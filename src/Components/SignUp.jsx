@@ -62,7 +62,7 @@ export function SignUp () {
 
                 if(SigningUpProcess.ok){
                   Welcome(`Welcome ${username.value}`)
-                  navigate("/Get_Answers")
+                  navigate("/")
                 } else{
                   const errorMessage = getMessage.SignUpError
                   if(errorMessage){
