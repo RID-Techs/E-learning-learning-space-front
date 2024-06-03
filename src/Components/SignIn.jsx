@@ -7,9 +7,11 @@ import password from "/password.png";
 import E_member from "/E_picture.webp";
 import { toast, Zoom } from 'react-toastify';
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 export function SignIn () {
     const navigate = useNavigate()
+    const [process, setProcess] = useState(false)
 
     const FillInputs = () => {
         toast.warn("Please, All fields are required !", {
@@ -44,7 +46,7 @@ export function SignIn () {
         if(username.value === "" || password.value === "") {
             FillInputs()
         } else{
-            e.target.textContainer = "Processing..."
+            setProcess(true)
             const SigningIn = async () => {
                 const SigningInProcess = await fetch("https://e-learning-learning-space-back.onrender.com/myElearning/login", {
                   method: "POST",
@@ -112,7 +114,7 @@ export function SignIn () {
                         <input type="password" id="password" placeholder="Password"/>
                     </div>
                     <div className="">
-                        <button onClick={Login} id="login-button" type="button">Sign in</button>
+                        <button onClick={Login} id="login-button" type="button">{process ? "Processing..." : "Sign in"}</button>
                     </div>
                 </form>
             </div>
