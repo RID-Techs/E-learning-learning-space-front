@@ -698,7 +698,7 @@ It’s important to note that these translations may vary depending on the conte
         )}
       </div>
 
-      <footer className="container-fluid mt-4">
+      <footer className="container-fluid">
       <div className="footer-first-part">
       <div className="header-holder">
           <header>
