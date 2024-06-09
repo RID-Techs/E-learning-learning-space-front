@@ -93,7 +93,13 @@ header{
 .welcome-text{
   align-self: center;
 }
-
+#new-update{
+  color: rgb(0, 66, 0);
+  background-color: lightgreen;
+  padding-left: 0.3em;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px rgb(189, 161, 4);
+}
 .login-holder{
   display: flex;
   justify-content: center;

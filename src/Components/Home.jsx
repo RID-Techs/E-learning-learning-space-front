@@ -71,6 +71,9 @@ import English_Poetry_Exam_21_22 from "../Docs/Semester_4/English_Poetry_Exam_21
 
 import Advanced_Oral_Expression from "../Docs/Semester_4/Advanced_Oral_Expression.pdf";
 
+import The_Prince_of_Parthia_Sem_4 from "../Docs/Semester_4/The_Prince_of_Parthia_Sem_4.pdf";
+import The_Contrast_Sem_4 from "../Docs/Semester_4/The_Contrast_Sem_4.pdf";
+
 //Semester 6
 import Academic_Writing from "../Docs/Semester_6/Academic_Writing.pdf";
 import Academic_Writing_Exam_21_22 from "../Docs/Semester_6/Academic_Writing_Exam_21_22.pdf";
@@ -88,6 +91,9 @@ import Etu_Crit_Lit_Am_Their_Eyes from "../Docs/Semester_6/Etu_Crit_Lit_Am_Their
 
 import Etu_Crit_Lit_Ang_Exam_21_22 from "../Docs/Semester_6/Etu_Crit_Lit_Ang_Exam_21_22.pdf";
 import Etu_Crit_Lit_Ang_Exam_22_23 from "../Docs/Semester_6/Etu_Crit_Lit_Ang_Exam_22_23.pdf";
+
+import Hamlet_And_Much_Ado_About_Nothing from "../Docs/Semester_6/Hamlet_And_Much_Ado_About_Nothing.pdf";
+import Animal_Farm_Sem_6 from "../Docs/Semester_6/Animal_Farm_Sem_6.pdf";
 
 import Literature_Compare from "../Docs/Semester_6/Literature_Compare.pdf";
 import Literature_Compare_Exam_22_23 from "../Docs/Semester_6/Literature_Compare_Exam_22_23.pdf";
@@ -334,9 +340,19 @@ export function Home() {
       url: English_Poetry_Exam_21_22
     },
     { id: 19, 
+      name: "The Prince of Parthia by Thomas Godfrey", 
+      url: The_Prince_of_Parthia_Sem_4,
+      newUpdate: true
+    },
+    { id: 20, 
+      name: "The Contrast by Royall Tyler", 
+      url: The_Contrast_Sem_4,
+      newUpdate: true
+    },
+    { id: 21, 
       name: "Advanced Oral Expression", 
       url: Advanced_Oral_Expression
-    }
+    },
   ];
 
   const pdfFiles_sem_5 = [
@@ -379,6 +395,16 @@ export function Home() {
     { id: 10, 
       name: `Étude et Critique de la Littérature Américaine : Zora Neale Hurston's "Their Eyes Were Watching God"`, 
       url: Etu_Crit_Lit_Am_Their_Eyes
+    },
+    { id: 18, 
+      name: `Étude et Critique de la Littérature Anglaise : "Animal Farm by George Orwell"`, 
+      url: Animal_Farm_Sem_6,
+      newUpdate: true
+    },
+    { id: 19, 
+      name: `Étude et Critique de la Littérature Anglaise : "Hamlet And Much Ado About Nothing, both by William Shakespeare"`, 
+      url: Hamlet_And_Much_Ado_About_Nothing,
+      newUpdate: true
     },
     { id: 11, 
       name: "Étude et Critique de la Littérature Anglaise Exam_Paper 2021-2022", 
@@ -641,6 +667,7 @@ It’s important to note that these translations may vary depending on the conte
   <div key={doc.id} className="col">
     <div className="doc-item">
       <div>
+        {doc.newUpdate && <p id="new-update">New !</p>}
         <img src={docs} alt="doc" />
       </div>
       <div>
@@ -673,6 +700,7 @@ It’s important to note that these translations may vary depending on the conte
   <div key={doc.id} className="col">
     <div className="doc-item">
       <div>
+      {doc.newUpdate && <p id="new-update">New !</p>}
         <img src={docs} alt="doc" />
       </div>
       <div>

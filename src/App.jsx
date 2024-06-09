@@ -1,4 +1,4 @@
-// import { useState } from 'react'
+
 import {RouterProvider, createBrowserRouter} from "react-router-dom"
 import { ErrorBoundary } from "react-error-boundary";
 import { Home } from "./Components/Home"
@@ -12,7 +12,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import { LoadHomePage } from "./Components/loaderPreFetch";
 
 function App() {
-  // const navigate = useNavigate()
 
   const router = createBrowserRouter([
     {
