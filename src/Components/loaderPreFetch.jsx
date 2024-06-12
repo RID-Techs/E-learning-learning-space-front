@@ -29,10 +29,12 @@ export async function LoadHomePage () {
             method: "POST",
             credentials: "include"
           })
-          if(NewToken.status === 403){
+          setTimeout(() => {
+            if(NewToken.status === 403){
               alert("Hi, your Session is over. Please, Login Again")
               window.location.href = "/"
           }
+          },20000)
           const newTokenAnswer = await NewToken.json()
           return newTokenAnswer
         } catch (error) {
