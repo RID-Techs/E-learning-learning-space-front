@@ -1,7 +1,6 @@
 // Images logo, semester, courses, Answers, user, download, docs and warning are from https://icons8.com/
 import logo from "/learns.png";
 import semester from "/semester_2.png";
-import courses from "/coursess.png";
 import Answers from "/answerss.png";
 import user from "/user.png";
 import warning from "/warning.png";
@@ -102,22 +101,19 @@ import Literature_and_media from "../Docs/Semester_6/Literature_and_media.pdf";
 import Literature_and_media_Exam_21_22 from "../Docs/Semester_6/Literature_and_media_Exam_21_22.pdf";
 import Literature_and_media_Exam_22_23 from "../Docs/Semester_6/Literature_and_media_Exam_22_23.pdf";
 
-import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { toast, Zoom } from 'react-toastify';
+import { useNavigate } from "react-router-dom";
 
 export function Home() {
-
   const navigate = useNavigate()
-
-  const LogOut = () => {
-    toast.success("You have just logged out !", {
-        theme: "light",
-        position:"top-center",
-        autoClose: 2000,
-        transition: Zoom
-    })
-}
+//   const LogOut = () => {
+//     toast.success("You have just logged out !", {
+//         theme: "light",
+//         position:"top-center",
+//         autoClose: 2000,
+//         transition: Zoom
+//     })
+// }
 
   const hola = localStorage.getItem("User")
   const [checked_1, setChecked_1] = useState(false);
@@ -436,32 +432,13 @@ export function Home() {
     }
   ];
 
-  const handleDownload = (url, fileName) => {
-    const modifiedFileName = fileName.replace(/\s+/g, "_") + ".pdf";
-    const link = document.createElement("a");
-    link.href = url;
-    link.download = modifiedFileName;
-    link.click();
-  };
-
-  const LoggedOut = async() => {
-    try {
-      const LoggingOut = await fetch("https://e-learning-learning-space-back.onrender.com/myElearning/logout", {
-        method: "POST",
-        credentials: "include"
-    })
-    if(LoggingOut.ok){
-      LogOut()
+  const LoggedOut = () => {
       localStorage.removeItem("User")
       setTimeout(() => {
         navigate("/")
       }, 1000)
     }
-  }   catch (error) {
-      console.log("Error logging out :", error)
-    }
-  
-}
+
 
   return (
     <>
@@ -481,13 +458,6 @@ export function Home() {
                 <img height={32} src={semester} alt="Semester" /> My semester{" "}
             </li>
               </a>
-              <a href="#my-current-courses">
-            <li>
-                {" "}
-                <img height={32} src={courses} alt="courses" /> My Current
-                Courses{" "}
-            </li>
-              </a>
               <a href="Get_Answers">
             <li>
                 {" "}
@@ -499,6 +469,7 @@ export function Home() {
           </ul>
         </div>
       </div>
+      
       <div className="container mt-5 welcome">
         <div className="welcome-text">
           <h2 id="welcome-message">
@@ -595,14 +566,18 @@ export function Home() {
               {pdfFiles_sem_2.map((doc) => (
                 <div key={doc.id} className="col">
                   <div className="doc-item">
+                  <div className="doc-img-and-name">
+      <div>
+        {doc.newUpdate && <p id="new-update">New !</p>}
+        <img src={docs} alt="doc" />
+      </div>
+        <p> ~ {doc.name}</p>
+      </div>
                     <div>
-                      <img src={docs} alt="doc" />
-                    </div>
-                    <div>
-                      <p> ~ {doc.name}</p>
                       <a
-                        href={doc.url}
-                        onClick={() => handleDownload(doc.url, doc.name)}
+                         href={doc.url}
+                         rel="noopener noreferrer"
+                         download={`${doc.name}.pdf`}
                       >
                         <img
                           className="me-2"
@@ -666,15 +641,18 @@ It’s important to note that these translations may vary depending on the conte
 {pdfFiles_sem_4.map((doc) => (
   <div key={doc.id} className="col">
     <div className="doc-item">
+      <div className="doc-img-and-name">
       <div>
         {doc.newUpdate && <p id="new-update">New !</p>}
         <img src={docs} alt="doc" />
       </div>
-      <div>
         <p> ~ {doc.name}</p>
+      </div>
+      <div>
         <a
           href={doc.url}
-          onClick={() => handleDownload(doc.url, doc.name)}
+          rel="noopener noreferrer"
+          download={`${doc.name}.pdf`}
         >
           <img
             className="me-2"
@@ -699,15 +677,18 @@ It’s important to note that these translations may vary depending on the conte
 {pdfFiles_sem_5.map((doc) => (
   <div key={doc.id} className="col">
     <div className="doc-item">
+    <div className="doc-img-and-name">
       <div>
-      {doc.newUpdate && <p id="new-update">New !</p>}
+        {doc.newUpdate && <p id="new-update">New !</p>}
         <img src={docs} alt="doc" />
       </div>
-      <div>
         <p> ~ {doc.name}</p>
+      </div>
+      <div>
         <a
           href={doc.url}
-          onClick={() => handleDownload(doc.url, doc.name)}
+          rel="noopener noreferrer"
+          download={`${doc.name}.pdf`}
         >
           <img
             className="me-2"

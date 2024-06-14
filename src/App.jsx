@@ -6,10 +6,10 @@ import { Error } from "./Errors/Error";
 import { ErrorPage } from "./Errors/ErrorPage"
 import { Get_Answers } from "./Components/Get_Answers";
 import { SignUp } from "./Components/SignUp";
-import { SignIn } from "./Components/SignIn";
+// import { SignIn } from "./Components/SignIn";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { LoadHomePage } from "./Components/loaderPreFetch";
+import { WelcomePage } from "./Components/Welcome";
 
 function App() {
 
@@ -18,7 +18,7 @@ function App() {
       path: "/",
       element: (
         <ErrorBoundary fallback={<Error/>}>
-          <SignIn/>
+          <WelcomePage/>
         </ErrorBoundary>
       ),
       errorElement: <ErrorPage/>
@@ -34,7 +34,6 @@ function App() {
     },
     {
       path: "/Home",
-      loader: LoadHomePage,
       element: (
         <ErrorBoundary fallback={<Error/>}>
           <Home/>
