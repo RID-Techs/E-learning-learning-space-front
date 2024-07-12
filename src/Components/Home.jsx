@@ -3,6 +3,7 @@ import logo from "/learns.png";
 import semester from "/semester_2.png";
 import Answers from "/answerss.png";
 import user from "/user.png";
+import courses from "/coursess.png";
 import warning from "/warning.png";
 import download from "/download.png";
 import docs from "/doc.png";
@@ -101,19 +102,66 @@ import Literature_and_media from "../Docs/Semester_6/Literature_and_media.pdf";
 import Literature_and_media_Exam_21_22 from "../Docs/Semester_6/Literature_and_media_Exam_21_22.pdf";
 import Literature_and_media_Exam_22_23 from "../Docs/Semester_6/Literature_and_media_Exam_22_23.pdf";
 
+import { toast, Zoom } from 'react-toastify';
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export function Home() {
   const navigate = useNavigate()
-//   const LogOut = () => {
-//     toast.success("You have just logged out !", {
-//         theme: "light",
-//         position:"top-center",
-//         autoClose: 2000,
-//         transition: Zoom
-//     })
-// }
+  const LogOut = () => {
+    toast.warn("You have just quit your session !", {
+        theme: "light",
+        position:"top-center",
+        autoClose: 2000,
+        transition: Zoom
+    })
+}
+
+  useEffect(() => {
+
+    function One () {
+      const headerHeight = document.querySelector(".header-wraper").offsetHeight
+              const TargetElement = document.getElementById("welcome-message")
+  
+              if(TargetElement && window.innerWidth <= 476){
+                  window.scrollTo({
+                      top: TargetElement.offsetTop - headerHeight,
+                      behavior: "smooth"
+                  })
+              }
+    }
+
+    One()
+
+    function Position () {
+      const headerHeight = document.querySelector(".header-wraper")
+      if (!headerHeight) {
+          console.error("Header element not found.");
+          return;
+      }
+      const GetHeight = headerHeight.offsetHeight
+  
+      const AllLinks = document.querySelectorAll("a[href^='#']")
+  
+      AllLinks.forEach((eachLink) => {
+          eachLink.addEventListener("click", (e) => {
+              e.preventDefault()
+              const TargetId = eachLink.getAttribute("href").substring(1)
+              const TargetElement = document.getElementById(TargetId)
+  
+              if(TargetElement){
+                  window.scrollTo({
+                      top: TargetElement.offsetTop - GetHeight,
+                      behavior: "smooth"
+                  })
+              }
+  
+          })
+      })
+  }
+  
+  Position()
+  }, [])
 
   const hola = localStorage.getItem("User")
   const [checked_1, setChecked_1] = useState(false);
@@ -241,7 +289,8 @@ export function Home() {
     },
     { id: 20,
       name: "Méthodologie de Traduction", 
-      url: Traduction
+      url: Traduction,
+      Traduction_rectification: true
     },
     { id: 21,
       name: "Méthodologie de Traduction_Exam_19_20", 
@@ -249,8 +298,7 @@ export function Home() {
     },
     { id: 22,
       name: "Méthodologie de Traduction_Exam_20_21", 
-      url: Traduction_Exam_20_21,
-      Traduction_rectification: true
+      url: Traduction_Exam_20_21
     },
     { id: 23,
       name: "Méthodologie de Traduction_Exam_22_23", 
@@ -433,7 +481,7 @@ export function Home() {
   ];
 
   const LoggedOut = () => {
-      localStorage.removeItem("User")
+      LogOut()
       setTimeout(() => {
         navigate("/")
       }, 1000)
@@ -445,39 +493,51 @@ export function Home() {
       <div className="container-fluid header-wraper">
         <div className="header-holder">
           <header>
-            <img src={logo} alt="E-learning" />
+            <img height={50} src={logo} alt="E-learning" />
             <h1>E-learning</h1>
           </header>
-        </div>
 
         <div className="header-elements">
           <ul>
-              <a href="#Enjoy">
+              <a href="#my">
             <li>
                 {" "}
-                <img height={32} src={semester} alt="Semester" /> My semester{" "}
+                <img height={22} src={semester} alt="Semester" /> My semester{" "}
+            </li>
+              </a>
+              <a href="#my-courses">
+            <li>
+                {" "}
+                <img height={22} src={courses} alt="Semester" /> My Current Courses{" "}
             </li>
               </a>
               <a href="Get_Answers">
             <li>
                 {" "}
-                <img height={32} src={Answers} alt="Answers" /> E-learning Get
+                <img height={22} src={Answers} alt="Answers" /> E-learning Get
                 Answers Spot{" "}
             </li>
               </a>
-          <button id="Log-out" onClick={LoggedOut} type="button">Log Out <img height={32} src={LogingOut} alt="Log-out" /> </button>
+              <a href="https://elerning-e-library.netlify.app" target="_blank">
+            <li>
+                {" "}
+                <img height={22} src={Answers} alt="Answers" /> My E-library{" "}
+            </li>
+              </a>
+          <button id="Log-out" onClick={LoggedOut} type="button">Log Out <img height={22} src={LogingOut} alt="Log-out" /> </button>
           </ul>
+        </div>
         </div>
       </div>
       
-      <div className="container mt-5 welcome">
+      <div className="container welcome">
         <div className="welcome-text">
           <h2 id="welcome-message">
             {" "}
             <span id="my-semester-span">~</span> Welcome {hola}{" "}
             <img src={user} alt="user" /> ~{" "}
           </h2>
-          <p id="Enjoy">
+          <p>
             Enjoy learning with E-learning ! Here, you have everything you need
             to grasp your courses and enhance your understanding by broadening
             your scope.
@@ -492,7 +552,7 @@ export function Home() {
       <div className="container mt-4">
         <hr className="divider" />
       </div>
-      <div className="container mt-5">
+      <div id="my" className="container mt-5">
         <h1 id="my-semester">
           {" "}
           <span id="my-semester-span">~</span>{" "}
@@ -543,7 +603,7 @@ export function Home() {
         </p>
       </div>
 
-      <div className="container mt-4">
+      <div id="my-courses" className="container mt-4">
         <h1 id="my-current-courses">
           {" "}
           <span id="my-semester-span">~</span>{" "}
@@ -590,17 +650,17 @@ export function Home() {
 
                     {doc.Traduction_rectification && 
                     <details className="mt-3">
-                      <summary>Click to see a small Rectification 📌</summary>
+                      <summary>Click to see some small Rectifications 📌</summary>
 
                       <p className="Rectification mt-2">
                       📌🥇Rectification of some parts in this document, make sure to take into consideration what will be said next :
 
-🌿The proper and actual definitions of the terms {"}Thème and Version{"} in the context of Translation are these ones bellow, not the ones in the document. 
+🌿The proper and actual definitions of the terms <strong>{`"`}Thème and Version{`"`}</strong> in the context of Translation are these ones bellow, not the ones in the document. <br />
 
-Thème: This refers to the translation of text into a foreign language.
-Version: This refers to the translation of text into one’s own language.
+<strong>Thème:</strong> refers to the translation of text into a foreign language. <br />
+<strong>Version:</strong> refers to the translation of text into one’s own language. <br />
 
-🌿 Since, For, Ago. In the document, there are some mistakes, here is the rectified explanation about them :
+🌿 Also, there are some mistakes <strong>Since, For, Ago</strong> in the document. Here is the rectified explanation about them :
 
 Translation of « since, » « for, » and « ago » ?
 In French, the words « since, » « for, » and « ago » can be translated in different ways depending on the context. Here are some examples :
@@ -619,9 +679,9 @@ Ago :
 For example : 
 « I worked here two years ago » can be translated as « J’ai travaillé ici il y a deux ans » in French.
   
-It’s important to note that these translations may vary depending on the context and the specific meaning of the word in the sentence. A professional translator will always consider the context and use the appropriate translation based on the intended meaning.
+It’s important to note that these translations may vary depending on the context and the specific meaning of the word in the sentence. A professional translator will always consider the context and use the appropriate translation based on the intended meaning. <br />
 
-🌈 Thanks for your understanding !!!🌿
+Thanks for your understanding !!!🌿
                       </p>
                     </details>
                     }
@@ -709,14 +769,14 @@ It’s important to note that these translations may vary depending on the conte
 
       <footer className="container-fluid">
       <div className="footer-first-part">
-      <div className="header-holder">
+      <div className="footers-holder-">
           <header>
             <img height={32} src={logo} alt="E-learning" />
             <h3>E-learning</h3>
           </header>
         </div>
         <div className="rights">
-          <p>2024 | All Rights Reserved</p>
+          <p> &copy; 2024 | All Rights Reserved</p>
         </div>
         <div className="author">
           <p>Made with <span style={{color: "red"}}>&hearts;</span> by E-learning</p>

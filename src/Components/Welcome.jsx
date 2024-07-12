@@ -19,12 +19,17 @@ export function WelcomePage () {
             transition: Zoom
         })
     }
-
-    const EnterMySession = () => {  
-        const username = prompt("What is your Username ?")
-        Welcome(`Welcome ${username}`)
-        localStorage.setItem("User", username)
-        navigate("/Home")
+    const User = localStorage.getItem("User")
+    const EnterMySession = () => { 
+        if(User) {
+          Welcome(`Hi ${User}`)
+          navigate("/Home")
+        } else {
+          const username = prompt("What is your Username ?")
+          Welcome(`Welcome ${username}`)
+          localStorage.setItem("User", username)
+          navigate("/Home#welcome-message")
+        }
     }
 
     return (
@@ -32,7 +37,7 @@ export function WelcomePage () {
               <div className="container-fluid header-wraper-home">
         <div className="header-holder">
           <header>
-            <img src={logo} alt="E-learning" />
+            <img height={50} src={logo} alt="E-learning" />
             <h1>E-learning</h1>
           </header>
         </div>
@@ -43,7 +48,7 @@ export function WelcomePage () {
     </div>
 
         <div className="mt-4">
-            <h3 className="ms-4">Sign in to get access to the E-learning learning space <img src={star} alt="star" /> </h3>
+            <h3 className="ms-4"> Click {`"`}Open{`"`} to access the E-learning learning space <img src={star} alt="star" /> </h3>
         </div>
 
         <div className="login-holder mt-4">

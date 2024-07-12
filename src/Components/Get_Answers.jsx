@@ -3,8 +3,6 @@ import logo from "/learns.png";
 import Homepage from "/Homepage.png";
 import Answers from "/answerss.png";
 import user from "/user.png";
-import WhatsApp from "/WhatsApp.png";
-import AnimatedArrow from "/AnimatedArrow.gif";
 import warning from "/warning.png";
 
 // Image Faq from https://www.freepik.com/
@@ -98,18 +96,18 @@ export function Get_Answers() {
           </header>
         </div>
 
-        <div className="header-elements">
+        <div id="answers-header" className="header-elements">
           <ul>
             <a href="Home">
               <li>
                 {" "}
-                <img height={32} src={Homepage} alt="Semester" /> Homepage{" "}
+                <img height={22} src={Homepage} alt="Semester" /> Homepage{" "}
               </li>
             </a>
             <a className="active" href="Get_Answers">
               <li>
                 {" "}
-                <img height={32} src={Answers} alt="Answers" /> E-learning Get
+                <img height={22} src={Answers} alt="Answers" /> E-learning Get
                 Answers Spot{" "}
               </li>
             </a>
@@ -117,7 +115,7 @@ export function Get_Answers() {
         </div>
       </div>
 
-      <div className="container mt-5 welcome_2">
+      <div className="container welcome_2">
         <div className="welcome-text">
           <h2 id="welcome-message">
             {" "}
@@ -1963,15 +1961,6 @@ export function Get_Answers() {
 
           </div> 
         )}
-
-      <div className="put-question mt-5">
-        <h3>Do you have a question ?</h3>
-        <div className="contact-holder">
-        <p id="Ifso">If so, then ask me here...</p>
-        <p id="arrow-holder"><img id="arrow" src={AnimatedArrow} alt="arrow" /></p>
-        <a href="https://wa.me/70454088?text=Hello Sir, I would like to ask a question." target="_blank"> <img height={32} src={WhatsApp} alt="WhatsApp" /> E-learning</a>
-        </div>
-      </div>
 
       </div>
 

@@ -28,16 +28,19 @@ body{
   padding: 1em;
 }
 .header-wraper{
-  position: sticky;
+  position: fixed;
   top: 0;
-  bottom: 9;
-  display: flex;
-  flex-wrap: wrap;
-  padding: 1em;
-  justify-content: space-between;
+  padding: 0.7em;
+  width: 100%;
   background-color: aliceblue;
   box-shadow: 4px 0px 4px brown;
-  z-index: 2;
+  z-index: 1000;
+}
+.header-holder{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  justify-content: space-between;
 }
 .header-wraper-home{
   position: sticky;
@@ -55,16 +58,21 @@ header{
   display: inline-flex;
   gap: 1em;
 }
-.header-elements{
-  align-self: end;
-}
+
 #member{
   font-family: Lora-Italic-VariableFont_wght;
+}
+#answers-header{
+  margin-top: 0.5em;
+}
+.header-elements {
+  margin: 0em -1em;
+  padding-right: 0.5em;
 }
 .header-elements ul {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5em;
+  gap: 1em;
 }
 .header-elements ul > li {
   list-style: none;
@@ -88,8 +96,14 @@ header{
 .header-elements a.active{
   box-shadow: 6px 6px #cf032f, 12px 12px #00d9e9;
 }
-.welcome, .welcome_2{
+.welcome{
   display: flex;
+  margin-top: 9em;
+}
+
+.welcome_2{
+  display: flex;
+  margin-top: 12em;
 }
 
 .welcome-text{
@@ -175,9 +189,7 @@ header{
 #welcome-message{
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
-#Enjoy{
-  font-size: 1.2rem;
-}
+
 #welcome-foot{
   font-size: 1.1rem;
   font-family: monospace;
@@ -185,6 +197,9 @@ header{
 }
 hr.divider{
   border-top: 5px dashed #8c8b8b;
+}
+#my, #my-courses{
+  padding-top: 1em;
 }
 #my-semester, #my-current-courses{
   text-align: center;
@@ -370,6 +385,10 @@ footer{
 }
 
 @media screen and (max-width: 992px) {
+  .welcome {
+    margin-top: 17em;
+  }
+
   .welcome::before{
     display: none;
   }
@@ -381,18 +400,35 @@ footer{
   }
 }
 
+/* ============================ */
+/* ============================ */
+/* ============================ */
+/* ============================ */
+
 @media screen and (max-width: 476px) {
+
+  .header-elements {
+    padding-right: 0.9em;
+  }
 
   .header-elements ul > a {
     padding: 0.3em;
   }
+  #welcome-message{
+    padding-top: 1.2em;
+  }
+  #member{
+    padding: 1em;
+  }
 
   .welcome {
     flex-direction: column;
+    margin-top: 20em;
   }
 
   .welcome_2{
     flex-direction: column;
+    margin-top: 13em;
   }
   .welcome::before{
     display: none;
