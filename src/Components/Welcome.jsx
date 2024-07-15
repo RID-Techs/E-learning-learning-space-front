@@ -7,9 +7,23 @@ import courses from "/coursess.png";
 import E_member from "/E_picture.webp";
 import { toast, Zoom } from 'react-toastify';
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 export function WelcomePage () {
     const navigate = useNavigate()
+    const [note, setNote] = useState(true)
+  const [hasRead, setHasRead] = useState(false)
+  const CloseNoteButton = () => {
+    setNote(false)
+    localStorage.setItem("Show Note", false)
+    setHasRead(true)
+  }
+    useEffect(() => {
+      const getNote = localStorage.getItem("Show Note")
+      if(getNote){
+        setNote(false)
+      }
+    }, [])
 
     const Welcome = (message) => {
         toast.success(message, {
@@ -34,6 +48,33 @@ export function WelcomePage () {
 
     return (
         <>
+
+        {note && (
+          <div className="conatiner-fluid Info-holder">
+          <div className="container">
+          <div className="Info-wrapper">
+          <div className="ContentInfo">
+              <div className="info-title">
+                <h1> <span className="note">~</span> Important Note <span className="note">~</span> </h1>
+              </div>
+              <hr />
+              <div className="info-body">
+                <p>
+                Welcome to the <span id="site-name"><strong><em>E-learning website</em></strong></span>. Our platform is a learning space for students of Anglophone Studies who want to enhance their understanding of the courses taught by lecturers. On the platform, you will find all the resources you need to improve your comprehension of the material, increase your interactions with lecturers during courses, and ultimately enable you to transmit the knowledge you gain. By doing so, you will broaden your scope on various topics in the field of the English language. <span className="underline"> <strong>However, some resources may not be up to date, as lecturers often modify or change the content of their courses.</strong> </span> Otherwise, you are all set.
+                </p>
+              </div>
+              <hr />
+              <div className="leave">
+                <button id="close-Button" onClick={CloseNoteButton} type="button">Close</button>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+        ) }
+
+
+
               <div className="container-fluid header-wraper-home">
         <div className="header-holder">
           <header>
@@ -53,11 +94,11 @@ export function WelcomePage () {
 
         <div className="login-holder mt-4">
 
-            <div className="welcome-button">
+            {hasRead && (<div className="welcome-button">
                 <button onClick={EnterMySession} id="login-button"> <img height={32} src={courses} alt="user" /> Open my Learning Space</button>
-            </div>
+            </div>)}
 
-            <div className="">
+            <div>
                 <img height={350} src={E_member} alt="learning" />
             </div>
 

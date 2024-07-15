@@ -16,6 +16,53 @@ body{
   height: 100vh;
 }
 
+.Info-holder{
+  position: absolute;
+  height: 100dvh;
+  width: 100%;
+  background-color: rgba(12, 8, 8, 0.719);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Info-wrapper{
+  background-color: azure;
+}
+.note{
+  color: #cf032f;
+}
+#site-name{
+  color: rgb(21, 0, 206);
+}
+.ContentInfo{
+  display: inline-flex;
+  flex-direction: column;
+  padding: 1em;
+}
+.info-title h1 {
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.info-body p {
+  font-size: clamp(1.1rem, 1.5vw, 1.5rem);
+}
+.leave{
+  align-self: flex-end;
+}
+.leave button {
+  outline: none;
+  border: none;
+  padding: 0.5em;
+  border-radius: 5px;
+  background-color: #cf032f;
+  color: #fff;
+}
+.leave button:hover{
+  color: #cf032f;
+  background-color: #fff;
+  box-shadow: 0px 0px 3px brown;
+}
 .error-page-wraper {
   display: flex;
   align-items: center;
@@ -108,13 +155,6 @@ header{
 
 .welcome-text{
   align-self: center;
-}
-#new-update{
-  color: rgb(0, 66, 0);
-  background-color: lightgreen;
-  padding-left: 0.3em;
-  border-radius: 5px;
-  box-shadow: 2px 2px 2px rgb(189, 161, 4);
 }
 .login-holder{
   display: flex;
@@ -347,7 +387,33 @@ hr.divider{
   background-color: paleturquoise;
   box-shadow: 0px 0px 5px brown, 2px 2px 2px lightgreen;
 }
+.doc-header{
+  line-height: 1.5em;
+}
+.spacers{
+  text-align: center;
+}
 
+.Detailled-docs{
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+}
+.Detailled-docs a{
+  text-decoration: none;
+  background-color: paleturquoise;
+  box-shadow: 0px 2px 2px brown;
+  border-radius: 10px;
+  padding: 0.7em;
+  color: #000;
+  transition: all 0.2s ease-in-out;
+}
+
+.Detailled-docs a:hover{
+  color: #fff;
+  background-color: brown;
+  box-shadow: 0px 2px 2px rgb(68, 78, 78);
+}
 .put-question a:hover{
   background-color: lightgreen;
   box-shadow: 0px 0px 5px paleturquoise, 2px 2px 2px purple;
@@ -440,7 +506,8 @@ footer{
     height: 250px;
   }
   .semester-choice ul{
-    gap: 1em;
+    gap: 2em;
+    margin-left: -1em;
   }
   .footer-first-part{
     gap: 0em;

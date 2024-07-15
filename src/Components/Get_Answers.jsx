@@ -3,7 +3,14 @@ import logo from "/learns.png";
 import Homepage from "/Homepage.png";
 import Answers from "/answerss.png";
 import user from "/user.png";
+import doc from "/doc.png";
 import warning from "/warning.png";
+
+import Semester_1_Detailled_document from "../Docs/Semester_1/Semester_1_Detailled_document.pdf"
+import Semester_3_Detailled_document from "../Docs/Semester_3/Semester_3_Detailled_document.pdf"
+import Semester_4_Detailled_document from "../Docs/Semester_4/Semester_4_Detailled_document.pdf"
+import Semester_5_Detailled_document from "../Docs/Semester_5/Semester_5_Detailled_document.pdf"
+import Semester_6_Detailled_document from "../Docs/Semester_6/Semester_6_Detailled_document.pdf"
 
 // Image Faq from https://www.freepik.com/
 import Faq from "/Faq.webp";
@@ -11,57 +18,190 @@ import { useEffect, useState } from "react";
 
 export function Get_Answers() {
   const hola = localStorage.getItem("User")
-  const [checked_1, setChecked_1] = useState(false);
-  const [checked_2, setChecked_2] = useState(false);
-  const [checked_3, setChecked_3] = useState(false);
+  const [checked_sem_1, setChecked_Sem_1] = useState(false);
+  const [checked_sem_3, setChecked_Sem_3] = useState(false);
+  const [checked_sem_5, setChecked_Sem_5] = useState(false);
+  const [checked_sem_2, setChecked_Sem_2] = useState(false);
+  const [checked_sem_4, setChecked_Sem_4] = useState(false);
+  const [checked_sem_6, setChecked_Sem_6] = useState(false);
 
   const [openAnswer, setOpenAnswer] = useState(false);
   console.log(openAnswer)
 
-  const TrueCheck = (e) => {
+  
+  useEffect(() => {
+    const all = document.querySelectorAll(".semester-choice ul li")
+
+    const Inps = document.querySelectorAll("input")
+
+    if(checked_sem_1 || checked_sem_2 || checked_sem_3 || checked_sem_4 || checked_sem_5 || checked_sem_6){
+      Inps.forEach((inp) => {
+  
+        if(inp.checked){
+          const styleToParent = inp.parentElement
+          styleToParent.style.backgroundImage = "linear-gradient(to right, rgb(214, 253, 253), rgb(180, 255, 236))"
+          styleToParent.style.borderTop = "2px solid rgba(67, 161, 238, 0.87)"
+          styleToParent.style.borderBottom = "2px dotted rgb(0, 113, 128)"
+          styleToParent.style.boxShadow = "inset 3px 0px 0px yellow, -3px 0px 0px brown, inset -3px 0px 0px brown, 3px 0px 0px yellow"
+        } 
+      })
+
+    } else {
+      Inps.forEach((inp) => {
+          const styleToParent_2 = inp.parentElement
+          styleToParent_2.style.backgroundImage = ""
+          styleToParent_2.style.borderTop = ""
+          styleToParent_2.style.borderBottom = ""
+          styleToParent_2.style.boxShadow = ""
+      })
+    }
+
+    const handleClick = (event) => {
+      const target = event.currentTarget
+      if(target) {
+        all.forEach((el) => {
+        el.style.backgroundImage = ""
+        el.style.borderTop = ""
+        el.style.borderBottom = ""
+        el.style.boxShadow = ""
+      })
+      target.style.backgroundImage = "linear-gradient(to right, rgb(214, 253, 253), rgb(180, 255, 236))"
+      target.style.borderTop = "2px solid rgba(67, 161, 238, 0.87)"
+      target.style.borderBottom = "2px dotted rgb(0, 113, 128)"
+      target.style.boxShadow = "inset 3px 0px 0px yellow, -3px 0px 0px brown, inset -3px 0px 0px brown, 3px 0px 0px yellow"
+      }
+      
+    }
+
+    all.forEach((el) => {
+      el.addEventListener("click", handleClick)
+    })
+
+    return () => {
+      all.forEach((el) => {
+        el.removeEventListener("click", handleClick)
+      })
+    }
+
+  }, [checked_sem_1, checked_sem_2, checked_sem_3, checked_sem_4, checked_sem_5, checked_sem_6])
+
+  const True_Sem_1_Checked = (e) => {
+    localStorage.removeItem("Answer_Sem_3");
+    localStorage.removeItem("Answer_Sem_5");
+    localStorage.removeItem("Answer_Sem_2");
     localStorage.removeItem("Answer_Sem_4");
     localStorage.removeItem("Answer_Sem_6");
-    setChecked_1(e.target.checked);
-    setChecked_2(false);
-    setChecked_3(false);
+    setChecked_Sem_1(e.target.checked);
+    setChecked_Sem_3(false)
+    setChecked_Sem_5(false)
+    setChecked_Sem_2(false)
+    setChecked_Sem_4(false);
+    setChecked_Sem_6(false);
+    localStorage.setItem("Answer_Sem_1", true);
+  };
+  const True_Sem_3_Checked = (e) => {
+    localStorage.removeItem("Answer_Sem_1");
+    localStorage.removeItem("Answer_Sem_5");
+    localStorage.removeItem("Answer_Sem_2");
+    localStorage.removeItem("Answer_Sem_4");
+    localStorage.removeItem("Answer_Sem_6");
+    setChecked_Sem_3(e.target.checked);
+    setChecked_Sem_1(false)
+    setChecked_Sem_5(false)
+    setChecked_Sem_2(false)
+    setChecked_Sem_4(false);
+    setChecked_Sem_6(false);
+    localStorage.setItem("Answer_Sem_3", true);
+  };
+  const True_Sem_5_Checked = (e) => {
+    localStorage.removeItem("Answer_Sem_3");
+    localStorage.removeItem("Answer_Sem_1");
+    localStorage.removeItem("Answer_Sem_2");
+    localStorage.removeItem("Answer_Sem_4");
+    localStorage.removeItem("Answer_Sem_6");
+    setChecked_Sem_5(e.target.checked);
+    setChecked_Sem_3(false)
+    setChecked_Sem_1(false)
+    setChecked_Sem_2(false)
+    setChecked_Sem_4(false);
+    setChecked_Sem_6(false);
+    localStorage.setItem("Answer_Sem_5", true);
+  };
+
+  const True_Sem_2_Checked = (e) => {
+    localStorage.removeItem("Answer_Sem_1");
+    localStorage.removeItem("Answer_Sem_3");
+    localStorage.removeItem("Answer_Sem_5");
+    localStorage.removeItem("Answer_Sem_4");
+    localStorage.removeItem("Answer_Sem_6");
+    setChecked_Sem_2(e.target.checked);
+    setChecked_Sem_1(false);
+    setChecked_Sem_3(false);
+    setChecked_Sem_5(false);
+    setChecked_Sem_4(false);
+    setChecked_Sem_6(false);
     localStorage.setItem("Answer_Sem_2", true);
   };
 
-  const TrueCheck_2 = (e) => {
+  const True_Sem_4_Checked = (e) => {
+    localStorage.removeItem("Answer_Sem_1");
+    localStorage.removeItem("Answer_Sem_3");
+    localStorage.removeItem("Answer_Sem_5");
     localStorage.removeItem("Answer_Sem_2");
     localStorage.removeItem("Answer_Sem_6");
-    setChecked_2(e.target.checked);
-    setChecked_1(false);
-    setChecked_3(false);
+    setChecked_Sem_4(e.target.checked);
+    setChecked_Sem_1(false);
+    setChecked_Sem_3(false);
+    setChecked_Sem_5(false);
+    setChecked_Sem_2(false);
+    setChecked_Sem_6(false);
     localStorage.setItem("Answer_Sem_4", true);
   };
-  const TrueCheck_3 = (e) => {
+  const True_Sem_6_Checked = (e) => {
+    localStorage.removeItem("Answer_Sem_1");
+    localStorage.removeItem("Answer_Sem_3");
+    localStorage.removeItem("Answer_Sem_5");
     localStorage.removeItem("Answer_Sem_2");
     localStorage.removeItem("Answer_Sem_4");
-    setChecked_3(e.target.checked);
-    setChecked_1(false);
-    setChecked_2(false);
+    setChecked_Sem_6(e.target.checked);
+    setChecked_Sem_1(false);
+    setChecked_Sem_3(false);
+    setChecked_Sem_5(false);
+    setChecked_Sem_2(false);
+    setChecked_Sem_4(false);
     localStorage.setItem("Answer_Sem_6", true);
   };
 
   useEffect(() => {
+    const getSem_1 = localStorage.getItem("Answer_Sem_1");
+    const getSem_3 = localStorage.getItem("Answer_Sem_3");
+    const getSem_5 = localStorage.getItem("Answer_Sem_5");
     const getSem_2 = localStorage.getItem("Answer_Sem_2");
     const getSem_4 = localStorage.getItem("Answer_Sem_4");
     const getSem_6 = localStorage.getItem("Answer_Sem_6");
 
+    if (getSem_1) {
+      setChecked_Sem_1(true);
+    }
+    if (getSem_3) {
+      setChecked_Sem_3(true);
+    }
+    if (getSem_5) {
+      setChecked_Sem_5(true);
+    }
     if (getSem_2) {
-      setChecked_1(true);
+      setChecked_Sem_2(true);
     }
     if (getSem_4) {
-      setChecked_2(true);
+      setChecked_Sem_4(true);
     }
     if (getSem_6) {
-      setChecked_3(true);
+      setChecked_Sem_6(true);
     }
   }, []);
 
   useEffect(() => {
-    if(checked_1 || checked_2 || checked_3){
+    if(checked_sem_1 || checked_sem_3 || checked_sem_5 || checked_sem_2 || checked_sem_4 || checked_sem_6){
       const All_RevealAnswers = document.querySelectorAll(".reveal-answer")
 
       const handleClick = (event) => {
@@ -84,7 +224,7 @@ export function Get_Answers() {
         })
       }
     }
-  }, [checked_1, checked_2, checked_3])
+  }, [checked_sem_1, checked_sem_3, checked_sem_5, checked_sem_2, checked_sem_4, checked_sem_6])
 
   return (
     <>
@@ -152,14 +292,36 @@ export function Get_Answers() {
 
       <div className="container semester-choice mt-4">
         <ul>
+          <label htmlFor="semester_1">
+          <li>
+              Semester 1{" "}
+              <input
+                checked={checked_sem_1}
+                onChange={True_Sem_1_Checked}
+                type="checkbox"
+                id="semester_1"
+              />
+            </li>
+          </label>
           <label htmlFor="semester_2">
             <li>
               Semester 2{" "}
               <input
-                checked={checked_1}
-                onChange={TrueCheck}
+                checked={checked_sem_2}
+                onChange={True_Sem_2_Checked}
                 type="checkbox"
                 id="semester_2"
+              />
+            </li>
+          </label>
+          <label htmlFor="semester_3">
+          <li>
+              Semester 3{" "}
+              <input
+                checked={checked_sem_3}
+                onChange={True_Sem_3_Checked}
+                type="checkbox"
+                id="semester_3"
               />
             </li>
           </label>
@@ -167,19 +329,30 @@ export function Get_Answers() {
             <li>
               Semester 4{" "}
               <input
-                checked={checked_2}
-                onChange={TrueCheck_2}
+                checked={checked_sem_4}
+                onChange={True_Sem_4_Checked}
                 type="checkbox"
                 id="semester_4"
               />
             </li>
           </label>
+          <label htmlFor="semester_5">
+         <li>
+              Semester 5{" "}
+              <input
+                checked={checked_sem_5}
+                onChange={True_Sem_5_Checked}
+                type="checkbox"
+                id="semester_5"
+              />
+            </li>
+         </label>
           <label htmlFor="semester_6">
             <li>
               Semester 6{" "}
               <input
-                checked={checked_3}
-                onChange={TrueCheck_3}
+                checked={checked_sem_6}
+                onChange={True_Sem_6_Checked}
                 type="checkbox"
                 id="semester_6"
               />
@@ -203,7 +376,7 @@ export function Get_Answers() {
       </div>
 
       <div className="container mt-5">
-        {checked_1 === false && checked_2 === false && checked_3 === false ? (
+        { checked_sem_1 === false && checked_sem_3 === false && checked_sem_5 === false && checked_sem_2 === false && checked_sem_4 === false && checked_sem_6 === false ? (
           <p id="no-course">
             {" "}
             <img
@@ -219,7 +392,43 @@ export function Get_Answers() {
 
       <div className="container">
 
-        {checked_1 && (
+        {checked_sem_1 && (<div className="col">
+              <div className="faq-holder">
+                <h5 className="doc-header">
+                🏅🖌🌿 Click on <span className="underline"><em>{`"`}Download My Document{`"`}</em></span> to get a well-explained document that will help you understand all the topics related to Semester 1 courses.
+                </h5>
+                <div className="spacers">---------------</div>
+                <div className="Detailled-docs">
+                <a href={Semester_1_Detailled_document} download={`Semester 1 Detailled document.pdf`} rel="noopener noreferrer"> <img height={32} src={doc} alt="doc" /> Download My Document</a>
+                </div>
+              </div>
+            </div>)}
+
+        {checked_sem_3 && (<div className="col">
+              <div className="faq-holder">
+                <h5 className="doc-header">
+                🏅🖌🌿 Click on <span className="underline"><em>{`"`}Download My Document{`"`}</em></span> to get a well-explained document that will help you understand all the topics related to Semester 3 courses.
+                </h5>
+                <div className="spacers">---------------</div>
+                <div className="Detailled-docs">
+                <a href={Semester_3_Detailled_document} download={`Semester 3 Detailled document.pdf`} rel="noopener noreferrer"> <img height={32} src={doc} alt="doc" /> Download My Document</a>
+                </div>
+              </div>
+            </div>)}
+
+        {checked_sem_5 && (<div className="col">
+              <div className="faq-holder">
+                <h5 className="doc-header">
+                🏅🖌🌿 Click on <span className="underline"><em>{`"`}Download My Document{`"`}</em></span> to get a well-explained document that will help you understand all the topics related to Semester 5 courses.
+                </h5>
+                <div className="spacers">---------------</div>
+                <div className="Detailled-docs">
+                <a href={Semester_5_Detailled_document} download={`Semester 5 Detailled document.pdf`} rel="noopener noreferrer"> <img height={32} src={doc} alt="doc" /> Download My Document</a>
+                </div>
+              </div>
+            </div>)}
+
+        {checked_sem_2 && (
           <div className="row row-cols-xl-3 row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-1 g-4">
             <div className="col">
               <div className="faq-holder">
@@ -409,7 +618,7 @@ export function Get_Answers() {
           </div>
         )}
 
-        {checked_2 && (
+        {checked_sem_4 && (
           <div className="row row-cols-xl-3 row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-1 g-4">
             <div className="col">
               <div className="faq-holder">
@@ -681,74 +890,109 @@ export function Get_Answers() {
                   </summary>
                   <div className="mt-4 answer-content">
                     <p>
-                    🌿 Integration in the context of British civilization refers to the process of individuals or groups from diverse backgrounds becoming part of British society while maintaining their distinct identities. Britain has a long history of being a multicultural society due to its colonial past, global connections, and waves of immigration. Integration plays a crucial role in fostering social cohesion and ensuring equal opportunities for all. <br />
-                    Here are some key points regarding integration in British civilization :
+                    🌿 <strong>Integration</strong> is a multifaceted process that involves mutual acceptance and adaptation between immigrants and the host society. In the context of British civilization, successful integration has been facilitated through various measures, policies, and initiatives designed to support immigrants in becoming active and accepted members of the community. Key steps that have eased immigrant integration in Britain include :
                     </p>
                     <p>
                       <span className="underline">
                         <strong>
-                          <em>- Multiculturalism :</em>
+                          <em>- 1. Legislative Frameworks :</em>
                         </strong>
-                      </span>{" "}
-                      British civilization embraces multiculturalism, recognizing and celebrating the diversity of cultures, languages, religions, and traditions within the country. It acknowledges that individuals can maintain their cultural heritage while also being active participants in British society.
+                      </span>{" "} <br />
+                      <strong>a. Race Relations Acts</strong> <br />
+                      The Race Relations Acts provided a legal basis for combating discrimination and promoting equality : <br />
+                      <strong>*Race Relations Act 1965*:</strong> Outlawed discrimination in public places based on race, color, or ethnic origins. <br />
+                      <strong>*Race Relations Act 1968*:</strong> Extended anti-discrimination laws to employment, housing, and public services. <br />
+                      <strong>*Race Relations Act 1976*:</strong> Introduced the concept of indirect discrimination and established the Commission for Racial Equality to promote racial harmony. <br />
+
+                      <strong>b. British Nationality Acts</strong> <br />
+                      These acts helped define who could become British citizens, fostering a sense of belonging : <br />
+                      <strong>*British Nationality Act 1948*:</strong> Created the status of Citizens of the United Kingdom and Colonies (CUKC), encouraging Commonwealth migration. <br />
+                      <strong>*British Nationality Act 1981*:</strong> Reclassified British nationality into five categories, clarifying rights and responsibilities for different groups.
+
                     </p>
 
                     <p>
                       {" "}
                       <span className="underline">
                         <strong>
-                          <em>- Immigration and Settlement :</em>
+                          <em>- 2. Education and Language Support :</em>
                         </strong>
-                      </span>{" "}
-                      Britain has witnessed significant immigration throughout its history. Immigrants have arrived from former colonies, Europe, and other parts of the world. Successful integration involves providing support and opportunities for newcomers to settle, learn the language, find employment, and contribute to the wider society.
+                      </span>{" "} <br />
+                      <strong>a. English Language Courses</strong> <br />
+                      Proficiency in the English language is crucial for effective integration : <br />
+                      <strong>*ESOL (English for Speakers of Other Languages)*:</strong> Programs provide language training for immigrants to enhance communication skills, improve job prospects, and facilitate social interactions. <br />
+
+                      <strong>b. Multicultural Education</strong> <br />
+                      Schools play a vital role in promoting understanding and acceptance of different cultures : <br />
+                      <strong>*Inclusive Curriculum*:</strong> Teaching about various cultures, histories, and contributions of different ethnic groups helps build mutual respect. <br />
+                      <strong>*Support for Bilingual Students*:</strong>  Offering additional support for students whose first language is not English ensures they can thrive academically. <br /> 
                     </p>
 
                     <p>
                       <span className="underline">
                         <strong>
-                          <em>- Equal Rights and Values :</em>
+                          <em>- 3. Employment Opportunities and Economic Integration :</em>
                         </strong>
-                      </span>{" "}
-                      Integration in British civilization is built on the principles of equal rights, democracy, and the rule of law. All individuals, regardless of their background, are expected to adhere to these values, which form the foundation of British society.
+                      </span>{" "} <br />
+                      Access to employment is essential for economic self-sufficiency and social integration : <br />
+                      <strong>*Work Permit Schemes*:</strong> Simplifying the process for immigrants to obtain work permits encourages lawful employment. <br />
+                      <strong>*Recognition of Qualifications*:</strong> Ensuring that foreign qualifications are recognized or providing pathways for certification helps immigrants utilize their skills.
                     </p>
 
                     <p>
                       {" "}
                       <span className="underline">
                         <strong>
-                          <em>- Education and Language :</em>
+                          <em>- 4. Community and Social Integration :</em>
                         </strong>
-                      </span>{" "}
-                      Education plays a vital role in integration by providing opportunities for individuals to learn about British history, values, and customs. English language proficiency is also important for effective communication and full participation in society.
+                      </span>{" "} <br />
+                      <strong>a. Community Organizations and Support Networks 
+                      </strong> <br />
+                      Community organizations offer vital support and resources : <br />
+
+                      <strong>*Cultural Associations*:</strong> These organizations provide a sense of community, cultural preservation, and mutual aid. <br />
+                      <strong>*Integration Programs*:</strong> Initiatives that bring together different community groups foster social cohesion and understanding. <br />
+
+                      <strong>b. Housing Policies :</strong> <br />
+                      Access to adequate housing is a critical aspect of integration : <br />
+                      <strong>*Equal Access to Housing*:</strong> Ensuring non-discriminatory access to housing markets and public housing helps prevent segregation. <br />
+                      <strong>*Supportive Housing Initiatives*:</strong> Programs that assist immigrants in finding housing contribute to their stability and integration.
                     </p>
 
                     <p>
                       <span className="underline">
                         <strong>
-                          <em>- Social Cohesion :</em>
+                          <em>- 5. Health and Social Services :</em>
                         </strong>
-                      </span>{" "}
-                      Integration aims to promote social cohesion by fostering interactions, understanding, and mutual respect among different communities. This can be achieved through initiatives such as community programs, cultural events, and dialogue between different groups.
+                      </span>{" "} <br />
+                      Providing equitable access to health and social services is crucial : <br />
+                      <strong>*Healthcare Access*:</strong> Ensuring immigrants can access healthcare services without discrimination improves their well-being and integration prospects. <br />
+                      <strong>*Social Services Support*:</strong> Offering support for social services, such as child care and counseling, helps families adjust to their new environment.
                     </p>
                     <p>
                       <span className="underline">
                         <strong>
-                          <em>- Legal Framework :</em>
+                          <em>- 6. Political Participation and Civic Engagement :</em>
                         </strong>
-                      </span>{" "}
-                      The British legal framework ensures that individuals are protected from discrimination based on their ethnicity, religion, or other characteristics. This provides a framework for a fair and inclusive society where everyone has equal opportunities.
+                      </span>{" "} <br />
+                      Encouraging immigrants to participate in the political process and civic life strengthens their sense of belonging : <br />
+                      <strong>*Voting Rights*:</strong> Extending voting rights to immigrants in local elections increases their involvement in community decision-making. <br />
+                      <strong>*Civic Education*:</strong> Educating immigrants about their rights and responsibilities helps them engage more effectively in society.
                     </p>
                     <p>
                       <span className="underline">
                         <strong>
-                          <em>- Political Participation :</em>
+                          <em>- 7. Anti-Discrimination Policies and Advocacy :</em>
                         </strong>
-                      </span>{" "}
-                      Integration involves encouraging individuals from diverse backgrounds to participate in the political process. This can include voting, running for office, and engaging in civic activities to shape policies and decisions that affect their lives.
+                      </span>{" "} <br />
+                      Combating racism and discrimination is fundamental for a welcoming environment : <br />
+                      <strong>*Anti-Discrimination Campaigns*:</strong> Public awareness campaigns challenge prejudices and promote inclusivity. <br />
+                      <strong>*Advocacy Groups*:</strong> Organizations that advocate for immigrants{`'`} rights work to ensure their fair treatment and representation.
                     </p>
 
                     <p>
-                    It{"'"}s important to note that integration is an ongoing process that requires efforts from both the host society and individuals to create an inclusive and harmonious environment. By embracing diversity and promoting integration, British civilization continues to evolve, drawing strength from its multicultural fabric while maintaining a sense of national identity.
+                    <strong>Conclusion</strong> <br />
+                    Integration in Britain has been facilitated through comprehensive legislative frameworks, education and language support, employment opportunities, community initiatives, access to health and social services, political participation, and strong anti-discrimination policies. These measures have created an environment where immigrants can actively participate in and contribute to society, fostering mutual acceptance and respect. As a result, Britain has become a successful multicultural country characterized by its rich diversity and vibrant cultural landscape.
                     </p>
             
                     <p>
@@ -772,92 +1016,71 @@ export function Get_Answers() {
                   </summary>
                   <div className="mt-4 answer-content">
                     <p>
-                    🌿 Here{"'"}s a comprehensive list of landmarks demonstrating the effectiveness of British integration, including dates :
+                    🌿 Here{"'"}s a comprehensive list of landmarks demonstrating the effectiveness of British integration :
                     </p>
                     <p>
                       <span className="underline">
                         <strong>
-                          <em>- Legal Framework and Anti-Discrimination Legislation :</em>
+                          <em>- Citizenship Tests and Ceremonies :</em>
                         </strong>
                       </span>{" "} <br />
-                       **1965** : Enactment of the Race Relations Act, prohibiting racial discrimination in public places and employment. <br />
+                      Introduced by the Immigration, Nationality and Asylum Act 2002, citizenship tests and ceremonies became a pivotal part of the integration process. The first citizenship ceremony was held in 2004, and these ceremonies have since become compulsory. During the ceremonies, applicants swear allegiance to the Queen and commit to respecting British values. This formal process underscores the importance placed on integrating new citizens into British society .
+                    </p>
+
+                    <p>
+                      {" "}
+                      <span className="underline">
+                        <strong>
+                          <em>- Legislation and Policy Changes :</em>
+                        </strong>
+                      </span>{" "} <br />
+                      The British Nationality Act of 1981 and its subsequent amendments, such as the Nationality, Immigration and Asylum Act 2002 and the Immigration, Asylum and Nationality Act 2006, illustrate continuous efforts to refine and adapt immigration and integration policies. These legislative changes aimed to reclassify citizenship categories, modify the principle of ius soli, and ensure that nationality could be passed on by either parent . <br />
+                      The 1968 Race Relations Act expanded the scope of anti-discrimination laws, covering employment and housing, and reinforced the institutional framework for addressing racial issues .
+                    </p>
+
+                    <p>
+                      <span className="underline">
+                        <strong>
+                          <em>- Multicultural Policies: </em>
+                        </strong>
+                      </span>{" "} <br />
+                      1969 onwards: The development and institutionalization of multiculturalist policies aimed at easing tensions within and between communities by granting them the right to express their cultural differences both privately and publicly. Examples include : <br />
+                      * Sikh bus drivers gaining the right to wear traditional beards and turbans at work. <br />
+                      * The inclusion of ethnic histories in British school curricula. <br />
+                      * Providing access to official documents in multiple languages. <br />
+                      * Allowing Muslim women to wear full veils in public spaces. <br />
+                      * Creating separate swimming pools and specific school schedules for certain ethnic communities .
+                    </p>
+
+                    <p>
+                      {" "}
+                      <span className="underline">
+                        <strong>
+                          <em>- Educational and Social Initiatives :</em>
+                        </strong>
+                      </span>{" "} <br />
+                      Specific measures to accommodate diverse communities, such as separate swimming pools for men and women in neighborhoods with a high rate of Muslim immigrants, and schools with adapted rhythms for Pakistani families, reflect practical steps taken to integrate diverse communities into British society .
+                    </p>
+
+                    <p>
+                      <span className="underline">
+                        <strong>
+                          <em>- Stephen Lawrence Case and McPherson Report :</em>
+                        </strong>
+                      </span>{" "} <br />
+                      1993: The murder of Stephen Lawrence, a black teenager, highlighted issues of racial discrimination and institutional racism in the UK. The subsequent McPherson Report in 1999 brought significant attention to these issues and led to reforms in policing and public services to address racial disadvantage and promote equality .
+                    </p>
+                    <p>
+                      <span className="underline">
+                        <strong>
+                          <em>- Political Debates and Initiatives :</em>
+                        </strong>
+                      </span>{" "} <br />
+                      2006-2008: Key political speeches by leaders like Tony Blair, Gordon Brown, and David Cameron addressed the themes of multiculturalism and integration. These speeches acknowledged the progress made in anti-discrimination legislation and the importance of fostering a sense of shared values while respecting cultural diversity. They also proposed initiatives like a {`"`}British Day{`"`} and a {`"`}Museum of Britishness{`"`} to celebrate and reinforce British identity .
+                    </p>
                     
-    **1976** : Passage of the Race Relations Act, strengthening protections against discrimination in housing, employment, and public services. <br />
-
-    **2010**: Introduction of the Equality Act, consolidating and enhancing anti-discrimination laws to protect individuals from discrimination based on various characteristics including race, ethnicity, religion, and nationality.
-                    </p>
-
                     <p>
-                      {" "}
-                      <span className="underline">
-                        <strong>
-                          <em>- Social Cohesion and Community Engagement :</em>
-                        </strong>
-                      </span>{" "} <br />
-                      **2000**: Formation of the Commission on the Future of Multi-Ethnic Britain, emphasizing the importance of social cohesion and diversity in British society. <br />
-                      **2007**: Launch of the Government{"'"}s Preventing Violent Extremism Strategy, promoting community engagement and integration efforts to prevent extremism and promote cohesion.
-                    </p>
-
-                    <p>
-                      <span className="underline">
-                        <strong>
-                          <em>- Political Representation and Participation :</em>
-                        </strong>
-                      </span>{" "} <br />
-                      **1987**: Election of the first ethnic minority Members of Parliament (MPs), including Diane Abbott and Bernie Grant. <br />
-                      **2000**: Increase in ethnic minority representation in local government following the Local Government Act, which introduced proportional representation in local elections.
-                    </p>
-
-                    <p>
-                      {" "}
-                      <span className="underline">
-                        <strong>
-                          <em>- Economic Opportunities and Employment Equality :</em>
-                        </strong>
-                      </span>{" "} <br />
-                      **1965**: Establishment of the Race Relations Board to address racial discrimination in employment. <br />
-                      **2010**: Implementation of the Equality Act, prohibiting discrimination in employment and occupation, and promoting equal opportunities in the workforce.
-                    </p>
-
-                    <p>
-                      <span className="underline">
-                        <strong>
-                          <em>- Education and Access to Opportunities :</em>
-                        </strong>
-                      </span>{" "} <br />
-                      **1965**: Introduction of the Race Relations Act, aiming to promote equality of opportunity in education. <br />
-                      **1999**: Implementation of recommendations from the Stephen Lawrence Inquiry report, addressing institutional racism in education and other sectors.
-                    </p>
-                    <p>
-                      <span className="underline">
-                        <strong>
-                          <em>- Cultural Diversity and Expression :</em>
-                        </strong>
-                      </span>{" "} <br />
-                      **2006**: Creation of the Arts Council England{"'"}s Diversity Strategy, promoting diversity and inclusion in the arts. <br />
-                      **1987**: Establishment of Black History Month in the UK, celebrating the contributions of black people to British society.
-                    </p>
-                    <p>
-                      <span className="underline">
-                        <strong>
-                          <em>- Media Representation and Diversity :</em>
-                        </strong>
-                      </span>{" "} <br />
-                      **2008**: Launch of the BBC{"'"}s Diversity Strategy, aiming to increase diversity in programming and workforce representation. <br />
-                      **2012**: Formation of the British Media Diversity Network, advocating for greater diversity and representation in the media industry.
-                    </p>
-                    <p>
-                      <span className="underline">
-                        <strong>
-                          <em>- Healthcare and Social Services Access :</em>
-                        </strong>
-                      </span>{" "} <br />
-                      **2015**: Introduction of the NHS Race Equality Standard, aiming to tackle health inequalities and improve healthcare access for minority groups. <br />
-                      **2009**: Launch of the Department of Health{"'"}s Tackling Health Inequalities: 10 Years On report, highlighting progress and challenges in addressing health disparities.
-                    </p>
-
-                    <p>
-                    These landmarks illustrate the progression of integration efforts in Britain over time, reflecting legislative changes, policy initiatives, and societal developments aimed at fostering equality, inclusion, and social cohesion.
+                    These landmarks collectively illustrate a multifaceted approach to integration in Britain, blending legal, cultural, and social strategies to foster a cohesive society.
                     </p>
             
                     <p>
@@ -881,63 +1104,64 @@ export function Get_Answers() {
                   </summary>
                   <div className="mt-4 answer-content">
                     <p>
-                    🌿 Here are some key dates into the discussion of British nationality :
+                    🌿 <strong>British Nationality</strong> has evolved significantly over time, influenced by the principles of <strong>ius soli (right of the soil)</strong> and <strong>ius sanguinis (right of blood)</strong>, alongside various legislative changes. Here{`'`}s an overview of how these principles have shaped British nationality and the key legislative milestones :
+
                     </p>
                     <p>
                       <span className="underline">
                         <strong>
-                          <em>- Legal Framework :</em>
+                          <em>- Ius Soli and Ius Sanguinis :</em>
                         </strong>
                       </span>{" "} <br />
-                      **1701**: The Act of Settlement established rules for succession to the English and Irish crowns, setting the foundation for modern British nationality law. <br />
-                      **1981**: The British Nationality Act 1981 came into force, modernizing and consolidating British nationality law. It introduced new categories of British citizenship and replaced previous legislation dating back to the British Nationality Act 1948.
+                      *Ius Soli (Right of the Soil)*: This principle grants nationality to individuals born within a country{`'`}s territory, regardless of their parents{`'`} nationality. Historically, British nationality law was heavily influenced by ius soli. <br />
+                      *Ius Sanguinis (Right of Blood)*: This principle confers nationality based on descent, meaning a child inherits the nationality of their parents regardless of where they are born. This principle has also played a role in British nationality law, particularly in the context of children born to British parents outside the UK.
                     </p>
 
                     <p>
                       {" "}
                       <span className="underline">
                         <strong>
-                          <em>- Cultural Identity :</em>
+                          <em>- British Nationality Act of 1948 :</em>
                         </strong>
                       </span>{" "} <br />
-                      **Early Centuries**: The emergence of a distinct British identity evolved over centuries, shaped by historical events such as the Norman Conquest, the Acts of Union (1707 and 1801), and the British Empire{"'"}s expansion. <br />
-                      **19th and 20th Centuries**: Industrialization, urbanization, and cultural movements like the Victorian era contributed to the development of a shared British identity across England, Scotland, Wales, and Ireland.
+                      The *British Nationality Act of 1948* was a landmark piece of legislation that redefined British nationality post-World War II. Key aspects include : <br />
+                      *Establishment of Citizenship of the United Kingdom and Colonies (CUKC)*: This act created the status of CUKC, which was held by individuals born in the UK or its colonies, as well as those naturalized or registered as CUKCs. <br />
+                      *Incorporation of Ius Soli and Ius Sanguinis*: The act maintained elements of both principles, granting citizenship to those born in the UK or its colonies (ius soli) and those born to a British father outside the UK (ius sanguinis). <br />
+                      *Commonwealth Citizenship*: The act recognized citizens of Commonwealth countries as British subjects, fostering a sense of shared nationality among former colonies.
                     </p>
 
                     <p>
                       <span className="underline">
                         <strong>
-                          <em>- Political Context :</em>
+                          <em>- British Nationality Act of 1981 :</em>
                         </strong>
                       </span>{" "} <br />
-                      **1997**: Devolution referendums in Scotland and Wales led to the establishment of the Scottish Parliament and the Senedd (Welsh Parliament) in 1999, granting greater autonomy to these regions. <br />
-                      **1998**: The Good Friday Agreement was signed, paving the way for peace and power-sharing in Northern Ireland and impacting discussions of British and Irish national identity.
+                      The *British Nationality Act of 1981* significantly reformed British nationality law, introducing a more complex and categorized system of citizenship. Key changes include : <br />
+                      <strong>*Reclassification into Five Categories*:</strong> <br />
+                      - *British Citizenship*: Granted primarily to those born in the UK to a parent who is a British citizen or settled in the UK, as well as to certain individuals by descent or registration. <br />
+                      - *British Dependent Territories Citizenship (BDTC)*: Applied to those connected with the UK{`'`}s remaining overseas territories (renamed British Overseas Territories Citizenship in 2002). <br />
+                      - *British Overseas Citizenship (BOC)*: Given to certain former CUKCs who did not qualify for British Citizenship or BDTC. <br />
+                      - *British Subject*: Applied to individuals who were British subjects before 1949 and did not acquire any other nationality or citizenship after 1949. <br />
+                      - *British Protected Persons*: A status for individuals connected with territories under British protection but not part of the UK or its colonies. <br />
+                      <strong>*Modification of Ius Sanguinis*:</strong> <br />
+                      - The 1981 act placed greater emphasis on ius sanguinis, particularly for British Citizenship by descent. Children born outside the UK to a British citizen parent could acquire British citizenship by descent, but this was typically limited to one generation born abroad. <br />
+                      - The act also introduced stricter conditions for passing on British citizenship by descent, such as requiring the parent to have lived in the UK for a certain period before the child{`'`}s birth. <br />
+                      <strong>*Limitation of Ius Soli*:</strong> <br />
+                      - The act restricted the automatic acquisition of British citizenship by birth in the UK. Only those born in the UK to a British citizen or a parent settled in the UK could acquire citizenship by birth.
                     </p>
 
                     <p>
                       {" "}
                       <span className="underline">
                         <strong>
-                          <em>- Global Context :</em>
+                          <em>- Summary</em>
                         </strong>
                       </span>{" "} <br />
-                      **20th Century**: Decolonization movements and the dismantling of the British Empire reshaped British nationality, leading to the creation of new nation-states and the migration of people from former colonies to the UK. <br />
-                      **1973**: The UK joined the European Economic Community (EEC), later becoming the European Union (EU), impacting British nationality and citizenship rights through EU law and freedom of movement.
-
+                      *Pre-1948*: British nationality was largely based on ius soli, granting citizenship to those born within the British Empire, and to a lesser extent, ius sanguinis. <br /> *1948 - 1981*: The British Nationality Act of 1948 introduced the CUKC and maintained a blend of ius soli and ius sanguinis, while fostering Commonwealth citizenship. <br /> *Post-1981*: The British Nationality Act of 1981 reclassified British nationality into five categories, emphasized ius sanguinis for passing on citizenship by descent, and restricted ius soli to children born in the UK to British citizens or settled parents.
                     </p>
 
                     <p>
-                      <span className="underline">
-                        <strong>
-                          <em>- Legal Rights and Responsibilities :</em>
-                        </strong>
-                      </span>{" "} <br />
-                      **2000**: The Nationality, Immigration, and Asylum Act 2002 introduced changes to British nationality law, including provisions on acquisition and loss of citizenship. <br />
-                      **2004**: The introduction of citizenship ceremonies marked a formal process for new British citizens to pledge allegiance and affirm their rights and responsibilities.
-                    </p>
-
-                    <p>
-                    By incorporating these dates, the discussion of British nationality is situated within a historical and legislative context, highlighting key moments that have shaped citizenship, identity, and belonging in the UK.
+                    These changes reflect the evolving nature of British nationality law, influenced by historical, political, and social factors, and the need to address the complexities of a globalized world.
                     </p>
             
                     <p>
@@ -1262,10 +1486,22 @@ export function Get_Answers() {
               </div>
             </div>
 
+            <div className="col">
+              <div className="faq-holder">
+                <h5 className="doc-header">
+                🏅🖌🌿 Click on <span className="underline"><em>{`"`}Download My Document{`"`}</em></span> to get a well-explained document that will help you understand all the topics related to Semester 4 courses.
+                </h5>
+                <div className="spacers">---------------</div>
+                <div className="Detailled-docs">
+                <a href={Semester_4_Detailled_document} download={`Semester 4 Detailled document.pdf`} rel="noopener noreferrer"> <img height={32} src={doc} alt="doc" /> Download My Document</a>
+                </div>
+              </div>
+            </div>
+
           </div>
         )}
 
-        {checked_3 && (
+        {checked_sem_6 && (
           <div className="row row-cols-xl-3 row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-1 g-4">
             <div className="col">
               <div className="faq-holder">
@@ -1956,6 +2192,18 @@ export function Get_Answers() {
                     </p>
                   </div>
                 </details>
+              </div>
+            </div>
+
+            <div className="col">
+              <div className="faq-holder">
+                <h5 className="doc-header">
+                🏅🖌🌿 Click on <span className="underline"><em>{`"`}Download My Document{`"`}</em></span> to get a well-explained document that will help you understand all the topics related to Semester 6 courses.
+                </h5>
+                <div className="spacers">---------------</div>
+                <div className="Detailled-docs">
+                <a href={Semester_6_Detailled_document} download={`Semester 6 Detailled document.pdf`} rel="noopener noreferrer"> <img height={32} src={doc} alt="doc" /> Download My Document</a>
+                </div>
               </div>
             </div>
 

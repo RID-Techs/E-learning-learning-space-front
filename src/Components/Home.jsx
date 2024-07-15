@@ -11,6 +11,93 @@ import LogingOut from "/LogOut.png";
 // Illustration OnlineLearning is from https://undraw.co/
 import OnlineLearning from "/Online_learning.svg";
 
+// Semester 1
+import English_Grammar_Exam_Paper_17_18 from "../Docs/Semester_1/English_Grammar_Exam_Paper_17_18.pdf"
+import English_Grammar_Exam_Paper_19_20 from "../Docs/Semester_1/English_Grammar_Exam_Paper_19_20.pdf"
+import English_Grammar_Exam_Paper_20_21 from "../Docs/Semester_1/English_Grammar_Exam_Paper_20_21.pdf"
+
+import Questions_Answers_Civilisation_Americaine from "../Docs/Semester_1/Questions_Answers_Civilisation_Américaine.pdf"
+import Civilisation_Américaine_Exam_Paper_20_21 from "../Docs/Semester_1/Civilisation_Américaine_Exam_Paper_20_21.pdf"
+import Civilisation_Américaine_Exam_Paper_21_22 from "../Docs/Semester_1/Civilisation_Américaine_Exam_Paper_21_22.pdf"
+import Civilisation_Américaine_Exam_Paper_22_23 from "../Docs/Semester_1/Civilisation_Américaine_Exam_Paper_22_23.pdf"
+
+import Civilisation_Africaine_Questions_Answers from "../Docs/Semester_1/Civilisation_Africaine_Questions_Answers.pdf"
+import Civilisation_Africaine_Exam_Paper_17_18 from "../Docs/Semester_1/Civilisation_Africaine_Exam_Paper_17_18.pdf"
+import Civilisation_Africaine_Exam_Paper_18_19 from "../Docs/Semester_1/Civilisation_Africaine_Exam_Paper_18_19.pdf"
+import Civilisation_Africaine_Exam_Paper_19_20 from "../Docs/Semester_1/Civilisation_Africaine_Exam_Paper_19_20.pdf"
+import Civilisation_Africaine_Exam_Paper_20_21 from "../Docs/Semester_1/Civilisation_Africaine_Exam_Paper_20_21.pdf"
+
+import Méthodologie_du_Travail_Universitaire_Exam_Paper_20_21 from "../Docs/Semester_1/Méthodologie_du_Travail_Universitaire_Exam_Paper_20_21.pdf"
+import Méthodologie_du_Travail_Universitaire_Exam_Paper_21_22 from "../Docs/Semester_1/Méthodologie_du_Travail_Universitaire_Exam_Paper_21_22.pdf"
+import Méthodologie_du_Travail_Universitaire_Exam_Paper_22_23 from "../Docs/Semester_1/Méthodologie_du_Travail_Universitaire_Exam_Paper_22_23.pdf"
+
+import Phonetics_and_Phonology from "../Docs/Semester_1/Phonetics_and_Phonology.pdf"
+import Phonetics_and_Phonology_Exam_Paper_16_17 from "../Docs/Semester_1/Phonetics_and_Phonology_Exam_Paper_16_17.pdf"
+import Phonetics_and_Phonology_Exam_Paper_19_20 from "../Docs/Semester_1/Phonetics_and_Phonology_Exam_Paper_19_20.pdf"
+import Phonetics_and_Phonology_Exam_Paper_20_21 from "../Docs/Semester_1/Phonetics_and_Phonology_Exam_Paper_20_21.pdf"
+import Phonetics_and_Phonology_Exam_Paper_21_22 from "../Docs/Semester_1/Phonetics_and_Phonology_Exam_Paper_21_22.pdf"
+import Phonetics_and_Phonology_Exam_Paper_22_23 from "../Docs/Semester_1/Phonetics_and_Phonology_Exam_Paper_22_23.pdf"
+import Phonetics_and_Phonology_Questions_Answers from "../Docs/Semester_1/Phonetics_and_Phonology_Questions_Answers.pdf"
+
+import Civilisation_Britanique from "../Docs/Semester_1/Civilisation_Britanique.pdf"
+import Civilisation_Britanique_Questions_Answers from "../Docs/Semester_1/Civilisation_Britanique_Questions_Answers.pdf"
+import Civilisation_Britanique_Exam_Paper_20_21 from "../Docs/Semester_1/Civilisation_Britanique_Exam_Paper_20_21.pdf"
+import Civilisation_Britanique_Exam_Paper_21_22 from "../Docs/Semester_1/Civilisation_Britanique_Exam_Paper_21_22.pdf"
+import Civilisation_Britanique_Exam_Paper_22_23 from "../Docs/Semester_1/Civilisation_Britanique_Exam_Paper_22_23.pdf"
+
+
+// Semester 3
+import Eighteenth_Century_English_Novel from "../Docs/Semester_3/Eighteenth_Century_English_Novel.pdf"
+import Eighteenth_Century_English_Novel_Exam_Paper_21_22 from "../Docs/Semester_3/Eighteenth_Century_English_Novel_Exam_Paper_21_22.pdf"
+
+import Morphology_and_Syntax_Exam_Paper_20_21 from "../Docs/Semester_3/Morphology_and_Syntax_Exam_Paper_20_21.pdf"
+import Morphology_and_Syntax_Exam_Paper_21_22 from "../Docs/Semester_3/Morphology_and_Syntax_Exam_Paper_21_22.pdf"
+
+import Roman_Africain_Case_Studies from "../Docs/Semester_3/Roman_Africain_Case_Studies.pdf"
+import Roman_Africain_Exam_Paper_20_21 from "../Docs/Semester_3/Roman_Africain_Exam_Paper_20_21.pdf"
+
+import Roman_Américain_Novels from "../Docs/Semester_3/Roman_Américain_Novels.pdf"
+import Roman_Américain_Exam_Paper_20_21 from "../Docs/Semester_3/Roman_Américain_Exam_Paper_20_21.pdf"
+import Roman_Américain_Exam_Paper_21_22 from "../Docs/Semester_3/Roman_Américain_Exam_Paper_21_22.pdf"
+
+import Théâtre_africain_Plays from "../Docs/Semester_3/Théâtre_africain_Plays.pdf"
+import Théâtre_africain_Exam_Paper_20_21 from "../Docs/Semester_3/Théâtre_africain_Exam_Paper_20_21.pdf"
+import Théâtre_africain_Exam_Paper_21_22 from "../Docs/Semester_3/Théâtre_africain_Exam_Paper_21_22.pdf"
+
+import Théâtre_classique_anglais_Plays from "../Docs/Semester_3/Théâtre_classique_anglais_Plays.pdf"
+import Théâtre_classique_anglais from "../Docs/Semester_3/Théâtre_classique_anglais.pdf"
+import Théâtre_classique_anglais_Exam_Paper_20_21 from "../Docs/Semester_3/Théâtre_classique_anglais_Exam_Paper_20_21.pdf"
+import Théâtre_classique_anglais_Exam_Paper_21_22 from "../Docs/Semester_3/Théâtre_classique_anglais_Exam_Paper_21_22.pdf"
+
+import Traduction_avancée from "../Docs/Semester_3/Traduction_avancée.pdf"
+import Traduction_avancée_Exam_Paper_21_22 from "../Docs/Semester_3/Traduction_avancée_Exam_Paper_21_22.pdf"
+
+
+// Semester 5
+import Nineteenth_Century_English_Novel from "../Docs/Semester_5/Nineteenth_Century_English_Novel.pdf"
+import Nineteenth_Century_English_Novel_Exam_Paper_21_22 from "../Docs/Semester_5/Nineteenth_Century_English_Novel_Exam_Paper_21_22.pdf"
+import Nineteenth_Century_English_Novel_Exam_Paper_22_23 from "../Docs/Semester_5/Nineteenth_Century_English_Novel_Exam_Paper_22_23.pdf"
+
+import Roman_PostColonial_Africain from "../Docs/Semester_5/Roman_PostColonial_Africain.pdf"
+import Roman_PostColonial_Africain_Exam_Paper_21_22 from "../Docs/Semester_5/Roman_PostColonial_Africain_Exam_Paper_21_22.pdf"
+
+import Morpho_Phonological_Analysis from "../Docs/Semester_5/Morpho_Phonological_Analysis.pdf"
+import Morpho_Phonological_Analysis_Exam_Paper_20_21 from "../Docs/Semester_5/Morpho_Phonological_Analysis_Exam_Paper_20_21.pdf"
+import Morpho_Phonological_Analysis_Exam_Paper_21_22 from "../Docs/Semester_5/Morpho_Phonological_Analysis_Exam_Paper_21_22.pdf"
+import Morpho_Phonological_Analysis_Exam_Paper_22_23 from "../Docs/Semester_5/Morpho_Phonological_Analysis_Exam_Paper_22_23.pdf"
+
+import Discourse_Analysis from "../Docs/Semester_5/Discourse_Analysis.pdf"
+import Discourse_Analysis_Exam_Paper_22_23 from "../Docs/Semester_5/Discourse_Analysis_Exam_Paper_22_23.pdf"
+
+import Environment_and_Literature from "../Docs/Semester_5/Environment_and_Literature.pdf"
+import Environment_and_Literature_Exam_Paper_21_22 from "../Docs/Semester_5/Environment_and_Literature_Exam_Paper_21_22.pdf"
+import Environment_and_Literature_Exam_Paper_22_23 from "../Docs/Semester_5/Environment_and_Literature_Exam_Paper_22_23.pdf"
+
+import Culture_and_Literature from "../Docs/Semester_5/Culture_and_Literature.pdf"
+import Culture_and_Literature_Novels from "../Docs/Semester_5/Culture_and_Literature_Novels.pdf"
+import Culture_and_Literature_Exam_Paper_22_23 from "../Docs/Semester_5/Culture_and_Literature_Exam_Paper_22_23.pdf"
+
+
 //Semester 2
 import Anglophone_Lit from "../Docs/Semester_2/Anglophone_Lit.pdf";
 import Anglophone_Lit_Exam_20_21 from "../Docs/Semester_2/Anglophone_Lit_Exam_20_21.pdf";
@@ -164,51 +251,442 @@ export function Home() {
   }, [])
 
   const hola = localStorage.getItem("User")
-  const [checked_1, setChecked_1] = useState(false);
-  const [checked_2, setChecked_2] = useState(false);
-  const [checked_3, setChecked_3] = useState(false);
+  const [checked_sem_1, setChecked_Sem_1] = useState(false);
+  const [checked_sem_3, setChecked_Sem_3] = useState(false);
+  const [checked_sem_5, setChecked_Sem_5] = useState(false);
+  const [checked_sem_2, setChecked_Sem_2] = useState(false);
+  const [checked_sem_4, setChecked_Sem_4] = useState(false);
+  const [checked_sem_6, setChecked_Sem_6] = useState(false);
 
-  const TrueCheck = (e) => {
+  useEffect(() => {
+    const all = document.querySelectorAll(".semester-choice ul li")
+    const Inps = document.querySelectorAll("input")
+
+    if(checked_sem_1 || checked_sem_2 || checked_sem_3 || checked_sem_4 || checked_sem_5 || checked_sem_6){
+      Inps.forEach((inp) => {
+  
+        if(inp.checked){
+          const styleToParent = inp.parentElement
+          styleToParent.style.backgroundImage = "linear-gradient(to right, rgb(214, 253, 253), rgb(180, 255, 236))"
+          styleToParent.style.borderTop = "2px solid rgba(67, 161, 238, 0.87)"
+          styleToParent.style.borderBottom = "2px dotted rgb(0, 113, 128)"
+          styleToParent.style.boxShadow = "inset 3px 0px 0px yellow, -3px 0px 0px brown, inset -3px 0px 0px brown, 3px 0px 0px yellow"
+        } 
+      })
+
+    } else {
+      Inps.forEach((inp) => {
+          const styleToParent_2 = inp.parentElement
+          styleToParent_2.style.backgroundImage = ""
+          styleToParent_2.style.borderTop = ""
+          styleToParent_2.style.borderBottom = ""
+          styleToParent_2.style.boxShadow = ""
+      })
+    }
+
+    const handleClick = (event) => {
+      const target = event.currentTarget
+      if(target) {
+        all.forEach((el) => {
+        el.style.backgroundImage = ""
+        el.style.borderTop = ""
+        el.style.borderBottom = ""
+        el.style.boxShadow = ""
+      })
+      target.style.backgroundImage = "linear-gradient(to right, rgb(214, 253, 253), rgb(180, 255, 236))"
+      target.style.borderTop = "2px solid rgba(67, 161, 238, 0.87)"
+      target.style.borderBottom = "2px dotted rgb(0, 113, 128)"
+      target.style.boxShadow = "inset 3px 0px 0px yellow, -3px 0px 0px brown, inset -3px 0px 0px brown, 3px 0px 0px yellow"
+      }
+      
+    }
+
+    all.forEach((el) => {
+      el.addEventListener("click", handleClick)
+    })
+
+    return () => {
+      all.forEach((el) => {
+        el.removeEventListener("click", handleClick)
+      })
+    }
+
+  }, [checked_sem_1, checked_sem_2, checked_sem_3, checked_sem_4, checked_sem_5, checked_sem_6])
+
+  const True_Sem_1_Checked = (e) => {
+    localStorage.removeItem("Sem_2")
+    localStorage.removeItem("Sem_3")
+    localStorage.removeItem("Sem_5")
     localStorage.removeItem("Sem_4")
     localStorage.removeItem("Sem_6")
-    setChecked_1(e.target.checked);
-    setChecked_2(false);
-    setChecked_3(false);
+    setChecked_Sem_1(e.target.checked);
+    setChecked_Sem_2(false)
+    setChecked_Sem_3(false)
+    setChecked_Sem_5(false)
+    setChecked_Sem_4(false);
+    setChecked_Sem_6(false);
+    localStorage.setItem("Sem_1", true)
+  };
+
+  const True_Sem_3_Checked = (e) => {
+    localStorage.removeItem("Sem_1")
+    localStorage.removeItem("Sem_2")
+    localStorage.removeItem("Sem_5")
+    localStorage.removeItem("Sem_4")
+    localStorage.removeItem("Sem_6")
+    setChecked_Sem_3(e.target.checked);
+    setChecked_Sem_1(false)
+    setChecked_Sem_2(false)
+    setChecked_Sem_5(false)
+    setChecked_Sem_4(false);
+    setChecked_Sem_6(false);
+    localStorage.setItem("Sem_3", true)
+  };
+
+  const True_Sem_5_Checked = (e) => {
+    localStorage.removeItem("Sem_1")
+    localStorage.removeItem("Sem_3")
+    localStorage.removeItem("Sem_2")
+    localStorage.removeItem("Sem_4")
+    localStorage.removeItem("Sem_6")
+    setChecked_Sem_5(e.target.checked);
+    setChecked_Sem_1(false)
+    setChecked_Sem_3(false)
+    setChecked_Sem_2(false)
+    setChecked_Sem_4(false);
+    setChecked_Sem_6(false);
+    localStorage.setItem("Sem_5", true)
+  };
+
+  const True_Sem_2_Checked = (e) => {
+    localStorage.removeItem("Sem_1")
+    localStorage.removeItem("Sem_3")
+    localStorage.removeItem("Sem_5")
+    localStorage.removeItem("Sem_4")
+    localStorage.removeItem("Sem_6")
+    setChecked_Sem_2(e.target.checked);
+    setChecked_Sem_1(false)
+    setChecked_Sem_3(false)
+    setChecked_Sem_5(false)
+    setChecked_Sem_4(false);
+    setChecked_Sem_6(false);
     localStorage.setItem("Sem_2", true)
   };
 
-  const TrueCheck_2 = (e) => {
+  const True_Sem_4_Checked = (e) => {
+    localStorage.removeItem("Sem_1")
+    localStorage.removeItem("Sem_3")
+    localStorage.removeItem("Sem_5")
     localStorage.removeItem("Sem_2")
     localStorage.removeItem("Sem_6")
-    setChecked_2(e.target.checked);
-    setChecked_1(false);
-    setChecked_3(false);
+    setChecked_Sem_4(e.target.checked);
+    setChecked_Sem_1(false)
+    setChecked_Sem_3(false)
+    setChecked_Sem_5(false)
+    setChecked_Sem_2(false);
+    setChecked_Sem_6(false);
     localStorage.setItem("Sem_4", true)
   };
-  const TrueCheck_3 = (e) => {
+  const True_Sem_6_Checked = (e) => {
+    localStorage.removeItem("Sem_1")
+    localStorage.removeItem("Sem_3")
+    localStorage.removeItem("Sem_5")
     localStorage.removeItem("Sem_2")
     localStorage.removeItem("Sem_4")
-    setChecked_3(e.target.checked);
-    setChecked_1(false);
-    setChecked_2(false);
+    setChecked_Sem_6(e.target.checked);
+    setChecked_Sem_1(false)
+    setChecked_Sem_3(false)
+    setChecked_Sem_5(false)
+    setChecked_Sem_2(false);
+    setChecked_Sem_4(false);
     localStorage.setItem("Sem_6", true)
   };
 
   useEffect(() => {
+    const getSem_1 = localStorage.getItem("Sem_1")
+    const getSem_3 = localStorage.getItem("Sem_3")
+    const getSem_5 = localStorage.getItem("Sem_5")
     const getSem_2 = localStorage.getItem("Sem_2")
     const getSem_4 = localStorage.getItem("Sem_4")
     const getSem_6 = localStorage.getItem("Sem_6")
 
+    if(getSem_1){
+      setChecked_Sem_1(true)
+    }
+    if(getSem_3){
+      setChecked_Sem_3(true)
+    }
+    if(getSem_5){
+      setChecked_Sem_5(true)
+    }
+
     if(getSem_2) {
-      setChecked_1(true)
+      setChecked_Sem_2(true)
     }
     if(getSem_4) {
-      setChecked_2(true)
+      setChecked_Sem_4(true)
     }
     if(getSem_6) {
-      setChecked_3(true)
+      setChecked_Sem_6(true)
     }
   }, [])
+
+  const pdfFiles_sem_1 = [
+    { id: 1, name: "English Grammar Exam Paper of 2017 - 2018", 
+      url: English_Grammar_Exam_Paper_17_18 
+    },
+    {
+      id: 2,
+      name: "English Grammar Exam Paper of 2019 - 2020",
+      url: English_Grammar_Exam_Paper_19_20,
+    },
+    { id: 3, 
+      name: "English Grammar Exam Paper of 2020 - 2021", 
+      url: English_Grammar_Exam_Paper_20_21
+    },
+    { id: 4, 
+      name: "American Civilization : Questions & Answers", 
+      url: Questions_Answers_Civilisation_Americaine
+    },
+    { id: 5, 
+      name: "American Civilization Exam_Paper 2020-2021", 
+      url: Civilisation_Américaine_Exam_Paper_20_21
+    },
+    { id: 6, 
+      name: "American Civilization Exam_Paper 2020-2021", 
+      url: Civilisation_Américaine_Exam_Paper_21_22
+    },
+    { id: 7, 
+      name: "American Civilization Exam_Paper 2022-2023", 
+      url: Civilisation_Américaine_Exam_Paper_22_23
+    },
+    { id: 8, 
+      name: "African Civilization : Questions & Answers", 
+      url: Civilisation_Africaine_Questions_Answers
+    },
+    { id: 9, 
+      name: "African Civilization Exam_Paper 2017-2018", 
+      url: Civilisation_Africaine_Exam_Paper_17_18
+    },
+    { id: 10, 
+      name: "African Civilization Exam_Paper 2018-2019", 
+      url: Civilisation_Africaine_Exam_Paper_18_19
+    },
+    { id: 11, 
+      name: "African Civilization Exam_Paper 2019-2020", 
+      url: Civilisation_Africaine_Exam_Paper_19_20
+    },
+    { id: 12, 
+      name: "African Civilization Exam_Paper 2020 - 2021", 
+      url: Civilisation_Africaine_Exam_Paper_20_21
+    },
+    { id: 13, 
+      name: "Phonetics and Phonology", 
+      url: Phonetics_and_Phonology
+    },
+    { id: 14, 
+      name: "Phonetics and Phonology Exam_Paper 2016-2017", 
+      url: Phonetics_and_Phonology_Exam_Paper_16_17
+    },
+    { id: 15, 
+      name: "Phonetics and Phonology Exam_Paper 2019-2020", 
+      url: Phonetics_and_Phonology_Exam_Paper_19_20
+    },
+    { id: 16, 
+      name: "Phonetics and Phonology Exam_Paper 2020-2021", 
+      url: Phonetics_and_Phonology_Exam_Paper_20_21
+    },
+    { id: 17, 
+      name: "Phonetics and Phonology Exam_Paper 2021-2022", 
+      url: Phonetics_and_Phonology_Exam_Paper_21_22
+    },
+    { id: 18, 
+      name: "Phonetics and Phonology Exam_Paper 2022-2023", 
+      url: Phonetics_and_Phonology_Exam_Paper_22_23
+    },
+    { id: 19, 
+      name: "Phonetics and Phonology : Questions & Answers", 
+      url: Phonetics_and_Phonology_Questions_Answers
+    },
+    { id: 20,
+      name: "Méthodologie du Travail Universitaire Exam_Paper 2020-2021", 
+      url: Méthodologie_du_Travail_Universitaire_Exam_Paper_20_21,
+    },
+    { id: 21,
+      name: "Méthodologie du Travail Universitaire Exam_Paper 2021-2022", 
+      url: Méthodologie_du_Travail_Universitaire_Exam_Paper_21_22
+    },
+    { id: 22,
+      name: "Méthodologie du Travail Universitaire Exam_Paper 2022-2023", 
+      url: Méthodologie_du_Travail_Universitaire_Exam_Paper_22_23
+    },
+    { id: 23,
+      name: "Civilisation_Britanique", 
+      url: Civilisation_Britanique
+    },
+    { id: 24,
+      name: "Civilisation_Britanique : Questions & Answers", 
+      url: Civilisation_Britanique_Questions_Answers
+    },
+    { id: 25,
+      name: "Civilisation_Britanique Exam_Paper 2020-2021", 
+      url: Civilisation_Britanique_Exam_Paper_20_21
+    },
+    { id: 26,
+      name: "Civilisation_Britanique Exam_Paper 2021-2022", 
+      url: Civilisation_Britanique_Exam_Paper_21_22
+    },
+    { id: 27,
+      name: "Civilisation_Britanique Exam_Paper 2022-2023", 
+      url: Civilisation_Britanique_Exam_Paper_22_23
+    },
+  ];
+
+  const pdfFiles_sem_3 = [
+    { id: 1, name: "18th Century English Novel", 
+      url: Eighteenth_Century_English_Novel 
+    },
+    {
+      id: 2,
+      name: "18th Century English Novel Exam Paper of 2021 - 2022",
+      url: Eighteenth_Century_English_Novel_Exam_Paper_21_22,
+    },
+    { id: 3, 
+      name: "Morphology and Syntax Exam Paper of 2020 - 2021", 
+      url: Morphology_and_Syntax_Exam_Paper_20_21
+    },
+    { id: 4, 
+      name: "Morphology and Syntax xam Paper of 2021 - 2022", 
+      url: Morphology_and_Syntax_Exam_Paper_21_22
+    },
+    { id: 5, 
+      name: "African Novel : Cases Studies", 
+      url: Roman_Africain_Case_Studies
+    },
+    { id: 6, 
+      name: "African Novel Exam_Paper 2020-2021", 
+      url: Roman_Africain_Exam_Paper_20_21
+    },
+    { id: 7, 
+      name: "American Novel : Case Studies", 
+      url: Roman_Américain_Novels
+    },
+    { id: 8, 
+      name: "American Novel Exam_Paper 2020-2021", 
+      url: Roman_Américain_Exam_Paper_20_21
+    },
+    { id: 9, 
+      name: "American Novel Exam_Paper 2021-2022", 
+      url: Roman_Américain_Exam_Paper_21_22
+    },
+    { id: 10, 
+      name: "Théâtre africain : époque coloniale, Given Play (Wole Soyinka's The Lion and The Jewel)", 
+      url: Théâtre_africain_Plays
+    },
+    { id: 11, 
+      name: "Théâtre africain Exam_Paper 2020-2021", 
+      url: Théâtre_africain_Exam_Paper_20_21
+    },
+    { id: 12, 
+      name: "Théâtre africain Exam_Paper 2021 - 2022", 
+      url: Théâtre_africain_Exam_Paper_21_22
+    },
+    { id: 13, 
+      name: "Théâtre classique anglais", 
+      url: Théâtre_classique_anglais
+    },
+    { id: 14, 
+      name: "Théâtre classique anglais : Given Plays", 
+      url: Théâtre_classique_anglais_Plays
+    },
+    { id: 15, 
+      name: "Théâtre classique anglais Exam_Paper 2020-2021", 
+      url: Théâtre_classique_anglais_Exam_Paper_20_21
+    },
+    { id: 16, 
+      name: "Théâtre classique anglais Exam_Paper 2021-2022", 
+      url: Théâtre_classique_anglais_Exam_Paper_21_22
+    },
+    { id: 17, 
+      name: "Traduction avancée", 
+      url: Traduction_avancée
+    },
+    { id: 18, 
+      name: "Traduction_avancée Exam_Paper 2021-2022", 
+      url: Traduction_avancée_Exam_Paper_21_22
+    }
+  ];
+
+  const pdfFiles_sem_5 = [
+    { id: 1, name: "19th Century English Novel : Cases Studies", 
+      url: Nineteenth_Century_English_Novel 
+    },
+    {
+      id: 2,
+      name: "19th Century English Novel Exam Paper of 2021 - 2022",
+      url: Nineteenth_Century_English_Novel_Exam_Paper_21_22,
+    },
+    { id: 3, 
+      name: "19th Century English Novel Exam Paper of 2022 - 2023", 
+      url: Nineteenth_Century_English_Novel_Exam_Paper_22_23
+    },
+    { id: 4, 
+      name: "Morpho-Phonological Analysis : Definition of some terms", 
+      url: Morpho_Phonological_Analysis
+    },
+    { id: 5, 
+      name: "Morpho-Phonological Analysis Exam_Paper 2020-2021", 
+      url: Morpho_Phonological_Analysis_Exam_Paper_20_21
+    },
+    { id: 6, 
+      name: "Morpho-Phonological Analysis Exam_Paper 2021-2022", 
+      url: Morpho_Phonological_Analysis_Exam_Paper_21_22
+    },
+    { id: 7, 
+      name: "Morpho-Phonological Analysis Exam_Paper 2022-2023", 
+      url: Morpho_Phonological_Analysis_Exam_Paper_22_23
+    },
+    { id: 8, 
+      name: "Roman Post-Colonial_Africain", 
+      url: Roman_PostColonial_Africain
+    },
+    { id: 9, 
+      name: "Roman Post-Colonial_Africain Exam_Paper 2021-2022", 
+      url: Roman_PostColonial_Africain_Exam_Paper_21_22
+    },
+    { id: 10, 
+      name: "Discourse Analysis", 
+      url: Discourse_Analysis
+    },
+    { id: 11, 
+      name: "Discourse Analysis Exam_Paper 2022-2023", 
+      url: Discourse_Analysis_Exam_Paper_22_23
+    },
+    { id: 12, 
+      name: "Littérature et Environnement", 
+      url: Environment_and_Literature
+    },
+    { id: 13, 
+      name: "Littérature et Environnement Exam_Paper 2021-2022", 
+      url: Environment_and_Literature_Exam_Paper_21_22
+    },
+    { id: 14, 
+      name: "Littérature et Environnement Exam_Paper 2022-2023", 
+      url: Environment_and_Literature_Exam_Paper_22_23
+    },
+    { id: 15, 
+      name: "Littérature et Culture", 
+      url: Culture_and_Literature
+    },
+    { id: 16, 
+      name: "Littérature et Culture : Cas d'études (Romans)", 
+      url: Culture_and_Literature_Novels
+    },
+    { id: 17, 
+      name: "Littérature et Culture Exam_Paper 2022-2023", 
+      url: Culture_and_Literature_Exam_Paper_22_23
+    }
+  ];
 
   const pdfFiles_sem_2 = [
     { id: 1, name: "Anglophone Literature", 
@@ -385,13 +863,11 @@ export function Home() {
     },
     { id: 19, 
       name: "The Prince of Parthia by Thomas Godfrey", 
-      url: The_Prince_of_Parthia_Sem_4,
-      newUpdate: true
+      url: The_Prince_of_Parthia_Sem_4
     },
     { id: 20, 
       name: "The Contrast by Royall Tyler", 
-      url: The_Contrast_Sem_4,
-      newUpdate: true
+      url: The_Contrast_Sem_4
     },
     { id: 21, 
       name: "Advanced Oral Expression", 
@@ -399,7 +875,7 @@ export function Home() {
     },
   ];
 
-  const pdfFiles_sem_5 = [
+  const pdfFiles_sem_6 = [
     { id: 1, name: "Academic Writing", 
       url: Academic_Writing 
     },
@@ -442,13 +918,11 @@ export function Home() {
     },
     { id: 18, 
       name: `Étude et Critique de la Littérature Anglaise : "Animal Farm by George Orwell"`, 
-      url: Animal_Farm_Sem_6,
-      newUpdate: true
+      url: Animal_Farm_Sem_6
     },
     { id: 19, 
       name: `Étude et Critique de la Littérature Anglaise : "Hamlet And Much Ado About Nothing, both by William Shakespeare"`, 
-      url: Hamlet_And_Much_Ado_About_Nothing,
-      newUpdate: true
+      url: Hamlet_And_Much_Ado_About_Nothing
     },
     { id: 11, 
       name: "Étude et Critique de la Littérature Anglaise Exam_Paper 2021-2022", 
@@ -562,14 +1036,36 @@ export function Home() {
 
       <div className="container semester-choice mt-4">
         <ul>
+        <label htmlFor="semester_1">
+          <li>
+              Semester 1{" "}
+              <input
+                checked={checked_sem_1}
+                onChange={True_Sem_1_Checked}
+                type="checkbox"
+                id="semester_1"
+              />
+            </li>
+          </label>
           <label htmlFor="semester_2">
             <li>
               Semester 2{" "}
               <input
-                checked={checked_1}
-                onChange={TrueCheck}
+                checked={checked_sem_2}
+                onChange={True_Sem_2_Checked}
                 type="checkbox"
                 id="semester_2"
+              />
+            </li>
+          </label>
+          <label htmlFor="semester_3">
+          <li>
+              Semester 3{" "}
+              <input
+                checked={checked_sem_3}
+                onChange={True_Sem_3_Checked}
+                type="checkbox"
+                id="semester_3"
               />
             </li>
           </label>
@@ -577,19 +1073,30 @@ export function Home() {
             <li>
               Semester 4{" "}
               <input
-                checked={checked_2}
-                onChange={TrueCheck_2}
+                checked={checked_sem_4}
+                onChange={True_Sem_4_Checked}
                 type="checkbox"
                 id="semester_4"
               />
             </li>
           </label>
+          <label htmlFor="semester_5">
+         <li>
+              Semester 5{" "}
+              <input
+                checked={checked_sem_5}
+                onChange={True_Sem_5_Checked}
+                type="checkbox"
+                id="semester_5"
+              />
+            </li>
+         </label>
           <label htmlFor="semester_6">
             <li>
               Semester 6{" "}
               <input
-                checked={checked_3}
-                onChange={TrueCheck_3}
+                checked={checked_sem_6}
+                onChange={True_Sem_6_Checked}
                 type="checkbox"
                 id="semester_6"
               />
@@ -612,7 +1119,7 @@ export function Home() {
       </div>
 
       <div className="container mt-5">
-        {checked_1 === false && checked_2 === false && checked_3 === false ? (
+        {checked_sem_1 === false && checked_sem_3 === false && checked_sem_5 === false && checked_sem_2 === false && checked_sem_4 === false && checked_sem_6 === false ? (
           <p id="no-course">
             {" "}
             <img className="me-2" height={32} src={warning} alt="warning" /> You
@@ -620,7 +1127,112 @@ export function Home() {
           </p>
         ) : null}
 
-          {checked_1 && (
+{checked_sem_1 && (
+
+<div className="row row-cols-xl-3 row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-1 g-4">
+            
+{pdfFiles_sem_1.map((doc) => (
+  <div key={doc.id} className="col">
+    <div className="doc-item">
+      <div className="doc-img-and-name">
+      <div>
+        <img src={docs} alt="doc" />
+      </div>
+        <p> ~ {doc.name}</p>
+      </div>
+      <div>
+        <a
+          href={doc.url}
+          rel="noopener noreferrer"
+          download={`${doc.name}.pdf`}
+        >
+          <img
+            className="me-2"
+            height={32}
+            src={download}
+            alt="arrow"
+          />{" "}
+          Download my course
+        </a>
+      </div>
+    </div>
+  </div>
+))}
+
+</div>
+        )}
+
+{checked_sem_3 && (
+
+<div className="row row-cols-xl-3 row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-1 g-4">
+            
+{pdfFiles_sem_3.map((doc) => (
+  <div key={doc.id} className="col">
+    <div className="doc-item">
+      <div className="doc-img-and-name">
+      <div>
+        <img src={docs} alt="doc" />
+      </div>
+        <p> ~ {doc.name}</p>
+      </div>
+      <div>
+        <a
+          href={doc.url}
+          rel="noopener noreferrer"
+          download={`${doc.name}.pdf`}
+        >
+          <img
+            className="me-2"
+            height={32}
+            src={download}
+            alt="arrow"
+          />{" "}
+          Download my course
+        </a>
+      </div>
+    </div>
+  </div>
+))}
+
+</div>
+        )}
+
+{checked_sem_5 && (
+
+<div className="row row-cols-xl-3 row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-1 g-4">
+            
+{pdfFiles_sem_5.map((doc) => (
+  <div key={doc.id} className="col">
+    <div className="doc-item">
+      <div className="doc-img-and-name">
+      <div>
+        <img src={docs} alt="doc" />
+      </div>
+        <p> ~ {doc.name}</p>
+      </div>
+      <div>
+        <a
+          href={doc.url}
+          rel="noopener noreferrer"
+          download={`${doc.name}.pdf`}
+        >
+          <img
+            className="me-2"
+            height={32}
+            src={download}
+            alt="arrow"
+          />{" "}
+          Download my course
+        </a>
+      </div>
+    </div>
+  </div>
+))}
+
+</div>
+        )}
+
+          {checked_sem_2 && (
         <div className="row row-cols-xl-3 row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-1 g-4">
             
               {pdfFiles_sem_2.map((doc) => (
@@ -628,7 +1240,6 @@ export function Home() {
                   <div className="doc-item">
                   <div className="doc-img-and-name">
       <div>
-        {doc.newUpdate && <p id="new-update">New !</p>}
         <img src={docs} alt="doc" />
       </div>
         <p> ~ {doc.name}</p>
@@ -694,7 +1305,7 @@ Thanks for your understanding !!!🌿
         </div>
           )}
 
-        {checked_2 && (
+        {checked_sem_4 && (
 
 <div className="row row-cols-xl-3 row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-1 g-4">
             
@@ -703,7 +1314,6 @@ Thanks for your understanding !!!🌿
     <div className="doc-item">
       <div className="doc-img-and-name">
       <div>
-        {doc.newUpdate && <p id="new-update">New !</p>}
         <img src={docs} alt="doc" />
       </div>
         <p> ~ {doc.name}</p>
@@ -730,16 +1340,15 @@ Thanks for your understanding !!!🌿
 </div>
         )}
 
-        {checked_3 && (
+        {checked_sem_6 && (
 
 <div className="row row-cols-xl-3 row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-1 g-4">
             
-{pdfFiles_sem_5.map((doc) => (
+{pdfFiles_sem_6.map((doc) => (
   <div key={doc.id} className="col">
     <div className="doc-item">
     <div className="doc-img-and-name">
       <div>
-        {doc.newUpdate && <p id="new-update">New !</p>}
         <img src={docs} alt="doc" />
       </div>
         <p> ~ {doc.name}</p>
