@@ -16,12 +16,17 @@ export function WelcomePage () {
   const CloseNoteButton = () => {
     setNote(false)
     localStorage.setItem("Show Note", false)
+    localStorage.setItem("Read", true)
     setHasRead(true)
   }
     useEffect(() => {
       const getNote = localStorage.getItem("Show Note")
+      const Read = localStorage.getItem("Read")
       if(getNote){
         setNote(false)
+      }
+      if(Read){
+        setHasRead(true)
       }
     }, [])
 
