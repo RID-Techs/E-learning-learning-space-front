@@ -557,7 +557,7 @@ export function Home() {
       url: Morphology_and_Syntax_Exam_Paper_20_21
     },
     { id: 4, 
-      name: "Morphology and Syntax xam Paper of 2021 - 2022", 
+      name: "Morphology and Syntax Exam Paper of 2021 - 2022", 
       url: Morphology_and_Syntax_Exam_Paper_21_22
     },
     { id: 5, 
