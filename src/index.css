@@ -17,7 +17,7 @@ body{
 }
 
 .Info-holder{
-  position: absolute;
+  position: fixed;
   height: 100dvh;
   width: 100%;
   background-color: rgba(12, 8, 8, 0.719);
@@ -85,6 +85,7 @@ body{
 }
 .header-holder{
   display: flex;
+  padding: 0em 1em;
   flex-wrap: wrap;
   gap: 0.5em;
   justify-content: space-between;
@@ -317,11 +318,16 @@ hr.divider{
   border: 1px dotted red;
   padding: 0.5em;
   border-radius: 5px;
-  box-shadow: 2px 0px 2px brown;
+  box-shadow: 2px 2px 2px brown;
   transition: all 0.2s ease-in-out;
 }
 .doc-item a:hover{
   box-shadow: 0px 2px 2px brown;
+}
+.doc-action-button{
+  display: flex;
+  gap: 2em;
+  justify-content: center;
 }
 .Rectification{
   background-color: aliceblue;
@@ -397,6 +403,7 @@ hr.divider{
 .Detailled-docs{
   padding: 1em;
   display: flex;
+  gap: 2em;
   justify-content: center;
 }
 .Detailled-docs a{
@@ -449,7 +456,9 @@ footer{
 .rights, .author, .Phone-number{
   margin-top: 7px;
 }
-
+.rights{
+  margin-left: 1em;
+}
 @media screen and (max-width: 992px) {
   .welcome {
     margin-top: 17em;

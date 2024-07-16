@@ -4,6 +4,7 @@ import semester from "/semester_2.png";
 import Answers from "/answerss.png";
 import user from "/user.png";
 import courses from "/coursess.png";
+import open from "/course.png";
 import warning from "/warning.png";
 import download from "/download.png";
 import docs from "/doc.png";
@@ -1140,7 +1141,20 @@ export function Home() {
       </div>
         <p> ~ {doc.name}</p>
       </div>
-      <div>
+      <div className="doc-action-button">
+        <a
+          href={doc.url}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <img
+            className="me-2"
+            height={22}
+            src={open}
+            alt="arrow"
+          />{" "}
+          Open
+        </a>
         <a
           href={doc.url}
           rel="noopener noreferrer"
@@ -1148,11 +1162,11 @@ export function Home() {
         >
           <img
             className="me-2"
-            height={32}
+            height={22}
             src={download}
             alt="arrow"
           />{" "}
-          Download my course
+          Download
         </a>
       </div>
     </div>
@@ -1175,7 +1189,20 @@ export function Home() {
       </div>
         <p> ~ {doc.name}</p>
       </div>
-      <div>
+      <div className="doc-action-button">
+        <a
+          href={doc.url}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <img
+            className="me-2"
+            height={22}
+            src={open}
+            alt="arrow"
+          />{" "}
+          Open
+        </a>
         <a
           href={doc.url}
           rel="noopener noreferrer"
@@ -1183,11 +1210,11 @@ export function Home() {
         >
           <img
             className="me-2"
-            height={32}
+            height={22}
             src={download}
             alt="arrow"
           />{" "}
-          Download my course
+          Download
         </a>
       </div>
     </div>
@@ -1210,7 +1237,20 @@ export function Home() {
       </div>
         <p> ~ {doc.name}</p>
       </div>
-      <div>
+      <div className="doc-action-button">
+        <a
+          href={doc.url}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <img
+            className="me-2"
+            height={22}
+            src={open}
+            alt="arrow"
+          />{" "}
+          Open
+        </a>
         <a
           href={doc.url}
           rel="noopener noreferrer"
@@ -1218,11 +1258,11 @@ export function Home() {
         >
           <img
             className="me-2"
-            height={32}
+            height={22}
             src={download}
             alt="arrow"
           />{" "}
-          Download my course
+          Download
         </a>
       </div>
     </div>
@@ -1245,19 +1285,34 @@ export function Home() {
         <p> ~ {doc.name}</p>
       </div>
                     <div>
+                      <div className="doc-action-button">
                       <a
-                         href={doc.url}
-                         rel="noopener noreferrer"
-                         download={`${doc.name}.pdf`}
-                      >
-                        <img
-                          className="me-2"
-                          height={32}
-                          src={download}
-                          alt="arrow"
-                        />{" "}
-                        Download my course
-                      </a>
+          href={doc.url}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <img
+            className="me-2"
+            height={22}
+            src={open}
+            alt="arrow"
+          />{" "}
+          Open
+        </a>
+        <a
+          href={doc.url}
+          rel="noopener noreferrer"
+          download={`${doc.name}.pdf`}
+        >
+          <img
+            className="me-2"
+            height={22}
+            src={download}
+            alt="arrow"
+          />{" "}
+          Download
+        </a>
+                      </div>
 
                     {doc.Traduction_rectification && 
                     <details className="mt-3">
@@ -1318,7 +1373,20 @@ Thanks for your understanding !!!🌿
       </div>
         <p> ~ {doc.name}</p>
       </div>
-      <div>
+      <div className="doc-action-button">
+        <a
+          href={doc.url}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <img
+            className="me-2"
+            height={22}
+            src={open}
+            alt="arrow"
+          />{" "}
+          Open
+        </a>
         <a
           href={doc.url}
           rel="noopener noreferrer"
@@ -1326,11 +1394,11 @@ Thanks for your understanding !!!🌿
         >
           <img
             className="me-2"
-            height={32}
+            height={22}
             src={download}
             alt="arrow"
           />{" "}
-          Download my course
+          Download
         </a>
       </div>
     </div>
@@ -1353,7 +1421,20 @@ Thanks for your understanding !!!🌿
       </div>
         <p> ~ {doc.name}</p>
       </div>
-      <div>
+      <div className="doc-action-button">
+        <a
+          href={doc.url}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <img
+            className="me-2"
+            height={22}
+            src={open}
+            alt="arrow"
+          />{" "}
+          Open
+        </a>
         <a
           href={doc.url}
           rel="noopener noreferrer"
@@ -1361,11 +1442,11 @@ Thanks for your understanding !!!🌿
         >
           <img
             className="me-2"
-            height={32}
+            height={22}
             src={download}
             alt="arrow"
           />{" "}
-          Download my course
+          Download
         </a>
       </div>
     </div>

@@ -118,7 +118,7 @@ export function WelcomePage () {
           </header>
         </div>
         <div className="rights">
-          <p>2024 | All Rights Reserved</p>
+          <p>&copy; 2024 | All Rights Reserved</p>
         </div>
         <div className="author">
           <p>Made with <span style={{color: "red"}}>&hearts;</span> by E-learning</p>

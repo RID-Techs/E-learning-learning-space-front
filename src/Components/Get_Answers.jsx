@@ -231,10 +231,10 @@ export function Get_Answers() {
       <div className="container-fluid header-wraper">
         <div className="header-holder">
           <header>
-            <img src={logo} alt="E-learning" />
+            <img height={50} src={logo} alt="E-learning" />
             <h1>E-learning</h1>
           </header>
-        </div>
+        
 
         <div id="answers-header" className="header-elements">
           <ul>
@@ -252,6 +252,7 @@ export function Get_Answers() {
               </li>
             </a>
           </ul>
+        </div>
         </div>
       </div>
 
@@ -393,37 +394,40 @@ export function Get_Answers() {
       <div className="container">
 
         {checked_sem_1 && (<div className="col">
-              <div className="faq-holder">
+          <div className="faq-holder">
                 <h5 className="doc-header">
-                🏅🖌🌿 Click on <span className="underline"><em>{`"`}Download My Document{`"`}</em></span> to get a well-explained document that will help you understand all the topics related to Semester 1 courses.
+                🏅🖌🌿 Click on either <span className="underline"><em>{`"`}Open{`"`}</em></span> or <span className="underline"><em>{`"`}Download{`"`}</em></span> to get a well-explained document that will help you understand all the topics related to Semester 1 courses.
                 </h5>
                 <div className="spacers">---------------</div>
                 <div className="Detailled-docs">
-                <a href={Semester_1_Detailled_document} download={`Semester 1 Detailled document.pdf`} rel="noopener noreferrer"> <img height={32} src={doc} alt="doc" /> Download My Document</a>
+                <a href={Semester_1_Detailled_document} target="_blank" rel="noopener noreferrer"> <img height={32} src={doc} alt="doc" /> Open</a>
+                <a href={Semester_1_Detailled_document} download={`Semester 1 Detailled document.pdf`} rel="noopener noreferrer"> <img height={32} src={doc} alt="doc" /> Download</a>
                 </div>
               </div>
             </div>)}
 
         {checked_sem_3 && (<div className="col">
-              <div className="faq-holder">
+          <div className="faq-holder">
                 <h5 className="doc-header">
-                🏅🖌🌿 Click on <span className="underline"><em>{`"`}Download My Document{`"`}</em></span> to get a well-explained document that will help you understand all the topics related to Semester 3 courses.
+                🏅🖌🌿 Click on either <span className="underline"><em>{`"`}Open{`"`}</em></span> or <span className="underline"><em>{`"`}Download{`"`}</em></span> to get a well-explained document that will help you understand all the topics related to Semester 3 courses.
                 </h5>
                 <div className="spacers">---------------</div>
                 <div className="Detailled-docs">
-                <a href={Semester_3_Detailled_document} download={`Semester 3 Detailled document.pdf`} rel="noopener noreferrer"> <img height={32} src={doc} alt="doc" /> Download My Document</a>
+                <a href={Semester_3_Detailled_document} target="_blank" rel="noopener noreferrer"> <img height={32} src={doc} alt="doc" /> Open</a>
+                <a href={Semester_3_Detailled_document} download={`Semester 3 Detailled document.pdf`} rel="noopener noreferrer"> <img height={32} src={doc} alt="doc" /> Download</a>
                 </div>
               </div>
             </div>)}
 
         {checked_sem_5 && (<div className="col">
-              <div className="faq-holder">
+          <div className="faq-holder">
                 <h5 className="doc-header">
-                🏅🖌🌿 Click on <span className="underline"><em>{`"`}Download My Document{`"`}</em></span> to get a well-explained document that will help you understand all the topics related to Semester 5 courses.
+                🏅🖌🌿 Click on either <span className="underline"><em>{`"`}Open{`"`}</em></span> or <span className="underline"><em>{`"`}Download{`"`}</em></span> to get a well-explained document that will help you understand all the topics related to Semester 5 courses.
                 </h5>
                 <div className="spacers">---------------</div>
                 <div className="Detailled-docs">
-                <a href={Semester_5_Detailled_document} download={`Semester 5 Detailled document.pdf`} rel="noopener noreferrer"> <img height={32} src={doc} alt="doc" /> Download My Document</a>
+                <a href={Semester_5_Detailled_document} target="_blank" rel="noopener noreferrer"> <img height={32} src={doc} alt="doc" /> Open</a>
+                <a href={Semester_5_Detailled_document} download={`Semester 5 Detailled document.pdf`} rel="noopener noreferrer"> <img height={32} src={doc} alt="doc" /> Download</a>
                 </div>
               </div>
             </div>)}
@@ -1489,11 +1493,12 @@ export function Get_Answers() {
             <div className="col">
               <div className="faq-holder">
                 <h5 className="doc-header">
-                🏅🖌🌿 Click on <span className="underline"><em>{`"`}Download My Document{`"`}</em></span> to get a well-explained document that will help you understand all the topics related to Semester 4 courses.
+                🏅🖌🌿 Click on either <span className="underline"><em>{`"`}Open{`"`}</em></span> or <span className="underline"><em>{`"`}Download{`"`}</em></span> to get a well-explained document that will help you understand all the topics related to Semester 4 courses.
                 </h5>
                 <div className="spacers">---------------</div>
                 <div className="Detailled-docs">
-                <a href={Semester_4_Detailled_document} download={`Semester 4 Detailled document.pdf`} rel="noopener noreferrer"> <img height={32} src={doc} alt="doc" /> Download My Document</a>
+                <a href={Semester_4_Detailled_document} target="_blank" rel="noopener noreferrer"> <img height={32} src={doc} alt="doc" /> Open</a>
+                <a href={Semester_4_Detailled_document} download={`Semester 4 Detailled document.pdf`} rel="noopener noreferrer"> <img height={32} src={doc} alt="doc" /> Download</a>
                 </div>
               </div>
             </div>
@@ -2196,13 +2201,14 @@ export function Get_Answers() {
             </div>
 
             <div className="col">
-              <div className="faq-holder">
+            <div className="faq-holder">
                 <h5 className="doc-header">
-                🏅🖌🌿 Click on <span className="underline"><em>{`"`}Download My Document{`"`}</em></span> to get a well-explained document that will help you understand all the topics related to Semester 6 courses.
+                🏅🖌🌿 Click on either <span className="underline"><em>{`"`}Open{`"`}</em></span> or <span className="underline"><em>{`"`}Download{`"`}</em></span> to get a well-explained document that will help you understand all the topics related to Semester 6 courses.
                 </h5>
                 <div className="spacers">---------------</div>
                 <div className="Detailled-docs">
-                <a href={Semester_6_Detailled_document} download={`Semester 6 Detailled document.pdf`} rel="noopener noreferrer"> <img height={32} src={doc} alt="doc" /> Download My Document</a>
+                <a href={Semester_6_Detailled_document} target="_blank" rel="noopener noreferrer"> <img height={32} src={doc} alt="doc" /> Open</a>
+                <a href={Semester_6_Detailled_document} download={`Semester 6 Detailled document.pdf`} rel="noopener noreferrer"> <img height={32} src={doc} alt="doc" /> Download</a>
                 </div>
               </div>
             </div>
@@ -2221,7 +2227,7 @@ export function Get_Answers() {
           </header>
         </div>
         <div className="rights">
-          <p>2024 | All Rights Reserved</p>
+          <p>&copy; 2024 | All Rights Reserved</p>
         </div>
         <div className="author">
           <p>Made with <span style={{color: "red"}}>&hearts;</span> by E-learning</p>
