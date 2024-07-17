@@ -194,6 +194,7 @@ import { toast, Zoom } from 'react-toastify';
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+
 export function Home() {
   const navigate = useNavigate()
   const LogOut = () => {
@@ -962,6 +963,13 @@ export function Home() {
       }, 1000)
     }
 
+    const Again = (event) => {
+      if(window.innerWidth <= 768){
+        event.preventDefault()
+        window.open(event.target.href, "_blank")
+      }
+    }
+
 
   return (
     <>
@@ -1144,8 +1152,7 @@ export function Home() {
       <div className="doc-action-button">
         <a
           href={doc.url}
-          rel="noopener noreferrer"
-          target="_blank"
+          onClick={Again}
         >
           <img
             className="me-2"
