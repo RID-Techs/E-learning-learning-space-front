@@ -431,6 +431,7 @@ export function Home() {
     if(getSem_6) {
       setChecked_Sem_6(true)
     }
+
   }, [])
 
   const pdfFiles_sem_1 = [
@@ -963,13 +964,17 @@ export function Home() {
       }, 1000)
     }
 
-    const Again = (event) => {
-      if(window.innerWidth <= 768){
-        event.preventDefault()
-        window.open(event.target.href, "_blank")
+    useEffect(() =>{
+      const bothScreens = document.querySelectorAll(".both-screens")
+    const ChangeText = () => {
+      if(window.innerWidth <= 885) {
+        bothScreens.forEach((btn) => {
+          btn.textContent = "Download my course"
+        })
       }
     }
-
+    ChangeText()
+    })
 
   return (
     <>
@@ -1151,8 +1156,10 @@ export function Home() {
       </div>
       <div className="doc-action-button">
         <a
+        className="only-desktop"
           href={doc.url}
-          onClick={Again}
+          rel="noopener noreferrer"
+          target="_blank"
         >
           <img
             className="me-2"
@@ -1173,7 +1180,7 @@ export function Home() {
             src={download}
             alt="arrow"
           />{" "}
-          Download
+          <span className="both-screens">Download</span>
         </a>
       </div>
     </div>
@@ -1198,6 +1205,7 @@ export function Home() {
       </div>
       <div className="doc-action-button">
         <a
+        className="only-desktop"
           href={doc.url}
           rel="noopener noreferrer"
           target="_blank"
@@ -1211,6 +1219,7 @@ export function Home() {
           Open
         </a>
         <a
+        
           href={doc.url}
           rel="noopener noreferrer"
           download={`${doc.name}.pdf`}
@@ -1221,7 +1230,7 @@ export function Home() {
             src={download}
             alt="arrow"
           />{" "}
-          Download
+          <span className="both-screens">Download</span>
         </a>
       </div>
     </div>
@@ -1246,6 +1255,7 @@ export function Home() {
       </div>
       <div className="doc-action-button">
         <a
+        className="only-desktop"
           href={doc.url}
           rel="noopener noreferrer"
           target="_blank"
@@ -1259,6 +1269,7 @@ export function Home() {
           Open
         </a>
         <a
+        
           href={doc.url}
           rel="noopener noreferrer"
           download={`${doc.name}.pdf`}
@@ -1269,7 +1280,7 @@ export function Home() {
             src={download}
             alt="arrow"
           />{" "}
-          Download
+          <span className="both-screens">Download</span>
         </a>
       </div>
     </div>
@@ -1294,6 +1305,7 @@ export function Home() {
                     <div>
                       <div className="doc-action-button">
                       <a
+                      className="only-desktop"
           href={doc.url}
           rel="noopener noreferrer"
           target="_blank"
@@ -1307,6 +1319,7 @@ export function Home() {
           Open
         </a>
         <a
+        
           href={doc.url}
           rel="noopener noreferrer"
           download={`${doc.name}.pdf`}
@@ -1317,7 +1330,7 @@ export function Home() {
             src={download}
             alt="arrow"
           />{" "}
-          Download
+          <span className="both-screens">Download</span>
         </a>
                       </div>
 
@@ -1382,6 +1395,7 @@ Thanks for your understanding !!!🌿
       </div>
       <div className="doc-action-button">
         <a
+        className="only-desktop"
           href={doc.url}
           rel="noopener noreferrer"
           target="_blank"
@@ -1395,6 +1409,7 @@ Thanks for your understanding !!!🌿
           Open
         </a>
         <a
+        
           href={doc.url}
           rel="noopener noreferrer"
           download={`${doc.name}.pdf`}
@@ -1405,7 +1420,7 @@ Thanks for your understanding !!!🌿
             src={download}
             alt="arrow"
           />{" "}
-          Download
+          <span className="both-screens">Download</span>
         </a>
       </div>
     </div>
@@ -1430,6 +1445,7 @@ Thanks for your understanding !!!🌿
       </div>
       <div className="doc-action-button">
         <a
+        className="only-desktop"
           href={doc.url}
           rel="noopener noreferrer"
           target="_blank"
@@ -1443,6 +1459,7 @@ Thanks for your understanding !!!🌿
           Open
         </a>
         <a
+        
           href={doc.url}
           rel="noopener noreferrer"
           download={`${doc.name}.pdf`}
@@ -1453,7 +1470,7 @@ Thanks for your understanding !!!🌿
             src={download}
             alt="arrow"
           />{" "}
-          Download
+          <span className="both-screens">Download</span>
         </a>
       </div>
     </div>

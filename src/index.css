@@ -473,6 +473,9 @@ footer{
   .header-wraper-home{
     gap: 2em;
   }
+  a.only-desktop{
+    display: none;
+  }
 }
 
 /* ============================ */
@@ -485,9 +488,12 @@ footer{
   .header-elements {
     padding-right: 0.9em;
   }
+  a.only-desktop{
+    display: none;
+  }
 
   #my, #my-courses{
-    padding-top: 3.9em;
+    padding-top: 3.7em;
   }
 
   .header-elements ul > a {
