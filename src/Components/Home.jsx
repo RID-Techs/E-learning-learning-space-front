@@ -436,524 +436,650 @@ export function Home() {
 
   const pdfFiles_sem_1 = [
     { id: 1, name: "English Grammar Exam Paper of 2017 - 2018", 
-      url: English_Grammar_Exam_Paper_17_18 
+      url: English_Grammar_Exam_Paper_17_18,
+      opendoc: "https://drive.google.com/file/d/1hwyD-4FI9GUZxim14XMMdrIKSpAz3EBN/view?usp=drive_link" 
     },
     {
       id: 2,
       name: "English Grammar Exam Paper of 2019 - 2020",
       url: English_Grammar_Exam_Paper_19_20,
+      opendoc: "https://drive.google.com/file/d/1Tyrsx6ainC_SrFdBuKybzQyztUI9cOyv/view?usp=drive_link"
     },
     { id: 3, 
       name: "English Grammar Exam Paper of 2020 - 2021", 
-      url: English_Grammar_Exam_Paper_20_21
+      url: English_Grammar_Exam_Paper_20_21,
+      opendoc: "https://drive.google.com/file/d/1ihQIjpgHMRk1XZhVRI5yC_y8UnWbKayp/view?usp=drive_link"
     },
     { id: 4, 
       name: "American Civilization : Questions & Answers", 
-      url: Questions_Answers_Civilisation_Americaine
+      url: Questions_Answers_Civilisation_Americaine,
+      opendoc: "https://drive.google.com/file/d/1SWDL9pEvySiUdpsVV6U6uuIXTfQbf6TY/view?usp=drive_link"
     },
     { id: 5, 
       name: "American Civilization Exam_Paper 2020-2021", 
-      url: Civilisation_Américaine_Exam_Paper_20_21
+      url: Civilisation_Américaine_Exam_Paper_20_21,
+      opendoc: "https://drive.google.com/file/d/1UIeXua9iWpPOpT2mTIqb5SDz1YPbeLa2/view?usp=drive_link"
     },
     { id: 6, 
       name: "American Civilization Exam_Paper 2020-2021", 
-      url: Civilisation_Américaine_Exam_Paper_21_22
+      url: Civilisation_Américaine_Exam_Paper_21_22,
+      opendoc: "https://drive.google.com/file/d/1FWJ1bncwKW1GBmDYh0FgHqKvuEALsZIb/view?usp=drive_link"
     },
     { id: 7, 
       name: "American Civilization Exam_Paper 2022-2023", 
-      url: Civilisation_Américaine_Exam_Paper_22_23
+      url: Civilisation_Américaine_Exam_Paper_22_23,
+      opendoc: "https://drive.google.com/file/d/1kdzS-N8vOM-HcuqNhg1KVlNuSIOjcGrr/view?usp=drive_link"
     },
     { id: 8, 
       name: "African Civilization : Questions & Answers", 
-      url: Civilisation_Africaine_Questions_Answers
+      url: Civilisation_Africaine_Questions_Answers,
+      opendoc: "https://drive.google.com/file/d/1GbwiWn_ddJpZkSVi9_3P_dX-178EzL6s/view?usp=drive_link"
     },
     { id: 9, 
       name: "African Civilization Exam_Paper 2017-2018", 
-      url: Civilisation_Africaine_Exam_Paper_17_18
+      url: Civilisation_Africaine_Exam_Paper_17_18,
+      opendoc: "https://drive.google.com/file/d/1Glj6VNpU2nDJdrsO2HRsUG75gmJZLBxi/view?usp=drive_link"
     },
     { id: 10, 
       name: "African Civilization Exam_Paper 2018-2019", 
-      url: Civilisation_Africaine_Exam_Paper_18_19
+      url: Civilisation_Africaine_Exam_Paper_18_19,
+      opendoc: "https://drive.google.com/file/d/1D3B8Ru-P6DSbGBDqKbXUxmwH6ABf3s-O/view?usp=drive_link"
     },
     { id: 11, 
       name: "African Civilization Exam_Paper 2019-2020", 
-      url: Civilisation_Africaine_Exam_Paper_19_20
+      url: Civilisation_Africaine_Exam_Paper_19_20,
+      opendoc: "https://drive.google.com/file/d/14D1jiXBbj9_hs1uwplS_W3L1J1B7HdFh/view?usp=drive_link"
     },
     { id: 12, 
       name: "African Civilization Exam_Paper 2020 - 2021", 
-      url: Civilisation_Africaine_Exam_Paper_20_21
+      url: Civilisation_Africaine_Exam_Paper_20_21,
+      opendoc: "https://drive.google.com/file/d/1z0ODpGgPhPFIMEL3rgo0ZrUSVx5dK4kW/view?usp=drive_link"
     },
     { id: 13, 
       name: "Phonetics and Phonology", 
-      url: Phonetics_and_Phonology
+      url: Phonetics_and_Phonology,
+      opendoc: "https://drive.google.com/file/d/1dQmz7osfSxVzQUfF6-CzqHeATvUvqCCs/view?usp=drive_link"
     },
     { id: 14, 
       name: "Phonetics and Phonology Exam_Paper 2016-2017", 
-      url: Phonetics_and_Phonology_Exam_Paper_16_17
+      url: Phonetics_and_Phonology_Exam_Paper_16_17,
+      opendoc: "https://drive.google.com/file/d/1Aeg3zUzcJ4E5NiI_HZUTYapOoLzEhPvm/view?usp=drive_link"
     },
     { id: 15, 
       name: "Phonetics and Phonology Exam_Paper 2019-2020", 
-      url: Phonetics_and_Phonology_Exam_Paper_19_20
+      url: Phonetics_and_Phonology_Exam_Paper_19_20,
+      opendoc: "https://drive.google.com/file/d/1zLKgSy8DKfRg0t9kn07C3Sr1ZI9Xqwol/view?usp=drive_link"
     },
     { id: 16, 
       name: "Phonetics and Phonology Exam_Paper 2020-2021", 
-      url: Phonetics_and_Phonology_Exam_Paper_20_21
+      url: Phonetics_and_Phonology_Exam_Paper_20_21,
+      opendoc: "https://drive.google.com/file/d/1W2hGeEcGJN-gmtt3l2KA50b7eKKlxj7E/view?usp=drive_link"
     },
     { id: 17, 
       name: "Phonetics and Phonology Exam_Paper 2021-2022", 
-      url: Phonetics_and_Phonology_Exam_Paper_21_22
+      url: Phonetics_and_Phonology_Exam_Paper_21_22,
+      opendoc: "https://drive.google.com/file/d/19kfOG9N0BQf1M_oKuERjKBnJUV60tS5H/view?usp=drive_link"
     },
     { id: 18, 
       name: "Phonetics and Phonology Exam_Paper 2022-2023", 
-      url: Phonetics_and_Phonology_Exam_Paper_22_23
+      url: Phonetics_and_Phonology_Exam_Paper_22_23,
+      opendoc: "https://drive.google.com/file/d/1u2965B9la64XT6xBExdgpvwHCtO2fGtp/view?usp=drive_link"
     },
     { id: 19, 
       name: "Phonetics and Phonology : Questions & Answers", 
-      url: Phonetics_and_Phonology_Questions_Answers
+      url: Phonetics_and_Phonology_Questions_Answers,
+      opendoc: "https://drive.google.com/file/d/14EAnfUtRgnW2YcIORrQu-F0dzE9Msr4P/view?usp=drive_link"
     },
     { id: 20,
       name: "Méthodologie du Travail Universitaire Exam_Paper 2020-2021", 
       url: Méthodologie_du_Travail_Universitaire_Exam_Paper_20_21,
+      opendoc: "https://drive.google.com/file/d/1DCsGnaZW6WqZVbMGhE3tmPZ_7v7uIa-W/view?usp=drive_link"
     },
     { id: 21,
       name: "Méthodologie du Travail Universitaire Exam_Paper 2021-2022", 
-      url: Méthodologie_du_Travail_Universitaire_Exam_Paper_21_22
+      url: Méthodologie_du_Travail_Universitaire_Exam_Paper_21_22,
+      opendoc: "https://drive.google.com/file/d/1HuhUKQ1h0ApCCU6uw-QFXGTSlLGB5ybP/view?usp=drive_link"
     },
     { id: 22,
       name: "Méthodologie du Travail Universitaire Exam_Paper 2022-2023", 
-      url: Méthodologie_du_Travail_Universitaire_Exam_Paper_22_23
+      url: Méthodologie_du_Travail_Universitaire_Exam_Paper_22_23,
+      opendoc: "https://drive.google.com/file/d/1NmaJQ4p3zqDR4AeBnrUclORwvttb7EE1/view?usp=drive_link"
     },
     { id: 23,
       name: "Civilisation_Britanique", 
-      url: Civilisation_Britanique
+      url: Civilisation_Britanique,
+      opendoc: "https://drive.google.com/file/d/1peaPqKntwsuH43LM5bu9AUQJ8aZIwif_/view?usp=drive_link"
     },
     { id: 24,
       name: "Civilisation_Britanique : Questions & Answers", 
-      url: Civilisation_Britanique_Questions_Answers
+      url: Civilisation_Britanique_Questions_Answers,
+      opendoc: "https://drive.google.com/file/d/1FQg4blJDs958zRumCkZ41--_Ghu5D6hN/view?usp=drive_link"
     },
     { id: 25,
       name: "Civilisation_Britanique Exam_Paper 2020-2021", 
-      url: Civilisation_Britanique_Exam_Paper_20_21
+      url: Civilisation_Britanique_Exam_Paper_20_21,
+      opendoc: "https://drive.google.com/file/d/1ipbgixQ9FYaHhSEq_BxQcjYuFV6-iTVS/view?usp=drive_link"
     },
     { id: 26,
       name: "Civilisation_Britanique Exam_Paper 2021-2022", 
-      url: Civilisation_Britanique_Exam_Paper_21_22
+      url: Civilisation_Britanique_Exam_Paper_21_22,
+      opendoc: "https://drive.google.com/file/d/1nIFFVzuDEDJVyy-ATPLeLQcjYwXaVVD5/view?usp=drive_link"
     },
     { id: 27,
       name: "Civilisation_Britanique Exam_Paper 2022-2023", 
-      url: Civilisation_Britanique_Exam_Paper_22_23
+      url: Civilisation_Britanique_Exam_Paper_22_23,
+      opendoc: "https://drive.google.com/file/d/1EDq2QJsrXOLJBBm6Fp23kstl2uo2_cjk/view?usp=drive_link"
     },
   ];
 
   const pdfFiles_sem_3 = [
-    { id: 1, name: "18th Century English Novel", 
-      url: Eighteenth_Century_English_Novel 
+    { id: 1, 
+      name: "18th Century English Novel", 
+      url: Eighteenth_Century_English_Novel,
+      opendoc: "https://drive.google.com/file/d/1f_EOGRNxN0JPzNBYXDybPCAFeeTVEpGs/view?usp=drive_link"
     },
     {
       id: 2,
       name: "18th Century English Novel Exam Paper of 2021 - 2022",
       url: Eighteenth_Century_English_Novel_Exam_Paper_21_22,
+      opendoc: "https://drive.google.com/file/d/1p7bO7duaZouT0Hl4ibnJQO3jW9LpVsqb/view?usp=drive_link"
     },
     { id: 3, 
       name: "Morphology and Syntax Exam Paper of 2020 - 2021", 
-      url: Morphology_and_Syntax_Exam_Paper_20_21
+      url: Morphology_and_Syntax_Exam_Paper_20_21,
+      opendoc: "https://drive.google.com/file/d/1vrIyEk8h0M0Ie7eOjmKK28TQXxGgfcKh/view?usp=drive_link"
     },
     { id: 4, 
       name: "Morphology and Syntax Exam Paper of 2021 - 2022", 
-      url: Morphology_and_Syntax_Exam_Paper_21_22
+      url: Morphology_and_Syntax_Exam_Paper_21_22,
+      opendoc: "https://drive.google.com/file/d/1O2bF2pQH9Wo_-1Owgckv_pRIUPIWTKR9/view?usp=drive_link"
     },
     { id: 5, 
       name: "African Novel : Cases Studies", 
-      url: Roman_Africain_Case_Studies
+      url: Roman_Africain_Case_Studies,
+      opendoc: "https://drive.google.com/file/d/1nYmeyonQUE88HFdoPnnCHeweUnOg4izf/view?usp=drive_link"
     },
     { id: 6, 
       name: "African Novel Exam_Paper 2020-2021", 
-      url: Roman_Africain_Exam_Paper_20_21
+      url: Roman_Africain_Exam_Paper_20_21,
+      opendoc: "https://drive.google.com/file/d/16KxiV_ByEwgNeUkgXGXrYmClJn-H54QX/view?usp=drive_link"
     },
     { id: 7, 
       name: "American Novel : Case Studies", 
-      url: Roman_Américain_Novels
+      url: Roman_Américain_Novels,
+      opendoc: "https://drive.google.com/file/d/1c_qVhwxRfA8AfsG5_LNeWoKrdj3ywcT0/view?usp=drive_link"
     },
     { id: 8, 
       name: "American Novel Exam_Paper 2020-2021", 
-      url: Roman_Américain_Exam_Paper_20_21
+      url: Roman_Américain_Exam_Paper_20_21,
+      opendoc: "https://drive.google.com/file/d/1ruCK9PDYR6BOfVtJJp2r_L4fnbQVkTPz/view?usp=drive_link"
     },
     { id: 9, 
       name: "American Novel Exam_Paper 2021-2022", 
-      url: Roman_Américain_Exam_Paper_21_22
+      url: Roman_Américain_Exam_Paper_21_22,
+      opendoc: "https://drive.google.com/file/d/12qD2ejMDuh4Jb59baFSwenRKusXTTKu_/view?usp=drive_link"
     },
     { id: 10, 
       name: "Théâtre africain : époque coloniale, Given Play (Wole Soyinka's The Lion and The Jewel)", 
-      url: Théâtre_africain_Plays
+      url: Théâtre_africain_Plays,
+      opendoc: "https://drive.google.com/file/d/1v_68TpKK14E1W6AgP1Aa1ICXgnRSo-QQ/view?usp=drive_link"
     },
     { id: 11, 
       name: "Théâtre africain Exam_Paper 2020-2021", 
-      url: Théâtre_africain_Exam_Paper_20_21
+      url: Théâtre_africain_Exam_Paper_20_21,
+      opendoc: "https://drive.google.com/file/d/1ooRtoQXdSnjX5xBMoH47f5Bi00eaY_qm/view?usp=drive_link"
     },
     { id: 12, 
       name: "Théâtre africain Exam_Paper 2021 - 2022", 
-      url: Théâtre_africain_Exam_Paper_21_22
+      url: Théâtre_africain_Exam_Paper_21_22,
+      opendoc: "https://drive.google.com/file/d/1g6olhFVme4o2usQblCMjR51-j7eSb8hx/view?usp=drive_link"
     },
     { id: 13, 
       name: "Théâtre classique anglais", 
-      url: Théâtre_classique_anglais
+      url: Théâtre_classique_anglais,
+      opendoc: "https://drive.google.com/file/d/1h3-HFzUXygInZ2ST7JyNHLw0pISUWKHt/view?usp=drive_link"
     },
     { id: 14, 
       name: "Théâtre classique anglais : Given Plays", 
-      url: Théâtre_classique_anglais_Plays
+      url: Théâtre_classique_anglais_Plays,
+      opendoc: "https://drive.google.com/file/d/1EV1xqvaoHFIeVg_71N-hAWJp5CWGefsL/view?usp=drive_link"
     },
     { id: 15, 
       name: "Théâtre classique anglais Exam_Paper 2020-2021", 
-      url: Théâtre_classique_anglais_Exam_Paper_20_21
+      url: Théâtre_classique_anglais_Exam_Paper_20_21,
+      opendoc: "https://drive.google.com/file/d/1xZm_mmCoPI3EJipiQx6pLGMnccBvach4/view?usp=drive_link"
     },
     { id: 16, 
       name: "Théâtre classique anglais Exam_Paper 2021-2022", 
-      url: Théâtre_classique_anglais_Exam_Paper_21_22
+      url: Théâtre_classique_anglais_Exam_Paper_21_22,
+      opendoc: "https://drive.google.com/file/d/16V1-MRfbBIjExQYob-y_PMIBClBqDUMe/view?usp=drive_link"
     },
     { id: 17, 
       name: "Traduction avancée", 
-      url: Traduction_avancée
+      url: Traduction_avancée,
+      opendoc: "https://drive.google.com/file/d/1C8MsE_Dy8ei4n958YzYoPHsLfbSYlX4k/view?usp=drive_link"
     },
     { id: 18, 
       name: "Traduction_avancée Exam_Paper 2021-2022", 
-      url: Traduction_avancée_Exam_Paper_21_22
+      url: Traduction_avancée_Exam_Paper_21_22,
+      opendoc: "https://drive.google.com/file/d/1J5gfwpKlRzsQQYNubpc4k4DolOY7j9yd/view?usp=drive_link"
     }
   ];
 
   const pdfFiles_sem_5 = [
-    { id: 1, name: "19th Century English Novel : Cases Studies", 
-      url: Nineteenth_Century_English_Novel 
+    { id: 1, 
+      name: "19th Century English Novel : Cases Studies", 
+      url: Nineteenth_Century_English_Novel,
+      opendoc: "https://drive.google.com/file/d/1Yr3Tu19346ai4kCFRFT2jMgDxyhgMUUt/view?usp=drive_link"
     },
     {
       id: 2,
       name: "19th Century English Novel Exam Paper of 2021 - 2022",
       url: Nineteenth_Century_English_Novel_Exam_Paper_21_22,
+      opendoc: "https://drive.google.com/file/d/1GX63dD9n2SYouHgroAJdF1C6_6mLu2a_/view?usp=drive_link"
     },
     { id: 3, 
       name: "19th Century English Novel Exam Paper of 2022 - 2023", 
-      url: Nineteenth_Century_English_Novel_Exam_Paper_22_23
+      url: Nineteenth_Century_English_Novel_Exam_Paper_22_23,
+      opendoc: "https://drive.google.com/file/d/1fnR5M8eOlzop_NZxApwuhZfDPzo036gL/view?usp=drive_link"
     },
     { id: 4, 
       name: "Morpho-Phonological Analysis : Definition of some terms", 
-      url: Morpho_Phonological_Analysis
+      url: Morpho_Phonological_Analysis,
+      opendoc: "https://drive.google.com/file/d/1_4-wRMfaRol9j7LX7aumTFxqxY4LJK6X/view?usp=drive_link"
     },
     { id: 5, 
       name: "Morpho-Phonological Analysis Exam_Paper 2020-2021", 
-      url: Morpho_Phonological_Analysis_Exam_Paper_20_21
+      url: Morpho_Phonological_Analysis_Exam_Paper_20_21,
+      opendoc: "https://drive.google.com/file/d/1NVTxqAHDUGCO-egPdhssprVspzZtOkD4/view?usp=drive_link"
     },
     { id: 6, 
       name: "Morpho-Phonological Analysis Exam_Paper 2021-2022", 
-      url: Morpho_Phonological_Analysis_Exam_Paper_21_22
+      url: Morpho_Phonological_Analysis_Exam_Paper_21_22,
+      opendoc: "https://drive.google.com/file/d/1q7GAq1ScodnVMNhmBHiGoI_mbOamODbJ/view?usp=drive_link"
     },
     { id: 7, 
       name: "Morpho-Phonological Analysis Exam_Paper 2022-2023", 
-      url: Morpho_Phonological_Analysis_Exam_Paper_22_23
+      url: Morpho_Phonological_Analysis_Exam_Paper_22_23,
+      opendoc: "https://drive.google.com/file/d/1TPxavIMNz9qvmYeqaAYXZtngTNocXuYp/view?usp=drive_link"
     },
     { id: 8, 
       name: "Roman Post-Colonial_Africain", 
-      url: Roman_PostColonial_Africain
+      url: Roman_PostColonial_Africain,
+      opendoc: "https://drive.google.com/file/d/1PTOoIxEhi4sPIWieRqjSuqrCKrgytS5p/view?usp=drive_link"
     },
     { id: 9, 
       name: "Roman Post-Colonial_Africain Exam_Paper 2021-2022", 
-      url: Roman_PostColonial_Africain_Exam_Paper_21_22
+      url: Roman_PostColonial_Africain_Exam_Paper_21_22,
+      opendoc: "https://drive.google.com/file/d/1uZEJ7OQFbZlfROWHZyX7g6HMXYjm9qSt/view?usp=drive_link"
     },
     { id: 10, 
       name: "Discourse Analysis", 
-      url: Discourse_Analysis
+      url: Discourse_Analysis,
+      opendoc: "https://drive.google.com/file/d/1XN0Mm5vRZNB1nHmma8zkQo7gwFwVP91q/view?usp=drive_link"
     },
     { id: 11, 
       name: "Discourse Analysis Exam_Paper 2022-2023", 
-      url: Discourse_Analysis_Exam_Paper_22_23
+      url: Discourse_Analysis_Exam_Paper_22_23,
+      opendoc: "https://drive.google.com/file/d/1BblhII-swDVj8s6ZCXwt_J00HKoV_Qbb/view?usp=drive_link"
     },
     { id: 12, 
       name: "Littérature et Environnement", 
-      url: Environment_and_Literature
+      url: Environment_and_Literature,
+      opendoc: "https://drive.google.com/file/d/1zQB217fchHCW448WbZVDa3gxWIOhVYeC/view?usp=drive_link"
     },
     { id: 13, 
       name: "Littérature et Environnement Exam_Paper 2021-2022", 
-      url: Environment_and_Literature_Exam_Paper_21_22
+      url: Environment_and_Literature_Exam_Paper_21_22,
+      opendoc: "https://drive.google.com/file/d/1WPSZ2hcp6nJvgeCVBA6imeWtE_4K8oeh/view?usp=drive_link"
     },
     { id: 14, 
       name: "Littérature et Environnement Exam_Paper 2022-2023", 
-      url: Environment_and_Literature_Exam_Paper_22_23
+      url: Environment_and_Literature_Exam_Paper_22_23,
+      opendoc: "https://drive.google.com/file/d/1JqPILMfV6yk-e7DoS0swygCiR5Yk4CJc/view?usp=drive_link"
     },
     { id: 15, 
       name: "Littérature et Culture", 
-      url: Culture_and_Literature
+      url: Culture_and_Literature,
+      opendoc: "https://drive.google.com/file/d/1MlqowGBM3Wq2l15o7UsQOQ_233IlgA7t/view?usp=drive_link"
     },
     { id: 16, 
       name: "Littérature et Culture : Cas d'études (Romans)", 
-      url: Culture_and_Literature_Novels
+      url: Culture_and_Literature_Novels,
+      opendoc: "https://drive.google.com/file/d/16BkslYjE-zK7OWX6pQtd0JLI5mlpSq_H/view?usp=drive_link"
     },
     { id: 17, 
       name: "Littérature et Culture Exam_Paper 2022-2023", 
-      url: Culture_and_Literature_Exam_Paper_22_23
+      url: Culture_and_Literature_Exam_Paper_22_23,
+      opendoc: "https://drive.google.com/file/d/1RRTfbxDiiqQraY_uJM11-ptNCMdUzgpY/view?usp=drive_link"
     }
   ];
 
   const pdfFiles_sem_2 = [
-    { id: 1, name: "Anglophone Literature", 
-      url: Anglophone_Lit 
+    { id: 1, 
+      name: "Anglophone Literature", 
+      url: Anglophone_Lit,
+      opendoc: "https://drive.google.com/file/d/1Ytzi9rAVJ016thDM9ozhU1sySVGBMI6O/view?usp=drive_link" 
     },
     {
       id: 2,
       name: "Anglophone Literature Exam_Paper 2020-2021",
       url: Anglophone_Lit_Exam_20_21,
+      opendoc: "https://drive.google.com/file/d/1WWDORk6Iah8lnGhIQHICbhlBQ49rpDkD/view?usp=drive_link"
     },
     { id: 3, 
       name: "Anglophone Literature Exam_Paper 2022-2023", 
-      url: Anglophone_Lit_Exam_22_23
+      url: Anglophone_Lit_Exam_22_23,
+      opendoc: "https://drive.google.com/file/d/19SZJTTkTNBcpi19ETxCvNgT4ZBnhNIy3/view?usp=drive_link"
     },
     { id: 4, 
       name: "Anglophone Poetry", 
-      url: Anglophone_Poetry
+      url: Anglophone_Poetry,
+      opendoc: "https://drive.google.com/file/d/1J88HyKpWmjVnGQnBy7vsMjKUK_mng_N0/view?usp=drive_link"
     },
     { id: 5, 
       name: "Anglophone Poetry Exam_Paper 2019-2020", 
-      url: Anglophone_Poetry_Exam_19_20
+      url: Anglophone_Poetry_Exam_19_20,
+      opendoc: "https://drive.google.com/file/d/1CcErEvK7MFxzhm_vkAgvCP1_2UEDrmit/view?usp=drive_link"
     },
     { id: 6, 
       name: "Anglophone Poetry Exam_Paper 2020-2021", 
-      url: Anglophone_Poetry_Exam_20_21
+      url: Anglophone_Poetry_Exam_20_21,
+      opendoc: "https://drive.google.com/file/d/1CU1xv666ylzDj7Be-u1AkhYxcmozbxTa/view?usp=drive_link"
     },
     { id: 7, 
       name: "Anglophone Poetry Exam_Paper 2022-2023", 
-      url: Anglophone_Poetry_Exam_22_23
+      url: Anglophone_Poetry_Exam_22_23,
+      opendoc: "https://drive.google.com/file/d/1B5G4RxSYbYvjT3rSOsNzPuo8jxK4o7JU/view?usp=drive_link"
     },
     { id: 8, 
       name: "Anglophone Prose", 
-      url: Anglophone_Prose
+      url: Anglophone_Prose,
+      opendoc: "https://drive.google.com/file/d/1K-z4jDAf_IfpoJOL8UBRhYgtYwIyY0vL/view?usp=drive_link"
     },
     { id: 9, 
       name: "Anglophone Prose Exam_Paper 2019-2020", 
-      url: Anglophone_Prose_Exam_19_20
+      url: Anglophone_Prose_Exam_19_20,
+      opendoc: "https://drive.google.com/file/d/1CL2BgA4Wpt2mHOxhI4cJMo_1jK_YRVOh/view?usp=drive_link"
     },
     { id: 10, 
       name: "Anglophone Prose Exam_Paper 2020-2021", 
-      url: Anglophone_Prose_Exam_20_21
+      url: Anglophone_Prose_Exam_20_21,
+      opendoc: "https://drive.google.com/file/d/1UAY69xDZuUr2qrjVTlbYdUatJSO3D0rl/view?usp=drive_link"
     },
     { id: 11, 
       name: "Anglophone Prose Exam_Paper 2022-2023", 
-      url: Anglophone_Prose_Exam_22_23
+      url: Anglophone_Prose_Exam_22_23,
+      opendoc: "https://drive.google.com/file/d/1lddgllcfVPsnXsq8uGiCylAMvno9fIKF/view?usp=drive_link"
     },
     { id: 12, 
       name: "Anglophone Theater", 
-      url: Anglophone_Theater
+      url: Anglophone_Theater,
+      opendoc: "https://drive.google.com/file/d/11cJf9PWvbTDEEkKVkpedhMvJ9GhhnQBq/view?usp=drive_link"
     },
     { id: 13, 
       name: "Anglophone Theater Exam_Paper 2020-2021", 
-      url: Anglophone_Theater_Exam_20_21
+      url: Anglophone_Theater_Exam_20_21,
+      opendoc: "https://drive.google.com/file/d/1RXuKqsVxPwH2pt39iW1A4o0LK0igYwby/view?usp=drive_link"
     },
     { id: 14, 
       name: "Anglophone Theater Exam_Paper 2022-2023", 
-      url: Anglophone_Theater_Exam_22_23
+      url: Anglophone_Theater_Exam_22_23,
+      opendoc: "https://drive.google.com/file/d/19fZFKrvoaPZLox38Fk75tK4pm-4Tw5OI/view?usp=drive_link"
     },
     { id: 15, 
       name: "Creative Writing", 
-      url: Creative_Writing
+      url: Creative_Writing,
+      opendoc: "https://drive.google.com/file/d/1iCj5SCk04XjSkfSqMaLayY3W9pYs1W7l/view?usp=drive_link"
     },
     { id: 16, 
       name: "Creative Writing Questions & Answers", 
-      url: Creative_Writing_QAs
+      url: Creative_Writing_QAs,
+      opendoc: "https://drive.google.com/file/d/1U7TUm4JgPIBEmDlX0s42A2wa9GLvtdFC/view?usp=drive_link"
     },
     { id: 17, 
       name: "Creative Writing Exam_Paper 2019-2020", 
-      url: Creative_Writing_Exam_19_20
+      url: Creative_Writing_Exam_19_20,
+      opendoc: "https://drive.google.com/file/d/1VeLqJVWVoza_1TgwuZEegDpdhVTJzMwO/view?usp=drive_link"
     },
     { id: 18, 
       name: "Creative Writing Exam_Paper 2020-2021", 
-      url: Creative_Writing_Exam_20_21
+      url: Creative_Writing_Exam_20_21,
+      opendoc: "https://drive.google.com/file/d/1DIoM4mvvGFhSGru3NQdA4ZnDWt2J9nHj/view?usp=drive_link"
     },
     { id: 19, 
       name: "Creative WritingExam_Paper 2022-2023", 
-      url: Creative_Writing_Exam_22_23
+      url: Creative_Writing_Exam_22_23,
+      opendoc: "https://drive.google.com/file/d/1eGKRdzGtRWHuUhM8nH6H_DZ_CPHFj3hU/view?usp=drive_link"
     },
     { id: 20,
       name: "Méthodologie de Traduction", 
       url: Traduction,
+      opendoc: "https://drive.google.com/file/d/1WOMmV5hfhwxVK-keCwd1nbvtDwaJclZr/view?usp=drive_link",
       Traduction_rectification: true
     },
     { id: 21,
       name: "Méthodologie de Traduction_Exam_19_20", 
-      url: Traduction_Exam_19_20
+      url: Traduction_Exam_19_20,
+      opendoc: "https://drive.google.com/file/d/1lZyQolsVhiKfGjR_HrlOGKBM4Glsx6Bp/view?usp=drive_link"
     },
     { id: 22,
       name: "Méthodologie de Traduction_Exam_20_21", 
-      url: Traduction_Exam_20_21
+      url: Traduction_Exam_20_21,
+      opendoc: "https://drive.google.com/file/d/1cgI856nCPLfPTuIapxN9lUvD_cvY_f8i/view?usp=drive_link"
     },
     { id: 23,
       name: "Méthodologie de Traduction_Exam_22_23", 
-      url: Traduction_Exam_22_23
+      url: Traduction_Exam_22_23,
+      opendoc: "https://drive.google.com/file/d/1XUy2FDL8XGnusGFjGe8UmAIRDCE_wgk5/view?usp=drive_link"
     },
     { id: 24,
       name: "Oral Expression", 
-      url: Oral_Expressions
+      url: Oral_Expressions,
+      opendoc: "https://drive.google.com/file/d/1tWuinHQDSM4H5nNdcuRtevDf6HZJHR4n/view?usp=drive_link"
     },
   ];
 
   const pdfFiles_sem_4 = [
-    { id: 1, name: "African Civilisation", 
-      url: African_Civilisation 
+    { id: 1, 
+      name: "African Civilisation", 
+      url: African_Civilisation,
+      opendoc: "https://drive.google.com/file/d/1Bauz4Jx1jigBed9w34wd38BVITD6DHWu/view?usp=drive_link"
     },
     {
       id: 2,
       name: "African Poetry",
       url: African_Poetry,
+      opendoc: "https://drive.google.com/file/d/1Z5U92uM73Rg4W4UrKX4qxWfMwMpTH9h7/view?usp=drive_link"
     },
     { id: 3, 
       name: "African Poetry Exam_Paper 2020-2021", 
-      url: African_Poetry_Exam_20_21
+      url: African_Poetry_Exam_20_21,
+      opendoc: "https://drive.google.com/file/d/13Og6krqLYtzB3AevjwFh0l3sqrRpC5PA/view?usp=drive_link"
     },
     { id: 4, 
       name: "African Poetry Exam_Paper 2021-2022", 
-      url: African_Poetry_Exam_21_22
+      url: African_Poetry_Exam_21_22,
+      opendoc: "https://drive.google.com/file/d/1OfkX3EWgqGcBGOXb62sGUXgxk7sQbeAH/view?usp=drive_link"
     },
     { id: 5, 
       name: "American Civilisation", 
-      url: American_Civilisation
+      url: American_Civilisation,
+      opendoc: "https://drive.google.com/file/d/1FxQTPg33UbD8pVckLjX1ILe7Ra9y1pfx/view?usp=drive_link"
     },
     { id: 6, 
       name: "American Civilisation Exam_Paper 2020-2021", 
-      url: American_Civilisation_Exam_20_21
+      url: American_Civilisation_Exam_20_21,
+      opendoc: "https://drive.google.com/file/d/1EruyqohSQrw-SVpTIoMctS9bLEukfHma/view?usp=drive_link"
     },
     { id: 7, 
       name: "American Poetry", 
-      url: American_Poetry
+      url: American_Poetry,
+      opendoc: "https://drive.google.com/file/d/1ECo8FnicJ67kZ7mHbORdUxuE5IqgkLoM/view?usp=drive_link"
     },
     { id: 8, 
       name: "American Poetry Exam_Paper 2020-2021", 
-      url: American_Poetry_Exam_20_21
+      url: American_Poetry_Exam_20_21,
+      opendoc: "https://drive.google.com/file/d/1NvnHg91DbIXvGsBOtPkbIvzVRWm25q48/view?usp=drive_link"
     },
     { id: 9, 
       name: "American Poetry Exam_Paper 2021-2022", 
-      url: American_Poetry_Exam_21_22
+      url: American_Poetry_Exam_21_22,
+      opendoc: "https://drive.google.com/file/d/1eFdvz66eOGWRXFmjQBWldY5PZl1Km_sk/view?usp=drive_link"
     },
     { id: 10, 
-      name: "Contemporary British Civilisation", 
-      url: Contemporary_British_Civilisation
+      name: "Contemporary British Civilisation Exam_Paper 2020-2021", 
+      url: Contemporary_British_Civilisation_Exam_20_21,
+      opendoc: "https://drive.google.com/file/d/18HgqVJwu32kvJNNLby_vJ58xfFpp-fD_/view?usp=drive_link"
     },
     { id: 11, 
-      name: "Contemporary British Civilisation Exam_Paper 2020-2021", 
-      url: Contemporary_British_Civilisation_Exam_20_21
+      name: "Contemporary British Civilisation Exam_Paper 2021-2022", 
+      url: Contemporary_British_Civilisation_Exam_21_22,
+      opendoc: "https://drive.google.com/file/d/1xZ1-fdPRv0FoQMzOr8_ddpxKVSQJFHdt/view?usp=drive_link"
     },
     { id: 12, 
-      name: "Contemporary British Civilisation Exam_Paper 2021-2022", 
-      url: Contemporary_British_Civilisation_Exam_21_22
+      name: "Early American Theater", 
+      url: Early_American_Theater,
+      opendoc: "https://drive.google.com/file/d/1iBAF_BAEZCZze0wdmw8awWOqtSR5BlkC/view?usp=drive_link"
     },
     { id: 13, 
-      name: "Early American Theater", 
-      url: Early_American_Theater
+      name: "Early American Theater Exam_Paper 2020-2021", 
+      url: Early_American_Theater_Exam_20_21,
+      opendoc: "https://drive.google.com/file/d/1n4qAw5kE3Rb3_kt_aBAZ4Gi_9UCyUAcc/view?usp=drive_link"
     },
     { id: 14, 
-      name: "Early American Theater Exam_Paper 2020-2021", 
-      url: Early_American_Theater_Exam_20_21
+      name: "Early American Theater Exam_Paper 2021-2022", 
+      url: Early_American_Theater_Exam_21_22,
+      opendoc: "https://drive.google.com/file/d/1ak5RF2ldeyFPDFBgHKjyepSLnrpBGh2B/view?usp=drive_link"
     },
     { id: 15, 
-      name: "Early American Theater Exam_Paper 2021-2022", 
-      url: Early_American_Theater_Exam_21_22
+      name: "English Poetry", 
+      url: English_Poetry,
+      opendoc: "https://drive.google.com/file/d/11anhfT8O7fd2HxqTxdkJSOLzQQW2Pc5H/view?usp=drive_link"
     },
     { id: 16, 
-      name: "English Poetry", 
-      url: English_Poetry
+      name: "English Poetry Exam_Paper 2020-2021", 
+      url: English_Poetry_Exam_20_21,
+      opendoc: "https://drive.google.com/file/d/1eBDeQ4uMwKutZdqTR5l2S2fKnBAtedmE/view?usp=drive_link"
     },
     { id: 17, 
-      name: "English Poetry Exam_Paper 2020-2021", 
-      url: English_Poetry_Exam_20_21
+      name: "English Poetry Exam_Paper 2021-2022", 
+      url: English_Poetry_Exam_21_22,
+      opendoc: "https://drive.google.com/file/d/1Kqu1keWk5HOSqaGo6ardIrtuTxiEKXYV/view?usp=drive_link"
     },
     { id: 18, 
-      name: "English Poetry Exam_Paper 2021-2022", 
-      url: English_Poetry_Exam_21_22
+      name: "The Prince of Parthia by Thomas Godfrey", 
+      url: The_Prince_of_Parthia_Sem_4,
+      opendoc: "https://drive.google.com/file/d/1FIDQ52uifdMuck0Zk8_OmIpLi7GgUN_S/view?usp=drive_link"
     },
     { id: 19, 
-      name: "The Prince of Parthia by Thomas Godfrey", 
-      url: The_Prince_of_Parthia_Sem_4
+      name: "The Contrast by Royall Tyler", 
+      url: The_Contrast_Sem_4,
+      opendoc: "https://drive.google.com/file/d/14fIc6Pqmu9Oip4g2UPR1uLNjEl9amYPp/view?usp=drive_link"
     },
     { id: 20, 
-      name: "The Contrast by Royall Tyler", 
-      url: The_Contrast_Sem_4
-    },
-    { id: 21, 
       name: "Advanced Oral Expression", 
-      url: Advanced_Oral_Expression
+      url: Advanced_Oral_Expression,
+      opendoc: "https://drive.google.com/file/d/1WEtSwwPo7go4_U0Jt_muh34ikLWIxCCR/view?usp=drive_link"
     },
   ];
 
   const pdfFiles_sem_6 = [
-    { id: 1, name: "Academic Writing", 
-      url: Academic_Writing 
+    { id: 1, 
+      name: "Academic Writing", 
+      url: Academic_Writing,
+      opendoc: "https://drive.google.com/file/d/1tk1TSh2K4viAaa6-D76Su24zkg9DEGur/view?usp=drive_link"
     },
     {
       id: 2,
       name: "Academic Writing Exam_Paper 2021-2022",
       url: Academic_Writing_Exam_21_22,
+      opendoc: "https://drive.google.com/file/d/1CwV17qnXFTNtdbOgGgPYSlO8cmACmraO/view?usp=drive_link"
     },
     { id: 3, 
       name: "Academic Writing Exam_Paper 2022-2023", 
-      url: Academic_Writing_Exam_22_23
+      url: Academic_Writing_Exam_22_23,
+      opendoc: "https://drive.google.com/file/d/13N8QNR3SHjyShTGyX3TLHChZLf9cpCOp/view?usp=drive_link"
     },
     { id: 4, 
       name: "Literary Theory and Criticism",
-      url: Literary_Theory_and_Criticism
+      url: Literary_Theory_and_Criticism,
+      opendoc: "https://drive.google.com/file/d/1ZpCA1El2WLwya2TupMiJ0xd58XXzq4vr/view?usp=drive_link"
     },
     { id: 5, 
       name: "Literary Theory and Criticism Exam_Paper 2022-2023", 
-      url: Literary_Theory_and_Criticism_Exam_22_23
+      url: Literary_Theory_and_Criticism_Exam_22_23,
+      opendoc: "https://drive.google.com/file/d/1Hel8kdZdV6EcKcyxGT306WA6ojS7SK_H/view?usp=drive_link"
     },
     { id: 6, 
       name: "Étude et Critique de la Littérature Africaine", 
-      url: Etu_Crit_Lit_Afr
+      url: Etu_Crit_Lit_Afr,
+      opendoc: "https://drive.google.com/file/d/13G_16OchclbCz0Abtj6jd4b13j5qF3Ez/view?usp=drive_link"
     },
     { id: 7, 
       name: "Étude et Critique de la Littérature Africaine Exam_Paper 2021-2022", 
-      url: Etu_Crit_Lit_Afr_Exam_21_22
+      url: Etu_Crit_Lit_Afr_Exam_21_22,
+      opendoc: "https://drive.google.com/file/d/1NXhGoO6kLo71i_I0m3AKK1oXafvjbA_a/view?usp=drive_link"
     },
     { id: 8, 
       name: "Étude et Critique de la Littérature Africaine Exam_Paper 2022-2023", 
-      url: Etu_Crit_Lit_Afr_Exam_22_23
+      url: Etu_Crit_Lit_Afr_Exam_22_23,
+      opendoc: "https://drive.google.com/file/d/1eP49IprNfloYng0t7vbeSdW_4tQfS7i3/view?usp=drive_link"
     },
     { id: 9, 
       name: `Étude et Critique de la Littérature Américaine : Alice Walker's "The Color Purple"`, 
-      url: Etu_Crit_Lit_Am_Color_Purple
+      url: Etu_Crit_Lit_Am_Color_Purple,
+      opendoc: "https://drive.google.com/file/d/1HZ_Vysunl4sf13wpDDro1pmJZcLCrSsO/view?usp=drive_link"
     },
     { id: 10, 
       name: `Étude et Critique de la Littérature Américaine : Zora Neale Hurston's "Their Eyes Were Watching God"`, 
-      url: Etu_Crit_Lit_Am_Their_Eyes
+      url: Etu_Crit_Lit_Am_Their_Eyes,
+      opendoc: "https://drive.google.com/file/d/18VDI_p6hJvWxDQSrBAbW0t-NhcgbsP_O/view?usp=drive_link"
     },
     { id: 18, 
       name: `Étude et Critique de la Littérature Anglaise : "Animal Farm by George Orwell"`, 
-      url: Animal_Farm_Sem_6
+      url: Animal_Farm_Sem_6,
+      opendoc: "https://drive.google.com/file/d/1C1cAbUQ3nDYbqYUjjGNgiGh5x81Fy1zT/view?usp=drive_link"
     },
     { id: 19, 
       name: `Étude et Critique de la Littérature Anglaise : "Hamlet And Much Ado About Nothing, both by William Shakespeare"`, 
-      url: Hamlet_And_Much_Ado_About_Nothing
+      url: Hamlet_And_Much_Ado_About_Nothing,
+      opendoc: "https://drive.google.com/file/d/1hCHPeXBPQifVuH0cSpwvIh-zfEQyGvJs/view?usp=drive_link"
     },
     { id: 11, 
       name: "Étude et Critique de la Littérature Anglaise Exam_Paper 2021-2022", 
-      url: Etu_Crit_Lit_Ang_Exam_21_22
+      url: Etu_Crit_Lit_Ang_Exam_21_22,
+      opendoc: "https://drive.google.com/file/d/1YDcGFdEnrUb9a3LInlIyproMQnkMHNaG/view?usp=drive_link"
     },
     { id: 12, 
       name: "Étude et Critique de la Littérature Anglaise Exam_Paper 2022-2023", 
-      url: Etu_Crit_Lit_Ang_Exam_22_23
+      url: Etu_Crit_Lit_Ang_Exam_22_23,
+      opendoc: "https://drive.google.com/file/d/1GbpZm090iHM1lUzf_fMj4KhbDQzTbB0f/view?usp=drive_link"
     },
     { id: 13, 
       name: "Littérature Comparée", 
-      url: Literature_Compare
+      url: Literature_Compare,
+      opendoc: "https://drive.google.com/file/d/15sld0wS3WVEEtmCVtolILWq0m6LlF6GG/view?usp=drive_link"
     },
     { id: 14, 
       name: "Littérature Comparée Exam_Paper 2022-2023", 
-      url: Literature_Compare_Exam_22_23
+      url: Literature_Compare_Exam_22_23,
+      opendoc: "https://drive.google.com/file/d/15PmBoU3Jjgzu9P8RJAjguG7NPUjxVSnh/view?usp=drive_link"
     },
     { id: 15, 
       name: "Literature and Media", 
-      url: Literature_and_media
+      url: Literature_and_media,
+      opendoc: "https://drive.google.com/file/d/1O6v1j69V0ChOdETRvcGOV21yieA9YRHI/view?usp=drive_link"
     },
     { id: 16, 
       name: "Literature and Media Exam_Paper 2021-2022", 
-      url: Literature_and_media_Exam_21_22
+      url: Literature_and_media_Exam_21_22,
+      opendoc: "https://drive.google.com/file/d/1OOD59hXMxtWljJoKAQUbQQGmitlrD6St/view?usp=drive_link"
     },
     { id: 17, 
       name: "Literature and Media Exam_Paper 2022-2023", 
-      url: Literature_and_media_Exam_22_23
+      url: Literature_and_media_Exam_22_23,
+      opendoc: "https://drive.google.com/file/d/1_xFM5PFnspDfo7jneLlFwZD1HeSOahMd/view?usp=drive_link"
     }
   ];
 
@@ -964,17 +1090,22 @@ export function Home() {
       }, 1000)
     }
 
-    useEffect(() =>{
-      const bothScreens = document.querySelectorAll(".both-screens")
-    const ChangeText = () => {
-      if(window.innerWidth <= 885) {
-        bothScreens.forEach((btn) => {
-          btn.textContent = "Download my course"
-        })
-      }
-    }
-    ChangeText()
-    })
+    const [dateOfCreation, setDateOfCreation]  = useState("2024")
+
+  useEffect(() => {
+    const getYear = () => {
+      const currentYear = new Date().getFullYear().toString();
+      
+      setDateOfCreation((prevDateOfCreation) => {
+        if (!prevDateOfCreation.includes(currentYear)) {
+          return `${prevDateOfCreation} - ${currentYear}`;
+        }
+        return prevDateOfCreation;
+      });
+    };
+  
+    getYear();
+  }, []);
 
   return (
     <>
@@ -1156,8 +1287,7 @@ export function Home() {
       </div>
       <div className="doc-action-button">
         <a
-        className="only-desktop"
-          href={doc.url}
+          href={doc.opendoc}
           rel="noopener noreferrer"
           target="_blank"
         >
@@ -1204,9 +1334,8 @@ export function Home() {
         <p> ~ {doc.name}</p>
       </div>
       <div className="doc-action-button">
-        <a
-        className="only-desktop"
-          href={doc.url}
+      <a
+          href={doc.opendoc}
           rel="noopener noreferrer"
           target="_blank"
         >
@@ -1254,9 +1383,8 @@ export function Home() {
         <p> ~ {doc.name}</p>
       </div>
       <div className="doc-action-button">
-        <a
-        className="only-desktop"
-          href={doc.url}
+      <a
+          href={doc.opendoc}
           rel="noopener noreferrer"
           target="_blank"
         >
@@ -1305,8 +1433,7 @@ export function Home() {
                     <div>
                       <div className="doc-action-button">
                       <a
-                      className="only-desktop"
-          href={doc.url}
+          href={doc.opendoc}
           rel="noopener noreferrer"
           target="_blank"
         >
@@ -1394,9 +1521,8 @@ Thanks for your understanding !!!🌿
         <p> ~ {doc.name}</p>
       </div>
       <div className="doc-action-button">
-        <a
-        className="only-desktop"
-          href={doc.url}
+      <a
+          href={doc.opendoc}
           rel="noopener noreferrer"
           target="_blank"
         >
@@ -1444,9 +1570,8 @@ Thanks for your understanding !!!🌿
         <p> ~ {doc.name}</p>
       </div>
       <div className="doc-action-button">
-        <a
-        className="only-desktop"
-          href={doc.url}
+      <a
+          href={doc.opendoc}
           rel="noopener noreferrer"
           target="_blank"
         >
@@ -1490,7 +1615,7 @@ Thanks for your understanding !!!🌿
           </header>
         </div>
         <div className="rights">
-          <p> &copy; 2024 | All Rights Reserved</p>
+          <p> &copy; {dateOfCreation} | All Rights Reserved</p>
         </div>
         <div className="author">
           <p>Made with <span style={{color: "red"}}>&hearts;</span> by E-learning</p>

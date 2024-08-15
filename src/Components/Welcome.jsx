@@ -51,6 +51,23 @@ export function WelcomePage () {
         }
     }
 
+    const [dateOfCreation, setDateOfCreation]  = useState("2024")
+
+  useEffect(() => {
+    const getYear = () => {
+      const currentYear = new Date().getFullYear().toString();
+      
+      setDateOfCreation((prevDateOfCreation) => {
+        if (!prevDateOfCreation.includes(currentYear)) {
+          return `${prevDateOfCreation} - ${currentYear}`;
+        }
+        return prevDateOfCreation;
+      });
+    };
+  
+    getYear();
+  }, []);
+
     return (
         <>
 
@@ -118,7 +135,7 @@ export function WelcomePage () {
           </header>
         </div>
         <div className="rights">
-          <p>&copy; 2024 | All Rights Reserved</p>
+          <p>&copy; {dateOfCreation} | All Rights Reserved</p>
         </div>
         <div className="author">
           <p>Made with <span style={{color: "red"}}>&hearts;</span> by E-learning</p>

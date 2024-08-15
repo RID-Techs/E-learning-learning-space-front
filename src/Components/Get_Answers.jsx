@@ -3,7 +3,8 @@ import logo from "/learns.png";
 import Homepage from "/Homepage.png";
 import Answers from "/answerss.png";
 import user from "/user.png";
-import doc from "/doc.png";
+import open from "/course.png";
+import download from "/download.png";
 import warning from "/warning.png";
 
 import Semester_1_Detailled_document from "../Docs/Semester_1/Semester_1_Detailled_document.pdf"
@@ -26,8 +27,7 @@ export function Get_Answers() {
   const [checked_sem_6, setChecked_Sem_6] = useState(false);
 
   const [openAnswer, setOpenAnswer] = useState(false);
-  console.log(openAnswer)
-
+  console.log(openAnswer);
   
   useEffect(() => {
     const all = document.querySelectorAll(".semester-choice ul li")
@@ -226,6 +226,23 @@ export function Get_Answers() {
     }
   }, [checked_sem_1, checked_sem_3, checked_sem_5, checked_sem_2, checked_sem_4, checked_sem_6])
 
+  const [dateOfCreation, setDateOfCreation]  = useState("2024")
+
+  useEffect(() => {
+    const getYear = () => {
+      const currentYear = new Date().getFullYear().toString();
+      
+      setDateOfCreation((prevDateOfCreation) => {
+        if (!prevDateOfCreation.includes(currentYear)) {
+          return `${prevDateOfCreation} - ${currentYear}`;
+        }
+        return prevDateOfCreation;
+      });
+    };
+  
+    getYear();
+  }, []);
+
   return (
     <>
       <div className="container-fluid header-wraper">
@@ -400,8 +417,8 @@ export function Get_Answers() {
                 </h5>
                 <div className="spacers">---------------</div>
                 <div className="Detailled-docs">
-                <a href={Semester_1_Detailled_document} target="_blank" rel="noopener noreferrer"> <img height={32} src={doc} alt="doc" /> Open</a>
-                <a href={Semester_1_Detailled_document} download={`Semester 1 Detailled document.pdf`} rel="noopener noreferrer"> <img height={32} src={doc} alt="doc" /> Download</a>
+                <a href="https://drive.google.com/file/d/1t9pv_-A_9TS8FAdDjWdmnwqQISK4fDvB/view?usp=drive_link" target="_blank" rel="noopener noreferrer"> <img height={22} src={open} alt="doc" /> Open</a>
+                <a href={Semester_1_Detailled_document} download={`Semester 1 Detailled document.pdf`} rel="noopener noreferrer"> <img height={22} src={download} alt="doc" /> Download</a>
                 </div>
               </div>
             </div>)}
@@ -413,8 +430,8 @@ export function Get_Answers() {
                 </h5>
                 <div className="spacers">---------------</div>
                 <div className="Detailled-docs">
-                <a href={Semester_3_Detailled_document} target="_blank" rel="noopener noreferrer"> <img height={32} src={doc} alt="doc" /> Open</a>
-                <a href={Semester_3_Detailled_document} download={`Semester 3 Detailled document.pdf`} rel="noopener noreferrer"> <img height={32} src={doc} alt="doc" /> Download</a>
+                <a href="https://drive.google.com/file/d/1kszTY85pFpXeJQfdSg5ayC_D_8U8rG0y/view?usp=drive_link" target="_blank" rel="noopener noreferrer"> <img height={22} src={open} alt="doc" /> Open</a>
+                <a href={Semester_3_Detailled_document} download={`Semester 3 Detailled document.pdf`} rel="noopener noreferrer"> <img height={22} src={download} alt="doc" /> Download</a>
                 </div>
               </div>
             </div>)}
@@ -426,8 +443,8 @@ export function Get_Answers() {
                 </h5>
                 <div className="spacers">---------------</div>
                 <div className="Detailled-docs">
-                <a href={Semester_5_Detailled_document} target="_blank" rel="noopener noreferrer"> <img height={32} src={doc} alt="doc" /> Open</a>
-                <a href={Semester_5_Detailled_document} download={`Semester 5 Detailled document.pdf`} rel="noopener noreferrer"> <img height={32} src={doc} alt="doc" /> Download</a>
+                <a href="https://drive.google.com/file/d/1TrQibA-a3GFAuX--95tBdFfp4cVFEC31/view?usp=drive_link" target="_blank" rel="noopener noreferrer"> <img height={22} src={open} alt="doc" /> Open</a>
+                <a href={Semester_5_Detailled_document} download={`Semester 5 Detailled document.pdf`} rel="noopener noreferrer"> <img height={22} src={download} alt="doc" /> Download</a>
                 </div>
               </div>
             </div>)}
@@ -1497,8 +1514,8 @@ export function Get_Answers() {
                 </h5>
                 <div className="spacers">---------------</div>
                 <div className="Detailled-docs">
-                <a href={Semester_4_Detailled_document} target="_blank" rel="noopener noreferrer"> <img height={32} src={doc} alt="doc" /> Open</a>
-                <a href={Semester_4_Detailled_document} download={`Semester 4 Detailled document.pdf`} rel="noopener noreferrer"> <img height={32} src={doc} alt="doc" /> Download</a>
+                <a href="https://drive.google.com/file/d/1befkXVQib9vH4FKvqnB_hF5t1zWIqV5U/view?usp=drive_link" target="_blank" rel="noopener noreferrer"> <img height={22} src={open} alt="doc" /> Open</a>
+                <a href={Semester_4_Detailled_document} download={`Semester 4 Detailled document.pdf`} rel="noopener noreferrer"> <img height={22} src={download} alt="doc" /> Download</a>
                 </div>
               </div>
             </div>
@@ -2207,8 +2224,8 @@ export function Get_Answers() {
                 </h5>
                 <div className="spacers">---------------</div>
                 <div className="Detailled-docs">
-                <a href={Semester_6_Detailled_document} target="_blank" rel="noopener noreferrer"> <img height={32} src={doc} alt="doc" /> Open</a>
-                <a href={Semester_6_Detailled_document} download={`Semester 6 Detailled document.pdf`} rel="noopener noreferrer"> <img height={32} src={doc} alt="doc" /> Download</a>
+                <a href="https://drive.google.com/file/d/1QELAIL7EaDAUYqqdq4TBn0yxKRprfMnw/view?usp=drive_link" target="_blank" rel="noopener noreferrer"> <img height={22} src={open} alt="doc" /> Open</a>
+                <a href={Semester_6_Detailled_document} download={`Semester 6 Detailled document.pdf`} rel="noopener noreferrer"> <img height={22} src={download} alt="doc" /> Download</a>
                 </div>
               </div>
             </div>
@@ -2227,7 +2244,7 @@ export function Get_Answers() {
           </header>
         </div>
         <div className="rights">
-          <p>&copy; 2024 | All Rights Reserved</p>
+          <p>&copy; {dateOfCreation} | All Rights Reserved</p>
         </div>
         <div className="author">
           <p>Made with <span style={{color: "red"}}>&hearts;</span> by E-learning</p>
