@@ -145,7 +145,6 @@ import American_Poetry from "../Docs/Semester_4/American_Poetry.pdf";
 import American_Poetry_Exam_20_21 from "../Docs/Semester_4/American_Poetry_Exam_20_21.pdf";
 import American_Poetry_Exam_21_22 from "../Docs/Semester_4/American_Poetry_Exam_21_22.pdf";
 
-import Contemporary_British_Civilisation from "../Docs/Semester_4/Contemporary_British_Civilisation.pdf";
 import Contemporary_British_Civilisation_Exam_20_21 from "../Docs/Semester_4/Contemporary_British_Civilisation_Exam_20_21.pdf";
 import Contemporary_British_Civilisation_Exam_21_22 from "../Docs/Semester_4/Contemporary_British_Civilisation_Exam_21_22.pdf";
 
