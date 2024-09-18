@@ -264,8 +264,7 @@ export function Get_Answers() {
             <a className="active" href="Get_Answers">
               <li>
                 {" "}
-                <img height={22} src={Answers} alt="Answers" /> E-learning Get
-                Answers Spot{" "}
+                <img height={22} src={Answers} alt="Answers" /> E-learning Answer Hub{" "}
               </li>
             </a>
           </ul>
@@ -284,12 +283,12 @@ export function Get_Answers() {
             Here, you have{" "}
             <strong>
               <em>
-                All the answers to the frequently asked questions with regard to
+                all the answers to the Frequently Asked Questions with regard to
                 each course.
               </em>
             </strong>
           </p>
-          <p id="welcome-foot">Feel free to ask yours too !</p>
+          <p id="welcome-foot">Enjoy reading the answers while, of course, integrating them with your own ideas. It could be an advantage for you.</p>
         </div>
 
         <div className="ms-lg-3">
@@ -379,9 +378,8 @@ export function Get_Answers() {
         </ul>
         <p>
           <span id="semester-note">Please note</span> : You have to choose your
-          semester before seeing your{" "}
-          <span id="semester-note-2">Answers to Questions</span> related to your
-          semester{"'"}s courses !
+          semester before seeing the{" "}
+          <span id="semester-note-2">Answers to Questions</span> related to your courses !
         </p>
       </div>
 
@@ -403,7 +401,7 @@ export function Get_Answers() {
               src={warning}
               alt="warning"
             />{" "}
-            There is no answer for the moment ! Choose your semester first.
+            There is no answer at the moment ! Please choose your semester first.
           </p>
         ) : null}
       </div>

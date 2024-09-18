@@ -16,6 +16,10 @@ body{
   height: 100vh;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 .Info-holder{
   position: fixed;
   height: 100dvh;
@@ -153,6 +157,73 @@ header{
   display: flex;
   margin-top: 12em;
 }
+#click-open-btn {
+  position: relative;
+}
+#open-btn::before{
+  position: absolute;
+  content: "";
+  height: 12px;
+  width: 100%;
+  bottom: 0;
+  z-index: -1;
+  background-color: rgb(209, 216, 255);
+}
+
+.user-name-holder{
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #0000007c;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-name{
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.user-name input {
+  outline: none;
+  border: 1px solid rgb(94, 5, 177);
+  border-radius: 10px;
+  padding: 0.5em;
+  font-size: 1rem;
+}
+
+.username-wrapper button {
+  outline: none;
+  border: none;
+  padding: 0.5em;
+  font-size: 1rem;
+  background-color: rgb(94, 5, 177);
+  border: 1px solid rgb(94, 5, 177);
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: inset 0px 3px 3px aliceblue, inset 0px -3px 3px aliceblue, inset 0px 4px 5px rgb(94, 5, 177);
+  transition: all 0.2s ease-in-out;
+}
+
+.username-wrapper button:hover{
+  background-color: #fafaf6;
+  color: rgb(94, 5, 177);
+  box-shadow: inset 0px 3px 3px #8c8b8b, inset 0px -3px 3px #8c8b8b, inset 0px 4px 5px rgb(94, 5, 177);
+}
+
+.username-wrapper{
+  display: inline-flex;
+  flex-direction: column;
+  gap: 1em;
+  background-color: aliceblue;
+  padding: 1em;
+  border-radius: 10px;
+}
 
 .welcome-text{
   align-self: center;
@@ -194,14 +265,15 @@ header{
   outline: none;
   border: none;
   border-radius: 15px;
-  background-color: rgb(98, 1, 143);
+  background-color: rgb(71, 1, 163);
   color: #fff;
   padding: 0.7em;
-  box-shadow: 0px 0px 3px rgb(98, 1, 143);
+  box-shadow: 0px 0px 4px rgb(92, 6, 179);
   transition: all 0.3s ease-in-out;
 }
 #login-button:hover{
   background-color: rgb(220, 237, 245);
+  box-shadow: 0px 0px 4px rgb(71, 1, 163);
   color: #000;
 }
 .onlineImg img {

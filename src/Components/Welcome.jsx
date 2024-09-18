@@ -13,6 +13,7 @@ export function WelcomePage () {
     const navigate = useNavigate()
     const [note, setNote] = useState(true)
   const [hasRead, setHasRead] = useState(false)
+
   const CloseNoteButton = () => {
     setNote(false)
     localStorage.setItem("Show Note", false)
@@ -38,17 +39,33 @@ export function WelcomePage () {
             transition: Zoom
         })
     }
+    const [newUser, setNewUser] = useState("")
+    const [UserAlredyLoggedIn, setUserAlredyLoggedIn] = useState(true);
     const User = localStorage.getItem("User")
+
     const EnterMySession = () => { 
+      const bodyState = document.querySelector("body")
         if(User) {
           Welcome(`Hi ${User}`)
           navigate("/Home")
         } else {
-          const username = prompt("What is your Username ?")
-          Welcome(`Welcome ${username}`)
-          localStorage.setItem("User", username)
-          navigate("/Home#welcome-message")
+          setUserAlredyLoggedIn(false);
+          bodyState.classList.add("no-scroll")
         }
+    }
+
+    const SignInNewUser = (e) => {
+      const NewUser = e.target.value;
+      setNewUser(NewUser)
+    }
+
+    const LoginByName = () => {
+      const bodyState = document.querySelector("body")
+      localStorage.setItem("User", newUser)
+      setUserAlredyLoggedIn(true)
+      bodyState.classList.remove("no-scroll")
+      Welcome(`Welcome ${newUser}`)
+      navigate("/Home")
     }
 
     const [dateOfCreation, setDateOfCreation]  = useState("2024")
@@ -96,7 +113,6 @@ export function WelcomePage () {
         ) }
 
 
-
               <div className="container-fluid header-wraper-home">
         <div className="header-holder">
           <header>
@@ -111,8 +127,21 @@ export function WelcomePage () {
     </div>
 
         <div className="mt-4">
-            <h3 className="ms-4"> Click {`"`}Open{`"`} to access the E-learning learning space <img src={star} alt="star" /> </h3>
+            <h3 className="ms-4"> Click the <span id="click-open-btn"> <span id="open-btn">centered-button</span></span> below to access the E-learning learning space <img src={star} alt="star" /> </h3>
         </div>
+        {!UserAlredyLoggedIn && (
+          <div className="container">
+          <div className="user-name-holder">
+            <div className="username-wrapper">
+            <div className="user-name">
+              <label htmlFor="new-user">Your name :</label>
+              <input type="text" value={newUser} onChange={SignInNewUser} id="new-user" placeholder="Enter your Name" />
+            </div>
+            <button type="button" onClick={LoginByName}>Login</button>
+            </div>
+          </div>
+        </div>
+        )}
 
         <div className="login-holder mt-4">
 

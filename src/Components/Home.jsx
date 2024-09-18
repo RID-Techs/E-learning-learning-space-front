@@ -1120,7 +1120,7 @@ export function Home() {
               <a href="#my">
             <li>
                 {" "}
-                <img height={22} src={semester} alt="Semester" /> My semester{" "}
+                <img height={22} src={semester} alt="Semester" /> My Semester{" "}
             </li>
               </a>
               <a href="#my-courses">
@@ -1132,8 +1132,7 @@ export function Home() {
               <a href="Get_Answers">
             <li>
                 {" "}
-                <img height={22} src={Answers} alt="Answers" /> E-learning Get
-                Answers Spot{" "}
+                <img height={22} src={Answers} alt="Answers" /> E-learning Answer Hub{" "}
             </li>
               </a>
               <a href="https://elerning-e-library.netlify.app" target="_blank">
@@ -1266,8 +1265,7 @@ export function Home() {
         {checked_sem_1 === false && checked_sem_3 === false && checked_sem_5 === false && checked_sem_2 === false && checked_sem_4 === false && checked_sem_6 === false ? (
           <p id="no-course">
             {" "}
-            <img className="me-2" height={32} src={warning} alt="warning" /> You
-            have no course for the moment ! Choose your semester first.
+            <img className="me-2" height={32} src={warning} alt="warning" /> You have no courses at the moment ! Please choose your semester first.
           </p>
         ) : null}
 
