@@ -1,15 +1,13 @@
 
 import {RouterProvider, createBrowserRouter} from "react-router-dom"
 import { ErrorBoundary } from "react-error-boundary";
-import { Home } from "./Components/Home"
 import { Error } from "./Errors/Error";
 import { ErrorPage } from "./Errors/ErrorPage"
+import { Welcome_Page } from "./Components/WelcomePage";
+import { Home } from "./Components/Home"
 import { Get_Answers } from "./Components/Get_Answers";
-import { SignUp } from "./Components/SignUp";
-// import { SignIn } from "./Components/SignIn";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { WelcomePage } from "./Components/Welcome";
 
 function App() {
 
@@ -18,16 +16,7 @@ function App() {
       path: "/",
       element: (
         <ErrorBoundary fallback={<Error/>}>
-          <WelcomePage/>
-        </ErrorBoundary>
-      ),
-      errorElement: <ErrorPage/>
-    },
-    {
-      path: "/E_SignUps",
-      element: (
-        <ErrorBoundary fallback={<Error/>}>
-          <SignUp/>
+          <Welcome_Page/>
         </ErrorBoundary>
       ),
       errorElement: <ErrorPage/>

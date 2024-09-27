@@ -78,7 +78,7 @@ export function SignUp () {
               <div className="container-fluid header-wraper-home">
         <div className="header-holder">
           <header>
-            <img src={logo} alt="E-learning" />
+            <img height={50} src={logo} alt="E-learning" />
             <h1>E-learning</h1>
           </header>
         </div>
@@ -89,7 +89,7 @@ export function SignUp () {
     </div>
 
         <div className="mt-4">
-            <h3 className="ms-4">Sign up to get access to the E-learning learning space <img src={star} alt="star" /> </h3>
+            <h3 className="ms-4">Sign up to get a free and total access to the E-learning learning space <img src={star} alt="star" /> </h3>
         </div>
 
         <div className="login-holder mt-4">
