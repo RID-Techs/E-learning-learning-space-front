@@ -8,7 +8,6 @@ import open from "/course.png";
 import warning from "/warning.png";
 import download from "/download.png";
 import docs from "/doc.png";
-import LogingOut from "/LogOut.png";
 // Illustration OnlineLearning is from https://undraw.co/
 import OnlineLearning from "/Online_learning.svg";
 
