@@ -293,7 +293,7 @@ const LoginByName = () => {
       </div>
 
       <div className="mt-4">
-        <h3 className="ms-4">
+        <h3 className="ms-4 me-4">
           {" "}
           Click the{" "}
           <span id="click-open-btn">
@@ -313,7 +313,7 @@ const LoginByName = () => {
     <button onClick={EnterMySession} id="login-button"> <img height={32} src={courses} alt="user" /> Open my Learning Space</button>
 </div>)}
 
-<div>
+<div className="welcome-picture">
     <img height={350} src={E_member} alt="learning" />
 </div>
 

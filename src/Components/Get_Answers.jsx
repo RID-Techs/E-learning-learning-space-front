@@ -2,6 +2,7 @@
 import logo from "/learns.png";
 import Homepage from "/Homepage.png";
 import Answers from "/answerss.png";
+import TestOne from "/testOne.png";
 import user from "/user.png";
 import open from "/course.png";
 import download from "/download.png";
@@ -265,6 +266,12 @@ export function Get_Answers() {
               <li>
                 {" "}
                 <img height={22} src={Answers} alt="Answers" /> E-learning Answer Hub{" "}
+              </li>
+            </a>
+            <a className="" href="Test">
+              <li>
+                {" "}
+                <img height={22} src={TestOne} alt="Answers" /> Tests{" "}
               </li>
             </a>
           </ul>
