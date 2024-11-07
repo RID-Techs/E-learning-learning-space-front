@@ -452,24 +452,20 @@ header{
   border-bottom-color: rgb(223, 123, 8);
 }
 
-.grammar-test{
-  height: 100vh;
-  overflow: scroll;
-}
-
 .grammar-test h1 {
   position: relative;
   text-align: center;
   text-decoration: underline double brown;
   text-underline-offset: 20px;
+  line-height: 2em;
 }
 .grammar-test h1::after{
   position: absolute;
   content: "✵";
-  top: 50%;
+  top: 0;
+  left: 0;
   margin-top: 1em;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%);
   color: brown;
   background-color: #f3fffe;
   filter: drop-shadow(0px 0px 9px #f3fffe);
@@ -1013,12 +1009,42 @@ footer{
   flex-wrap: wrap;
   gap: 2em;
 }
+
+.not-available{
+  display: flex;
+  justify-content: center;
+  padding: 0.5em;
+}
+.unavailable {
+  background-color: rgb(245, 248, 248);
+  padding: 0.5em;
+  border-radius: 5px;
+  box-shadow: 0px 0px 2px #000;
+}
+.unavailable h1 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: bold;
+  background-image: linear-gradient(95deg, rgb(51, 172, 172), rgb(3, 114, 3));
+  background-clip: text;
+  color: transparent;
+}
+.unavailable p{
+  font-size: 1.2rem;
+}
+.phonetic-trans {
+  display: inline-flex;
+  font-size: 1.1rem;
+}
+.phonetics-items {
+  margin-top: 0.15em;
+}
 .rights, .author, .Phone-number{
   margin-top: 7px;
 }
 .rights{
   margin-left: 1em;
 }
+
 @media screen and (max-width: 992px) {
   .welcome {
     margin-top: 17em;

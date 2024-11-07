@@ -1362,7 +1362,7 @@ export function Sem_1_Grammar() {
 
       <div className="question-container mt-3">
         <div className="question-wrapper">
-          <p>5--{">"} Which of These groups of keywords below contains the right kyewords that go with the Simple Present tense.</p>
+          <p>5--{">"} Which of these groups of keywords below contains the right keywords that go with the Simple Present tense ?</p>
         </div>
         <div className="answer-wrapper">
           <div className="correct-answer">
@@ -1483,7 +1483,7 @@ export function Sem_1_Grammar() {
 
       <div className="question-container mt-3">
         <div className="question-wrapper">
-          <p>13--{">"} to/Lomé/will/by/she/tomorrow/travelling/9 O{"'"}clock/be.(put it in order)</p>
+          <p>13--{">"} to/Lomé/will/by/she/tomorrow/travelling/9 O{"'"}clock/be.(Put the words in the correct order to form a sentence)</p>
         </div>
         <div className="answer-wrapper">
           <div className="correct-answer">
@@ -1498,7 +1498,7 @@ export function Sem_1_Grammar() {
 
       <div className="question-container mt-3">
         <div className="question-wrapper">
-          <p>14--{">"} I have worked here for 2 years.(take back this sentence using {`"`}ago{`"`} this time)</p>
+          <p>14--{">"} I have worked here for 2 years.(Rewrite this sentence using {`"`}ago{`"`})</p>
         </div>
         <div className="answer-wrapper">
           <div className="correct-answer">
@@ -1513,7 +1513,7 @@ export function Sem_1_Grammar() {
 
       <div className="question-container mt-3">
         <div className="question-wrapper">
-          <p>15--{">"} The doubling rule which consists in doubling the final consonant of a verb ending with a consonant immediately preceded by a short vowel if of course, the syllable containing that short vowel is stressed, applies for the verb {`"`}To run{`"`}, but not for {`"`}To rain{`"`}.</p>
+          <p>15--{">"} The doubling rule, which consists in doubling the final consonant of a verb ending with a consonant immediately preceded by a short vowel (if, of course, the syllable containing that short vowel is stressed), applies to the verb {`"`}to run,{`"`} but not to {`"`}to rain.{`"`} </p>
         </div>
         <div className="answer-wrapper">
           <div className="correct-answer">
@@ -1603,7 +1603,7 @@ export function Sem_1_Grammar() {
 
       <div className="question-container mt-3">
         <div className="question-wrapper">
-          <p>21--{">"} Derive Possessive Adjectives from Personal Pronouns, respectively (I, You, She, He, It, We, You, They).</p>
+          <p>21--{">"} Derive possessive adjectives from these personal pronouns, respectively (I, You, She, He, It, We, You, They).</p>
         </div>
         <div className="answer-wrapper">
           <div className="correct-answer">

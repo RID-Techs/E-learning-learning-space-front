@@ -4,23 +4,21 @@ import Answers from "/answerss.png";
 import TestOne from "/testOne.png";
 import star from "/stars_2.png";
 import Testpic from "/test.png";
-// import { Sem_1_Grammar } from "./SEM_1_TEST/GrammarSem1";
 import { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
 import { Sem_1_Grammar } from "./SEM_1_TEST/GrammarSem1";
+import { Phonetics } from "./SEM_1_TEST/Phonetics";
+import { TestSem_2 } from "./SEM_2/sem_2";
+import { TestSem_4 } from "./SEM_4/Sem_4";
+import { TestSem_6 } from "./SEM_6/Sem_6";
+import { American_Test } from "./SEM_1_TEST/American_Test";
+import { British_Test } from "./SEM_1_TEST/British_Test";
+import { Century_18thNovel_Test } from "./SEM_1_TEST/Century_18thNovelTest";
 export function Test() {
   const [testSem, setTestSem] = useState("");
 
-  const [storeScrollPosition, setStoreScrollPosition] = useState(null);
   const handleTestSem = (e) => {
     setTestSem(e.target.value);
-    const AllSubjectsPosition = document.querySelector(".test-subjects");
-      AllSubjectsPosition.addEventListener("scroll", () => {
-      const scrollYdata = AllSubjectsPosition.scrollTop;
-      console.log(scrollYdata);
-      setStoreScrollPosition(scrollYdata)
-  })
-}
+  }
 
   useEffect(() => {
     const allInps = document.querySelectorAll("label");
@@ -39,22 +37,163 @@ export function Test() {
   }, []);
 
   const positionRef = useRef(null);
-  const positionRef_2 = useRef(null);
+
   const [GramTest, setGramTest] = useState(false);
+  const [PhonTest, setPhonTest] = useState(false);
+  const [AmericanTest, setAmericanTest] = useState(false);
+  const [BritishTest, setBritishTest] = useState(false);
+  const [Century_18thNovel, setCentury_18thNovel] = useState(false);
+  const [MorphologyTest, setMorphologyTest] = useState(false);
+  const [AmericanNovelTest, setAmericanNovelTest] = useState(false);
+  const [Century_19thNovel, setCentury_19thNovel] = useState(false);
+  const [Lit_EnvironmentTest, setLit_EnvironmentTest] = useState(false);
 
   const HideSubjects_1 = () => {
     const Subjects = document.querySelector(".test-subjects");
     const TestInterface = document.querySelector(".test-appear-container");
     Subjects.style.display = "none";
     setGramTest(true);
+    setPhonTest(false);
+    setAmericanTest(false);
+    setBritishTest(false);
+    setCentury_18thNovel(false);
+    setMorphologyTest(false);
+    setAmericanNovelTest(false);
+    setCentury_19thNovel(false);
+    setLit_EnvironmentTest(false);
     positionRef.current.scrollTop = 0;
     TestInterface.style.display = "block";
-    console.log("hop: ", storeScrollPosition);
-    
+  }
+  const HideSubjects_2 = () => {
+    const Subjects = document.querySelector(".test-subjects");
+    const TestInterface = document.querySelector(".test-appear-container");
+    Subjects.style.display = "none";
+    setPhonTest(true);
+    setGramTest(false);
+    setAmericanTest(false);
+    setBritishTest(false);
+    setCentury_18thNovel(false);
+    setMorphologyTest(false);
+    setAmericanNovelTest(false);
+    setCentury_19thNovel(false);
+    setLit_EnvironmentTest(false);
+    positionRef.current.scrollTop = 0;
+    TestInterface.style.display = "block";
+  }
+  const HideSubjects_3 = () => {
+    const Subjects = document.querySelector(".test-subjects");
+    const TestInterface = document.querySelector(".test-appear-container");
+    Subjects.style.display = "none";
+    setAmericanTest(true);
+    setPhonTest(false);
+    setGramTest(false);
+    setBritishTest(false);
+    setCentury_18thNovel(false);
+    setMorphologyTest(false);
+    setAmericanNovelTest(false);
+    setCentury_19thNovel(false);
+    setLit_EnvironmentTest(false);
+    positionRef.current.scrollTop = 0;
+    TestInterface.style.display = "block";
+  }
+  const HideSubjects_4 = () => {
+    const Subjects = document.querySelector(".test-subjects");
+    const TestInterface = document.querySelector(".test-appear-container");
+    Subjects.style.display = "none";
+    setBritishTest(true);
+    setAmericanTest(false);
+    setPhonTest(false);
+    setGramTest(false);
+    setCentury_18thNovel(false);
+    setMorphologyTest(false);
+    setAmericanNovelTest(false);
+    setCentury_19thNovel(false);
+    setLit_EnvironmentTest(false);
+    positionRef.current.scrollTop = 0;
+    TestInterface.style.display = "block";
+  }
+  const HideSubjects_5 = () => {
+    const Subjects = document.querySelector(".test-subjects");
+    const TestInterface = document.querySelector(".test-appear-container");
+    Subjects.style.display = "none";
+    setCentury_18thNovel(true);
+    setBritishTest(false);
+    setAmericanTest(false);
+    setPhonTest(false);
+    setGramTest(false);
+    setMorphologyTest(false);
+    setAmericanNovelTest(false);
+    setCentury_19thNovel(false);
+    setLit_EnvironmentTest(false);
+    positionRef.current.scrollTop = 0;
+    TestInterface.style.display = "block";
+  }
+  const HideSubjects_6 = () => {
+    const Subjects = document.querySelector(".test-subjects");
+    const TestInterface = document.querySelector(".test-appear-container");
+    Subjects.style.display = "none";
+    setMorphologyTest(true);
+    setBritishTest(false);
+    setAmericanTest(false);
+    setPhonTest(false);
+    setGramTest(false);
+    setCentury_18thNovel(false);
+    setAmericanNovelTest(false);
+    setCentury_19thNovel(false);
+    setLit_EnvironmentTest(false);
+    positionRef.current.scrollTop = 0;
+    TestInterface.style.display = "block";
+  }
+  const HideSubjects_7 = () => {
+    const Subjects = document.querySelector(".test-subjects");
+    const TestInterface = document.querySelector(".test-appear-container");
+    Subjects.style.display = "none";
+    setAmericanNovelTest(true);
+    setBritishTest(false);
+    setAmericanTest(false);
+    setPhonTest(false);
+    setGramTest(false);
+    setCentury_18thNovel(false);
+    setMorphologyTest(false);
+    setCentury_19thNovel(false);
+    setLit_EnvironmentTest(false);
+    positionRef.current.scrollTop = 0;
+    TestInterface.style.display = "block";
+  }
+  const HideSubjects_8 = () => {
+    const Subjects = document.querySelector(".test-subjects");
+    const TestInterface = document.querySelector(".test-appear-container");
+    Subjects.style.display = "none";
+    setCentury_19thNovel(true);
+    setBritishTest(false);
+    setAmericanTest(false);
+    setPhonTest(false);
+    setGramTest(false);
+    setCentury_18thNovel(false);
+    setMorphologyTest(false);
+    setAmericanNovelTest(false);
+    setLit_EnvironmentTest(false);
+    positionRef.current.scrollTop = 0;
+    TestInterface.style.display = "block";
+  }
+  const HideSubjects_9 = () => {
+    const Subjects = document.querySelector(".test-subjects");
+    const TestInterface = document.querySelector(".test-appear-container");
+    Subjects.style.display = "none";
+    setLit_EnvironmentTest(true);
+    setBritishTest(false);
+    setAmericanTest(false);
+    setPhonTest(false);
+    setGramTest(false);
+    setCentury_18thNovel(false);
+    setMorphologyTest(false);
+    setAmericanNovelTest(false);
+    setCentury_19thNovel(false);
+    positionRef.current.scrollTop = 0;
+    TestInterface.style.display = "block";
   }
 
   const BackBtn = () => {
-    positionRef_2.current.scrollY = storeScrollPosition;
     const TestInterface = document.querySelector(".test-appear-container");
     const Subjects = document.querySelector(".test-subjects");
     TestInterface.style.display = "none";
@@ -63,7 +202,7 @@ export function Test() {
 
   return (
     <>
-      <div ref={positionRef_2} className="container-fluid test-wraper">
+      <div className="container-fluid test-wraper">
         <div className="test-holder">
           <header className="test-header">
             <img height={50} src={logo} alt="E-learning" />
@@ -198,39 +337,80 @@ export function Test() {
           <div className="test-subject-item">
             <p className="subject-header">Phonetics & Phonology <img src={star} alt="star" /> </p>
             <hr className="test-divder" />
-            <Link to={"/Test/Grammar"}>
-              <button className="test-btn" type="button">Take a test <img height={22} src={Testpic} alt="star" /> </button>
-            </Link>
-          </div>
-
-          <div className="test-subject-item">
-            <p className="subject-header">British Civilisation <img src={star} alt="star" /> </p>
-            <hr className="test-divder" />
-            <Link to={"/Test/Grammar"}>
-              <button className="test-btn" type="button">Take a test <img height={22} src={Testpic} alt="star" /> </button>
-            </Link>
+              <button onClick={HideSubjects_2} className="test-btn" type="button">Take a test <img height={22} src={Testpic} alt="star" /> </button>
           </div>
 
           <div className="test-subject-item">
             <p className="subject-header">American Civilisation <img src={star} alt="star" /> </p>
             <hr className="test-divder" />
-            <Link to={"/Test/Grammar"}>
-              <button className="test-btn" type="button">Take a test <img height={22} src={Testpic} alt="star" /> </button>
-            </Link>
+              <button onClick={HideSubjects_3} className="test-btn" type="button">Take a test <img height={22} src={Testpic} alt="star" /> </button>
           </div>
 
           <div className="test-subject-item">
-            <p className="subject-header">Tertiary Work Methodology <img src={star} alt="star" /> </p>
+            <p className="subject-header">British Civilisation <img src={star} alt="star" /> </p>
             <hr className="test-divder" />
-            <Link to={"/Test/Grammar"}>
-              <button className="test-btn" type="button">Take a test <img height={22} src={Testpic} alt="star" /> </button>
-            </Link>
+              <button onClick={HideSubjects_4} className="test-btn" type="button">Take a test <img height={22} src={Testpic} alt="star" /> </button>
           </div>
           
         </div>
       
       : null}
     </div>
+
+    <div className="container mt-4">
+      {testSem === "Semester 3" ? 
+      
+        <div className="test-subjects">
+          <div className="test-subject-item">
+            <p className="subject-header">18<sup>th</sup> Century English Novel <img src={star} alt="star" /> </p>
+            <hr className="test-divder" />
+              <button onClick={HideSubjects_5}  className="test-btn" type="button">Take a test <img height={22} src={Testpic} alt="star" /> </button>
+          </div>
+
+          <div className="test-subject-item">
+            <p className="subject-header">Morphology & Syntax <img src={star} alt="star" /> </p>
+            <hr className="test-divder" />
+              <button onClick={HideSubjects_6} className="test-btn" type="button">Take a test <img height={22} src={Testpic} alt="star" /> </button>
+          </div>
+
+          <div className="test-subject-item">
+            <p className="subject-header">American Novel <img src={star} alt="star" /> </p>
+            <hr className="test-divder" />
+              <button onClick={HideSubjects_7} className="test-btn" type="button">Take a test <img height={22} src={Testpic} alt="star" /> </button>
+          </div>
+        </div>
+      : null}
+    </div>
+
+    <div className="container mt-4">
+      {testSem === "Semester 5" ? 
+      
+        <div className="test-subjects">
+          <div className="test-subject-item">
+            <p className="subject-header">19<sup>th</sup> Century English Novel <img src={star} alt="star" /> </p>
+            <hr className="test-divder" />
+              <button onClick={HideSubjects_8}  className="test-btn" type="button">Take a test <img height={22} src={Testpic} alt="star" /> </button>
+          </div>
+
+          <div className="test-subject-item">
+            <p className="subject-header">Littérature & Environnement <img src={star} alt="star" /> </p>
+            <hr className="test-divder" />
+              <button onClick={HideSubjects_9} className="test-btn" type="button">Take a test <img height={22} src={Testpic} alt="star" /> </button>
+          </div>
+        </div>
+      : null}
+    </div>
+
+    <div className="container mt-4">
+      {testSem === "Semester 2" ? <TestSem_2 /> : null}
+    </div>
+    <div className="container mt-4">
+      {testSem === "Semester 4" ? <TestSem_4 /> : null}
+    </div>
+    <div className="container mt-4">
+      {testSem === "Semester 6" ? <TestSem_6 /> : null}
+    </div>
+
 
     <div className="test-appear-container">
       <div ref={positionRef} className="test-appear">
@@ -250,13 +430,16 @@ export function Test() {
   <path d="M9 10h7a4 4 0 1 1 0 8h-1" />
 </svg> Back</button>
 {GramTest && <Sem_1_Grammar />}
-        
+{PhonTest && <Phonetics />}
+{AmericanTest && <American_Test />}
+{BritishTest && <British_Test /> }
+{Century_18thNovel && <Century_18thNovel_Test /> }
+{MorphologyTest && <British_Test /> }
+{AmericanNovelTest && <British_Test /> }
+{Lit_EnvironmentTest && <British_Test /> }
+{Century_19thNovel && <British_Test /> }
       </div>
     </div>
-
-
-
-
 
 
     </>
