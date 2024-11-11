@@ -274,13 +274,13 @@ export function Get_Answers() {
             {isMember ? <a className="" href="Test">
               <li>
                 {" "}
-                <img height={22} src={TestOne} alt="Answers" /> Tests{" "}
+                <img height={22} src={TestOne} alt="Answers" /> Test{" "}
               </li>
             </a> : 
             <a data-bs-toggle="modal" data-bs-target="#logInMember">
             <li>
               {" "}
-              <img height={22} src={TestOne} alt="Answers" /> Tests{" "}
+              <img height={22} src={TestOne} alt="Answers" /> Test{" "}
             </li>
           </a> }
             
