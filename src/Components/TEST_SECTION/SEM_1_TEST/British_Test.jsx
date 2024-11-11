@@ -1656,7 +1656,7 @@ export function British_Test () {
       const allBtns = document.querySelectorAll("button");
 
       checkSpinnerReset.style.display = "inline-block";
-      checkResetText.textContent = "Reseting...";
+      checkResetText.textContent = "Resetting...";
 
       setTimeout(() => {
       allBtns.forEach((btn) => {
@@ -1736,7 +1736,7 @@ export function British_Test () {
   return (
     <>
       <div className="grammar-test mt-4">
-      <h1>⦔ Take British Civilization test</h1>
+      <h1>⦔ Take a British Civilization test</h1>
       <div className="test-section mt-5">
         
       <div className="question-container">
@@ -1816,7 +1816,7 @@ export function British_Test () {
 
       <div className="question-container mt-3">
         <div className="question-wrapper">
-          <p>6--{">"} The Prehistoric settlements encompasses the Old Stone Age, Middle Stone Age, New Stone Age and the celts.</p>
+          <p>6--{">"} The Prehistoric Settlements encompasses the Old Stone Age, Middle Stone Age, New Stone Age and the celts.</p>
         </div>
         <div className="answer-wrapper">
           <div className="correct-answer">
@@ -1831,12 +1831,12 @@ export function British_Test () {
 
       <div className="question-container mt-3">
         <div className="question-wrapper">
-          <p>7--{">"} THe Bronze Age imigrants were also......</p>
+          <p>7--{">"} The Bronze Age immigrants were also......</p>
         </div>
         <div className="answer-wrapper">
           <div className="correct-answer">
             <button onClick={wrongAnswerBtn_7} className="disable-btn" type="button">Hunters</button>
-            <button onClick={rightAnswerBtn_7} className="disable-btn" type="button">Famers</button>
+            <button onClick={rightAnswerBtn_7} className="disable-btn" type="button">Farmers</button>
           </div>
         </div>
         <div className="impression-section mt-3">
@@ -1861,7 +1861,7 @@ export function British_Test () {
 
       <div className="question-container mt-3">
         <div className="question-wrapper">
-          <p>9--{">"} The term <strong>Anglo-saxons</strong> consists of......</p>
+          <p>9--{">"} The term <strong>Anglo-Saxons</strong> consists of......</p>
         </div>
         <div className="answer-wrapper">
           <div className="correct-answer">
@@ -2268,7 +2268,7 @@ export function British_Test () {
 
       <div className="question-container mt-3">
         <div className="question-wrapper">
-          <p>36--{">"} The actual King of the United Kingdom is......</p>
+          <p>36--{">"} The current King of the United Kingdom is......</p>
         </div>
         <div className="answer-wrapper">
           <div className="correct-answer">

@@ -1,5 +1,5 @@
 import {useState} from "react"
-export function Century_18thNovel_Test () {
+export function S3_American_Novel_Test () {
   const [impressions_1, setImpressions_1] = useState("");
   const [impressions_2, setImpressions_2] = useState("");
   const [impressions_3, setImpressions_3] = useState("");
@@ -26,10 +26,6 @@ export function Century_18thNovel_Test () {
   const [impressions_24, setImpressions_24] = useState("");
   const [impressions_25, setImpressions_25] = useState("");
   const [impressions_26, setImpressions_26] = useState("");
-  const [impressions_27, setImpressions_27] = useState("");
-  const [impressions_28, setImpressions_28] = useState("");
-  const [impressions_29, setImpressions_29] = useState("");
-  const [impressions_30, setImpressions_30] = useState("");
 
   const [answerFound, setAnswerFound] = useState(null);
 
@@ -1023,159 +1019,6 @@ export function Century_18thNovel_Test () {
       setImpressions_26("Oops! Sorry, Try again later on.");
     }
     // =========================================================
-    // =========================================================
-  const rightAnswerBtn_27 = (e) => {
-    const CurrentBtn = e.target;
-    const nearParent = CurrentBtn.closest(".question-container");
-    
-    const Impressions = nearParent.querySelector(".impression-section");
-    const DisableBtn = nearParent.querySelectorAll(".disable-btn");
-    DisableBtn.forEach((btn) => {
-      btn.disabled = true;   
-      btn.style.cursor = "not-allowed";
-    })
-    CurrentBtn.disabled = false;
-    CurrentBtn.style.cursor = "pointer";
-    Impressions.style.display = "inline-block";
-    CurrentBtn.style.border = "2px solid lightgreen";
-    Impressions.classList.add("true-style");
-    setAnswerFound(true);
-    setImpressions_27("Congratulations! You got it.")
-  }
-    const wrongAnswerBtn_27 = (e) =>{
-      const CurrentBtn = e.target;
-      const nearParent = CurrentBtn.closest(".question-container");
-    
-      const Impressions = nearParent.querySelector(".impression-section");
-      const DisableBtn = nearParent.querySelectorAll(".disable-btn");
-      DisableBtn.forEach((btn) => {
-        btn.disabled = true;   
-        btn.style.cursor = "not-allowed";
-      })
-      CurrentBtn.disabled = false;
-      CurrentBtn.style.cursor = "pointer";
-      CurrentBtn.style.border = "2px solid lightcoral";
-      Impressions.style.display = "inline-block";
-      Impressions.classList.add("disable-style");
-      setAnswerFound(false);
-      setImpressions_27("Oops! Sorry, Try again later on.");
-    }
-    // =========================================================
-    // =========================================================
-  const rightAnswerBtn_28 = (e) => {
-    const CurrentBtn = e.target;
-    const nearParent = CurrentBtn.closest(".question-container");
-    
-    const Impressions = nearParent.querySelector(".impression-section");
-    const DisableBtn = nearParent.querySelectorAll(".disable-btn");
-    DisableBtn.forEach((btn) => {
-      btn.disabled = true;   
-      btn.style.cursor = "not-allowed";
-    })
-    CurrentBtn.disabled = false;
-    CurrentBtn.style.cursor = "pointer";
-    Impressions.style.display = "inline-block";
-    CurrentBtn.style.border = "2px solid lightgreen";
-    Impressions.classList.add("true-style");
-    setAnswerFound(true);
-    setImpressions_28("Congratulations! You got it.")
-  }
-    const wrongAnswerBtn_28 = (e) =>{
-      const CurrentBtn = e.target;
-      const nearParent = CurrentBtn.closest(".question-container");
-    
-      const Impressions = nearParent.querySelector(".impression-section");
-      const DisableBtn = nearParent.querySelectorAll(".disable-btn");
-      DisableBtn.forEach((btn) => {
-        btn.disabled = true;   
-        btn.style.cursor = "not-allowed";
-      })
-      CurrentBtn.disabled = false;
-      CurrentBtn.style.cursor = "pointer";
-      CurrentBtn.style.border = "2px solid lightcoral";
-      Impressions.style.display = "inline-block";
-      Impressions.classList.add("disable-style");
-      setAnswerFound(false);
-      setImpressions_28("Oops! Sorry, Try again later on.");
-    }
-    // =========================================================
-    // =========================================================
-  const rightAnswerBtn_29 = (e) => {
-    const CurrentBtn = e.target;
-    const nearParent = CurrentBtn.closest(".question-container");
-    
-    const Impressions = nearParent.querySelector(".impression-section");
-    const DisableBtn = nearParent.querySelectorAll(".disable-btn");
-    DisableBtn.forEach((btn) => {
-      btn.disabled = true;   
-      btn.style.cursor = "not-allowed";
-    })
-    CurrentBtn.disabled = false;
-    CurrentBtn.style.cursor = "pointer";
-    Impressions.style.display = "inline-block";
-    CurrentBtn.style.border = "2px solid lightgreen";
-    Impressions.classList.add("true-style");
-    setAnswerFound(true);
-    setImpressions_29("Congratulations! You got it.")
-  }
-    const wrongAnswerBtn_29 = (e) =>{
-      const CurrentBtn = e.target;
-      const nearParent = CurrentBtn.closest(".question-container");
-    
-      const Impressions = nearParent.querySelector(".impression-section");
-      const DisableBtn = nearParent.querySelectorAll(".disable-btn");
-      DisableBtn.forEach((btn) => {
-        btn.disabled = true;   
-        btn.style.cursor = "not-allowed";
-      })
-      CurrentBtn.disabled = false;
-      CurrentBtn.style.cursor = "pointer";
-      CurrentBtn.style.border = "2px solid lightcoral";
-      Impressions.style.display = "inline-block";
-      Impressions.classList.add("disable-style");
-      setAnswerFound(false);
-      setImpressions_29("Oops! Sorry, Try again later on.");
-    }
-    // =========================================================
-    // =========================================================
-  const rightAnswerBtn_30 = (e) => {
-    const CurrentBtn = e.target;
-    const nearParent = CurrentBtn.closest(".question-container");
-    
-    const Impressions = nearParent.querySelector(".impression-section");
-    const DisableBtn = nearParent.querySelectorAll(".disable-btn");
-    DisableBtn.forEach((btn) => {
-      btn.disabled = true;   
-      btn.style.cursor = "not-allowed";
-    })
-    CurrentBtn.disabled = false;
-    CurrentBtn.style.cursor = "pointer";
-    Impressions.style.display = "inline-block";
-    CurrentBtn.style.border = "2px solid lightgreen";
-    Impressions.classList.add("true-style");
-    setAnswerFound(true);
-    setImpressions_30("Congratulations! You got it.")
-  }
-    const wrongAnswerBtn_30 = (e) =>{
-      const CurrentBtn = e.target;
-      const nearParent = CurrentBtn.closest(".question-container");
-    
-      const Impressions = nearParent.querySelector(".impression-section");
-      const DisableBtn = nearParent.querySelectorAll(".disable-btn");
-      DisableBtn.forEach((btn) => {
-        btn.disabled = true;   
-        btn.style.cursor = "not-allowed";
-      })
-      CurrentBtn.disabled = false;
-      CurrentBtn.style.cursor = "pointer";
-      CurrentBtn.style.border = "2px solid lightcoral";
-      Impressions.style.display = "inline-block";
-      Impressions.classList.add("disable-style");
-      setAnswerFound(false);
-      setImpressions_30("Oops! Sorry, Try again later on.");
-    }
-
-    // =========================================================
 
     const ResetAllContent = () => {
       const inputAnswer = document.querySelectorAll(".input-answer");
@@ -1187,7 +1030,7 @@ export function Century_18thNovel_Test () {
       const allBtns = document.querySelectorAll("button");
 
       checkSpinnerReset.style.display = "inline-block";
-      checkResetText.textContent = "Reseting...";
+      checkResetText.textContent = "Resetting...";
 
       setTimeout(() => {
       allBtns.forEach((btn) => {
@@ -1229,10 +1072,6 @@ export function Century_18thNovel_Test () {
         setImpressions_24("");
         setImpressions_25("");
         setImpressions_26("");
-        setImpressions_27("");
-        setImpressions_28("");
-        setImpressions_29("");
-        setImpressions_30("");
 
         impressionSection.forEach((item) => {
           item.style.backgroundColor = "";
@@ -1255,17 +1094,17 @@ export function Century_18thNovel_Test () {
   return (
     <>
       <div className="grammar-test mt-4">
-      <h1>⦔ Take 18<sup>th</sup> Century English Novel test</h1>
+      <h1>⦔ Take an American Novel test</h1>
       <div className="test-section mt-5">
         
       <div className="question-container">
         <div className="question-wrapper">
-          <p>1--{">"} The English conquest was in......</p>
+          <p>1--{">"} Settlements, Puritan period and the Age of Reason or Enlightenment are the three main literary periods we have.</p>
         </div>
         <div className="answer-wrapper">
           <div className="correct-answer">
-            <button onClick={rightAnswerBtn_1} className="disable-btn" type="button">449 BC</button>
-            <button onClick={wrongAnswerBtn_1} className="disable-btn" type="button">449 AD</button>
+            <button onClick={rightAnswerBtn_1} className="disable-btn" type="button">True</button>
+            <button onClick={wrongAnswerBtn_1} className="disable-btn" type="button">False</button>
           </div>
         </div>
         <div className="impression-section mt-3">
@@ -1275,12 +1114,12 @@ export function Century_18thNovel_Test () {
 
       <div className="question-container mt-3">
         <div className="question-wrapper">
-          <p>2--{">"} Roman conquest was done in......</p>
+          <p>2--{">"} The Fugitive Slave Act was passed in......</p>
         </div>
         <div className="answer-wrapper">
           <div className="correct-answer">
-            <button onClick={wrongAnswerBtn_2} className="disable-btn" type="button">55 AD</button>
-            <button onClick={rightAnswerBtn_2} className="disable-btn" type="button">55 BC</button>
+            <button onClick={wrongAnswerBtn_2} className="disable-btn" type="button">1851</button>
+            <button onClick={rightAnswerBtn_2} className="disable-btn" type="button">1850</button>
           </div>
         </div>
         <div className="impression-section mt-3">
@@ -1290,12 +1129,12 @@ export function Century_18thNovel_Test () {
 
       <div className="question-container mt-3">
         <div className="question-wrapper">
-          <p>3--{">"} The roman conquest had great impact on English language.</p>
+          <p>3--{">"} Harriet Beecher Stowe is the writer of the novel......</p>
         </div>
         <div className="answer-wrapper">
           <div className="correct-answer">
-            <button onClick={rightAnswerBtn_3} className="disable-btn" type="button">False</button>
-            <button onClick={wrongAnswerBtn_3} className="disable-btn" type="button">True</button>
+            <button onClick={wrongAnswerBtn_3} className="disable-btn fw-bold fst-italic" type="button">Uncle Toms Cabin</button>
+            <button onClick={rightAnswerBtn_3} className="disable-btn fw-bold fst-italic" type="button">Uncle Tom{`'`}s Cabin</button>
           </div>
         </div>
         <div className="impression-section mt-3">
@@ -1305,12 +1144,12 @@ export function Century_18thNovel_Test () {
 
       <div className="question-container mt-3">
         <div className="question-wrapper">
-          <p>4--{">"} .....are people of long warring tradition.</p>
+          <p>4--{">"} Uncle Tom is an African-American.</p>
         </div>
         <div className="answer-wrapper">
           <div className="correct-answer">
-            <button onClick={wrongAnswerBtn_4} className="disable-btn" type="button">the Romans</button>
-            <button onClick={rightAnswerBtn_4} className="disable-btn" type="button">the Angles & the Saxons</button>
+            <button onClick={wrongAnswerBtn_4} className="disable-btn" type="button">False</button>
+            <button onClick={rightAnswerBtn_4} className="disable-btn" type="button">True</button>
           </div>
         </div>
         <div className="impression-section mt-3">
@@ -1320,12 +1159,12 @@ export function Century_18thNovel_Test () {
 
       <div className="question-container mt-3">
         <div className="question-wrapper">
-          <p>5--{">"} Poems written in the 7<sup>th</sup> and 8<sup>th</sup> century were pagan in spirit.</p>
+          <p>5--{">"} <strong><em>Uncle Tom{`'`}s Cabin</em></strong> was published in......</p>
         </div>
         <div className="answer-wrapper">
           <div className="correct-answer">
-            <button onClick={wrongAnswerBtn_5} className="disable-btn" type="button">False</button>
-            <button onClick={rightAnswerBtn_5} className="disable-btn" type="button">True</button>
+            <button onClick={wrongAnswerBtn_5} className="disable-btn" type="button">1860s</button>
+            <button onClick={rightAnswerBtn_5} className="disable-btn" type="button">1851</button>
           </div>
         </div>
         <div className="impression-section mt-3">
@@ -1335,12 +1174,12 @@ export function Century_18thNovel_Test () {
 
       <div className="question-container mt-3">
         <div className="question-wrapper">
-          <p>6--{">"} The 7<sup>th</sup> and 8<sup>th</sup> century poems were writen in......</p>
+          <p>6--{">"} Who is considered as a completely moral being and an unimpeachable Christian in <strong><em>Uncle Tom{`'`}s Cabin</em></strong> ?</p>
         </div>
         <div className="answer-wrapper">
           <div className="correct-answer">
-            <button onClick={rightAnswerBtn_6} className="disable-btn" type="button">alliterative teutonic language</button>
-            <button onClick={wrongAnswerBtn_6} className="disable-btn" type="button">alliterative tetonic language</button>
+            <button onClick={rightAnswerBtn_6} className="disable-btn" type="button">Evangeline</button>
+            <button onClick={wrongAnswerBtn_6} className="disable-btn" type="button">Marie St. Clare</button>
           </div>
         </div>
         <div className="impression-section mt-3">
@@ -1350,12 +1189,12 @@ export function Century_18thNovel_Test () {
 
       <div className="question-container mt-3">
         <div className="question-wrapper">
-          <p>7--{">"} The <strong><em>“Seafarer”</em></strong> is one fine sample of this early poetry.</p>
+          <p>7--{">"} The character Simon Legree is a good-hearted person in <strong><em>Uncle Tom{`'`}s Cabin</em></strong>.</p>
         </div>
         <div className="answer-wrapper">
           <div className="correct-answer">
-            <button onClick={wrongAnswerBtn_7} className="disable-btn" type="button">False</button>
-            <button onClick={rightAnswerBtn_7} className="disable-btn" type="button">True</button>
+            <button onClick={wrongAnswerBtn_7} className="disable-btn" type="button">True</button>
+            <button onClick={rightAnswerBtn_7} className="disable-btn" type="button">False</button>
           </div>
         </div>
         <div className="impression-section mt-3">
@@ -1365,12 +1204,12 @@ export function Century_18thNovel_Test () {
 
       <div className="question-container mt-3">
         <div className="question-wrapper">
-          <p>8--{">"} ......is one of those poets who enriched English literature with poetical productions of Christian thoughts, in teutonic dialect and Latin.</p>
+          <p>8--{">"} In <strong><em>Uncle Tom{`'`}s Cabin</em></strong>, the slave hunter hired by Mr Haley to bring back Eliza, Harry, and George is named......</p>
         </div>
         <div className="answer-wrapper">
           <div className="correct-answer">
-            <button onClick={wrongAnswerBtn_8} className="disable-btn" type="button">Cynwulf</button>
-            <button onClick={rightAnswerBtn_8} className="disable-btn" type="button">Caedmon</button>
+            <button onClick={wrongAnswerBtn_8} className="disable-btn" type="button">Tom Locker</button>
+            <button onClick={rightAnswerBtn_8} className="disable-btn" type="button">Tom Loker</button>
           </div>
         </div>
         <div className="impression-section mt-3">
@@ -1380,12 +1219,12 @@ export function Century_18thNovel_Test () {
 
       <div className="question-container mt-3">
         <div className="question-wrapper">
-          <p>9--{">"} The Norman conquest happened in the.......</p>
+          <p>9--{">"} In <strong><em>Uncle Tom{`'`}s Cabin</em></strong>, Christianity is used to fight slavery.</p>
         </div>
         <div className="answer-wrapper">
           <div className="correct-answer">
-            <button onClick={rightAnswerBtn_9} className="disable-btn" type="button">11<sup>th</sup> century</button>
-            <button onClick={wrongAnswerBtn_9} className="disable-btn" type="button">middle of 8<sup>th</sup> century</button>
+            <button onClick={rightAnswerBtn_9} className="disable-btn" type="button">True</button>
+            <button onClick={wrongAnswerBtn_9} className="disable-btn" type="button">False</button>
           </div>
         </div>
         <div className="impression-section mt-3">
@@ -1395,12 +1234,12 @@ export function Century_18thNovel_Test () {
 
       <div className="question-container mt-3">
         <div className="question-wrapper">
-          <p>10--{">"} From which conquest flourished a FRench literature which relegated English language to the near for one and a half century till its final revival in the 13<sup>th</sup> century.</p>
+          <p>10--{">"} In <strong><em>Uncle Tom{`'`}s Cabin</em></strong>, Beecher Stowe shows how African-Americans lost their dignity, their identity, and how they were dying inwardly, within their souls under the theme the <strong>Evil of Slavery</strong>.</p>
         </div>
         <div className="answer-wrapper">
           <div className="correct-answer">
-            <button onClick={wrongAnswerBtn_10} className="disable-btn" type="button">Danish conquest</button>
-            <button onClick={rightAnswerBtn_10} className="disable-btn" type="button">Norman conquest</button>
+            <button onClick={wrongAnswerBtn_10} className="disable-btn" type="button">False</button>
+            <button onClick={rightAnswerBtn_10} className="disable-btn" type="button">True</button>
           </div>
         </div>
         <div className="impression-section mt-3">
@@ -1410,12 +1249,12 @@ export function Century_18thNovel_Test () {
 
       <div className="question-container mt-3">
         <div className="question-wrapper">
-          <p>11--{">"} The poem <strong><em>“The Christ”</em></strong> was composed by...... </p>
+          <p>11--{">"} <strong><em>Uncle Tom{`'`}s Cabin</em></strong> pertains to the literary period of...... </p>
         </div>
         <div className="answer-wrapper">
           <div className="correct-answer">
-            <button onClick={rightAnswerBtn_11} className="disable-btn" type="button">Cynewulf</button>
-            <button onClick={wrongAnswerBtn_11} className="disable-btn" type="button">Bede</button>
+            <button onClick={rightAnswerBtn_11} className="disable-btn" type="button">Romanticism</button>
+            <button onClick={wrongAnswerBtn_11} className="disable-btn" type="button">Realism</button>
           </div>
         </div>
         <div className="impression-section mt-3">
@@ -1425,12 +1264,12 @@ export function Century_18thNovel_Test () {
 
       <div className="question-container mt-3">
         <div className="question-wrapper">
-          <p>12--{">"} Who is the author of the first true English poem ?</p>
+          <p>12--{">"} Realism is the portrayal of real life events in a fictional way.</p>
         </div>
         <div className="answer-wrapper">
           <div className="correct-answer">
-            <button onClick={wrongAnswerBtn_12} className="disable-btn" type="button">Geoffrey Chaucer</button>
-            <button onClick={rightAnswerBtn_12} className="disable-btn" type="button">Caedmon</button>
+            <button onClick={wrongAnswerBtn_12} className="disable-btn" type="button">False</button>
+            <button onClick={rightAnswerBtn_12} className="disable-btn" type="button">True</button>
           </div>
         </div>
         <div className="impression-section mt-3">
@@ -1440,12 +1279,12 @@ export function Century_18thNovel_Test () {
 
       <div className="question-container mt-3">
         <div className="question-wrapper">
-          <p>13--{">"} Beowulf is......</p>
+          <p>13--{">"} Mark Twain{"'"}s <strong><em>The Adventures of Huckleberry Finn</em></strong> is one fine example of novels written during Realism.</p>
         </div>
         <div className="answer-wrapper">
           <div className="correct-answer">
-            <button onClick={wrongAnswerBtn_13} className="disable-btn" type="button">a heroic play</button>
-            <button onClick={rightAnswerBtn_13} className="disable-btn" type="button">an eponymous character</button>
+            <button onClick={wrongAnswerBtn_13} className="disable-btn" type="button">False</button>
+            <button onClick={rightAnswerBtn_13} className="disable-btn" type="button">True</button>
           </div>
         </div>
         <div className="impression-section mt-3">
@@ -1455,12 +1294,12 @@ export function Century_18thNovel_Test () {
 
       <div className="question-container mt-3">
         <div className="question-wrapper">
-          <p>14--{">"} Which conquest had been done with ease and in a pacific way ?</p>
+          <p>14--{">"} Who wrote <strong><em>The Scarlet Letter</em></strong> ?</p>
         </div>
         <div className="answer-wrapper">
           <div className="correct-answer">
-            <button onClick={rightAnswerBtn_14} className="disable-btn" type="button">the Danish conquest</button>
-            <button onClick={wrongAnswerBtn_14} className="disable-btn" type="button">the English conquest</button>
+            <button onClick={rightAnswerBtn_14} className="disable-btn" type="button">Nathaniel Hawthorne</button>
+            <button onClick={wrongAnswerBtn_14} className="disable-btn" type="button">William Dean Howells</button>
           </div>
         </div>
         <div className="impression-section mt-3">
@@ -1470,12 +1309,12 @@ export function Century_18thNovel_Test () {
 
       <div className="question-container mt-3">
         <div className="question-wrapper">
-          <p>15--{">"} Who wrote the <strong><em>Roman de Rou</em></strong>, a chronicle history of the Dukes of Normandy(France) ?</p>
+          <p>15--{">"} The most prominent theorists and practitioners of American Literary Realism are in the number of......</p>
         </div>
         <div className="answer-wrapper">
           <div className="correct-answer">
-            <button onClick={wrongAnswerBtn_15} className="disable-btn" type="button">Claudius</button>
-            <button onClick={rightAnswerBtn_15} className="disable-btn" type="button">Wace</button>
+            <button onClick={wrongAnswerBtn_15} className="disable-btn" type="button">Four (4)</button>
+            <button onClick={rightAnswerBtn_15} className="disable-btn" type="button">Three (3)</button>
           </div>
         </div>
         <div className="impression-section mt-3">
@@ -1485,12 +1324,12 @@ export function Century_18thNovel_Test () {
 
       <div className="question-container mt-3">
         <div className="question-wrapper">
-          <p>16--{">"} Who turned Wace{"'"}s <strong><em>Brut</em></strong> into a poem of 32 000 lines of alliterative English verse, making of it an important landmark in the history of English Literature ?</p>
+          <p>16--{">"} Realism has come to oppose.....</p>
         </div>
         <div className="answer-wrapper">
           <div className="correct-answer">
-            <button onClick={wrongAnswerBtn_16} className="disable-btn" type="button">Geoffrey Chaucer</button>
-            <button onClick={rightAnswerBtn_16} className="disable-btn" type="button">Layamon</button>
+            <button onClick={wrongAnswerBtn_16} className="disable-btn" type="button">Puritanism</button>
+            <button onClick={rightAnswerBtn_16} className="disable-btn" type="button">Idealism</button>
           </div>
         </div>
         <div className="impression-section mt-3">
@@ -1500,12 +1339,12 @@ export function Century_18thNovel_Test () {
 
       <div className="question-container mt-3">
         <div className="question-wrapper">
-          <p>17--{">"} What is the first book of poetry written in English Language ?</p>
+          <p>17--{">"} Mark Twain{"'"}s <strong><em>The Adventures of Huckleberry Finn</em></strong> is much more concerned with the Realism sub-genre...... </p>
         </div>
         <div className="answer-wrapper">
           <div className="correct-answer">
-            <button onClick={wrongAnswerBtn_17} className="disable-btn" type="button">The Canterburry Tales</button>
-            <button onClick={rightAnswerBtn_17} className="disable-btn" type="button">Canterbury Tales</button>
+            <button onClick={wrongAnswerBtn_17} className="disable-btn" type="button">Regionalism</button>
+            <button onClick={rightAnswerBtn_17} className="disable-btn" type="button">Local Color</button>
           </div>
         </div>
         <div className="impression-section mt-3">
@@ -1515,12 +1354,12 @@ export function Century_18thNovel_Test () {
 
       <div className="question-container mt-3">
         <div className="question-wrapper">
-          <p>18--{">"} Geoffrey Chaucer inspired himself from......</p>
+          <p>18--{">"} Does Regionalism go beyond borders ?</p>
         </div>
         <div className="answer-wrapper">
           <div className="correct-answer">
-            <button onClick={rightAnswerBtn_18} className="disable-btn" type="button">Boccaccio{"'"}s Decameron</button>
-            <button onClick={wrongAnswerBtn_18} className="disable-btn" type="button">Boccacio{"'"}s Decameron</button>
+            <button onClick={rightAnswerBtn_18} className="disable-btn" type="button">Yes</button>
+            <button onClick={wrongAnswerBtn_18} className="disable-btn" type="button">No</button>
           </div>
         </div>
         <div className="impression-section mt-3">
@@ -1530,12 +1369,12 @@ export function Century_18thNovel_Test () {
 
       <div className="question-container mt-3">
         <div className="question-wrapper">
-          <p>19--{">"} The novel <strong><em>Robinson Crusoe</em></strong> was published in......</p>
+          <p>19--{">"} Mark Twain is not a pen name.</p>
         </div>
         <div className="answer-wrapper">
           <div className="correct-answer">
-            <button onClick={wrongAnswerBtn_19} className="disable-btn" type="button">1722</button>
-            <button onClick={rightAnswerBtn_19} className="disable-btn" type="button">1719</button>
+            <button onClick={wrongAnswerBtn_19} className="disable-btn" type="button">True</button>
+            <button onClick={rightAnswerBtn_19} className="disable-btn" type="button">False</button>
           </div>
         </div>
         <div className="impression-section mt-3">
@@ -1545,12 +1384,12 @@ export function Century_18thNovel_Test () {
 
       <div className="question-container mt-3">
         <div className="question-wrapper">
-          <p>20--{">"} Whose book has more profoundly shaped the novel as the whole ? </p>
+          <p>20--{">"} Who is Huck{"'"}s first true friend ? </p>
         </div>
         <div className="answer-wrapper">
           <div className="correct-answer">
-            <button onClick={wrongAnswerBtn_20} className="disable-btn" type="button">Thomas Malory</button>
-            <button onClick={rightAnswerBtn_20} className="disable-btn" type="button">Miguel de Cervantes Saavedra</button>
+            <button onClick={wrongAnswerBtn_20} className="disable-btn" type="button">Tom Sawyer</button>
+            <button onClick={rightAnswerBtn_20} className="disable-btn" type="button">Jim</button>
           </div>
         </div>
         <div className="impression-section mt-3">
@@ -1560,12 +1399,12 @@ export function Century_18thNovel_Test () {
 
       <div className="question-container mt-3">
         <div className="question-wrapper">
-          <p>21--{">"} The title of that book that profoundly shaped the novel as a whole is......</p>
+          <p>21--{">"} The main concern in Mark Twain{"'"}s <strong><em>The Adventures of Huckleberry Finn</em></strong> is..... </p>
         </div>
         <div className="answer-wrapper">
           <div className="correct-answer">
-            <button onClick={rightAnswerBtn_21} className="disable-btn" type="button">Don Quixote</button>
-            <button onClick={wrongAnswerBtn_21} className="disable-btn" type="button">Oroonoko</button>
+            <button onClick={rightAnswerBtn_21} className="disable-btn" type="button">Racism</button>
+            <button onClick={wrongAnswerBtn_21} className="disable-btn" type="button">Christian values</button>
           </div>
         </div>
         <div className="impression-section mt-3">
@@ -1575,12 +1414,12 @@ export function Century_18thNovel_Test () {
 
       <div className="question-container mt-3">
         <div className="question-wrapper">
-          <p>22--{">"} Who made the novel come to existence completely ?</p>
+          <p>22--{">"} THe actual name of <strong><em>The Adventures of Huckleberry Finn</em></strong> writer is......</p>
         </div>
         <div className="answer-wrapper">
           <div className="correct-answer">
-            <button onClick={wrongAnswerBtn_22} className="disable-btn" type="button">Boccaccio</button>
-            <button onClick={rightAnswerBtn_22} className="disable-btn" type="button">Daniel Defoe</button>
+            <button onClick={wrongAnswerBtn_22} className="disable-btn" type="button">Mark Twain</button>
+            <button onClick={rightAnswerBtn_22} className="disable-btn" type="button">Samuel Langhorne Clemmons</button>
           </div>
         </div>
         <div className="impression-section mt-3">
@@ -1590,7 +1429,7 @@ export function Century_18thNovel_Test () {
 
       <div className="question-container mt-3">
         <div className="question-wrapper">
-          <p>23--{">"} The rogue novels and the picaresque are some of the factors to the rise of the English Novel.</p>
+          <p>23--{">"} Jim Crow Law is a racially segregating law.</p>
         </div>
         <div className="answer-wrapper">
           <div className="correct-answer">
@@ -1605,12 +1444,12 @@ export function Century_18thNovel_Test () {
 
       <div className="question-container mt-3">
         <div className="question-wrapper">
-          <p>24--{">"} Henry Fielding{"'"}s <strong><em>Tom Jones</em></strong> is one of the early English novels.</p>
+          <p>24--{">"} The period in which black intellectuals, poets, musicians and writers explored their cultural identity is known as......</p>
         </div>
         <div className="answer-wrapper">
           <div className="correct-answer">
-            <button onClick={wrongAnswerBtn_24} className="disable-btn" type="button">False</button>
-            <button onClick={rightAnswerBtn_24} className="disable-btn" type="button">True</button>
+            <button onClick={wrongAnswerBtn_24} className="disable-btn" type="button">Black pride</button>
+            <button onClick={rightAnswerBtn_24} className="disable-btn" type="button">Harlem Renaissance</button>
           </div>
         </div>
         <div className="impression-section mt-3">
@@ -1620,12 +1459,12 @@ export function Century_18thNovel_Test () {
 
       <div className="question-container mt-3">
         <div className="question-wrapper">
-          <p>25--{">"} Who wrote the novel <strong><em>Pamela</em></strong> ?</p>
+          <p>25--{">"} The Harlem Renaissance came into being mostly because the......</p>
         </div>
         <div className="answer-wrapper">
           <div className="correct-answer">
-            <button onClick={rightAnswerBtn_25} className="disable-btn" type="button">Samuel Richardson</button>
-            <button onClick={wrongAnswerBtn_25} className="disable-btn" type="button">Henry Fielding</button>
+            <button onClick={rightAnswerBtn_25} className="disable-btn" type="button">Great Migration</button>
+            <button onClick={wrongAnswerBtn_25} className="disable-btn" type="button">Cultural movements</button>
           </div>
         </div>
         <div className="impression-section mt-3">
@@ -1635,76 +1474,16 @@ export function Century_18thNovel_Test () {
 
       <div className="question-container mt-3">
         <div className="question-wrapper">
-          <p>26--{">"} Samuel Richardson{"'"}s novel <strong><em>Clarissa</em></strong> is an epistolary novel.</p>
+          <p>26--{">"} The......unfortunately ends the Harlem Renaissance movement.</p>
         </div>
         <div className="answer-wrapper">
           <div className="correct-answer">
-            <button onClick={rightAnswerBtn_26} className="disable-btn" type="button">True</button>
-            <button onClick={wrongAnswerBtn_26} className="disable-btn" type="button">False</button>
+            <button onClick={rightAnswerBtn_26} className="disable-btn" type="button">Great depression</button>
+            <button onClick={wrongAnswerBtn_26} className="disable-btn" type="button">Racism</button>
           </div>
         </div>
         <div className="impression-section mt-3">
           { <p className="impression-msg">{answerFound === true ? impressions_26 : answerFound === false ? impressions_26 : null}</p>}
-        </div>
-      </div>
-
-      <div className="question-container mt-3">
-        <div className="question-wrapper">
-          <p>27--{">"} .......came to be used primarily as the antonym of idealism.</p>
-        </div>
-        <div className="answer-wrapper">
-          <div className="correct-answer">
-            <button onClick={wrongAnswerBtn_27} className="disable-btn" type="button">Elizabethan writings</button>
-            <button onClick={rightAnswerBtn_27} className="disable-btn" type="button">Realism</button>
-          </div>
-        </div>
-        <div className="impression-section mt-3">
-          { <p className="impression-msg">{answerFound === true ? impressions_27 : answerFound === false ? impressions_27 : null}</p>}
-        </div>
-      </div>
-
-      <div className="question-container mt-3">
-        <div className="question-wrapper">
-          <p>28--{">"} Who is the protagonist in Daniel Defoe{"'"}s <strong><em>Robinson Crusoe</em></strong></p>
-        </div>
-        <div className="answer-wrapper">
-          <div className="correct-answer">
-            <button onClick={wrongAnswerBtn_28} className="disable-btn" type="button">Friday</button>
-            <button onClick={rightAnswerBtn_28} className="disable-btn" type="button">Robinson Crusoe</button>
-          </div>
-        </div>
-        <div className="impression-section mt-3">
-          { <p className="impression-msg">{answerFound === true ? impressions_28 : answerFound === false ? impressions_28 : null}</p>}
-        </div>
-      </div>
-
-      <div className="question-container mt-3">
-        <div className="question-wrapper">
-          <p>29--{">"} Geoffrey Chaucer has dealt with Realism in his writings.</p>
-        </div>
-        <div className="answer-wrapper">
-          <div className="correct-answer">
-            <button onClick={wrongAnswerBtn_29} className="disable-btn" type="button">True</button>
-            <button onClick={rightAnswerBtn_29} className="disable-btn" type="button">False</button>
-          </div>
-        </div>
-        <div className="impression-section mt-3">
-          { <p className="impression-msg">{answerFound === true ? impressions_29 : answerFound === false ? impressions_29 : null}</p>}
-        </div>
-      </div>
-
-      <div className="question-container mt-3">
-        <div className="question-wrapper">
-          <p>30--{">"} The Angles{"'"} and the Saxons{"'"} literature is characterized by......</p>
-        </div>
-        <div className="answer-wrapper">
-          <div className="correct-answer">
-            <button onClick={rightAnswerBtn_30} className="disable-btn" type="button">Intrepidity</button>
-            <button onClick={wrongAnswerBtn_30} className="disable-btn" type="button">Boldeness</button>
-          </div>
-        </div>
-        <div className="impression-section mt-3">
-          { <p className="impression-msg">{answerFound === true ? impressions_30 : answerFound === false ? impressions_30 : null}</p>}
         </div>
       </div>
 

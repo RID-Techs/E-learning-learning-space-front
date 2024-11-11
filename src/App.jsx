@@ -9,6 +9,8 @@ import { Get_Answers } from "./Components/Get_Answers";
 import { Test } from "./Components/TEST_SECTION/Test";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { SignIn } from "./Components/SignIn";
+import { SignUp } from "./Components/SignUp";
 function App() {
 
   const router = createBrowserRouter([
@@ -17,6 +19,24 @@ function App() {
       element: (
         <ErrorBoundary fallback={<Error/>}>
           <Welcome_Page/>
+        </ErrorBoundary>
+      ),
+      errorElement: <ErrorPage/>
+    },
+    {
+      path: "/signup",
+      element: (
+        <ErrorBoundary fallback={<Error/>}>
+          <SignUp/>
+        </ErrorBoundary>
+      ),
+      errorElement: <ErrorPage/>
+    },
+    {
+      path: "/signin",
+      element: (
+        <ErrorBoundary fallback={<Error/>}>
+          <SignIn/>
         </ErrorBoundary>
       ),
       errorElement: <ErrorPage/>

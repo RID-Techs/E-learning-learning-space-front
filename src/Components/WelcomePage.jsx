@@ -1,20 +1,23 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 // Image logo, stars, star, username, password is from https://icons8.com/
 import logo from "/learns.png";
 import stars from "/stars.png";
+import reward from "/reward.png";
 import star from "/stars_2.png";
 import E_crew from "/E_crew.png";
 import courses from "/coursess.png";
 // import password from "/password.png";
 import E_member from "/E_picture.webp";
 import { toast, Zoom } from "react-toastify";
-
 export function Welcome_Page() {
   const navigate = useNavigate();
   const [showNote, setShowNote] = useState(null);
   const [hasReadNote, setHasReadNote] = useState(false);
   const [dateOfCreation, setDateOfCreation]  = useState("2024");
+
+  const getMemberStatus = localStorage.getItem("isLoggedIn");
+  const isMember = getMemberStatus === "true";
 
   const Welcome = (message) => {
     toast.success(message, {
@@ -290,7 +293,66 @@ const LoginByName = () => {
             Welcome Dear E-learning Member <img src={stars} alt="stars" />{" "}
           </h3>
         </div>
+        <div className="elearning-member-wrapper">
+          <div className="elearning-member">
+        {isMember ? <button type="button">  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="currentColor"
+>
+  <path d="M12 2a5 5 0 1 1 -5 5l.005 -.217a5 5 0 0 1 4.995 -4.783z" />
+  <path d="M14 14a5 5 0 0 1 5 5v1a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-1a5 5 0 0 1 5 -5h4z" />
+</svg> E-learning Member {isMember && <img height={32} src={reward} alt="reward" />} </button> : 
+
+<button type="button" data-bs-toggle="modal" data-bs-target="#logInMember">  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="currentColor"
+>
+  <path d="M12 2a5 5 0 1 1 -5 5l.005 -.217a5 5 0 0 1 4.995 -4.783z" />
+  <path d="M14 14a5 5 0 0 1 5 5v1a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-1a5 5 0 0 1 5 -5h4z" />
+</svg> E-learning Member</button>}
+          </div>
+        </div>
       </div>
+
+      <div className="modal" id="logInMember" tabIndex="-1">
+  <div className="modal-dialog">
+    <div className="modal-content">
+      <div className="modal-header">
+        <h5 className="modal-title text-primary-emphasis fw-bold">E-learning Member</h5>
+        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div className="modal-body">
+        <p>Sign in to access all content and new updates available exclusively to <strong>E-learning members</strong>. You can also take tests in the <strong>Test section</strong> to evaluate your learning progress and continue improving.</p>
+      </div>
+      <div className="modal-footer">
+        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <Link to={"/signin"}>
+        <button type="button" className="btn btn-primary fw-bold fst-italic" data-bs-dismiss="modal">Sign in <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  strokeWidth="2"
+  strokeLinecap="round"
+  strokeLinejoin="round"
+>
+  <path d="M9 8v-2a2 2 0 0 1 2 -2h7a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-7a2 2 0 0 1 -2 -2v-2" />
+  <path d="M3 12h13l-3 -3" />
+  <path d="M13 15l3 -3" />
+</svg> </button>
+        </Link>
+      </div>
+    </div>
+  </div>
+</div>
 
       <div className="mt-4">
         <h3 className="ms-4 me-4">
@@ -304,8 +366,6 @@ const LoginByName = () => {
           <img src={star} alt="star" />{" "}
         </h3>
       </div>
-
-
 
       <div className="login-holder mt-4">
 

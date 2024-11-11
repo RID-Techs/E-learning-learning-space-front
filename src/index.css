@@ -217,6 +217,30 @@ header{
   gap: 1em;
 }
 
+.elearning-member-wrapper {
+  align-self: center;
+  margin-top: -1em;
+}
+
+.elearning-member {
+  cursor: pointer;
+  background-image: linear-gradient(195deg, rgb(207, 253, 253), rgb(229, 218, 255));
+  border-radius: 10px;
+  box-shadow: 2px 0px 4px rgb(189, 168, 236), -2px 0px 4px rgb(93, 124, 124);
+  transition: all 0.2s ease-in-out;
+}
+.elearning-member button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  padding: 0.3em;
+  font-size: 1.2rem;
+  text-shadow: 2px 2px 2px #faf9f9;
+  font-style: italic;
+}
+.elearning-member:hover {
+  background-image: linear-gradient(-195deg, rgb(207, 253, 253), rgb(229, 218, 255));
+}
 #member{
   font-family: Lora-Italic-VariableFont_wght;
 }
@@ -498,6 +522,18 @@ header{
   flex-wrap: wrap;
   margin-left: 1em;
   gap: 1em;
+}
+
+.new-added-items{
+  align-self: self-start;
+}
+.new-added-items p {
+  padding: 0.2em;
+  color: rgb(2, 97, 2);
+  background-color: lightgreen;
+  box-shadow: 2px 2px 2px yellow;
+  border-radius: 5px;
+  margin-bottom: -0.5em;
 }
 
 .disable-style{

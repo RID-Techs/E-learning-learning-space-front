@@ -1657,7 +1657,7 @@ export function Phonetics () {
       const allBtns = document.querySelectorAll("button");
 
       checkSpinnerReset.style.display = "inline-block";
-      checkResetText.textContent = "Reseting...";
+      checkResetText.textContent = "Resetting...";
 
       setTimeout(() => {
       allBtns.forEach((btn) => {
@@ -1757,7 +1757,7 @@ export function Phonetics () {
 
       <div className="question-container mt-3">
         <div className="question-wrapper">
-          <p>2--{">"} In linguistics, the approach which studies how a language changes over a period of time is called......</p>
+          <p>2--{">"} In Linguistics, the approach which studies how a language changes over a period of time is called......</p>
         </div>
         <div className="answer-wrapper">
           <div className="correct-answer">
@@ -1862,7 +1862,7 @@ export function Phonetics () {
 
       <div className="question-container mt-3">
         <div className="question-wrapper">
-          <p>9--{">"} ......is the branch of linguistics that examines the physical properties of speech sounds.</p>
+          <p>9--{">"} ......is the branch of Linguistics that examines the physical properties of speech sounds.</p>
         </div>
         <div className="answer-wrapper">
           <div className="correct-answer">
@@ -1892,7 +1892,7 @@ export function Phonetics () {
 
       <div className="question-container mt-3">
         <div className="question-wrapper">
-          <p>11--{">"} Are <strong>articulatory phonetics, acoustic phonetics and auditory phonetics</strong> sub-branches of phonetics ?</p>
+          <p>11--{">"} Are <strong>articulatory phonetics, acoustic phonetics and auditory phonetics</strong> sub-branches of Phonetics ?</p>
         </div>
         <div className="answer-wrapper">
           <div className="correct-answer">
@@ -2091,8 +2091,8 @@ export function Phonetics () {
         </div>
         <div className="answer-wrapper">
           <div className="correct-answer">
-            <button onClick={wrongAnswerBtn_24} className="disable-btn" type="button">False</button>
-            <button onClick={rightAnswerBtn_24} className="disable-btn" type="button">True</button>
+            <button onClick={wrongAnswerBtn_24} className="disable-btn" type="button">True</button>
+            <button onClick={rightAnswerBtn_24} className="disable-btn" type="button">False</button>
           </div>
         </div>
         <div className="impression-section mt-3">
@@ -2241,8 +2241,8 @@ export function Phonetics () {
         </div>
         <div className="answer-wrapper">
           <div className="correct-answer">
-            <button onClick={rightAnswerBtn_34} className="disable-btn" type="button">Phoneme</button>
-            <button onClick={wrongAnswerBtn_34} className="disable-btn" type="button">Allophone</button>
+            <button onClick={rightAnswerBtn_34} className="disable-btn" type="button">Yes</button>
+            <button onClick={wrongAnswerBtn_34} className="disable-btn" type="button">No</button>
           </div>
         </div>
         <div className="impression-section mt-3">
@@ -2252,12 +2252,12 @@ export function Phonetics () {
 
       <div className="question-container mt-3">
         <div className="question-wrapper">
-          <p>35--{">"} Is there any relationship between Phonetics and Phonology ?</p>
+          <p>35--{">"} {`"`}p{`"`} is a......whereas [ p ] is a......</p>
         </div>
         <div className="answer-wrapper">
           <div className="correct-answer">
-            <button onClick={wrongAnswerBtn_35} className="disable-btn" type="button">No</button>
-            <button onClick={rightAnswerBtn_35} className="disable-btn" type="button">Yes</button>
+            <button onClick={wrongAnswerBtn_35} className="disable-btn" type="button">phoneme & sound</button>
+            <button onClick={rightAnswerBtn_35} className="disable-btn" type="button">letter & sound</button>
           </div>
         </div>
         <div className="impression-section mt-3">
@@ -2267,12 +2267,12 @@ export function Phonetics () {
 
       <div className="question-container mt-3">
         <div className="question-wrapper">
-          <p>36--{">"} Is there any relationship between Phonetics and Phonology ?</p>
+          <p>36--{">"} In the phonetic transcription of the word {`"`}play{`"`}, which sound is devoiced ?</p>
         </div>
         <div className="answer-wrapper">
           <div className="correct-answer">
-            <button onClick={wrongAnswerBtn_36} className="disable-btn" type="button">No</button>
-            <button onClick={rightAnswerBtn_36} className="disable-btn" type="button">Yes</button>
+            <button onClick={wrongAnswerBtn_36} className="disable-btn" type="button">[ p ]</button>
+            <button onClick={rightAnswerBtn_36} className="disable-btn" type="button">[ l ]</button>
           </div>
         </div>
         <div className="impression-section mt-3">

@@ -617,7 +617,7 @@ export function Sem_1_Grammar() {
         return;
       }
 
-      if(LowerCaseValue === "she will be travelling to lomé by 9 o'clock tomorrow." || LowerCaseValue === "tomorrow, she will be travelling to lomé by 9 o'clock."){
+      if(LowerCaseValue === "she will be travelling to lomé by 9 o'clock tomorrow" || LowerCaseValue === "tomorrow, she will be travelling to lomé by 9 o'clock" || LowerCaseValue === "she will be travelling to lomé tomorrow by 9 o'clock"){
         setEmptyInput(false);
         setAnswerFound(true);
         checkSpinner.style.display = "inline-block";
@@ -689,7 +689,7 @@ export function Sem_1_Grammar() {
         return;
       }
 
-      if(LowerCaseValue === "i worked here 2 years ago."){
+      if(LowerCaseValue === "i worked here 2 years ago"){
         setEmptyInput(false);
         setAnswerFound(true);
         checkSpinner.style.display = "inline-block";
@@ -1237,7 +1237,7 @@ export function Sem_1_Grammar() {
       const allBtns = document.querySelectorAll("button");
 
       checkSpinnerReset.style.display = "inline-block";
-      checkResetText.textContent = "Reseting...";
+      checkResetText.textContent = "Resetting...";
 
       setTimeout(() => {
       allBtns.forEach((btn) => {
@@ -1294,10 +1294,11 @@ export function Sem_1_Grammar() {
   return (
     <>
     <div className="grammar-test mt-4">
-      <h1>⦔ Take a Grammar test</h1>
+      <h1>⦔ Take an English Grammar test</h1>
       <div className="test-section mt-5">
         
       <div className="question-container">
+        <p className="fw-bold fst-italic">NB: Just type in the right answer and do not add a full stop (.) for sentences.</p>
         <div className="question-wrapper">
           <p>1--{">"} How many categories or time frames are English tenses divided into ?</p>
         </div>

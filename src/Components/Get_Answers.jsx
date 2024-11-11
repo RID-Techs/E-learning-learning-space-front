@@ -17,9 +17,12 @@ import Semester_6_Detailled_document from "../Docs/Semester_6/Semester_6_Detaill
 // Image Faq from https://www.freepik.com/
 import Faq from "/Faq.webp";
 import { useEffect, useState } from "react";
-
+import { Link } from "react-router-dom";
 export function Get_Answers() {
-  const hola = localStorage.getItem("User")
+  const hola = localStorage.getItem("User");
+  const getMemberStatus = localStorage.getItem("isLoggedIn");
+  const isMember = getMemberStatus === "true";
+
   const [checked_sem_1, setChecked_Sem_1] = useState(false);
   const [checked_sem_3, setChecked_Sem_3] = useState(false);
   const [checked_sem_5, setChecked_Sem_5] = useState(false);
@@ -268,16 +271,58 @@ export function Get_Answers() {
                 <img height={22} src={Answers} alt="Answers" /> E-learning Answer Hub{" "}
               </li>
             </a>
-            <a className="" href="Test">
+            {isMember ? <a className="" href="Test">
               <li>
                 {" "}
                 <img height={22} src={TestOne} alt="Answers" /> Tests{" "}
               </li>
-            </a>
+            </a> : 
+            <a data-bs-toggle="modal" data-bs-target="#logInMember">
+            <li>
+              {" "}
+              <img height={22} src={TestOne} alt="Answers" /> Tests{" "}
+            </li>
+          </a> }
+            
           </ul>
         </div>
         </div>
       </div>
+
+
+      <div className="modal" id="logInMember" tabIndex="-1">
+  <div className="modal-dialog">
+    <div className="modal-content">
+      <div className="modal-header">
+        <h5 className="modal-title text-primary-emphasis fw-bold">E-learning Member</h5>
+        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div className="modal-body">
+        <p>Want to take some tests ? Alright, sign in to access the <strong>Evaluation Section</strong>, available exclusively to <strong>E-learning members</strong>, where you can take tests to assess your learning progress and continue improving.</p>
+      </div>
+      <div className="modal-footer">
+        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <Link to={"/signin"}>
+        <button type="button" className="btn btn-primary fw-bold fst-italic" data-bs-dismiss="modal">Sign in <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  strokeWidth="2"
+  strokeLinecap="round"
+  strokeLinejoin="round"
+>
+  <path d="M9 8v-2a2 2 0 0 1 2 -2h7a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-7a2 2 0 0 1 -2 -2v-2" />
+  <path d="M3 12h13l-3 -3" />
+  <path d="M13 15l3 -3" />
+</svg> </button>
+        </Link>
+      </div>
+    </div>
+  </div>
+</div>
 
       <div className="container welcome_2">
         <div className="welcome-text">

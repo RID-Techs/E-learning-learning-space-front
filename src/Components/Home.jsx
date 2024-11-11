@@ -56,6 +56,8 @@ import Roman_Africain_Case_Studies from "../Docs/Semester_3/Roman_Africain_Case_
 import Roman_Africain_Exam_Paper_20_21 from "../Docs/Semester_3/Roman_Africain_Exam_Paper_20_21.pdf";
 
 import Roman_Américain_Novels from "../Docs/Semester_3/Roman_Américain_Novels.pdf";
+import Huckleberry_Finn from "../Docs/Semester_3/Huckleberry_Finn.pdf";
+import Uncle_Toms_Cabin from "../Docs/Semester_3/Uncle_Toms_Cabin.pdf";
 import Roman_Américain_Exam_Paper_20_21 from "../Docs/Semester_3/Roman_Américain_Exam_Paper_20_21.pdf";
 import Roman_Américain_Exam_Paper_21_22 from "../Docs/Semester_3/Roman_Américain_Exam_Paper_21_22.pdf";
 
@@ -92,6 +94,8 @@ import Environment_and_Literature_Exam_Paper_21_22 from "../Docs/Semester_5/Envi
 import Environment_and_Literature_Exam_Paper_22_23 from "../Docs/Semester_5/Environment_and_Literature_Exam_Paper_22_23.pdf";
 
 import Culture_and_Literature from "../Docs/Semester_5/Culture_and_Literature.pdf";
+import Things_Fall_Apart from "../Docs/Semester_5/Things_Fall_Apart.pdf";
+import Purple_Hibiscus from "../Docs/Semester_5/Purple_Hibiscus.pdf";
 import Culture_and_Literature_Novels from "../Docs/Semester_5/Culture_and_Literature_Novels.pdf";
 import Culture_and_Literature_Exam_Paper_22_23 from "../Docs/Semester_5/Culture_and_Literature_Exam_Paper_22_23.pdf";
 
@@ -252,6 +256,9 @@ export function Home() {
   const [checked_sem_2, setChecked_Sem_2] = useState(false);
   const [checked_sem_4, setChecked_Sem_4] = useState(false);
   const [checked_sem_6, setChecked_Sem_6] = useState(false);
+
+  const getMemberStatus = localStorage.getItem("isLoggedIn");
+  const isMember = getMemberStatus === "true";
 
   useEffect(() => {
     const all = document.querySelectorAll(".semester-choice ul li");
@@ -439,6 +446,56 @@ export function Home() {
       setChecked_Sem_6(true);
     }
   }, []);
+
+  useEffect(() => {
+    const getSem_3_NewBadge_1 = localStorage.getItem("Sem_3_NewBadge_1");
+    const getSem_3_NewBadge_2 = localStorage.getItem("Sem_3_NewBadge_2");
+    const getSem_5_NewBadge_1 = localStorage.getItem("Sem_5_NewBadge_1");
+    const getSem_5_NewBadge_2 = localStorage.getItem("Sem_5_NewBadge_2");
+    if(!getSem_3_NewBadge_1) {
+      localStorage.setItem("Sem_3_NewBadge_1", "true");
+    }
+    if(!getSem_3_NewBadge_2) {
+      localStorage.setItem("Sem_3_NewBadge_2", "true");
+    }
+    if(!getSem_5_NewBadge_1) {
+      localStorage.setItem("Sem_5_NewBadge_1", "true");
+    }
+    if(!getSem_5_NewBadge_2) {
+      localStorage.setItem("Sem_5_NewBadge_2", "true");
+    }
+  }, [])
+
+  const getSem_3_NewBadge_1 = localStorage.getItem("Sem_3_NewBadge_1");
+  const getSem_3_NewBadge_2 = localStorage.getItem("Sem_3_NewBadge_2");
+  const getSem_5_NewBadge_1 = localStorage.getItem("Sem_5_NewBadge_1");
+  const getSem_5_NewBadge_2 = localStorage.getItem("Sem_5_NewBadge_2");
+  const isTrue_Sem3_1 = getSem_3_NewBadge_1 === "true";
+  const isTrue_Sem3_2 = getSem_3_NewBadge_2 === "true";
+  const isTrue_Sem5_1 = getSem_5_NewBadge_1 === "true";
+  const isTrue_Sem5_2 = getSem_5_NewBadge_2 === "true";
+
+  const HideNewItemBadge_S3 = (e) => {
+    const currentItem = e.currentTarget;
+    const ToBeSeen = currentItem.getAttribute("data-actual-btn");
+    if(ToBeSeen === "btn-S3-8") {
+      localStorage.setItem("Sem_3_NewBadge_1", "false");
+    }
+    if(ToBeSeen === "btn-S3-9") {
+      localStorage.setItem("Sem_3_NewBadge_2", "false");
+    }
+  }
+  const HideNewItemBadge_S5 = (e) => {
+    const currentItem = e.currentTarget;
+    const ToBeSeen = currentItem.getAttribute("data-actual-btn");
+    if(ToBeSeen === "btn-S5-17") {
+      localStorage.setItem("Sem_5_NewBadge_1", "false");
+    }
+    if(ToBeSeen === "btn-S5-18") {
+      localStorage.setItem("Sem_5_NewBadge_2", "false");
+    }
+  }
+
 
   const pdfFiles_sem_1 = [
     {
@@ -684,76 +741,92 @@ export function Home() {
     },
     {
       id: 8,
+      name: "American Novel : Uncle Tom's Cabin by Harriet Beecher Stowe",
+      newAdded_1: isTrue_Sem3_1,
+      url: Uncle_Toms_Cabin,
+      opendoc:
+        "https://drive.google.com/file/d/1CYJxjhLyjVge5mdDVWo7yle49JXRmLcp/view?usp=drive_link",
+    },
+    {
+      id: 9,
+      name: "American Novel : The Adventures of Huckleberry Finn by Mark Twain",
+      newAdded_2: isTrue_Sem3_2,
+      url: Huckleberry_Finn,
+      opendoc:
+        "https://drive.google.com/file/d/1elzeJN_nooeQ2V2dQBO55a9IwBqf9w0f/view?usp=drive_link",
+    },
+    {
+      id: 10,
       name: "American Novel Exam_Paper 2020-2021",
       url: Roman_Américain_Exam_Paper_20_21,
       opendoc:
         "https://drive.google.com/file/d/1ruCK9PDYR6BOfVtJJp2r_L4fnbQVkTPz/view?usp=drive_link",
     },
     {
-      id: 9,
+      id: 11,
       name: "American Novel Exam_Paper 2021-2022",
       url: Roman_Américain_Exam_Paper_21_22,
       opendoc:
         "https://drive.google.com/file/d/12qD2ejMDuh4Jb59baFSwenRKusXTTKu_/view?usp=drive_link",
     },
     {
-      id: 10,
+      id: 12,
       name: "Théâtre africain : époque coloniale, Given Play (Wole Soyinka's The Lion and The Jewel)",
       url: Théâtre_africain_Plays,
       opendoc:
         "https://drive.google.com/file/d/1v_68TpKK14E1W6AgP1Aa1ICXgnRSo-QQ/view?usp=drive_link",
     },
     {
-      id: 11,
+      id: 13,
       name: "Théâtre africain Exam_Paper 2020-2021",
       url: Théâtre_africain_Exam_Paper_20_21,
       opendoc:
         "https://drive.google.com/file/d/1ooRtoQXdSnjX5xBMoH47f5Bi00eaY_qm/view?usp=drive_link",
     },
     {
-      id: 12,
+      id: 14,
       name: "Théâtre africain Exam_Paper 2021 - 2022",
       url: Théâtre_africain_Exam_Paper_21_22,
       opendoc:
         "https://drive.google.com/file/d/1g6olhFVme4o2usQblCMjR51-j7eSb8hx/view?usp=drive_link",
     },
     {
-      id: 13,
+      id: 15,
       name: "Théâtre classique anglais",
       url: Théâtre_classique_anglais,
       opendoc:
         "https://drive.google.com/file/d/1h3-HFzUXygInZ2ST7JyNHLw0pISUWKHt/view?usp=drive_link",
     },
     {
-      id: 14,
+      id: 16,
       name: "Théâtre classique anglais : Given Plays",
       url: Théâtre_classique_anglais_Plays,
       opendoc:
         "https://drive.google.com/file/d/1EV1xqvaoHFIeVg_71N-hAWJp5CWGefsL/view?usp=drive_link",
     },
     {
-      id: 15,
+      id: 17,
       name: "Théâtre classique anglais Exam_Paper 2020-2021",
       url: Théâtre_classique_anglais_Exam_Paper_20_21,
       opendoc:
         "https://drive.google.com/file/d/1xZm_mmCoPI3EJipiQx6pLGMnccBvach4/view?usp=drive_link",
     },
     {
-      id: 16,
+      id: 18,
       name: "Théâtre classique anglais Exam_Paper 2021-2022",
       url: Théâtre_classique_anglais_Exam_Paper_21_22,
       opendoc:
         "https://drive.google.com/file/d/16V1-MRfbBIjExQYob-y_PMIBClBqDUMe/view?usp=drive_link",
     },
     {
-      id: 17,
+      id: 19,
       name: "Traduction avancée",
       url: Traduction_avancée,
       opendoc:
         "https://drive.google.com/file/d/1C8MsE_Dy8ei4n958YzYoPHsLfbSYlX4k/view?usp=drive_link",
     },
     {
-      id: 18,
+      id: 20,
       name: "Traduction_avancée Exam_Paper 2021-2022",
       url: Traduction_avancée_Exam_Paper_21_22,
       opendoc:
@@ -876,6 +949,22 @@ export function Home() {
     },
     {
       id: 17,
+      name: "Littérature et Culture : Things Fall Apart by Chinua Achebe",
+      newAdded_1: isTrue_Sem5_1,
+      url: Things_Fall_Apart,
+      opendoc:
+        "https://drive.google.com/file/d/1FcahC8D9MIpBYmmGlxawHiji63FCwpki/view?usp=drive_link",
+    },
+    {
+      id: 18,
+      name: "Littérature et Culture : Purple Hibiscus by Chimamanda Ngozi Adichie",
+      newAdded_2: isTrue_Sem5_2,
+      url: Purple_Hibiscus,
+      opendoc:
+        "https://drive.google.com/file/d/1tk-UAPCsOEB-W4cOKwU-1y7HFh9IqRG9/view?usp=drive_link",
+    },
+    {
+      id: 19,
       name: "Littérature et Culture Exam_Paper 2022-2023",
       url: Culture_and_Literature_Exam_Paper_22_23,
       opendoc:
@@ -1334,6 +1423,13 @@ export function Home() {
     },
   ];
 
+  const pdfFiles_sem_3_Filtered = pdfFiles_sem_3.filter((item) => {
+    return item.id !== 8 && item.id !== 9
+  })
+  const pdfFiles_sem_5_Filtered = pdfFiles_sem_5.filter((item) => {
+    return item.id !== 17 && item.id !== 18
+  })
+
   const LoggedOut = () => {
     LogOut();
     setTimeout(() => {
@@ -1592,9 +1688,13 @@ export function Home() {
 
         {checked_sem_3 && (
           <div className="row row-cols-xl-3 row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-1 g-4">
-            {pdfFiles_sem_3.map((doc) => (
+            { isMember === true ?  pdfFiles_sem_3.map((doc) => (
               <div key={doc.id} className="col">
                 <div className="doc-item">
+                    <div className="new-added-items">
+                      {doc.newAdded_1 === true ? <p>New !</p> : null}
+                      {doc.newAdded_2 === true ? <p>New !</p> : null}
+                    </div>
                   <div className="doc-img-and-name">
                     <div>
                       <img src={docs} alt="doc" />
@@ -1605,6 +1705,8 @@ export function Home() {
                     <a
                       href={doc.opendoc}
                       rel="noopener noreferrer"
+                      data-actual-btn={`btn-S3-${doc.id}`}
+                      onClick={HideNewItemBadge_S3}
                       target="_blank"
                     >
                       <img
@@ -1618,6 +1720,8 @@ export function Home() {
                     <a
                       href={doc.url}
                       rel="noopener noreferrer"
+                      data-actual-btn={`btn-S3-${doc.id}`}
+                      onClick={HideNewItemBadge_S3}
                       download={`${doc.name}.pdf`}
                     >
                       <img
@@ -1631,52 +1735,158 @@ export function Home() {
                   </div>
                 </div>
               </div>
-            ))}
+            )) : 
+            pdfFiles_sem_3_Filtered.map((doc) => (
+              <div key={doc.id} className="col">
+                <div className="doc-item">
+                    <div className="new-added-items">
+                      {doc.newAdded_1 === true ? <p>New !</p> : null}
+                      {doc.newAdded_2 === true ? <p>New !</p> : null}
+                    </div>
+                  <div className="doc-img-and-name">
+                    <div>
+                      <img src={docs} alt="doc" />
+                    </div>
+                    <p> ~ {doc.name}</p>
+                  </div>
+                  <div className="doc-action-button">
+                    <a
+                      href={doc.opendoc}
+                      rel="noopener noreferrer"
+                      data-actual-btn={`btn-S3-${doc.id}`}
+                      onClick={HideNewItemBadge_S3}
+                      target="_blank"
+                    >
+                      <img
+                        className="me-2"
+                        height={22}
+                        src={open}
+                        alt="arrow"
+                      />{" "}
+                      Open
+                    </a>
+                    <a
+                      href={doc.url}
+                      rel="noopener noreferrer"
+                      data-actual-btn={`btn-S3-${doc.id}`}
+                      onClick={HideNewItemBadge_S3}
+                      download={`${doc.name}.pdf`}
+                    >
+                      <img
+                        className="me-2"
+                        height={22}
+                        src={download}
+                        alt="arrow"
+                      />{" "}
+                      <span className="both-screens">Download</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            ))
+            }
           </div>
         )}
 
         {checked_sem_5 && (
           <div className="row row-cols-xl-3 row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-1 g-4">
-            {pdfFiles_sem_5.map((doc) => (
-              <div key={doc.id} className="col">
-                <div className="doc-item">
-                  <div className="doc-img-and-name">
-                    <div>
-                      <img src={docs} alt="doc" />
+            {isMember === true ? 
+              pdfFiles_sem_5.map((doc) => (
+                <div key={doc.id} className="col">
+                  <div className="doc-item">
+                  <div className="new-added-items">
+                  {doc.newAdded_1 === true ? <p>New !</p> : null}
+                  {doc.newAdded_2 === true ? <p>New !</p> : null}
+                      </div>
+                    <div className="doc-img-and-name">
+                      <div>
+                        <img src={docs} alt="doc" />
+                      </div>
+                      <p> ~ {doc.name}</p>
                     </div>
-                    <p> ~ {doc.name}</p>
-                  </div>
-                  <div className="doc-action-button">
-                    <a
-                      href={doc.opendoc}
-                      rel="noopener noreferrer"
-                      target="_blank"
-                    >
-                      <img
-                        className="me-2"
-                        height={22}
-                        src={open}
-                        alt="arrow"
-                      />{" "}
-                      Open
-                    </a>
-                    <a
-                      href={doc.url}
-                      rel="noopener noreferrer"
-                      download={`${doc.name}.pdf`}
-                    >
-                      <img
-                        className="me-2"
-                        height={22}
-                        src={download}
-                        alt="arrow"
-                      />{" "}
-                      <span className="both-screens">Download</span>
-                    </a>
+                    <div className="doc-action-button">
+                      <a
+                        href={doc.opendoc}
+                        rel="noopener noreferrer"
+                        data-actual-btn={`btn-S5-${doc.id}`}
+                        onClick={HideNewItemBadge_S5}
+                        target="_blank"
+                      >
+                        <img
+                          className="me-2"
+                          height={22}
+                          src={open}
+                          alt="arrow"
+                        />{" "}
+                        Open
+                      </a>
+                      <a
+                        href={doc.url}
+                        rel="noopener noreferrer"
+                        data-actual-btn={`btn-S5-${doc.id}`}
+                        onClick={HideNewItemBadge_S5}
+                        download={`${doc.name}.pdf`}
+                      >
+                        <img
+                          className="me-2"
+                          height={22}
+                          src={download}
+                          alt="arrow"
+                        />{" "}
+                        <span className="both-screens">Download</span>
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              )) : 
+              pdfFiles_sem_5_Filtered.map((doc) => (
+                <div key={doc.id} className="col">
+                  <div className="doc-item">
+                  <div className="new-added-items">
+                  {doc.newAdded_1 === true ? <p>New !</p> : null}
+                  {doc.newAdded_2 === true ? <p>New !</p> : null}
+                      </div>
+                    <div className="doc-img-and-name">
+                      <div>
+                        <img src={docs} alt="doc" />
+                      </div>
+                      <p> ~ {doc.name}</p>
+                    </div>
+                    <div className="doc-action-button">
+                      <a
+                        href={doc.opendoc}
+                        rel="noopener noreferrer"
+                        data-actual-btn={`btn-S5-${doc.id}`}
+                        onClick={HideNewItemBadge_S5}
+                        target="_blank"
+                      >
+                        <img
+                          className="me-2"
+                          height={22}
+                          src={open}
+                          alt="arrow"
+                        />{" "}
+                        Open
+                      </a>
+                      <a
+                        href={doc.url}
+                        rel="noopener noreferrer"
+                        data-actual-btn={`btn-S5-${doc.id}`}
+                        onClick={HideNewItemBadge_S5}
+                        download={`${doc.name}.pdf`}
+                      >
+                        <img
+                          className="me-2"
+                          height={22}
+                          src={download}
+                          alt="arrow"
+                        />{" "}
+                        <span className="both-screens">Download</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              ))}
           </div>
         )}
 
