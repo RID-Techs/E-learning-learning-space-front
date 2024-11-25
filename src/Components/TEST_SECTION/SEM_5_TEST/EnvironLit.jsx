@@ -20,7 +20,7 @@ export function Lit_And_Environment () {
   const [answerFound, setAnswerFound] = useState(null);
 
   const rightAnswerBtn_1 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -38,7 +38,7 @@ export function Lit_And_Environment () {
     setImpressions_1("Congratulations! You got it.")
   }
     const wrongAnswerBtn_1 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -57,7 +57,7 @@ export function Lit_And_Environment () {
     }
 
   const rightAnswerBtn_2 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -75,7 +75,7 @@ export function Lit_And_Environment () {
     setImpressions_2("Congratulations! You got it.")
   }
     const wrongAnswerBtn_2 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -94,7 +94,7 @@ export function Lit_And_Environment () {
     }
 
   const rightAnswerBtn_3 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -112,7 +112,7 @@ export function Lit_And_Environment () {
     setImpressions_3("Congratulations! You got it.")
   }
     const wrongAnswerBtn_3 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -131,7 +131,7 @@ export function Lit_And_Environment () {
     }
 
   const rightAnswerBtn_4 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -149,7 +149,7 @@ export function Lit_And_Environment () {
     setImpressions_4("Congratulations! You got it.")
   }
     const wrongAnswerBtn_4 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -168,7 +168,7 @@ export function Lit_And_Environment () {
     }
 
   const rightAnswerBtn_5 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -186,7 +186,7 @@ export function Lit_And_Environment () {
     setImpressions_5("Congratulations! You got it.")
   }
     const wrongAnswerBtn_5 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -205,7 +205,7 @@ export function Lit_And_Environment () {
     }
 
   const rightAnswerBtn_6 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -223,7 +223,7 @@ export function Lit_And_Environment () {
     setImpressions_6("Congratulations! You got it.")
   }
     const wrongAnswerBtn_6 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -242,7 +242,7 @@ export function Lit_And_Environment () {
     }
 
   const rightAnswerBtn_7 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -260,7 +260,7 @@ export function Lit_And_Environment () {
     setImpressions_7("Congratulations! You got it.")
   }
     const wrongAnswerBtn_7 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -279,7 +279,7 @@ export function Lit_And_Environment () {
     }
 
   const rightAnswerBtn_8 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -297,7 +297,7 @@ export function Lit_And_Environment () {
     setImpressions_8("Congratulations! You got it.")
   }
     const wrongAnswerBtn_8 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -316,7 +316,7 @@ export function Lit_And_Environment () {
     }
 
   const rightAnswerBtn_9 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -334,7 +334,7 @@ export function Lit_And_Environment () {
     setImpressions_9("Congratulations! You got it.")
   }
     const wrongAnswerBtn_9 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -353,7 +353,7 @@ export function Lit_And_Environment () {
     }
 
   const rightAnswerBtn_10 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -371,7 +371,7 @@ export function Lit_And_Environment () {
     setImpressions_10("Congratulations! You got it.")
   }
     const wrongAnswerBtn_10 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -391,7 +391,7 @@ export function Lit_And_Environment () {
 
     // =========================================================
   const rightAnswerBtn_11 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -409,7 +409,7 @@ export function Lit_And_Environment () {
     setImpressions_11("Congratulations! You got it.")
   }
     const wrongAnswerBtn_11 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -430,7 +430,7 @@ export function Lit_And_Environment () {
 
     // =========================================================
   const rightAnswerBtn_12 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -448,7 +448,7 @@ export function Lit_And_Environment () {
     setImpressions_12("Congratulations! You got it.")
   }
     const wrongAnswerBtn_12 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -469,7 +469,7 @@ export function Lit_And_Environment () {
 
     // =========================================================
   const rightAnswerBtn_13 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -487,7 +487,7 @@ export function Lit_And_Environment () {
     setImpressions_13("Congratulations! You got it.")
   }
     const wrongAnswerBtn_13 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -508,7 +508,7 @@ export function Lit_And_Environment () {
 
     // =========================================================
   const rightAnswerBtn_14 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -526,7 +526,7 @@ export function Lit_And_Environment () {
     setImpressions_14("Congratulations! You got it.")
   }
     const wrongAnswerBtn_14 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -547,7 +547,7 @@ export function Lit_And_Environment () {
 
     // =========================================================
   const rightAnswerBtn_15 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -565,7 +565,7 @@ export function Lit_And_Environment () {
     setImpressions_15("Congratulations! You got it.")
   }
     const wrongAnswerBtn_15 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -586,7 +586,7 @@ export function Lit_And_Environment () {
 
     // =========================================================
   const rightAnswerBtn_16 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -604,7 +604,7 @@ export function Lit_And_Environment () {
     setImpressions_16("Congratulations! You got it.")
   }
     const wrongAnswerBtn_16 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");

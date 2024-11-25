@@ -47,7 +47,7 @@ export function Phonetics () {
   const [answerFound, setAnswerFound] = useState(null);
 
   const rightAnswerBtn_1 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -65,7 +65,7 @@ export function Phonetics () {
     setImpressions_1("Congratulations! You got it.")
   }
     const wrongAnswerBtn_1 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -84,7 +84,7 @@ export function Phonetics () {
     }
 
   const rightAnswerBtn_2 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -102,7 +102,7 @@ export function Phonetics () {
     setImpressions_2("Congratulations! You got it.")
   }
     const wrongAnswerBtn_2 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -121,7 +121,7 @@ export function Phonetics () {
     }
 
   const rightAnswerBtn_3 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -139,7 +139,7 @@ export function Phonetics () {
     setImpressions_3("Congratulations! You got it.")
   }
     const wrongAnswerBtn_3 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -158,7 +158,7 @@ export function Phonetics () {
     }
 
   const rightAnswerBtn_4 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -176,7 +176,7 @@ export function Phonetics () {
     setImpressions_4("Congratulations! You got it.")
   }
     const wrongAnswerBtn_4 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -195,7 +195,7 @@ export function Phonetics () {
     }
 
   const rightAnswerBtn_5 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -213,7 +213,7 @@ export function Phonetics () {
     setImpressions_5("Congratulations! You got it.")
   }
     const wrongAnswerBtn_5 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -232,7 +232,7 @@ export function Phonetics () {
     }
 
   const rightAnswerBtn_6 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -250,7 +250,7 @@ export function Phonetics () {
     setImpressions_6("Congratulations! You got it.")
   }
     const wrongAnswerBtn_6 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -269,7 +269,7 @@ export function Phonetics () {
     }
 
   const rightAnswerBtn_7 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -287,7 +287,7 @@ export function Phonetics () {
     setImpressions_7("Congratulations! You got it.")
   }
     const wrongAnswerBtn_7 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -306,7 +306,7 @@ export function Phonetics () {
     }
 
   const rightAnswerBtn_8 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -324,7 +324,7 @@ export function Phonetics () {
     setImpressions_8("Congratulations! You got it.")
   }
     const wrongAnswerBtn_8 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -343,7 +343,7 @@ export function Phonetics () {
     }
 
   const rightAnswerBtn_9 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -361,7 +361,7 @@ export function Phonetics () {
     setImpressions_9("Congratulations! You got it.")
   }
     const wrongAnswerBtn_9 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -380,7 +380,7 @@ export function Phonetics () {
     }
 
   const rightAnswerBtn_10 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -398,7 +398,7 @@ export function Phonetics () {
     setImpressions_10("Congratulations! You got it.")
   }
     const wrongAnswerBtn_10 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -418,7 +418,7 @@ export function Phonetics () {
 
     // =========================================================
   const rightAnswerBtn_11 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -436,7 +436,7 @@ export function Phonetics () {
     setImpressions_11("Congratulations! You got it.")
   }
     const wrongAnswerBtn_11 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -457,7 +457,7 @@ export function Phonetics () {
 
     // =========================================================
   const rightAnswerBtn_12 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -475,7 +475,7 @@ export function Phonetics () {
     setImpressions_12("Congratulations! You got it.")
   }
     const wrongAnswerBtn_12 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -496,7 +496,7 @@ export function Phonetics () {
 
     // =========================================================
   const rightAnswerBtn_13 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -514,7 +514,7 @@ export function Phonetics () {
     setImpressions_13("Congratulations! You got it.")
   }
     const wrongAnswerBtn_13 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -535,7 +535,7 @@ export function Phonetics () {
 
     // =========================================================
   const rightAnswerBtn_14 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -553,7 +553,7 @@ export function Phonetics () {
     setImpressions_14("Congratulations! You got it.")
   }
     const wrongAnswerBtn_14 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -574,7 +574,7 @@ export function Phonetics () {
 
     // =========================================================
   const rightAnswerBtn_15 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -592,7 +592,7 @@ export function Phonetics () {
     setImpressions_15("Congratulations! You got it.")
   }
     const wrongAnswerBtn_15 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -613,7 +613,7 @@ export function Phonetics () {
 
     // =========================================================
   const rightAnswerBtn_16 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -631,7 +631,7 @@ export function Phonetics () {
     setImpressions_16("Congratulations! You got it.")
   }
     const wrongAnswerBtn_16 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -652,7 +652,7 @@ export function Phonetics () {
 
     // =========================================================
   const rightAnswerBtn_17 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -670,7 +670,7 @@ export function Phonetics () {
     setImpressions_17("Congratulations! You got it.")
   }
     const wrongAnswerBtn_17 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -691,7 +691,7 @@ export function Phonetics () {
 
     // =========================================================
   const rightAnswerBtn_18 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -709,7 +709,7 @@ export function Phonetics () {
     setImpressions_18("Congratulations! You got it.")
   }
     const wrongAnswerBtn_18 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -730,7 +730,7 @@ export function Phonetics () {
 
     // =========================================================
   const rightAnswerBtn_19 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -748,7 +748,7 @@ export function Phonetics () {
     setImpressions_19("Congratulations! You got it.")
   }
     const wrongAnswerBtn_19 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -769,7 +769,7 @@ export function Phonetics () {
 
     // =========================================================
   const rightAnswerBtn_20 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -787,7 +787,7 @@ export function Phonetics () {
     setImpressions_20("Congratulations! You got it.")
   }
     const wrongAnswerBtn_20 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -808,7 +808,7 @@ export function Phonetics () {
 
     // =========================================================
   const rightAnswerBtn_21 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -826,7 +826,7 @@ export function Phonetics () {
     setImpressions_21("Congratulations! You got it.")
   }
     const wrongAnswerBtn_21 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -847,7 +847,7 @@ export function Phonetics () {
 
     // =========================================================
   const rightAnswerBtn_22 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -865,7 +865,7 @@ export function Phonetics () {
     setImpressions_22("Congratulations! You got it.")
   }
     const wrongAnswerBtn_22 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -886,7 +886,7 @@ export function Phonetics () {
 
     // =========================================================
   const rightAnswerBtn_23 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -904,7 +904,7 @@ export function Phonetics () {
     setImpressions_23("Congratulations! You got it.")
   }
     const wrongAnswerBtn_23 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -924,7 +924,7 @@ export function Phonetics () {
     // =========================================================
     // =========================================================
   const rightAnswerBtn_24 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -942,7 +942,7 @@ export function Phonetics () {
     setImpressions_24("Congratulations! You got it.")
   }
     const wrongAnswerBtn_24 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -962,7 +962,7 @@ export function Phonetics () {
     // =========================================================
     // =========================================================
   const rightAnswerBtn_25 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -980,7 +980,7 @@ export function Phonetics () {
     setImpressions_25("Congratulations! You got it.")
   }
     const wrongAnswerBtn_25 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -1000,7 +1000,7 @@ export function Phonetics () {
     // =========================================================
     // =========================================================
   const rightAnswerBtn_26 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -1018,7 +1018,7 @@ export function Phonetics () {
     setImpressions_26("Congratulations! You got it.")
   }
     const wrongAnswerBtn_26 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -1038,7 +1038,7 @@ export function Phonetics () {
     // =========================================================
     // =========================================================
   const rightAnswerBtn_27 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -1056,7 +1056,7 @@ export function Phonetics () {
     setImpressions_27("Congratulations! You got it.")
   }
     const wrongAnswerBtn_27 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -1076,7 +1076,7 @@ export function Phonetics () {
     // =========================================================
     // =========================================================
   const rightAnswerBtn_28 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -1094,7 +1094,7 @@ export function Phonetics () {
     setImpressions_28("Congratulations! You got it.")
   }
     const wrongAnswerBtn_28 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -1114,7 +1114,7 @@ export function Phonetics () {
     // =========================================================
     // =========================================================
   const rightAnswerBtn_29 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -1132,7 +1132,7 @@ export function Phonetics () {
     setImpressions_29("Congratulations! You got it.")
   }
     const wrongAnswerBtn_29 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -1152,7 +1152,7 @@ export function Phonetics () {
     // =========================================================
     // =========================================================
   const rightAnswerBtn_30 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -1170,7 +1170,7 @@ export function Phonetics () {
     setImpressions_30("Congratulations! You got it.")
   }
     const wrongAnswerBtn_30 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -1190,7 +1190,7 @@ export function Phonetics () {
     // =========================================================
     // =========================================================
   const rightAnswerBtn_31 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -1208,7 +1208,7 @@ export function Phonetics () {
     setImpressions_31("Congratulations! You got it.")
   }
     const wrongAnswerBtn_31 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -1228,7 +1228,7 @@ export function Phonetics () {
     // =========================================================
     // =========================================================
   const rightAnswerBtn_32 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -1246,7 +1246,7 @@ export function Phonetics () {
     setImpressions_32("Congratulations! You got it.")
   }
     const wrongAnswerBtn_32 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -1266,7 +1266,7 @@ export function Phonetics () {
     // =========================================================
     // =========================================================
   const rightAnswerBtn_33 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -1284,7 +1284,7 @@ export function Phonetics () {
     setImpressions_33("Congratulations! You got it.")
   }
     const wrongAnswerBtn_33 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -1305,7 +1305,7 @@ export function Phonetics () {
 
     // =========================================================
   const rightAnswerBtn_34 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -1323,7 +1323,7 @@ export function Phonetics () {
     setImpressions_34("Congratulations! You got it.")
   }
     const wrongAnswerBtn_34 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -1344,7 +1344,7 @@ export function Phonetics () {
 
     // =========================================================
   const rightAnswerBtn_35 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -1362,7 +1362,7 @@ export function Phonetics () {
     setImpressions_35("Congratulations! You got it.")
   }
     const wrongAnswerBtn_35 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -1382,7 +1382,7 @@ export function Phonetics () {
     // =========================================================
     // =========================================================
   const rightAnswerBtn_36 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -1400,7 +1400,7 @@ export function Phonetics () {
     setImpressions_36("Congratulations! You got it.")
   }
     const wrongAnswerBtn_36 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -1420,7 +1420,7 @@ export function Phonetics () {
     // =========================================================
     // =========================================================
   const rightAnswerBtn_37 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -1438,7 +1438,7 @@ export function Phonetics () {
     setImpressions_37("Congratulations! You got it.")
   }
     const wrongAnswerBtn_37 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -1458,7 +1458,7 @@ export function Phonetics () {
     // =========================================================
     // =========================================================
   const rightAnswerBtn_38 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -1476,7 +1476,7 @@ export function Phonetics () {
     setImpressions_38("Congratulations! You got it.")
   }
     const wrongAnswerBtn_38 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -1496,7 +1496,7 @@ export function Phonetics () {
     // =========================================================
     // =========================================================
   const rightAnswerBtn_39 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -1514,7 +1514,7 @@ export function Phonetics () {
     setImpressions_39("Congratulations! You got it.")
   }
     const wrongAnswerBtn_39 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -1534,7 +1534,7 @@ export function Phonetics () {
     // =========================================================
     // =========================================================
   const rightAnswerBtn_40 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -1552,7 +1552,7 @@ export function Phonetics () {
     setImpressions_40("Congratulations! You got it.")
   }
     const wrongAnswerBtn_40 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -1572,7 +1572,7 @@ export function Phonetics () {
     // =========================================================
     // =========================================================
   const rightAnswerBtn_41 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -1590,7 +1590,7 @@ export function Phonetics () {
     setImpressions_41("Congratulations! You got it.")
   }
     const wrongAnswerBtn_41 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -1610,7 +1610,7 @@ export function Phonetics () {
     // =========================================================
     // =========================================================
   const rightAnswerBtn_42 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -1628,7 +1628,7 @@ export function Phonetics () {
     setImpressions_42("Congratulations! You got it.")
   }
     const wrongAnswerBtn_42 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");

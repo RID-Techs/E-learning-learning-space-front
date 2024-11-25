@@ -30,7 +30,7 @@ export function Sem_1_Grammar() {
   const [emptyInput, setEmptyInput] = useState(null);
 
   const rightAnswerBtn_1 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -48,7 +48,7 @@ export function Sem_1_Grammar() {
     setImpressions_1("Congratulations! You got it.")
   }
     const wrongAnswerBtn_1 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -67,7 +67,7 @@ export function Sem_1_Grammar() {
     }
 
   const rightAnswerBtn_2 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -85,7 +85,7 @@ export function Sem_1_Grammar() {
     setImpressions_2("Congratulations! You got it.")
   }
     const wrongAnswerBtn_2 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -104,7 +104,7 @@ export function Sem_1_Grammar() {
     }
 
   const rightAnswerBtn_3 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -122,7 +122,7 @@ export function Sem_1_Grammar() {
     setImpressions_3("Congratulations! You got it.")
   }
     const wrongAnswerBtn_3 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -141,7 +141,7 @@ export function Sem_1_Grammar() {
     }
 
   const rightAnswerBtn_4 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -159,7 +159,7 @@ export function Sem_1_Grammar() {
     setImpressions_4("Congratulations! You got it.")
   }
     const wrongAnswerBtn_4 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -178,7 +178,7 @@ export function Sem_1_Grammar() {
     }
 
   const rightAnswerBtn_5 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -196,7 +196,7 @@ export function Sem_1_Grammar() {
     setImpressions_5("Congratulations! You got it.")
   }
     const wrongAnswerBtn_5 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -215,7 +215,7 @@ export function Sem_1_Grammar() {
     }
 
   const rightAnswerBtn_6 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -233,7 +233,7 @@ export function Sem_1_Grammar() {
     setImpressions_6("Congratulations! You got it.")
   }
     const wrongAnswerBtn_6 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -252,7 +252,7 @@ export function Sem_1_Grammar() {
     }
 
   const rightAnswerBtn_7 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -270,7 +270,7 @@ export function Sem_1_Grammar() {
     setImpressions_7("Congratulations! You got it.")
   }
     const wrongAnswerBtn_7 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -289,7 +289,7 @@ export function Sem_1_Grammar() {
     }
 
   const rightAnswerBtn_8 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -307,7 +307,7 @@ export function Sem_1_Grammar() {
     setImpressions_8("Congratulations! You got it.")
   }
     const wrongAnswerBtn_8 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -326,7 +326,7 @@ export function Sem_1_Grammar() {
     }
 
   const rightAnswerBtn_9 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -344,7 +344,7 @@ export function Sem_1_Grammar() {
     setImpressions_9("Congratulations! You got it.")
   }
     const wrongAnswerBtn_9 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -363,7 +363,7 @@ export function Sem_1_Grammar() {
     }
 
   const rightAnswerBtn_10 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -381,7 +381,7 @@ export function Sem_1_Grammar() {
     setImpressions_10("Congratulations! You got it.")
   }
     const wrongAnswerBtn_10 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
@@ -400,7 +400,7 @@ export function Sem_1_Grammar() {
     }
 
   const rightAnswerBtn_11 = (e) => {
-    const CurrentBtn = e.target;
+    const CurrentBtn = e.currentTarget;
     const nearParent = CurrentBtn.closest(".question-container");
     
     const Impressions = nearParent.querySelector(".impression-section");
@@ -418,7 +418,7 @@ export function Sem_1_Grammar() {
     setImpressions_11("Congratulations! You got it.")
   }
     const wrongAnswerBtn_11 = (e) =>{
-      const CurrentBtn = e.target;
+      const CurrentBtn = e.currentTarget;
       const nearParent = CurrentBtn.closest(".question-container");
     
       const Impressions = nearParent.querySelector(".impression-section");
