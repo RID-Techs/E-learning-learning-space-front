@@ -226,7 +226,7 @@ const LoginByName = () => {
                             </strong>{" "}
                             for more tips on the English language and essential
                             resources to help you dive deeper into the world of
-                            English like never before.
+                            English like never before. If you are already in, just click <strong>Close.</strong> Otherwise, click the button below to join the crew, and then return here.
                         </p>
                         <img
                             id="e-crew-icon"
@@ -237,6 +237,7 @@ const LoginByName = () => {
                         <a
                             href="https://chat.whatsapp.com/KEHsubuy8gKBogstCaBPzq"
                             target="_blank"
+                            onClick={CloseNoteButton}
                         >
                             {" "}
                             <svg
