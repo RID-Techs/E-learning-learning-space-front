@@ -148,6 +148,43 @@ const LoginByName = () => {
   navigate("/Home")
 }
 
+const [isLaunch, setIsLaunch] = useState(null);
+
+useEffect(() => {
+const getFromScreenLaunch = localStorage.getItem("fromScreenLaunch");
+
+const webApp = getFromScreenLaunch === "Screen";
+setIsLaunch(webApp);
+
+  let deferredPrompt;
+
+window.addEventListener("beforeinstallprompt", (e) => {
+// Prevent Chrome from showing the default prompt
+e.preventDefault();
+deferredPrompt = e;
+
+// Show your custom "Install App" button or banner
+const installBanner = document.getElementById("install-banner");
+installBanner.style.display = "block";
+
+// Handle the button click
+document.getElementById("install-btn").addEventListener("click", () => {
+  installBanner.style.display = "none"; // Hide banner
+  deferredPrompt.prompt(); // Show the install prompt
+
+  deferredPrompt.userChoice.then((choiceResult) => {
+    if (choiceResult.outcome === "accepted") {
+      console.log("User accepted");
+      localStorage.setItem("fromScreenLaunch", "Screen");
+    } else {
+      console.log("User dismissed");
+    }
+    deferredPrompt = null;
+  });
+});
+});
+}, [])
+
   return (
     <>
         {showNote && (
@@ -293,6 +330,23 @@ const LoginByName = () => {
           <h3 id="member">
             Welcome Dear E-learning Member <img src={stars} alt="stars" />{" "}
           </h3>
+
+          {isMember && !isLaunch ? (
+  <div id="install-banner">
+    <div className="banner-wrapper">
+      <div className="banner-content">
+        <p id="banner-title">✧ New Update ✧</p>
+        <p id="banner-divider">- · - - · - - · -</p>
+        <p>
+          Just click <strong>Install</strong> to turn the <strong><em>E-learning</em></strong> website into an application, making it directly accessible from your phone{"'"}s home screen for a better experience!
+        </p>
+        <button id="install-btn">Install ↯</button>
+      </div>
+    </div>
+  </div>
+) : null}
+
+
         </div>
         <div className="elearning-member-wrapper">
           <div className="elearning-member">

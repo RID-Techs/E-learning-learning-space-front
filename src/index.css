@@ -933,6 +933,63 @@ hr.divider{
   border-radius: 5px;
   box-shadow: 0px 0px 6px brown;
 }
+
+#install-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(17, 16, 16, 0.555);
+  backdrop-filter: blur(2px);
+  padding: 2em;
+  z-index: 9999;
+}
+.banner-wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#banner-title {
+  font-weight: bold;
+  color: #021553;
+  background-color: #0215531a;
+  padding: 0.2em;
+  border-radius: 5px;
+}
+.banner-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1em;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+  background-color: aliceblue;
+  border-radius: 0.5em;
+  padding: 1em;
+}
+#banner-divider {
+  text-align: center;
+  color: red;
+  font-weight: bold;
+}
+
+#install-btn{
+  outline: none;
+  border: none;
+  padding: 0.3em;
+  font-size: 1rem;
+  border-radius: 5px;
+  background-color: #021553;
+  color: #fff;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    color: #021553;
+    background-color: #ffff;
+    box-shadow: 0px 0px 3px #000;
+  }
+}
 .reveal-answer{
   background-color: rgba(127, 255, 212, 0.521);
   padding: 0.7em;
@@ -1098,6 +1155,9 @@ footer{
   a.only-desktop{
     display: none;
   }
+  .banner-content {
+    width: 100%;
+  }
 }
 
 /* ============================ */
@@ -1106,6 +1166,10 @@ footer{
 /* ============================ */
 
 @media screen and (max-width: 476px) {
+
+  .header-wraper-home{
+    gap: 0.3em;
+  }
 
   .header-elements {
     padding-right: 0.9em;
