@@ -99,6 +99,9 @@ import Purple_Hibiscus from "../Docs/Semester_5/Purple_Hibiscus.pdf";
 import Culture_and_Literature_Novels from "../Docs/Semester_5/Culture_and_Literature_Novels.pdf";
 import Culture_and_Literature_Exam_Paper_22_23 from "../Docs/Semester_5/Culture_and_Literature_Exam_Paper_22_23.pdf";
 
+import The_Bluest_Eye from "../Docs/Semester_5/The_Bluest_Eye.pdf";
+import Of_Mice_And_Men from "../Docs/Semester_5/Of_Mice_And_Men.pdf";
+
 //Semester 2
 import Anglophone_Lit from "../Docs/Semester_2/Anglophone_Lit.pdf";
 import Anglophone_Lit_Exam_20_21 from "../Docs/Semester_2/Anglophone_Lit_Exam_20_21.pdf";
@@ -448,10 +451,17 @@ export function Home() {
   }, []);
 
   useEffect(() => {
+    const getMemberStatus = localStorage.getItem("isLoggedIn");
+    const isMember = getMemberStatus === "true";
+    if(isMember) {
+
     const getSem_3_NewBadge_1 = localStorage.getItem("Sem_3_NewBadge_1");
     const getSem_3_NewBadge_2 = localStorage.getItem("Sem_3_NewBadge_2");
     const getSem_5_NewBadge_1 = localStorage.getItem("Sem_5_NewBadge_1");
     const getSem_5_NewBadge_2 = localStorage.getItem("Sem_5_NewBadge_2");
+    const getSem_5_NewBadge_3 = localStorage.getItem("Sem_5_NewBadge_3");
+    const getSem_5_NewBadge_4 = localStorage.getItem("Sem_5_NewBadge_4");
+
     if(!getSem_3_NewBadge_1) {
       localStorage.setItem("Sem_3_NewBadge_1", "true");
     }
@@ -464,16 +474,29 @@ export function Home() {
     if(!getSem_5_NewBadge_2) {
       localStorage.setItem("Sem_5_NewBadge_2", "true");
     }
+    if(!getSem_5_NewBadge_3) {
+      localStorage.setItem("Sem_5_NewBadge_3", "true");
+    }
+    if(!getSem_5_NewBadge_4) {
+      localStorage.setItem("Sem_5_NewBadge_4", "true");
+    }
+    }
+    
   }, [])
 
   const getSem_3_NewBadge_1 = localStorage.getItem("Sem_3_NewBadge_1");
   const getSem_3_NewBadge_2 = localStorage.getItem("Sem_3_NewBadge_2");
   const getSem_5_NewBadge_1 = localStorage.getItem("Sem_5_NewBadge_1");
   const getSem_5_NewBadge_2 = localStorage.getItem("Sem_5_NewBadge_2");
+  const getSem_5_NewBadge_3 = localStorage.getItem("Sem_5_NewBadge_3");
+  const getSem_5_NewBadge_4 = localStorage.getItem("Sem_5_NewBadge_4");
+  
   const isTrue_Sem3_1 = getSem_3_NewBadge_1 === "true";
   const isTrue_Sem3_2 = getSem_3_NewBadge_2 === "true";
   const isTrue_Sem5_1 = getSem_5_NewBadge_1 === "true";
   const isTrue_Sem5_2 = getSem_5_NewBadge_2 === "true";
+  const isTrue_Sem5_3 = getSem_5_NewBadge_3 === "true";
+  const isTrue_Sem5_4 = getSem_5_NewBadge_4 === "true";
 
   const HideNewItemBadge_S3 = (e) => {
     const currentItem = e.currentTarget;
@@ -493,6 +516,12 @@ export function Home() {
     }
     if(ToBeSeen === "btn-S5-18") {
       localStorage.setItem("Sem_5_NewBadge_2", "false");
+    }
+    if(ToBeSeen === "btn-S5-20") {
+      localStorage.setItem("Sem_5_NewBadge_3", "false");
+    }
+    if(ToBeSeen === "btn-S5-21") {
+      localStorage.setItem("Sem_5_NewBadge_4", "false");
     }
   }
 
@@ -970,6 +999,22 @@ export function Home() {
       opendoc:
         "https://drive.google.com/file/d/1RRTfbxDiiqQraY_uJM11-ptNCMdUzgpY/view?usp=drive_link",
     },
+    {
+      id: 20,
+      name: "Roman Modern Américain : Toni Morrison's The Bluest Eye",
+      newAdded_3: isTrue_Sem5_3,
+      url: The_Bluest_Eye,
+      opendoc:
+        "https://drive.google.com/file/d/1az3IMLt63UhXl-yu7POYInWkkmpeKPnl/view?usp=drive_link",
+    },
+    {
+      id: 21,
+      name: "Roman Modern Américain : John Steinbeck's Of Mice and Men",
+      newAdded_4: isTrue_Sem5_4,
+      url: Of_Mice_And_Men,
+      opendoc:
+        "https://drive.google.com/file/d/1eNF8QxJuUw5jJT05IBT3GqH55LvIJCZ3/view?usp=drive_link",
+    },
   ];
 
   const pdfFiles_sem_2 = [
@@ -1427,7 +1472,7 @@ export function Home() {
     return item.id !== 8 && item.id !== 9
   })
   const pdfFiles_sem_5_Filtered = pdfFiles_sem_5.filter((item) => {
-    return item.id !== 17 && item.id !== 18
+    return item.id !== 17 && item.id !== 18 && item.id !== 20 && item.id !== 21
   })
 
   const LoggedOut = () => {
@@ -1739,10 +1784,6 @@ export function Home() {
             pdfFiles_sem_3_Filtered.map((doc) => (
               <div key={doc.id} className="col">
                 <div className="doc-item">
-                    <div className="new-added-items">
-                      {doc.newAdded_1 === true ? <p>New !</p> : null}
-                      {doc.newAdded_2 === true ? <p>New !</p> : null}
-                    </div>
                   <div className="doc-img-and-name">
                     <div>
                       <img src={docs} alt="doc" />
@@ -1797,6 +1838,8 @@ export function Home() {
                   <div className="new-added-items">
                   {doc.newAdded_1 === true ? <p>New !</p> : null}
                   {doc.newAdded_2 === true ? <p>New !</p> : null}
+                  {doc.newAdded_3 === true ? <p>New !</p> : null}
+                  {doc.newAdded_4 === true ? <p>New !</p> : null}
                       </div>
                     <div className="doc-img-and-name">
                       <div>
@@ -1842,10 +1885,6 @@ export function Home() {
               pdfFiles_sem_5_Filtered.map((doc) => (
                 <div key={doc.id} className="col">
                   <div className="doc-item">
-                  <div className="new-added-items">
-                  {doc.newAdded_1 === true ? <p>New !</p> : null}
-                  {doc.newAdded_2 === true ? <p>New !</p> : null}
-                      </div>
                     <div className="doc-img-and-name">
                       <div>
                         <img src={docs} alt="doc" />
