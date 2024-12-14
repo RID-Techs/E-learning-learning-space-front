@@ -3,6 +3,7 @@ import logo from "/learns.png";
 import Homepage from "/Homepage.png";
 import Answers from "/answerss.png";
 import TestOne from "/testOne.png";
+import podcast from "/podcast.png";
 import user from "/user.png";
 import open from "/course.png";
 import download from "/download.png";
@@ -281,6 +282,18 @@ export function Get_Answers() {
             <li>
               {" "}
               <img height={22} src={TestOne} alt="Answers" /> Test{" "}
+            </li>
+          </a> }
+            {isMember ? <a className="" href="Podcast">
+              <li>
+                {" "}
+                <img height={22} src={podcast} alt="Podcast" /> E-Podcast{" "}
+              </li>
+            </a> : 
+            <a data-bs-toggle="modal" data-bs-target="#logInMember">
+            <li>
+              {" "}
+              <img height={22} src={podcast} alt="Podcast" /> E-Podcast{" "}
             </li>
           </a> }
             
