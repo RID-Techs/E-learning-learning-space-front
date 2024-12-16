@@ -338,7 +338,7 @@ export function Get_Answers() {
 </div>
 
       <div className="container welcome_2">
-        <div className="welcome-text">
+        <div className="welcome-text mt-4">
           <h2 id="welcome-message">
             {" "}
             <span id="my-semester-span">~</span> Dear {hola}{" "}
