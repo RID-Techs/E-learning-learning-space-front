@@ -151,39 +151,43 @@ const LoginByName = () => {
 const [isLaunch, setIsLaunch] = useState(null);
 
 useEffect(() => {
-const getFromScreenLaunch = localStorage.getItem("fromScreenLaunch");
+  
+      const getFromScreenLaunch = localStorage.getItem("fromScreenLaunch");
+      const webApp = getFromScreenLaunch === "Screen";
+      setIsLaunch(webApp);
 
-const webApp = getFromScreenLaunch === "Screen";
-setIsLaunch(webApp);
+      let deferredPrompt;
 
-  let deferredPrompt;
+      window.addEventListener("beforeinstallprompt", (e) => {
+        // Prevent Chrome from showing the default prompt
+        e.preventDefault();
+        deferredPrompt = e;
 
-window.addEventListener("beforeinstallprompt", (e) => {
-// Prevent Chrome from showing the default prompt
-e.preventDefault();
-deferredPrompt = e;
+        // Show your custom "Install App" button or banner
+        const installBanner = document.getElementById("install-banner");
+        if (installBanner) installBanner.style.display = "block";
 
-// Show your custom "Install App" button or banner
-const installBanner = document.getElementById("install-banner");
-installBanner.style.display = "block";
+        // Handle the button click
+        const installButton = document.getElementById("install-btn");
+        if (installButton) {
+          installButton.addEventListener("click", () => {
+            if (installBanner) installBanner.style.display = "none"; // Hide banner
+            deferredPrompt.prompt(); // Show the install prompt
 
-// Handle the button click
-document.getElementById("install-btn").addEventListener("click", () => {
-  installBanner.style.display = "none"; // Hide banner
-  deferredPrompt.prompt(); // Show the install prompt
+            deferredPrompt.userChoice.then((choiceResult) => {
+              if (choiceResult.outcome === "accepted") {
+                console.log("User accepted");
+                localStorage.setItem("fromScreenLaunch", "Screen");
+              } else {
+                console.log("User dismissed");
+              }
+              deferredPrompt = null;
+            });
+          });
+        }
+      });
+}, []);
 
-  deferredPrompt.userChoice.then((choiceResult) => {
-    if (choiceResult.outcome === "accepted") {
-      console.log("User accepted");
-      localStorage.setItem("fromScreenLaunch", "Screen");
-    } else {
-      console.log("User dismissed");
-    }
-    deferredPrompt = null;
-  });
-});
-});
-}, [])
 
   return (
     <>
@@ -331,7 +335,7 @@ document.getElementById("install-btn").addEventListener("click", () => {
             Welcome Dear E-learning Member <img src={stars} alt="stars" />{" "}
           </h3>
 
-          {isMember && !isLaunch ? (
+          {isMember && !isLaunch && window.innerWidth <= 786 ? (
   <div id="install-banner">
     <div className="banner-wrapper">
       <div className="banner-content">

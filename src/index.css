@@ -935,7 +935,7 @@ hr.divider{
 }
 
 #welcome-pod {
-  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  font-size: clamp(1.4rem, 2.2vw, 2rem);
 }
 
 
@@ -1015,8 +1015,8 @@ hr.divider{
 
 .cours-podcasts-holder {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 2em;
 }
 .cours-podcast {
@@ -1024,6 +1024,7 @@ hr.divider{
   padding: 0.5em;
   border-radius: 5px;
   box-shadow: 0px 0px 9px rgba(119, 136, 153, 0.726);
+  flex-basis: 25vw;
 }
 .cours-podcast-header p {
   background-color: #ffffffb4;
@@ -1356,5 +1357,8 @@ footer{
   }
   .inputs-wraper{
     justify-content: center;
+  }
+  .cours-podcast {
+    flex-basis: 0;
   }
 }
