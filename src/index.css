@@ -938,7 +938,6 @@ hr.divider{
   font-size: clamp(1.4rem, 2.2vw, 2rem);
 }
 
-
 .podcast-wrapper {
   margin-top: 7em;
   display: flex;

@@ -4,7 +4,7 @@
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#000000",
+  "theme_color": "rgba(233, 245, 255, 0.87)",
   "icons": [
     {
       "src": "/learns_1.png",
