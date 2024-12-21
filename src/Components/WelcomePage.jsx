@@ -188,6 +188,12 @@ useEffect(() => {
       });
 }, []);
 
+const ClosingBanner = () => {
+  const banner = document.getElementById("install-banner");
+  banner.style.display = "none";
+  localStorage.setItem("fromScreenLaunch", "Screen");
+}
+
 
   return (
     <>
@@ -339,6 +345,7 @@ useEffect(() => {
   <div id="install-banner">
     <div className="banner-wrapper">
       <div className="banner-content">
+        <div className="closing-banner"><button onClick={ClosingBanner} id="closing-banner">Close</button></div>
         <p id="banner-title">✧ New Update ✧</p>
         <p id="banner-divider">- · - - · - - · -</p>
         <p>
