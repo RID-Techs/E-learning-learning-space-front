@@ -252,7 +252,7 @@ export function Test() {
               <a className="active" href="Test">
                 <li>
                   {" "}
-                  <img height={22} src={TestOne} alt="Answers" /> Tests{" "}
+                  <img height={22} src={TestOne} alt="Answers" /> Test{" "}
                 </li>
               </a>
             </ul>
