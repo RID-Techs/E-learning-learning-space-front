@@ -1,4 +1,3 @@
-import tuto from "/E_learning_Website.mp4";
 import stars from "/stars.png";
 import logo from "/learns.png";
 import Nice from "/Nice.jpeg";
@@ -43,7 +42,7 @@ export function WebsiteTour() {
     <section className="tuto-section">
       <div className="video-holder">
         <video className="video" controls poster={Nice}>
-          <source src={tuto} type="video/mp4" />
+            <source src="https://drive.google.com/file/d/1JIm6p7DZdEHVsCbETx3B5WWVhXmOuN_R/view?usp=drive_link" type="video/mp4" />
         </video>
       </div>
     </section>
