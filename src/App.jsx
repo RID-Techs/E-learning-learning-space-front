@@ -12,6 +12,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { SignIn } from "./Components/SignIn";
 import { SignUp } from "./Components/SignUp";
 import { Podcast } from "./Components/Podcast";
+import { WebsiteTour } from "./Components/webTour";
 function App() {
 
   const router = createBrowserRouter([
@@ -74,6 +75,15 @@ function App() {
       element: (
         <ErrorBoundary fallback={<Error/>}>
           <Podcast/>
+        </ErrorBoundary>
+      ),
+      errorElement: <ErrorPage/>
+    },
+    {
+      path: "/Websitetour",
+      element: (
+        <ErrorBoundary fallback={<Error/>}>
+          <WebsiteTour />
         </ErrorBoundary>
       ),
       errorElement: <ErrorPage/>

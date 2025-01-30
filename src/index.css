@@ -1226,16 +1226,34 @@ hr.divider{
 footer{
   display: flex;
   flex-wrap: wrap;
-  padding-top: 0.3em;
-  margin-top: 4.8em;
   justify-content: space-between;
+  padding: 0.5em;
+  margin-top: 4.8em;
   background-color: rgba(249, 253, 253, 0.589);
   box-shadow: 2px 0px 2px slategray;
 }
-.footer-first-part{
+.footer-second-part{
   display: flex;
   flex-wrap: wrap;
-  gap: 2em;
+  gap: 1em;
+}
+
+.privacy {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  padding: 0.5em;
+}
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  padding: 0.5em;
+}
+
+.Phone-number {
+  display: flex;
+  padding: 0.5em;
 }
 
 .not-available{
@@ -1266,18 +1284,61 @@ footer{
 .phonetics-items {
   margin-top: 0.15em;
 }
-.rights, .author, .Phone-number{
-  margin-top: 7px;
+
+.welcome-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  padding: 2em;
 }
-.rights{
-  margin-left: 1em;
+#web-tour {
+  text-align: center;
+  text-decoration: none;
+  color: rgb(1, 1, 102);
+  background-color: #ffffffc2;
+  padding: 0.3em;
+  border-radius: 5px;
+  box-shadow: 0px 1px 1px slategrey;
+  transition: all 0.2s ease-in-out;
+    &:hover {
+      color: #ffffff;
+        background-color: rgb(1, 1, 102);
+        box-shadow: 0px 0px 5px rgba(165, 42, 42, 0.479);
+      }
 }
+.video-title {
+  margin-top: 2em;
+  display: flex;
+  justify-content: center;
+}
+.video-title h1 {
+  border-bottom: 2px dotted red;
+}
+
+.tuto-section {
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+}
+
+video {
+  height: 300px;
+  width: 300px;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px rgba(165, 42, 42, 0.479);
+  background-color: rgba(192, 192, 192, 0.829);
+  backdrop-filter: blur(33px);
+}
+/* ================================================== */
+/* ================================================== */
 
 @media screen and (max-width: 992px) {
   .welcome {
     margin-top: 17em;
   }
-
   .welcome::before{
     display: none;
   }
@@ -1293,10 +1354,18 @@ footer{
   .banner-content {
     width: 100%;
   }
-}
 
-/* ============================ */
-/* ============================ */
+  .footer-second-part {
+    margin-top: 1em;
+    padding: 0.5em;
+  }
+  .privacy {
+    gap: 1em;
+  }
+  .footer-second-part {
+    gap: 0.1em;
+  }
+}
 /* ============================ */
 /* ============================ */
 
@@ -1344,6 +1413,14 @@ footer{
     margin-top: 20em;
   }
 
+  .privacy {
+    gap: 0em;
+  }
+
+  .social-links {
+    gap: 0.5em;
+  }
+
   .welcome_2{
     flex-direction: column;
     margin-top: 13em;
@@ -1379,5 +1456,11 @@ footer{
   }
   .cours-podcast {
     flex-basis: 0;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .social-links {
+    gap: 1em;
   }
 }
