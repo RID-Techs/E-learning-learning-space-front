@@ -1323,14 +1323,35 @@ footer{
   padding: 1em;
 }
 
-video {
+.video-holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 300px;
   width: 300px;
-  border: 2px solid transparent;
   border-radius: 10px;
   box-shadow: 0px 0px 5px rgba(165, 42, 42, 0.479);
-  background-color: rgba(192, 192, 192, 0.829);
-  backdrop-filter: blur(33px);
+  background-image: linear-gradient(to left, #00000034, rgba(41, 30, 73, 0.288)), url("Nice.jpeg");
+  background-position: center;
+  background-size: cover;
+}
+
+.video-holder a {
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: bold;
+  background-color: rgba(207, 230, 253, 0.768);
+  padding: 0.5em;
+  border-radius: 5px;
+  backdrop-filter: blur(12px);
+  color: #021553;
+  box-shadow: 5px 0px 3px #053f1d81, -5px 0px 3px #053f1d81, 0px 5px 3px #053f1d81, 0px -5px 3px #053f1d81;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    background-color: #021553;
+    color: rgba(207, 230, 253, 0.768);
+    box-shadow: 5px 0px 5px #053f1d81, -5px 0px 5px #053f1d81, 0px 5px 5px #053f1d81, 0px -5px 5px #053f1d81;
+  }
 }
 /* ================================================== */
 /* ================================================== */

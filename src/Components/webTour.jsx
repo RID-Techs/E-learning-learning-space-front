@@ -1,6 +1,5 @@
 import stars from "/stars.png";
 import logo from "/learns.png";
-import Nice from "/Nice.jpeg";
 import { useEffect, useState } from "react";
 export function WebsiteTour() {
     const [dateOfCreation, setDateOfCreation]  = useState("2024");
@@ -20,7 +19,7 @@ export function WebsiteTour() {
       }, []);
   return (
     <>
-     <div className="container-fluid header-wraper-home">
+    <div className="container-fluid header-wraper-home">
             <div className="header-holder">
               <header>
                 <img height={50} src={logo} alt="E-learning" />
@@ -41,9 +40,20 @@ export function WebsiteTour() {
 
     <section className="tuto-section">
       <div className="video-holder">
-        <video className="video" controls poster={Nice}>
-            <source src="https://drive.google.com/file/d/1JIm6p7DZdEHVsCbETx3B5WWVhXmOuN_R/view?usp=drive_link" type="video/mp4" />
-        </video>
+          <a href="https://drive.google.com/file/d/1JIm6p7DZdEHVsCbETx3B5WWVhXmOuN_R/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path d="M6 4v16a1 1 0 0 0 1.524 .852l13 -8a1 1 0 0 0 0 -1.704l-13 -8a1 1 0 0 0 -1.524 .852z" />
+              </svg>
+            </span>
+            <span>Play</span>
+          </a>
       </div>
     </section>
 
