@@ -148,13 +148,19 @@ const LoginByName = () => {
   navigate("/Home")
 }
 
-const [isLaunch, setIsLaunch] = useState(null);
-
+const [isLaunch, setIsLaunch] = useState(() => {
+  const getFromScreenLaunch = localStorage.getItem("fromScreenLaunch");
+  const webApp = getFromScreenLaunch === "Screen";
+  return webApp;
+});
+  let reloadRoundTime = Number(sessionStorage.getItem("reloadRoundTime") || 1);
 useEffect(() => {
-  
-      const getFromScreenLaunch = localStorage.getItem("fromScreenLaunch");
-      const webApp = getFromScreenLaunch === "Screen";
-      setIsLaunch(webApp);
+
+  if (isMember && !isLaunch && reloadRoundTime < 2) {
+      sessionStorage.setItem("reloadRoundTime", reloadRoundTime + 1);
+      console.log("Added ng :", reloadRoundTime + 1);
+      window.location.reload();
+  }
 
       let deferredPrompt;
 
@@ -178,6 +184,7 @@ useEffect(() => {
               if (choiceResult.outcome === "accepted") {
                 console.log("User accepted");
                 localStorage.setItem("fromScreenLaunch", "Screen");
+                setIsLaunch(true);
               } else {
                 console.log("User dismissed");
               }
@@ -186,7 +193,7 @@ useEffect(() => {
           });
         }
       });
-}, []);
+}, [isLaunch, isMember, reloadRoundTime]);
 
 const ClosingBanner = () => {
   const banner = document.getElementById("install-banner");
