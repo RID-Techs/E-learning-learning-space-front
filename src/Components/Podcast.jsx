@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import { Sem_5_Podcasts } from "./Podcasts/Sem_5/AllSem_5_Podcasts";
 import { Sem_3_Podcasts } from "./Podcasts/Sem_3/All_Sem_3_Podcasts";
 import { Unavailable } from "./Podcasts/Unavailable/Unavailable";
+import { Sem_1_Podcasts } from "./Podcasts/Sem_1/All_Sem_1_Podcasts";
 
 export function Podcast () {
 
@@ -290,7 +291,7 @@ export function Podcast () {
     <div className="container mt-4">
       {isPodcastSem3 && <Sem_3_Podcasts/> }
       {isPodcastSem5 && <Sem_5_Podcasts/> }
-      {isPodcastSem1 && <Unavailable/> }
+      {isPodcastSem1 && <Sem_1_Podcasts/> }
       {isPodcastSem2 && <Unavailable/> }
       {isPodcastSem4 && <Unavailable/> }
       {isPodcastSem6 && <Unavailable/> }

@@ -5,10 +5,22 @@ import Huckleberry_Finn from "../cours_podcasts/Sem_3/Huckleberry_Finn.aac"
 import English_18_Novel from "../cours_podcasts/Sem_3/English_18_Novel.aac"
 import African_drama from "../cours_podcasts/Sem_3/African_drama.aac"
 import The_Lion_and_Jewel from "../cours_podcasts/Sem_3/The_Lion_and_Jewel.aac"
+import Morphology from "../cours_podcasts/Sem_3/Morphology.aac"
 export function Sem_3_Podcasts () {
   return (
         <div className="cours-podcasts-holder">
 
+      <div className="cours-podcast">
+        <div className="cours-podcast-header">
+          <p><span className="podcast-underliner">Podcast</span> : Morphology & Syntax</p>
+        </div>
+        <div className="cours-podcast-body">
+          <p>Content : Explanation of key concepts</p>
+          <audio controls>
+            <source src={Morphology} type="audio/aac" />
+          </audio>
+        </div>
+      </div>
           <div className="cours-podcast">
           <div className="cours-podcast-header">
             <p><span className="podcast-underliner">Podcast</span> : American Novel </p>
@@ -75,6 +87,7 @@ export function Sem_3_Podcasts () {
             </audio>
           </div>
         </div>
+
 
         </div>
   )

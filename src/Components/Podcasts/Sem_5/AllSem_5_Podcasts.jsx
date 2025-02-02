@@ -8,11 +8,47 @@ import Discourse_analysis_GRA from "../cours_podcasts/Sem_5/Grammar_In_Communica
 import Literature_Culture from "../cours_podcasts/Sem_5/Literature_Culture.aac"
 import Purple_Hibscus from "../cours_podcasts/Sem_5/Purple_Hibscus.aac"
 import Things_Apart from "../cours_podcasts/Sem_5/Things_Apart.aac"
+import Of_Mice from "../cours_podcasts/Sem_5/Of_Mice.aac"
+import Toni_Morrison_Bluest_Eye from "../cours_podcasts/Sem_5/Toni_Morrison_Bluest_Eye.aac"
+import phono_sem_5 from "../cours_podcasts/Sem_5/phono_sem_5.aac"
 
 export function Sem_5_Podcasts () {
   return (
         <div className="cours-podcasts-holder">
 
+          <div className="cours-podcast">
+          <div className="cours-podcast-header">
+            <p><span className="podcast-underliner">Podcast</span> : Morpho-Phonological Analysis </p>
+          </div>
+          <div className="cours-podcast-body">
+            <p>Content : Explanation of some key concepts</p>
+            <audio controls>
+            <source src={phono_sem_5} type="audio/aac" />
+            </audio>
+          </div>
+        </div>
+      <div className="cours-podcast">
+        <div className="cours-podcast-header">
+          <p><span className="podcast-underliner">Podcast</span> : American Novel </p>
+        </div>
+        <div className="cours-podcast-body">
+          <p>Case Study : Toni Morrison{"'"}s <em>The Bluest Eye</em></p>
+          <audio controls>
+            <source src={Toni_Morrison_Bluest_Eye} type="audio/aac" />
+          </audio>
+        </div>
+      </div>
+      <div className="cours-podcast">
+        <div className="cours-podcast-header">
+          <p><span className="podcast-underliner">Podcast</span> : American Novel </p>
+        </div>
+        <div className="cours-podcast-body">
+          <p>Case Study : John Steinbeck{"'"}s <em>Of Mice and Men</em></p>
+          <audio controls>
+            <source src={Of_Mice} type="audio/aac" />
+          </audio>
+        </div>
+      </div>
           <div className="cours-podcast">
           <div className="cours-podcast-header">
             <p><span className="podcast-underliner">Podcast</span> : 19<sup>th</sup> Century English Novel </p>
