@@ -1,6 +1,7 @@
 import logo from "/learns.png";
 import Homepage from "/Homepage.png";
 import podcast from "/podcast.png";
+import smile from "/smile.png";
 import podcast_pic from "/podcast_pic.png";
 import { useEffect, useRef, useState } from "react";
 import { Sem_5_Podcasts } from "./Podcasts/Sem_5/AllSem_5_Podcasts";
@@ -9,6 +10,9 @@ import { Unavailable } from "./Podcasts/Unavailable/Unavailable";
 import { Sem_1_Podcasts } from "./Podcasts/Sem_1/All_Sem_1_Podcasts";
 
 export function Podcast () {
+
+  const getMemberStatus = localStorage.getItem("isLoggedIn");
+  const isMember = getMemberStatus === "true";
 
   const [PodcastSem_1, setPodcastSem_1] = useState(false);
   const [PodcastSem_2, setPodcastSem_2] = useState(false);
@@ -289,12 +293,27 @@ export function Podcast () {
 
     
     <div className="container mt-4">
+        { isMember ? (
+          <>
       {isPodcastSem3 && <Sem_3_Podcasts/> }
       {isPodcastSem5 && <Sem_5_Podcasts/> }
       {isPodcastSem1 && <Sem_1_Podcasts/> }
       {isPodcastSem2 && <Unavailable/> }
       {isPodcastSem4 && <Unavailable/> }
-      {isPodcastSem6 && <Unavailable/> }
+      {isPodcastSem6 && <Unavailable />} 
+      </>) : (
+        <div className="login-needed-from-epodcast">
+          <div className="">
+                <div className="smile">
+                  <p>Hey !</p> <img height={32} src={smile} alt="smile" />
+                </div>
+                <p>
+                  To access the E-Podcast Content, please log in using your E-learning credentials.
+                </p>
+                <a href="signin">Login</a>
+          </div>
+        </div>
+      )}
     </div>
 
       <footer className="container-fluid">

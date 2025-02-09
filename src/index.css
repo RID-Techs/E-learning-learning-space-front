@@ -1353,6 +1353,38 @@ footer{
     box-shadow: 5px 0px 5px #053f1d81, -5px 0px 5px #053f1d81, 0px 5px 5px #053f1d81, 0px -5px 5px #053f1d81;
   }
 }
+.login-needed-from-epodcast {
+  display: inline-flex;
+  background-color: #ffffffa4;
+  padding: 0.5em;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px #000;
+}
+.smile {
+  display: flex;
+  gap: 0.2em;
+}
+.smile p {
+  font-weight: 400;
+}
+.smile img {
+  align-self: flex-start;
+}
+.login-needed-from-epodcast a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  background-color: #004a99;
+  padding: 0.3em 0.5em;
+  border-radius: 5px;
+  box-shadow: 0px 0px 2px #007bff;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    color: #007bff;
+    background-color: #fff;
+    box-shadow: 0px 0px 5px #007bff;
+  }
+}
 /* ================================================== */
 /* ================================================== */
 
