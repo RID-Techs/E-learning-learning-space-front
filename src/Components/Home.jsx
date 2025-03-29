@@ -195,6 +195,7 @@ import Literature_and_media_Exam_22_23 from "../Docs/Semester_6/Literature_and_m
 import { toast, Zoom } from "react-toastify";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Maintenance } from "./Maintenance/Maintenance";
 
 export function Home() {
   const navigate = useNavigate();
@@ -1501,6 +1502,7 @@ export function Home() {
 
   return (
     <>
+    <Maintenance />
       <div className="container-fluid header-wraper">
         <div className="header-holder">
           <header>

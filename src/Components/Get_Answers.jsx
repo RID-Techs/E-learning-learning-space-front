@@ -19,6 +19,7 @@ import Semester_6_Detailled_document from "../Docs/Semester_6/Semester_6_Detaill
 import Faq from "/Faq.webp";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { Maintenance } from "./Maintenance/Maintenance";
 export function Get_Answers() {
   const hola = localStorage.getItem("User");
   const getMemberStatus = localStorage.getItem("isLoggedIn");
@@ -250,6 +251,7 @@ export function Get_Answers() {
 
   return (
     <>
+    <Maintenance />
       <div className="container-fluid header-wraper">
         <div className="header-holder">
           <header>
