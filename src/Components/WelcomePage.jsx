@@ -10,7 +10,6 @@ import courses from "/coursess.png";
 // import password from "/password.png";
 import E_member from "/E_picture.webp";
 import { toast, Zoom } from "react-toastify";
-import { Maintenance } from "./Maintenance/Maintenance";
 export function Welcome_Page() {
   const navigate = useNavigate();
   const [showNote, setShowNote] = useState(null);
@@ -205,7 +204,6 @@ const ClosingBanner = () => {
 
   return (
     <>
-    <Maintenance />
         {showNote && (
             <div className="conatiner-fluid Info-holder">
             <div className="container">
@@ -429,7 +427,7 @@ const ClosingBanner = () => {
   </div>
 </div>
 
-      <div className="mt-4">
+      <div className="guide-msg">
         <h3 className="ms-4 me-4">
           {" "}
           Click the{" "}
@@ -472,14 +470,14 @@ const ClosingBanner = () => {
         </div>
         )}
 
-<footer className="container-fluid">
+<footer className="container-fluid welcome-footer">
           <div className="footer-first-part">
 
           <div className="header-holder">
-              <header>
+              <div className="header-footer">
                 <img height={32} src={logo} alt="E-learning" />
                 <h3>E-learning</h3>
-              </header>
+              </div>
             </div>
 
         </div>

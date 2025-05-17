@@ -3,7 +3,7 @@
   "short_name": "E-learning",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
+  "background_color": "#f7fffe",
   "theme_color": "rgba(233, 245, 255, 0.87)",
   "icons": [
     {

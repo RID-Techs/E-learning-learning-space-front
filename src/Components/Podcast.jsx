@@ -316,14 +316,14 @@ export function Podcast () {
       )}
     </div>
 
-      <footer className="container-fluid">
+      <footer className="container-fluid normal-footer">
         <div className="footer-first-part">
 
           <div className="header-holder">
-            <header>
+            <div className="header-footer">
               <img height={32} src={logo} alt="E-learning" />
               <h3>E-learning</h3>
-            </header>
+            </div>
           </div>
 
         </div>
