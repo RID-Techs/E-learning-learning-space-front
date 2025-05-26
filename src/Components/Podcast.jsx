@@ -259,7 +259,7 @@ export function Podcast () {
 
       <div className="container mt-2">
         <div className="podcast-semester-wrapper">
-          <h2 id="podcast-semester" > ᪣ Choose my semester </h2>
+          <h2 id="podcast-semester" > ✧ Choose my semester </h2>
         </div>
 
 
