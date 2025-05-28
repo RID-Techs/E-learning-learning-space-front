@@ -195,7 +195,7 @@ import Literature_and_media_Exam_22_23 from "../Docs/Semester_6/Literature_and_m
 import { toast, Zoom } from "react-toastify";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import { Survey } from "./Feedback/survey";
+import { Survey } from "./Feedback/survey";
 
 export function Home() {
   const navigate = useNavigate();
@@ -1508,7 +1508,7 @@ export function Home() {
 
   return (
     <>
-    <Maintenance />
+    {isSrvyVisible === false ? <Survey /> : null}
       <div className="container-fluid header-wraper">
         <div className="header-holder">
           <header>

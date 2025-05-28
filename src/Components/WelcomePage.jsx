@@ -10,7 +10,7 @@ import courses from "/coursess.png";
 // import password from "/password.png";
 import E_member from "/E_picture.webp";
 import { toast, Zoom } from "react-toastify";
-// import { Survey } from "./Feedback/survey";
+import { Survey } from "./Feedback/survey";
 export function Welcome_Page() {
   const navigate = useNavigate();
   const [showNote, setShowNote] = useState(null);
@@ -23,10 +23,7 @@ export function Welcome_Page() {
     const [isSrvyVisible, setIsSrvyVisible] = useState(() => {
     const getSrvy = localStorage.getItem("srv") || "false";
     return getSrvy !== "false";
-  });
-
-  console.log("Survey visibility:", isSrvyVisible);
-  
+  });  
 
   const Welcome = (message) => {
     toast.success(message, {
