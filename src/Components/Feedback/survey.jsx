@@ -602,7 +602,7 @@ export const Survey = () => {
       </div>
 
       {showThanks && <div className="thanks-wrapper">
-        <h5><em>Thanks for giving me a bit of your time, my dear {username} ! <span className="highlight">༆</span></em></h5>
+        <h5><em>Thank you for taking the time, my dear {username} ! <span className="highlight">༆</span></em></h5>
         <p>😉 Enjoy now !</p>
         <button onClick={endSurvey} type="button">Close</button>
       </div>}
