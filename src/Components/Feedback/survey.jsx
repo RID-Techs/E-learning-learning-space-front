@@ -20,6 +20,7 @@ export const Survey = () => {
     }
   }, [])
 
+      const [disableSubmitBtn, setDisableSubmitBtn] = useState(false);
       const [submitting, setSubmitting] = useState(false);
       const [surveyValue_1, setSurveyValue_1] = useState("");
       const [disableSurvey_1_opt_1, setDisableSurvey_1_opt_1] = useState(false);
@@ -314,10 +315,12 @@ export const Survey = () => {
   const handleSurveyQuestion_16 = (e) => {
     e.preventDefault();
     setSubmitting(true);
+    setDisableSubmitBtn(true);
 
     if(surveyValue_1 === "" || surveyValue_2 === "" || surveyValue_3 === "" || surveyValue_4 === "" || surveyValue_5 === "" || surveyValue_6 === "" || surveyValue_7 === "" || surveyValue_8 === "" || surveyValue_9 === "" || surveyValue_10 === "" || surveyValue_11 === "" || surveyValue_12 === "" || surveyValue_13 === "" || surveyValue_14 === "" || surveyValue_15 === "" || surveyValue_16 === "") {
       alert("Please answer all survey questions before submitting.");
       setSubmitting(false);
+      setDisableSubmitBtn(false);
       return;
     }
 
@@ -330,6 +333,7 @@ export const Survey = () => {
       if (error) {
         console.error("Error inserting data:", error.message);
         alert("An error occurred while submitting the survey. Please try again later.");
+        setDisableSubmitBtn(false);
         return;
       }
       if (data) {
@@ -592,7 +596,7 @@ export const Survey = () => {
               </div>
               <div className="survey-footer">
                 <button onClick={handleSurveyQuestion_16_Prev} type="button">⇠ Previous</button>
-                {isMember && <button onClick={handleSurveyQuestion_16} type="submit">{submitting ? "Processing...": "Submit ⸙"}</button>}
+                {isMember && <button type="submit" disabled={disableSubmitBtn}>{submitting ? "Processing...": "Submit ⸙"}</button>}
               </div>
             </div>}
 
