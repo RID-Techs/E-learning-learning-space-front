@@ -10,7 +10,8 @@ import courses from "/coursess.png";
 // import password from "/password.png";
 import E_member from "/E_picture.webp";
 import { toast, Zoom } from "react-toastify";
-import { Maintenance } from "./Maintenance/Maintenance";
+// import { Maintenance } from "./Maintenance/Maintenance";
+import { Survey } from "./Feedback/survey";
 export function Welcome_Page() {
   const navigate = useNavigate();
   const [showNote, setShowNote] = useState(null);
@@ -19,6 +20,14 @@ export function Welcome_Page() {
 
   const getMemberStatus = localStorage.getItem("isLoggedIn");
   const isMember = getMemberStatus === "true";
+
+    const [isSrvyVisible, setIsSrvyVisible] = useState(() => {
+    const getSrvy = localStorage.getItem("srv") || "false";
+    return getSrvy !== "false";
+  });
+
+  console.log("Survey visibility:", isSrvyVisible);
+  
 
   const Welcome = (message) => {
     toast.success(message, {
@@ -205,7 +214,6 @@ const ClosingBanner = () => {
 
   return (
     <>
-    <Maintenance />
         {showNote && (
             <div className="conatiner-fluid Info-holder">
             <div className="container">
@@ -337,6 +345,8 @@ const ClosingBanner = () => {
             </div>
         )}
 
+        {isSrvyVisible === false ? <Survey /> : null}
+
       <div className="container-fluid header-wraper-home">
         <div className="header-holder">
           <header>
@@ -358,7 +368,7 @@ const ClosingBanner = () => {
         <p id="banner-title">✧ New Update ✧</p>
         <p id="banner-divider">- · - - · - - · -</p>
         <p>
-          Just click <strong>Install</strong> to turn the <strong><em>E-learning</em></strong> website into an application, making it directly accessible from your phone{"'"}s home screen for a better experience!
+          Just click <strong>Install</strong> to turn the <strong><em>E-learning</em></strong> website into an application, making it directly accessible from your phone{"'"}s home screen for a better experience !
         </p>
         <button id="install-btn">Install ↯</button>
       </div>

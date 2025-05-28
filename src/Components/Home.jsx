@@ -195,7 +195,8 @@ import Literature_and_media_Exam_22_23 from "../Docs/Semester_6/Literature_and_m
 import { toast, Zoom } from "react-toastify";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Maintenance } from "./Maintenance/Maintenance";
+// import { Maintenance } from "./Maintenance/Maintenance";
+import { Survey } from "./Feedback/survey";
 
 export function Home() {
   const navigate = useNavigate();
@@ -207,6 +208,12 @@ export function Home() {
       transition: Zoom,
     });
   };
+
+  const [isSrvyVisible, setIsSrvyVisible] = useState(() => {
+    const getSrvy = localStorage.getItem("srv") || "false";
+    return getSrvy !== "false";
+  });
+
 
   useEffect(() => {
     function One() {
@@ -1502,7 +1509,7 @@ export function Home() {
 
   return (
     <>
-    <Maintenance />
+    {isSrvyVisible === false ? <Survey /> : null}
       <div className="container-fluid header-wraper">
         <div className="header-holder">
           <header>

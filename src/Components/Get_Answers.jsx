@@ -19,11 +19,17 @@ import Semester_6_Detailled_document from "../Docs/Semester_6/Semester_6_Detaill
 import Faq from "/Faq.webp";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Maintenance } from "./Maintenance/Maintenance";
+// import { Maintenance } from "./Maintenance/Maintenance";
+import { Survey } from "./Feedback/survey";
 export function Get_Answers() {
   const hola = localStorage.getItem("User");
   const getMemberStatus = localStorage.getItem("isLoggedIn");
   const isMember = getMemberStatus === "true";
+
+    const [isSrvyVisible, setIsSrvyVisible] = useState(() => {
+      const getSrvy = localStorage.getItem("srv") || "false";
+      return getSrvy !== "false";
+    });
 
   const [checked_sem_1, setChecked_Sem_1] = useState(false);
   const [checked_sem_3, setChecked_Sem_3] = useState(false);
@@ -251,7 +257,7 @@ export function Get_Answers() {
 
   return (
     <>
-    <Maintenance />
+    {isSrvyVisible === false ? <Survey /> : null}
       <div className="container-fluid header-wraper">
         <div className="header-holder">
           <header>
