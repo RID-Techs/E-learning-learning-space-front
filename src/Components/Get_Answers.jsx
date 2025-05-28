@@ -19,8 +19,7 @@ import Semester_6_Detailled_document from "../Docs/Semester_6/Semester_6_Detaill
 import Faq from "/Faq.webp";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-// import { Maintenance } from "./Maintenance/Maintenance";
-import { Survey } from "./Feedback/survey";
+// import { Survey } from "./Feedback/survey";
 export function Get_Answers() {
   const hola = localStorage.getItem("User");
   const getMemberStatus = localStorage.getItem("isLoggedIn");
@@ -257,7 +256,7 @@ export function Get_Answers() {
 
   return (
     <>
-    {isSrvyVisible === false ? <Survey /> : null}
+    <Maintenance />
       <div className="container-fluid header-wraper">
         <div className="header-holder">
           <header>
@@ -2306,14 +2305,14 @@ export function Get_Answers() {
 
       </div>
 
-      <footer className="container-fluid">
+      <footer className="container-fluid normal-footer">
         <div className="footer-first-part">
 
           <div className="header-holder">
-            <header>
+            <div className="header-footer">
               <img height={32} src={logo} alt="E-learning" />
               <h3>E-learning</h3>
-            </header>
+            </div>
           </div>
 
         </div>

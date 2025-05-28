@@ -259,7 +259,7 @@ export function Podcast () {
 
       <div className="container mt-2">
         <div className="podcast-semester-wrapper">
-          <h2 id="podcast-semester" > ᪣ Choose my semester </h2>
+          <h2 id="podcast-semester" > ✧ Choose my semester </h2>
         </div>
 
 
@@ -316,14 +316,14 @@ export function Podcast () {
       )}
     </div>
 
-      <footer className="container-fluid">
+      <footer className="container-fluid normal-footer">
         <div className="footer-first-part">
 
           <div className="header-holder">
-            <header>
+            <div className="header-footer">
               <img height={32} src={logo} alt="E-learning" />
               <h3>E-learning</h3>
-            </header>
+            </div>
           </div>
 
         </div>
