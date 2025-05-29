@@ -8,6 +8,8 @@ import { Sem_5_Podcasts } from "./Podcasts/Sem_5/AllSem_5_Podcasts";
 import { Sem_3_Podcasts } from "./Podcasts/Sem_3/All_Sem_3_Podcasts";
 import { Unavailable } from "./Podcasts/Unavailable/Unavailable";
 import { Sem_1_Podcasts } from "./Podcasts/Sem_1/All_Sem_1_Podcasts";
+import { Sem_6_Podcasts } from "./Podcasts/Sem_6/All_Sem_6_Podcasts";
+import { Sem_4_Podcasts } from "./Podcasts/Sem_4/All_Sem_4_Podcasts";
 
 export function Podcast () {
 
@@ -299,8 +301,8 @@ export function Podcast () {
       {isPodcastSem5 && <Sem_5_Podcasts/> }
       {isPodcastSem1 && <Sem_1_Podcasts/> }
       {isPodcastSem2 && <Unavailable/> }
-      {isPodcastSem4 && <Unavailable/> }
-      {isPodcastSem6 && <Unavailable />} 
+      {isPodcastSem4 && <Sem_4_Podcasts/> }
+      {isPodcastSem6 && <Sem_6_Podcasts />} 
       </>) : (
         <div className="login-needed-from-epodcast">
           <div className="">
