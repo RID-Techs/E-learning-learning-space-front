@@ -13,7 +13,11 @@ body{
   line-height: 1.5;
   color: #000;
   background-color: rgba(233, 245, 255, 0.87);
-  height: 100vh;
+  background-image: linear-gradient(180deg, rgba(233, 245, 255, 0.651), rgba(147, 231, 210, 0.192)), url("/educa_pic_2.png");
+  background-size: 250px;
+  background-repeat: repeat;
+  min-height: 100vh;
+  width: 100%;
 }
 
 .no-scroll {
@@ -190,7 +194,11 @@ body{
   top: 0;
   padding: 0.3em;
   width: 100%;
-  background-color: aliceblue;
+  background-image: linear-gradient(to left, rgba(198, 179, 250, 0.226), rgba(246, 255, 255, 0.699)), url("/educa_pic_2.png");
+  background-position: top;
+  background-size: cover;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   box-shadow: 4px 0px 4px brown;
   z-index: 1000;
 }
@@ -211,7 +219,9 @@ body{
   left: 0;
   width: 100%;
   padding: 0.7em;
-  background-color: aliceblue;
+  background-color: rgba(233, 245, 255, 0.932);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
   box-shadow: 4px 0px 4px brown;
   z-index: 2;
 }
@@ -267,7 +277,7 @@ header{
   list-style: none;
   text-decoration: none;
   border: 1px solid rgb(52, 177, 177);
-  background-color: aliceblue;
+  background-color: rgba(240, 248, 255, 0.781);
   box-shadow: 0px 4px 2px rgb(0, 100, 139);
   border-radius: 5px;
   padding: 0.5em;
@@ -302,7 +312,11 @@ header{
 }
 
 .test-wraper {
-  background-color: rgba(233, 245, 255, 0.87);
+  background-image: linear-gradient(to left, rgba(198, 179, 250, 0.226), rgba(246, 255, 255, 0.699)), url("/educa_pic_2.png");
+  background-position: top;
+  background-size: cover;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   box-shadow: 0px 1px 6px rgba(165, 42, 42, 0.486);
   padding: 0.3em;
   overflow: hidden;
@@ -907,9 +921,40 @@ hr.divider{
   flex-direction: column;
   gap: 1em;
   padding: 0.7em;
-  background-color: rgb(244, 250, 255);
+  background-color: rgba(244, 250, 255, 0.432);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
   box-shadow: 0px 0px 4px brown;
   border-radius: 5px;
+  position: relative;
+}
+
+.doc-item::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  background-color: rgba(76, 121, 51, 0.671);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border-top-left-radius: 5px;
+  z-index: -10;
+}
+.doc-item::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  right: 0;
+  height: 20px;
+  width: 20px;
+  background-color: rgba(80, 2, 50, 0.527);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border-top-left-radius: 15px;
+  border-bottom-right-radius: 5px;
+  z-index: -10;
 }
 .doc-img-and-name{
   display: flex;
@@ -927,11 +972,11 @@ hr.divider{
   justify-content: center;
   text-decoration: none;
   color: #000;
-  background-color: aliceblue;
+  background-color: rgba(240, 248, 255, 0.349);
   border: 1px dotted red;
   padding: 0.5em;
   border-radius: 5px;
-  box-shadow: 2px 2px 2px brown;
+  box-shadow: 2px 2px 2px rgba(49, 58, 1, 0.822), -2px -2px 2px rgba(33, 1, 92, 0.397);
   transition: all 0.2s ease-in-out;
 }
 .doc-item a:hover{
@@ -949,10 +994,35 @@ hr.divider{
   box-shadow: 0px 0px 1px silver;
 }
 .faq-holder{
-  background-color: rgb(244, 250, 255);
+  background-color: rgba(244, 250, 255, 0.432);
   padding: 1em;
   border-radius: 5px;
   box-shadow: 0px 0px 6px brown;
+  position: relative;
+}
+
+.faq-holder::before {
+  position: absolute;
+  content: "٭";
+  top: 0;
+  left: 0;
+  margin-top: -0.5em;
+  font-size: 2rem;
+  color: rgb(104, 21, 21);
+  text-shadow: 2px 2px 3px rgb(255, 255, 0);
+  border-top-left-radius: 5px;
+}
+.faq-holder::after {
+  position: absolute;
+  content: "⬫";
+  bottom: 0;
+  right: 0;
+  margin-bottom: -0.3em;
+  margin-right: -0.1em;
+  font-size: 3rem;
+  color: rgb(207, 152, 1);
+  text-shadow: 2px 2px 2px rgb(1, 1, 87), -2px 2px 2px rgb(1, 1, 87);
+  border-top-left-radius: 5px;
 }
 
 #welcome-pod {
@@ -1235,7 +1305,9 @@ footer{
   justify-content: space-between;
   padding: 0.3em;
   margin-top: 4.8em;
-  background-color: rgba(249, 253, 253, 0.589);
+  background-color: rgba(249, 253, 253, 0.233);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
   box-shadow: 2px 0px 2px slategray;
 }
 .header-footer {
