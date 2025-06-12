@@ -106,7 +106,7 @@ export function SignIn() {
         </div>
       </div>
 
-      <div className="mt-4">
+      <div className="sign-up-and-in-holder">
         <h3 className="ms-4">
           Sign in to get access to the E-learning learning space{" "}
           <img src={star} alt="star" />{" "}
@@ -144,7 +144,7 @@ export function SignIn() {
           </form>
         </div>
 
-        <div className="">
+        <div className="e-member-picture-holder">
           <img height={350} src={E_member} alt="learning" />
         </div>
       </div>

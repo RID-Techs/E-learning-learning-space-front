@@ -1,4 +1,5 @@
 const academic_Writing = "https://oousnjsxqzaocpqjfvkp.supabase.co/storage/v1/object/public/e-learning/Sem_6/Acdemic_writing.aac"
+const literary_theory = "https://oousnjsxqzaocpqjfvkp.supabase.co/storage/v1/object/public/e-learning/Sem_6/Theory.aac"
 export function Sem_6_Podcasts () {
   return (
         <div className="cours-podcasts-holder">
@@ -11,6 +12,18 @@ export function Sem_6_Podcasts () {
             <p>Content : Explanation of the course</p>
             <audio controls>
             <source src={academic_Writing} type="audio/aac" />
+            </audio>
+          </div>
+        </div>
+
+          <div className="cours-podcast">
+          <div className="cours-podcast-header">
+            <p><span className="podcast-underliner">Podcast</span> : Literary Theory and Criticism </p>
+          </div>
+          <div className="cours-podcast-body">
+            <p>Content : Explanation of the course</p>
+            <audio controls>
+            <source src={literary_theory} type="audio/aac" />
             </audio>
           </div>
         </div>

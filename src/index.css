@@ -232,6 +232,10 @@ header{
   gap: 0.5em;
 }
 
+.sign-up-and-in-holder {
+  margin-top: 8em;
+}
+
 .elearning-member {
   cursor: pointer;
   background-image: linear-gradient(195deg, rgb(207, 253, 253), rgb(229, 218, 255));
@@ -1520,6 +1524,15 @@ footer{
     padding-bottom: 0.6em;
   }
 
+  .sign-up-and-in-holder {
+  margin-top: 17em;
+}
+
+  .e-member-picture-holder {
+    display: flex;
+    justify-content: center;
+  }
+
   .guide-msg {
     margin-top: 19em;
   }
@@ -1619,5 +1632,14 @@ footer{
 @media screen and (max-width: 360px) {
   .social-links {
     gap: 1em;
+  }
+}
+@media screen and (max-width: 320px) {
+  .e-member-picture-holder {
+    display: flex;
+    justify-content: center;
+  }
+  .e-member-picture-holder img {
+    height: 280px;
   }
 }
