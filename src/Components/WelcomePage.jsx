@@ -353,7 +353,7 @@ const ClosingBanner = () => {
 
         <div className="header-elements">
           <h3 id="member">
-            Welcome Dear E-learning Member <img src={stars} alt="stars" />{" "}
+            Welcome Dear E-learning Member <img className="member-stars" src={stars} alt="stars" />{" "}
           </h3>
 
           {isMember && !isLaunch && window.innerWidth <= 786 ? (

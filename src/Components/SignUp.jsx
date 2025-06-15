@@ -96,7 +96,7 @@ export function SignUp() {
 
         <div className="header-elements">
           <h3 id="member">
-            Welcome Dear E-learning Member <img src={stars} alt="stars" />{" "}
+            Welcome Dear E-learning Member <img className="member-stars" src={stars} alt="stars" />{" "}
           </h3>
         </div>
       </div>

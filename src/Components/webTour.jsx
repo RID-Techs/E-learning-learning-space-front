@@ -29,12 +29,12 @@ export function WebsiteTour() {
     
             <div className="header-elements">
               <h3 id="member">
-                Welcome Dear E-learning Member <img src={stars} alt="stars" />{" "}
+                Welcome Dear E-learning Member <img className="member-stars" src={stars} alt="stars" />{" "}
               </h3>
             </div>
           </div>
 
-          <div className="video-title">
+          <div className="video-title sign-up-and-in-holder">
               <h1>E-learning Website tour</h1>
           </div>
 
