@@ -13,6 +13,7 @@ import { SignIn } from "./Components/SignIn";
 import { SignUp } from "./Components/SignUp";
 import { Podcast } from "./Components/Podcast";
 import { WebsiteTour } from "./Components/webTour";
+import { Survey } from "./Components/Feedback/survey";
 function App() {
 
   const router = createBrowserRouter([
@@ -84,6 +85,15 @@ function App() {
       element: (
         <ErrorBoundary fallback={<Error/>}>
           <WebsiteTour />
+        </ErrorBoundary>
+      ),
+      errorElement: <ErrorPage/>
+    },
+    {
+      path: "/Survey",
+      element: (
+        <ErrorBoundary fallback={<Error/>}>
+          <Survey />
         </ErrorBoundary>
       ),
       errorElement: <ErrorPage/>

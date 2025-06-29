@@ -3,12 +3,8 @@ import "./survey.css";
 import supabase from "../../Config/DbConnect"
 export const Survey = () => {
   const [showThanks, setShowThanks] = useState(false);
-  const [isMember, setIsMember] = useState(false);
   const [username, setUsername] = useState("");
   useEffect(() => {
-    const getMemberStatus = localStorage.getItem("isLoggedIn");
-    const checkMembersip = getMemberStatus === "true";
-    setIsMember(checkMembersip);
     const user = localStorage.getItem("User") ?? "E-member";
     if(user) {
       setUsername(user);
@@ -357,7 +353,7 @@ export const Survey = () => {
     <main>
       <div className="survey-wrapper">
       <h1><span className="highlight">♨</span> Hey {username}, <br /> E-learning is now back.</h1>
-      {showThanks === false && <p id="survey-introductory-msg">Well, let's go through a short and quick survey regarding E-learning.</p> }
+      {showThanks === false && <p id="survey-introductory-msg">Well, let{"'"}s go through a short and quick survey regarding E-learning.</p> }
       <div className="survey-container">
         <form onSubmit={handleSurveyQuestion_16}>
 
@@ -515,7 +511,7 @@ export const Survey = () => {
             </div>}
             {surveyQuestion_11 && <div className="survey-group">
               <div className="survey-header">
-                <h4><span className="highlight">⚶</span> Do you have any suggestions ? If so, please share ! Otherwise, just write <strong><em>'No suggestion'</em></strong>.</h4>
+                <h4><span className="highlight">⚶</span> Do you have any suggestions ? If so, please share ! Otherwise, just write <strong><em>{"'"}No suggestion{"'"}</em></strong>.</h4>
               </div>
               <div className="survey-body">
                 <div className="survey-area">
@@ -596,7 +592,7 @@ export const Survey = () => {
               </div>
               <div className="survey-footer">
                 <button onClick={handleSurveyQuestion_16_Prev} type="button">⇠ Previous</button>
-                {isMember && <button type="submit" disabled={disableSubmitBtn}>{submitting ? "Processing...": "Submit ⸙"}</button>}
+                <button type="submit" disabled={disableSubmitBtn}>{submitting ? "Processing...": "Submit ⸙"}</button>
               </div>
             </div>}
 

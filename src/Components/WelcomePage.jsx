@@ -10,7 +10,6 @@ import courses from "/coursess.png";
 // import password from "/password.png";
 import E_member from "/E_picture.webp";
 import { toast, Zoom } from "react-toastify";
-import { Survey } from "./Feedback/survey";
 export function Welcome_Page() {
   const navigate = useNavigate();
   const [showNote, setShowNote] = useState(null);
@@ -19,11 +18,6 @@ export function Welcome_Page() {
 
   const getMemberStatus = localStorage.getItem("isLoggedIn");
   const isMember = getMemberStatus === "true";
-
-    const [isSrvyVisible, setIsSrvyVisible] = useState(() => {
-    const getSrvy = localStorage.getItem("srv") || "false";
-    return getSrvy !== "false";
-  });  
 
   const Welcome = (message) => {
     toast.success(message, {
@@ -341,8 +335,6 @@ const ClosingBanner = () => {
             </div>
         )}
 
-        {isSrvyVisible === false ? <Survey /> : null}
-
       <div className="container-fluid header-wraper-home">
         <div className="header-holder">
           <header>
@@ -454,6 +446,7 @@ const ClosingBanner = () => {
     <div className="welcome-actions">
             <button onClick={EnterMySession} id="login-button"> <img height={32} src={courses} alt="user" /> Open my Learning Space</button>
             {isMember && <a id="web-tour" href="Websitetour" target="_blank">⋄⦂ Click me to make a nice tour of the website !</a>}
+            <a id="survey-link" href="Survey">Have some feedback ? Take the survey ፦</a>
     </div>
 </div>)}
 
