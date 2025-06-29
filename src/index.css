@@ -1014,20 +1014,21 @@ hr.divider{
   content: "٭";
   top: 0;
   left: 0;
+  margin-left: 0.1em;
   margin-top: -0.5em;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: rgb(104, 21, 21);
   text-shadow: 2px 2px 3px rgb(255, 255, 0);
   border-top-left-radius: 5px;
 }
 .faq-holder::after {
   position: absolute;
-  content: "⬫";
+  content: "࠰";
   bottom: 0;
   right: 0;
-  margin-bottom: -0.3em;
-  margin-right: -0.1em;
-  font-size: 3rem;
+  margin-bottom: -0.4em;
+  margin-right: 0.1em;
+  font-size: 1.7rem;
   color: rgb(207, 152, 1);
   text-shadow: 2px 2px 2px rgb(1, 1, 87), -2px 2px 2px rgb(1, 1, 87);
   border-top-left-radius: 5px;
