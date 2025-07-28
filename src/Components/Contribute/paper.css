@@ -1,0 +1,287 @@
+.form-container {
+  display: flex;
+  justify-content: center;
+}
+
+form {
+  max-width: 300px;
+  width: 100%;
+}
+
+label {
+  font-weight:500;
+}
+
+#semester-level, #teaching-unit, #paper-year {
+  outline: none;
+  padding: 0.5em;
+  border-radius: 5px;
+  background-color: #ffffff7c;
+  backdrop-filter: blur(3px);
+  border: 2px solid #0254a194;
+  font-size: 1.1rem;
+}
+
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+  margin: 1em 0;
+}
+
+.upload-picture-wrapper {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#upload-picture {
+  display: none;
+}
+#upload-picture-holder {
+  display: inline-flex;
+  background-color: #043d7494;
+  padding: 1em;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px #291a4694;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background-color: #01182e94;
+    box-shadow: 0px 0px 9px #fff;
+  }
+}
+
+.change-img-holder {
+  display: flex;
+  justify-content: center;
+}
+
+#change-img {
+  padding: 0.2em;
+  font-size: 1.1rem;
+  border: none;
+  box-shadow: 0px 0px 3px #000;
+  border-radius: 5px;
+  &:hover {
+    background-color: rgba(119, 207, 230, 0.233);
+  }
+}
+
+.paper-submit-btn-holder {
+  display: flex;
+  justify-content: center;
+}
+
+#paper-submit-btn {
+  outline: none;
+  padding: 0.3em;
+  font-size: 1.1rem;
+  font-weight: bold;
+  background-color: rgb(32, 1, 170);
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    box-shadow: 3px 3px 3px #000;
+  }
+}
+
+#loading-circle {
+  position: relative;
+  margin-right: 2em;
+  margin-left: 0.5em;
+}
+
+#loading-circle::before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  background-color: rgb(32, 1, 170);
+  border-top: 2px solid rgb(32, 1, 170);
+  border-bottom: 2px solid rgb(32, 1, 170);
+  border-left: 2px solid #fff;
+  border-right: 2px solid #fff;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  animation: turn 0.5s linear infinite;
+}
+
+@keyframes turn {
+  from {
+    transform: rotate(0deg);
+  } to {
+    transform: rotate(360deg);
+  }
+}
+
+.exam-paper-welcome-msg {
+  padding: 1em;
+}
+.exam-paper-welcome-msg h4{
+  padding-bottom: 0.5em;
+  text-align: center;
+  line-height: 1.5em;
+}
+
+.contribute-msg-group {
+  font-size: 1.2rem;
+  line-height: 1em;
+}
+
+.contribute-msg-group p:first-child {
+  line-height: 1.5em;
+}
+
+.contribute-msg-group p:last-child {
+  line-height: 1.7em;
+}
+
+#contribute-link {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  background-color: rgb(32, 1, 170);
+  padding: 0.3em;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    box-shadow: 3px 3px 3px #000;
+    background-color: rgb(32, 1, 170);
+  }
+}
+
+.semester-boxes-wrapper {
+  padding: 1em;
+}
+
+.semesters-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  justify-content: center;
+}
+
+.semester-checkbox {
+  display: none;
+}
+
+.semester-checkbox-custom-checked-wrapper {
+  background-color: #fff;
+  box-shadow: 0px 0px 9px #043e74;
+  border: 2px solid #fff;
+  padding: 0.3em 0.5em;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.semester-checkbox-custom-unchecked-wrapper {
+  background-color: #1d184994;
+  border: 2px solid rgb(196, 6, 164);
+  box-shadow: inset 0px 0px 9px #043e74;
+  color: #fff;
+  padding: 0.3em 0.5em;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.semester-checkbox-custom-checked {
+  position: relative;
+  margin-right: 1.4em;
+}
+.semester-checkbox-custom-checked::before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  background-color: #fff;
+  box-shadow: 0px 0px 9px #043e74;
+  border: 2px solid #fff;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  animation: fadeIn 0.5s ease-in-out;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.semester-checkbox-custom-checked::after {
+  position: absolute;
+  content: "√";
+  color: #043e74;
+  font-size: 1.4rem;
+  font-weight: bold;
+  height: 16px;
+  width: 8px;
+  background-color: transparent;
+  top: 0;
+  left: 0;
+  margin-left: 0.2em;
+  margin-top: -0.4em;
+  transform: rotate(25deg);
+  transition: all 0.3s ease-in-out;
+  animation: come-in 0.3s ease-in-out;
+}
+
+@keyframes come-in {
+  from {
+    transform: rotate(25deg) translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: rotate(25deg) translateY(0);
+    opacity: 1;
+  }
+}
+
+.semester-checkbox-custom-unchecked {
+  position: relative;
+  margin-right: 1.4em;
+}
+.semester-checkbox-custom-unchecked::before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  background-color: #fff;
+  box-shadow: 0px 0px 9px #043e74;
+  border: 2px solid #fff;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.no-semester-selected-msg-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+}
+
+.no-semester-selected-msg {
+  display: inline-flex;
+  gap: 0.5em;
+  padding: 1em;
+  border: 1px solid #00000054;
+  border-radius: 5px;
+  background-color: #ffffff49;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  color: #000;
+}
+
+.no-semester-selected-msg p {
+  margin: 0;
+  font-size: 1.1rem;
+}

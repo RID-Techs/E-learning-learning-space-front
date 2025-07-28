@@ -1483,7 +1483,6 @@ export function Home() {
   };
 
   const [dateOfCreation, setDateOfCreation] = useState("2024");
-
   useEffect(() => {
     const getYear = () => {
       const currentYear = new Date().getFullYear().toString();

@@ -345,7 +345,7 @@ const ClosingBanner = () => {
 
         <div className="header-elements">
           <h3 id="member">
-            Welcome Dear E-learning Member <img className="member-stars" src={stars} alt="stars" />{" "}
+            Welcome Dear E-learning Member <img className="member-stars" height={42} src={stars} alt="stars" />{" "}
           </h3>
 
           {isMember && !isLaunch && window.innerWidth <= 786 ? (
@@ -446,7 +446,8 @@ const ClosingBanner = () => {
     <div className="welcome-actions">
             <button onClick={EnterMySession} id="login-button"> <img height={32} src={courses} alt="user" /> Open my Learning Space</button>
             {isMember && <a id="web-tour" href="Websitetour" target="_blank">⋄⦂ Click me to make a nice tour of the website !</a>}
-            <a id="survey-link" href="Survey">Have some feedback ? Take the survey ፦</a>
+            <a id="survey-link" href="Survey">Have some feedback ? Take a quick survey ፦ </a>
+            <a id="exam-papers-link" href="/Exam-papers/"> <span id="exam-papers-icon">࠰⊱</span> E-Collection Of Papers 🪴</a>
     </div>
 </div>)}
 

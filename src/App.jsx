@@ -14,6 +14,8 @@ import { SignUp } from "./Components/SignUp";
 import { Podcast } from "./Components/Podcast";
 import { WebsiteTour } from "./Components/webTour";
 import { Survey } from "./Components/Feedback/survey";
+import { ExamPapersWrapper } from "./Components/Add_Paper_holder";
+import { GetAllExamPapersWrapper } from "./Components/All_Exam_Papers_Holder";
 function App() {
 
   const router = createBrowserRouter([
@@ -85,6 +87,24 @@ function App() {
       element: (
         <ErrorBoundary fallback={<Error/>}>
           <WebsiteTour />
+        </ErrorBoundary>
+      ),
+      errorElement: <ErrorPage/>
+    },
+    {
+      path: "/Exam-papers/add",
+      element: (
+        <ErrorBoundary fallback={<Error/>}>
+          <ExamPapersWrapper />
+        </ErrorBoundary>
+      ),
+      errorElement: <ErrorPage/>
+    },
+    {
+      path: "/Exam-papers",
+      element: (
+        <ErrorBoundary fallback={<Error/>}>
+          <GetAllExamPapersWrapper />
         </ErrorBoundary>
       ),
       errorElement: <ErrorPage/>
