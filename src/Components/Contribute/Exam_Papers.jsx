@@ -119,13 +119,22 @@ export function AddExamPapers () {
     const sendData = async (e) => {
       e.preventDefault();
       setSubmitStatus("pending");
-      if(!choosedSemester || !choosedTeachingUnit || !paperYear) {
-        MendatoryFields("Please, All fields are required !");
+      if(!choosedSemester) {
+        MendatoryFields("Please, Semesters !");
         setSubmitStatus("completed");
         return;
       }
-
-     if (!examPaperImg) {
+      if(!choosedTeachingUnit) {
+        MendatoryFields("Please, Teaching Unit !");
+        setSubmitStatus("completed");
+        return;
+      }
+      if(!paperYear) {
+        MendatoryFields("Please, Paper Year !");
+        setSubmitStatus("completed");
+        return;
+      }
+      if (!examPaperImg) {
       MendatoryFields("No file selected.");
       setSubmitStatus("completed");
       return;
