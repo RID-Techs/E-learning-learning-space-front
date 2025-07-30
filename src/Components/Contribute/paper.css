@@ -99,7 +99,7 @@ label {
   content: "";
   height: 20px;
   width: 20px;
-  background-color: rgb(32, 1, 170);
+  background-color: transparent;
   border-top: 2px solid rgb(32, 1, 170);
   border-bottom: 2px solid rgb(32, 1, 170);
   border-left: 2px solid #fff;
@@ -284,4 +284,208 @@ label {
 .no-semester-selected-msg p {
   margin: 0;
   font-size: 1.1rem;
+}
+
+#contribute-again {
+  color: #043e74;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    color: #0254a1;
+    text-decoration: none;
+  }
+}
+
+.teaching-units-section {
+  padding: 1em;
+  animation: show-up 0.5s ease-in-out;
+}
+
+.choose-exam-paper-semester-title {
+  text-align: center;
+}
+.choose-exam-paper-semester-title span, #teaching-units-section-title span {
+  text-decoration: underline dashed #043e74;
+  text-underline-offset: 4px;
+}
+
+@keyframes show-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.units-holder {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  justify-content: center;
+  gap: 0.5em;
+  padding: 1em;
+}
+
+.units-holder li {
+  list-style: none;
+  padding: 0.3em 1em;
+  border: 1px solid #043e74;
+  border-radius: 5px;
+  margin-bottom: 0.5em;
+  background-color: #ffffff7c;
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+}
+
+.units-holder li:hover {
+  background-color: rgba(255, 255, 255, 0.85);
+  cursor: pointer;
+}
+
+.units-holder li button {
+  outline: none;
+  border: none;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  color: #fff;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  background-color: #0254a1;
+  padding: 0.3em;
+  margin-bottom: 1em;
+  border-radius: 5px;
+  display: inline-block;
+  box-shadow: 5px 3px 1px #c406a4;
+}
+
+.units-holder li a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.unit-info-header {
+  display: flex;
+  align-items: center;
+  gap: 0.2em;
+  margin-bottom: 1em;
+}
+
+.unit-info-header p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #043e74;
+  padding-top: 0.7em;
+}
+
+.unit-info-body {
+  display: flex;
+  justify-content: center;
+}
+
+.display-papers-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #eef7fcef;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: 2000;
+  overflow-y: scroll;
+  padding: 1em;
+}
+
+.display-papers-holder {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  justify-content: center;
+  padding: 1em;
+  gap: 1em;
+}
+
+.paper-info-header {
+  display: flex;
+  justify-content: center;
+}
+
+.paper-info-header img {
+  object-fit: contain;
+  width: 250px;
+  height: 200px;
+}
+
+.paper-item {
+  border: 2px solid transparent;
+  border-radius: 5px;
+  padding: 1em;
+  background-color: #ffffff7c;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  transition: all 0.3s ease-in-out;
+
+}
+
+.paper-info-body {
+  margin-top: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.paper-info-body h5 {
+  text-align: center;
+  line-height: 1.5em;
+}
+
+.paper-info-body p {
+  font-size: 1.1rem;
+}
+
+.close-display-papers-body {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.close-display-papers-body button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: #fff;
+  color: #043e74;
+  border: 1px solid #043e74;
+  font-weight: bold;
+  padding: 0.3em 1em;
+  margin-right: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    color: #fff;
+    background-color: #0254a1;
+    box-shadow: 0px 0px 5px #000;
+  }
+}
+
+.paper-info-footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+}
+.paper-info-footer a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  background-color: #043e74;
+  padding: 0.3em;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+    &:hover {
+    background-color: #0254a1;
+    box-shadow: 0px 0px 5px #000;
+  }
 }

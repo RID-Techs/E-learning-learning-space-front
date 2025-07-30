@@ -1,8 +1,13 @@
 import { useState } from "react";
-// import supabase from "../../Config/DbConnect";
 import "./paper.css";
 import warning from "/warning.png";
 import { useEffect } from "react";
+import { Semester1Units } from "./Teaching_Units/Sem_1_2/Sem_1_Units";
+import { Semester2Units } from "./Teaching_Units/Sem_1_2/Sem_2_Units";
+import { Semester3Units } from "./Teaching_Units/Sem_3_4/Sem_3_Units";
+import { Semester4Units } from "./Teaching_Units/Sem_3_4/Sem_4_Units";
+import { Semester5Units } from "./Teaching_Units/Sem_5_6/Sem_5_Units";
+import { Semester6Units } from "./Teaching_Units/Sem_5_6/Sem_6_Units";
 export function GetALlExamPapers() {
   const [semester_1_Box, setSemester_1_Box] = useState(false);
   const [semester_2_Box, setSemester_2_Box] = useState(false);
@@ -11,8 +16,9 @@ export function GetALlExamPapers() {
   const [semester_5_Box, setSemester_5_Box] = useState(false);
   const [semester_6_Box, setSemester_6_Box] = useState(false);
 
-  const handleSemester1CheckboxChange = (event) => {
+  const handleSemester1CheckboxChange = async (event) => {
     setSemester_1_Box(event.target.checked);
+    localStorage.setItem("exp", "1");
     setSemester_2_Box(false);
     setSemester_3_Box(false);
     setSemester_4_Box(false);
@@ -22,6 +28,7 @@ export function GetALlExamPapers() {
 
   const handleSemester2CheckboxChange = (event) => {
     setSemester_2_Box(event.target.checked);
+    localStorage.setItem("exp", "2");
     setSemester_1_Box(false);
     setSemester_3_Box(false);
     setSemester_4_Box(false);
@@ -31,6 +38,7 @@ export function GetALlExamPapers() {
 
   const handleSemester3CheckboxChange = (event) => {
     setSemester_3_Box(event.target.checked);
+    localStorage.setItem("exp", "3");
     setSemester_1_Box(false);
     setSemester_2_Box(false);
     setSemester_4_Box(false);
@@ -40,6 +48,7 @@ export function GetALlExamPapers() {
 
   const handleSemester4CheckboxChange = (event) => {
     setSemester_4_Box(event.target.checked);
+    localStorage.setItem("exp", "4");
     setSemester_1_Box(false);
     setSemester_2_Box(false);
     setSemester_3_Box(false);
@@ -49,6 +58,7 @@ export function GetALlExamPapers() {
 
   const handleSemester5CheckboxChange = (event) => {
     setSemester_5_Box(event.target.checked);
+    localStorage.setItem("exp", "5");
     setSemester_1_Box(false);
     setSemester_2_Box(false);
     setSemester_3_Box(false);
@@ -58,6 +68,7 @@ export function GetALlExamPapers() {
 
   const handleSemester6CheckboxChange = (event) => {
     setSemester_6_Box(event.target.checked);
+    localStorage.setItem("exp", "6");
     setSemester_1_Box(false);
     setSemester_2_Box(false);
     setSemester_3_Box(false);
@@ -75,35 +86,46 @@ export function GetALlExamPapers() {
         }
       }, []);
 
-  // useEffect(() => {
-  //   async function fetchExamPapers() {
-  //     try {
-  //       const { data, error } = await supabase
-  //         .from('exam_papers')
-  //         .select('*')
-  //         .order('created_at', { ascending: false });
-
-  //       if (error) throw error;
-
-  //       setExamPapers(data);
-  //     } catch (error) {
-  //       console.error("Error fetching exam papers:", error);
-  //     } finally {
-  //       setLoading(false);
-  //     }
-  //   }
-
-  //   fetchExamPapers();
-  // }, []);
+    useEffect(() => {
+      const exp = localStorage.getItem("exp");
+      if (exp) {
+        switch (exp) {
+          case "1":
+            setSemester_1_Box(true);
+            break;
+          case "2":
+            setSemester_2_Box(true);
+            break;
+          case "3":
+            setSemester_3_Box(true);
+            break;
+          case "4":
+            setSemester_4_Box(true);
+            break;
+          case "5":
+            setSemester_5_Box(true);
+            break;
+          case "6":
+            setSemester_6_Box(true);
+            break;
+          default:
+            break;
+        }
+      }
+    }, []);
 
   return (
     <>
     <div className="exam-paper-welcome-msg contribute-msg-holder">
       <h4><em>Welcome to the <span id="collection-highlight">Collection of Exam papers</span> section, dear {username} <span className="highlight">༆</span></em></h4>
-      <div className="contribute-msg-group">
+      <div className="contribute-msg-group ms-md-5 ms-xl-5">
         <p>Here you can find all the exam papers that have been contributed by our community. 🎋🤗</p>
         <p>If you want to contribute, please click right here ⤑ <a href="/Exam-papers/add" id="contribute-link">Contribute</a> </p>
       </div>
+    </div>
+
+    <div className="choose-exam-paper-semester-wrapper p-2">
+      <h3 className="choose-exam-paper-semester-title">∻ <span>Choose a semester</span> 🖇</h3>
     </div>
 
     <div className="semester-boxes-wrapper">
@@ -177,6 +199,22 @@ export function GetALlExamPapers() {
         </div>
       )}
 
+      {!noneOfTheSemestersSelected && (
+      <div className="teaching-units-section">
+        <div className="teaching-units-section-title-section">
+          <h3 id="teaching-units-section-title" className="text-center">∻ <span>Teaching Units</span> 🖆 </h3>
+        </div>
+
+        <div className="teaching-units">
+          {semester_1_Box && <Semester1Units />}
+          {semester_2_Box && <Semester2Units />}
+          {semester_3_Box && <Semester3Units />}
+          {semester_4_Box && <Semester4Units />}
+          {semester_5_Box && <Semester5Units />}
+          {semester_6_Box && <Semester6Units />}
+        </div>        
+      </div>
+      )}
     </>
   );
 }

@@ -38,7 +38,7 @@ export function GetAllExamPapersWrapper () {
 
               <GetALlExamPapers />
 
-            <footer className="container-fluid normal-footer">
+            <footer className="container-fluid mt-1">
                       <div className="footer-first-part">
               
                         <div className="header-holder">
