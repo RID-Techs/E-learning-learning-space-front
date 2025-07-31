@@ -243,6 +243,7 @@ export function AddExamPapers() {
             setChoosedTeachingUnit("");
             setIsDoubleSided("");
             setChoosedPaperSide("");
+            setShowPaperSidePart(false);
             setPaperYear("");
             setExamPaperImg(null);
             setSubmitStatus("completed");
