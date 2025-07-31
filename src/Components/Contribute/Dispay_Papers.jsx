@@ -11,6 +11,10 @@ export function DisplayPapers({ papers }) {
             <div className="paper-info-body">
               <h5>📑 Unit : {paper.paper_name} </h5>
               <p>Academic Year : {paper.paper_year} 🧩📌</p>
+              {paper.is_double_sided === "Yes" ? (
+                <p>Paper Side : {paper.paper_side} 🎋</p>
+              ) : null
+              }
             </div>
             <div className="paper-info-footer">
               <a href={`${paper.paper_img}?download=${paper.paper_name}.jpg`} rel="noopener noreferrer" download={`${paper.paper_name}.jpg`}>Download ⤵</a>
@@ -26,6 +30,8 @@ DisplayPapers.propTypes = {
   papers: PropTypes.arrayOf(
     PropTypes.shape({
       paper_name: PropTypes.string.isRequired,
+      is_double_sided: PropTypes.string.isRequired,
+      paper_side: PropTypes.string.isRequired,
       paper_year: PropTypes.string.isRequired,
       paper_img: PropTypes.string.isRequired
     })

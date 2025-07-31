@@ -51,7 +51,7 @@ export function AddExamPapers() {
     toast.warn(msg, {
       theme: "light",
       position: "top-center",
-      autoClose: 2000,
+      autoClose: 3000,
       transition: Zoom,
     });
   };
@@ -60,7 +60,7 @@ export function AddExamPapers() {
     toast.error(message, {
       theme: "light",
       position: "top-center",
-      autoClose: 2000,
+      autoClose: 3000,
       transition: Zoom,
     });
   };
@@ -126,6 +126,7 @@ export function AddExamPapers() {
     } else {
       setShowPaperSidePart(false);
       setIsDoubleSided(choosedValue);
+      setChoosedPaperSide("");
     }
   };
 
@@ -144,7 +145,7 @@ export function AddExamPapers() {
     e.preventDefault();
     setSubmitStatus("pending");
 
-    if (!choosedSemester || !choosedTeachingUnit || !isDoubleSided || !choosedPaperSide || !paperYear) {
+    if (!choosedSemester || !choosedTeachingUnit || !isDoubleSided || (showPaperSidePart && !choosedPaperSide) || !paperYear) {
       MendatoryFields("Please, All fields are required !");
       setSubmitStatus("completed");
       return;
@@ -162,7 +163,7 @@ export function AddExamPapers() {
     try {
       let { data: exam_paper, error } = await supabase
         .from("exam_paper")
-        .select("paper_name,paper_year");
+        .select("paper_name,paper_side,paper_year");
 
       if (error) {
         ErrorMsg("Something went wrong. Please try again later.");
@@ -171,30 +172,36 @@ export function AddExamPapers() {
       }
 
       if (exam_paper && exam_paper.length > 0) {
-        const isPaperExists = exam_paper.some(
-          (paper) => {
-            if(paper.is_double_sided && paper.is_double_sided === isDoubleSided) {
-              return (
+        if(isDoubleSided === "Yes") {
+          const isPaperExists_1 = exam_paper.some(
+          (paper) => 
                 paper.paper_name === choosedTeachingUnit &&
                 paper.paper_side === choosedPaperSide &&
                 paper.paper_year === paperYear
-              );
-            } else {
-              return (
-                paper.paper_name === choosedTeachingUnit &&
-                paper.paper_year === paperYear
-              );
-            }
-          }
         );
-        if (isPaperExists) {
-          console.log(isPaperExists);
-          
+        if (isPaperExists_1) {
+          console.log("isPaperExists_1", isPaperExists_1);
           MendatoryFields(
-            "This exam paper already exists for the selected semester and year."
+            "This exam paper already exists for the selected part, semester and year."
           );
           setSubmitStatus("completed");
           return;
+        }
+        }
+        if (isDoubleSided === "No") {
+          const isPaperExists_2 = exam_paper.some(
+            (paper) => 
+                  paper.paper_name === choosedTeachingUnit &&
+                  paper.paper_year === paperYear
+          );
+          if (isPaperExists_2) {
+            console.log("isPaperExists_2", isPaperExists_2);
+            MendatoryFields(
+              "This exam paper already exists for the selected semester and year."
+            );
+            setSubmitStatus("completed");
+            return;
+          }
         }
       }
 
@@ -216,7 +223,7 @@ export function AddExamPapers() {
               paper_semester: choosedSemester,
               paper_name: choosedTeachingUnit,
               is_double_sided: isDoubleSided,
-              paper_side: choosedPaperSide,
+              paper_side: choosedPaperSide === "" ? null : choosedPaperSide,
               paper_img: pictureUrl,
               paper_year: paperYear,
             })
@@ -234,6 +241,8 @@ export function AddExamPapers() {
             setImgUploaded(false);
             setChoosedSemester("");
             setChoosedTeachingUnit("");
+            setIsDoubleSided("");
+            setChoosedPaperSide("");
             setPaperYear("");
             setExamPaperImg(null);
             setSubmitStatus("completed");
