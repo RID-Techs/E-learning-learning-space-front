@@ -27,6 +27,8 @@ main {
   font-size: clamp(1.2rem, 2vw, 1.5rem);
 }
 .survey-container{
+  display: flex;
+  justify-content: center;
   background-color: #dbdadaa4;
   padding: 1em;
   border-radius: 3em;

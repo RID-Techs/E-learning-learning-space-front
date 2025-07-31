@@ -194,7 +194,7 @@ import Literature_and_media_Exam_22_23 from "../Docs/Semester_6/Literature_and_m
 
 import { toast, Zoom } from "react-toastify";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export function Home() {
   const navigate = useNavigate();
@@ -1468,12 +1468,12 @@ export function Home() {
     },
   ];
 
-  const pdfFiles_sem_3_Filtered = pdfFiles_sem_3.filter((item) => {
-    return item.id !== 8 && item.id !== 9
-  })
-  const pdfFiles_sem_5_Filtered = pdfFiles_sem_5.filter((item) => {
-    return item.id !== 17 && item.id !== 18 && item.id !== 20 && item.id !== 21
-  })
+  // const pdfFiles_sem_3_Filtered = pdfFiles_sem_3.filter((item) => {
+  //   return item.id !== 8 && item.id !== 9
+  // })
+  // const pdfFiles_sem_5_Filtered = pdfFiles_sem_5.filter((item) => {
+  //   return item.id !== 17 && item.id !== 18 && item.id !== 20 && item.id !== 21
+  // })
 
   const LoggedOut = () => {
     LogOut();
@@ -1500,6 +1500,40 @@ export function Home() {
 
   return (
     <>
+         <div className="modal" id="logInMember" tabIndex="-1">
+      <div className="modal-dialog">
+        <div className="modal-content">
+          <div className="modal-header">
+            <h5 className="modal-title text-primary-emphasis fw-bold">E-learning Member</h5>
+            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div className="modal-body">
+            <p>Want to get access ? Alright, <strong>register</strong> to enjoy all the <strong>Resources</strong>, available exclusively to <strong>E-learning members</strong>, and therefore assess your learning progress and continue improving.</p>
+          </div>
+          <div className="modal-footer">
+            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <Link to={"/signin"}>
+            <button type="button" className="btn btn-primary fw-bold fst-italic" data-bs-dismiss="modal">Sign in <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M9 8v-2a2 2 0 0 1 2 -2h7a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-7a2 2 0 0 1 -2 -2v-2" />
+      <path d="M3 12h13l-3 -3" />
+      <path d="M13 15l3 -3" />
+    </svg> </button>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+
       <div className="container-fluid header-wraper">
         <div className="header-holder">
           <header>
@@ -1696,34 +1730,61 @@ export function Home() {
                     </div>
                     <p> ~ {doc.name}</p>
                   </div>
-                  <div className="doc-action-button">
-                    <a
-                      href={doc.opendoc}
-                      rel="noopener noreferrer"
-                      target="_blank"
-                    >
-                      <img
-                        className="me-2"
-                        height={22}
-                        src={open}
-                        alt="arrow"
-                      />{" "}
-                      Open
-                    </a>
-                    <a
-                      href={doc.url}
-                      rel="noopener noreferrer"
-                      download={`${doc.name}.pdf`}
-                    >
-                      <img
-                        className="me-2"
-                        height={22}
-                        src={download}
-                        alt="arrow"
-                      />{" "}
-                      <span className="both-screens">Download</span>
-                    </a>
-                  </div>
+                  {
+                      isMember === true ? (
+                        <div className="doc-action-button">
+                      <a
+                        href={doc.opendoc}
+                        rel="noopener noreferrer"
+                        data-actual-btn={`btn-S5-${doc.id}`}
+                        target="_blank"
+                      >
+                        <img
+                          className="me-2"
+                          height={22}
+                          src={open}
+                          alt="arrow"
+                        />{" "}
+                        Open
+                      </a>
+                      <a
+                        href={doc.url}
+                        rel="noopener noreferrer"
+                        data-actual-btn={`btn-S5-${doc.id}`}
+                        download={`${doc.name}.pdf`}
+                      >
+                        <img
+                          className="me-2"
+                          height={22}
+                          src={download}
+                          alt="arrow"
+                        />{" "}
+                        <span className="both-screens">Download</span>
+                      </a>
+                    </div>
+                      ) : (
+                        <div className="doc-action-button">
+                      <a data-bs-toggle="modal" data-bs-target="#logInMember">
+                        <img
+                          className="me-2"
+                          height={22}
+                          src={open}
+                          alt="arrow"
+                        />{" "}
+                        Open
+                      </a>
+                      <a data-bs-toggle="modal" data-bs-target="#logInMember">
+                        <img
+                          className="me-2"
+                          height={22}
+                          src={download}
+                          alt="arrow"
+                        />{" "}
+                        <span className="both-screens">Download</span>
+                      </a>
+                    </div>
+                      )
+                    }
                 </div>
               </div>
             ))}
@@ -1732,121 +1793,103 @@ export function Home() {
 
         {checked_sem_3 && (
           <div className="row row-cols-xl-3 row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-1 g-4">
-            { isMember === true ?  pdfFiles_sem_3.map((doc) => (
+           {pdfFiles_sem_3.map((doc) => (
               <div key={doc.id} className="col">
                 <div className="doc-item">
-                    <div className="new-added-items">
+                    {/* <div className="new-added-items">
                       {doc.newAdded_1 === true ? <p>New !</p> : null}
                       {doc.newAdded_2 === true ? <p>New !</p> : null}
-                    </div>
+                    </div> */}
                   <div className="doc-img-and-name">
                     <div>
                       <img src={docs} alt="doc" />
                     </div>
                     <p> ~ {doc.name}</p>
                   </div>
-                  <div className="doc-action-button">
-                    <a
-                      href={doc.opendoc}
-                      rel="noopener noreferrer"
-                      data-actual-btn={`btn-S3-${doc.id}`}
-                      onClick={HideNewItemBadge_S3}
-                      target="_blank"
-                    >
-                      <img
-                        className="me-2"
-                        height={22}
-                        src={open}
-                        alt="arrow"
-                      />{" "}
-                      Open
-                    </a>
-                    <a
-                      href={doc.url}
-                      rel="noopener noreferrer"
-                      data-actual-btn={`btn-S3-${doc.id}`}
-                      onClick={HideNewItemBadge_S3}
-                      download={`${doc.name}.pdf`}
-                    >
-                      <img
-                        className="me-2"
-                        height={22}
-                        src={download}
-                        alt="arrow"
-                      />{" "}
-                      <span className="both-screens">Download</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            )) : 
-            pdfFiles_sem_3_Filtered.map((doc) => (
-              <div key={doc.id} className="col">
-                <div className="doc-item">
-                  <div className="doc-img-and-name">
-                    <div>
-                      <img src={docs} alt="doc" />
+                  {
+                      isMember === true ? (
+                        <div className="doc-action-button">
+                      <a
+                        href={doc.opendoc}
+                        rel="noopener noreferrer"
+                        data-actual-btn={`btn-S5-${doc.id}`}
+                        onClick={HideNewItemBadge_S3}
+                        target="_blank"
+                      >
+                        <img
+                          className="me-2"
+                          height={22}
+                          src={open}
+                          alt="arrow"
+                        />{" "}
+                        Open
+                      </a>
+                      <a
+                        href={doc.url}
+                        rel="noopener noreferrer"
+                        data-actual-btn={`btn-S5-${doc.id}`}
+                        onClick={HideNewItemBadge_S3}
+                        download={`${doc.name}.pdf`}
+                      >
+                        <img
+                          className="me-2"
+                          height={22}
+                          src={download}
+                          alt="arrow"
+                        />{" "}
+                        <span className="both-screens">Download</span>
+                      </a>
                     </div>
-                    <p> ~ {doc.name}</p>
-                  </div>
-                  <div className="doc-action-button">
-                    <a
-                      href={doc.opendoc}
-                      rel="noopener noreferrer"
-                      data-actual-btn={`btn-S3-${doc.id}`}
-                      onClick={HideNewItemBadge_S3}
-                      target="_blank"
-                    >
-                      <img
-                        className="me-2"
-                        height={22}
-                        src={open}
-                        alt="arrow"
-                      />{" "}
-                      Open
-                    </a>
-                    <a
-                      href={doc.url}
-                      rel="noopener noreferrer"
-                      data-actual-btn={`btn-S3-${doc.id}`}
-                      onClick={HideNewItemBadge_S3}
-                      download={`${doc.name}.pdf`}
-                    >
-                      <img
-                        className="me-2"
-                        height={22}
-                        src={download}
-                        alt="arrow"
-                      />{" "}
-                      <span className="both-screens">Download</span>
-                    </a>
-                  </div>
+                      ) : (
+                        <div className="doc-action-button">
+                      <a data-bs-toggle="modal" data-bs-target="#logInMember">
+                        <img
+                          className="me-2"
+                          height={22}
+                          src={open}
+                          alt="arrow"
+                        />{" "}
+                        Open
+                      </a>
+                      <a data-bs-toggle="modal" data-bs-target="#logInMember">
+                        <img
+                          className="me-2"
+                          height={22}
+                          src={download}
+                          alt="arrow"
+                        />{" "}
+                        <span className="both-screens">Download</span>
+                      </a>
+                    </div>
+                      )
+                    }
                 </div>
               </div>
-            ))
-            }
+            ))}
+            
           </div>
         )}
 
         {checked_sem_5 && (
           <div className="row row-cols-xl-3 row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-1 g-4">
-            {isMember === true ? 
-              pdfFiles_sem_5.map((doc) => (
+            { pdfFiles_sem_5.map((doc) => (
                 <div key={doc.id} className="col">
                   <div className="doc-item">
-                  <div className="new-added-items">
+                  {/* <div className="new-added-items">
                   {doc.newAdded_1 === true ? <p>New !</p> : null}
                   {doc.newAdded_2 === true ? <p>New !</p> : null}
                   {doc.newAdded_3 === true ? <p>New !</p> : null}
                   {doc.newAdded_4 === true ? <p>New !</p> : null}
-                      </div>
+                      </div> */}
                     <div className="doc-img-and-name">
                       <div>
                         <img src={docs} alt="doc" />
                       </div>
                       <p> ~ {doc.name}</p>
                     </div>
-                    <div className="doc-action-button">
+                    {
+                      isMember === true ? (
+                        <div className="doc-action-button">
                       <a
                         href={doc.opendoc}
                         rel="noopener noreferrer"
@@ -1878,26 +1921,9 @@ export function Home() {
                         <span className="both-screens">Download</span>
                       </a>
                     </div>
-                  </div>
-                </div>
-              )) : 
-              pdfFiles_sem_5_Filtered.map((doc) => (
-                <div key={doc.id} className="col">
-                  <div className="doc-item">
-                    <div className="doc-img-and-name">
-                      <div>
-                        <img src={docs} alt="doc" />
-                      </div>
-                      <p> ~ {doc.name}</p>
-                    </div>
-                    <div className="doc-action-button">
-                      <a
-                        href={doc.opendoc}
-                        rel="noopener noreferrer"
-                        data-actual-btn={`btn-S5-${doc.id}`}
-                        onClick={HideNewItemBadge_S5}
-                        target="_blank"
-                      >
+                      ) : (
+                        <div className="doc-action-button">
+                      <a data-bs-toggle="modal" data-bs-target="#logInMember">
                         <img
                           className="me-2"
                           height={22}
@@ -1906,13 +1932,7 @@ export function Home() {
                         />{" "}
                         Open
                       </a>
-                      <a
-                        href={doc.url}
-                        rel="noopener noreferrer"
-                        data-actual-btn={`btn-S5-${doc.id}`}
-                        onClick={HideNewItemBadge_S5}
-                        download={`${doc.name}.pdf`}
-                      >
+                      <a data-bs-toggle="modal" data-bs-target="#logInMember">
                         <img
                           className="me-2"
                           height={22}
@@ -1922,6 +1942,8 @@ export function Home() {
                         <span className="both-screens">Download</span>
                       </a>
                     </div>
+                      )
+                    }
                   </div>
                 </div>
               ))}
@@ -1940,10 +1962,13 @@ export function Home() {
                     <p> ~ {doc.name}</p>
                   </div>
                   <div>
-                    <div className="doc-action-button">
+                    {
+                      isMember === true ? (
+                        <div className="doc-action-button">
                       <a
                         href={doc.opendoc}
                         rel="noopener noreferrer"
+                        data-actual-btn={`btn-S5-${doc.id}`}
                         target="_blank"
                       >
                         <img
@@ -1957,6 +1982,7 @@ export function Home() {
                       <a
                         href={doc.url}
                         rel="noopener noreferrer"
+                        data-actual-btn={`btn-S5-${doc.id}`}
                         download={`${doc.name}.pdf`}
                       >
                         <img
@@ -1968,6 +1994,29 @@ export function Home() {
                         <span className="both-screens">Download</span>
                       </a>
                     </div>
+                      ) : (
+                        <div className="doc-action-button">
+                      <a data-bs-toggle="modal" data-bs-target="#logInMember">
+                        <img
+                          className="me-2"
+                          height={22}
+                          src={open}
+                          alt="arrow"
+                        />{" "}
+                        Open
+                      </a>
+                      <a data-bs-toggle="modal" data-bs-target="#logInMember">
+                        <img
+                          className="me-2"
+                          height={22}
+                          src={download}
+                          alt="arrow"
+                        />{" "}
+                        <span className="both-screens">Download</span>
+                      </a>
+                    </div>
+                      )
+                    }
 
                     {doc.Traduction_rectification && (
                       <details className="mt-3">
@@ -2035,34 +2084,61 @@ export function Home() {
                     </div>
                     <p> ~ {doc.name}</p>
                   </div>
-                  <div className="doc-action-button">
-                    <a
-                      href={doc.opendoc}
-                      rel="noopener noreferrer"
-                      target="_blank"
-                    >
-                      <img
-                        className="me-2"
-                        height={22}
-                        src={open}
-                        alt="arrow"
-                      />{" "}
-                      Open
-                    </a>
-                    <a
-                      href={doc.url}
-                      rel="noopener noreferrer"
-                      download={`${doc.name}.pdf`}
-                    >
-                      <img
-                        className="me-2"
-                        height={22}
-                        src={download}
-                        alt="arrow"
-                      />{" "}
-                      <span className="both-screens">Download</span>
-                    </a>
-                  </div>
+                  {
+                      isMember === true ? (
+                        <div className="doc-action-button">
+                      <a
+                        href={doc.opendoc}
+                        rel="noopener noreferrer"
+                        data-actual-btn={`btn-S5-${doc.id}`}
+                        target="_blank"
+                      >
+                        <img
+                          className="me-2"
+                          height={22}
+                          src={open}
+                          alt="arrow"
+                        />{" "}
+                        Open
+                      </a>
+                      <a
+                        href={doc.url}
+                        rel="noopener noreferrer"
+                        data-actual-btn={`btn-S5-${doc.id}`}
+                        download={`${doc.name}.pdf`}
+                      >
+                        <img
+                          className="me-2"
+                          height={22}
+                          src={download}
+                          alt="arrow"
+                        />{" "}
+                        <span className="both-screens">Download</span>
+                      </a>
+                    </div>
+                      ) : (
+                        <div className="doc-action-button">
+                      <a data-bs-toggle="modal" data-bs-target="#logInMember">
+                        <img
+                          className="me-2"
+                          height={22}
+                          src={open}
+                          alt="arrow"
+                        />{" "}
+                        Open
+                      </a>
+                      <a data-bs-toggle="modal" data-bs-target="#logInMember">
+                        <img
+                          className="me-2"
+                          height={22}
+                          src={download}
+                          alt="arrow"
+                        />{" "}
+                        <span className="both-screens">Download</span>
+                      </a>
+                    </div>
+                      )
+                    }
                 </div>
               </div>
             ))}
@@ -2080,34 +2156,61 @@ export function Home() {
                     </div>
                     <p> ~ {doc.name}</p>
                   </div>
-                  <div className="doc-action-button">
-                    <a
-                      href={doc.opendoc}
-                      rel="noopener noreferrer"
-                      target="_blank"
-                    >
-                      <img
-                        className="me-2"
-                        height={22}
-                        src={open}
-                        alt="arrow"
-                      />{" "}
-                      Open
-                    </a>
-                    <a
-                      href={doc.url}
-                      rel="noopener noreferrer"
-                      download={`${doc.name}.pdf`}
-                    >
-                      <img
-                        className="me-2"
-                        height={22}
-                        src={download}
-                        alt="arrow"
-                      />{" "}
-                      <span className="both-screens">Download</span>
-                    </a>
-                  </div>
+                  {
+                      isMember === true ? (
+                        <div className="doc-action-button">
+                      <a
+                        href={doc.opendoc}
+                        rel="noopener noreferrer"
+                        data-actual-btn={`btn-S5-${doc.id}`}
+                        target="_blank"
+                      >
+                        <img
+                          className="me-2"
+                          height={22}
+                          src={open}
+                          alt="arrow"
+                        />{" "}
+                        Open
+                      </a>
+                      <a
+                        href={doc.url}
+                        rel="noopener noreferrer"
+                        data-actual-btn={`btn-S5-${doc.id}`}
+                        download={`${doc.name}.pdf`}
+                      >
+                        <img
+                          className="me-2"
+                          height={22}
+                          src={download}
+                          alt="arrow"
+                        />{" "}
+                        <span className="both-screens">Download</span>
+                      </a>
+                    </div>
+                      ) : (
+                        <div className="doc-action-button">
+                      <a data-bs-toggle="modal" data-bs-target="#logInMember">
+                        <img
+                          className="me-2"
+                          height={22}
+                          src={open}
+                          alt="arrow"
+                        />{" "}
+                        Open
+                      </a>
+                      <a data-bs-toggle="modal" data-bs-target="#logInMember">
+                        <img
+                          className="me-2"
+                          height={22}
+                          src={download}
+                          alt="arrow"
+                        />{" "}
+                        <span className="both-screens">Download</span>
+                      </a>
+                    </div>
+                      )
+                    }
                 </div>
               </div>
             ))}

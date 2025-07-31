@@ -273,30 +273,18 @@ export function Get_Answers() {
                 <img height={22} src={Answers} alt="Answers" /> E-learning Answer Hub{" "}
               </li>
             </a>
-            {isMember ? <a className="" href="Test">
+             <a className="" href="Test">
               <li>
                 {" "}
                 <img height={22} src={TestOne} alt="Answers" /> Test{" "}
               </li>
-            </a> : 
-            <a data-bs-toggle="modal" data-bs-target="#logInMember">
-            <li>
-              {" "}
-              <img height={22} src={TestOne} alt="Answers" /> Test{" "}
-            </li>
-          </a> }
-            {isMember ? <a className="" href="Podcast">
+            </a>
+            <a className="" href="Podcast">
               <li>
                 {" "}
                 <img height={22} src={podcast} alt="Podcast" /> E-Podcast{" "}
               </li>
-            </a> : 
-            <a data-bs-toggle="modal" data-bs-target="#logInMember">
-            <li>
-              {" "}
-              <img height={22} src={podcast} alt="Podcast" /> E-Podcast{" "}
-            </li>
-          </a> }
+            </a>
           <a className="" href="Survey">
               <li>
                 {" "}
@@ -318,7 +306,7 @@ export function Get_Answers() {
         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div className="modal-body">
-        <p>Want to take some tests ? Alright, sign in to access the <strong>Evaluation Section</strong>, available exclusively to <strong>E-learning members</strong>, where you can take tests to assess your learning progress and continue improving.</p>
+        <p>Want to get access ? Alright, <strong>register</strong> to enjoy all the <strong>Resources</strong>, available exclusively to <strong>E-learning members</strong>, and therefore assess your learning progress and continue improving.</p>
       </div>
       <div className="modal-footer">
         <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -486,10 +474,19 @@ export function Get_Answers() {
                 🏅🖌🌿 Click on either <span className="underline"><em>{`"`}Open{`"`}</em></span> or <span className="underline"><em>{`"`}Download{`"`}</em></span> to get a well-explained document that will help you understand all the topics related to Semester 1 courses.
                 </h5>
                 <div className="spacers">---------------</div>
-                <div className="Detailled-docs">
+                {
+                  isMember ? (
+                    <div className="Detailled-docs">
                 <a href="https://drive.google.com/file/d/1t9pv_-A_9TS8FAdDjWdmnwqQISK4fDvB/view?usp=drive_link" target="_blank" rel="noopener noreferrer"> <img height={22} src={open} alt="doc" /> Open</a>
                 <a href={Semester_1_Detailled_document} download={`Semester 1 Detailled document.pdf`} rel="noopener noreferrer"> <img height={22} src={download} alt="doc" /> Download</a>
                 </div>
+                  ) : (
+                    <div className="Detailled-docs">
+                <a data-bs-toggle="modal" data-bs-target="#logInMember"> <img height={22} src={open} alt="doc" /> Open</a>
+                <a data-bs-toggle="modal" data-bs-target="#logInMember"> <img height={22} src={download} alt="doc" /> Download</a>
+                </div>
+                  )
+                }
               </div>
             </div>)}
 
@@ -499,10 +496,22 @@ export function Get_Answers() {
                 🏅🖌🌿 Click on either <span className="underline"><em>{`"`}Open{`"`}</em></span> or <span className="underline"><em>{`"`}Download{`"`}</em></span> to get a well-explained document that will help you understand all the topics related to Semester 3 courses.
                 </h5>
                 <div className="spacers">---------------</div>
-                <div className="Detailled-docs">
+
+                {
+                  isMember ? (
+                    <div className="Detailled-docs">
                 <a href="https://drive.google.com/file/d/1kszTY85pFpXeJQfdSg5ayC_D_8U8rG0y/view?usp=drive_link" target="_blank" rel="noopener noreferrer"> <img height={22} src={open} alt="doc" /> Open</a>
                 <a href={Semester_3_Detailled_document} download={`Semester 3 Detailled document.pdf`} rel="noopener noreferrer"> <img height={22} src={download} alt="doc" /> Download</a>
                 </div>
+                  ) : (
+                    <div className="Detailled-docs">
+                <a data-bs-toggle="modal" data-bs-target="#logInMember"> <img height={22} src={open} alt="doc" /> Open</a>
+                <a data-bs-toggle="modal" data-bs-target="#logInMember"> <img height={22} src={download} alt="doc" /> Download</a>
+                </div>
+                  )
+                }
+
+
               </div>
             </div>)}
 
@@ -512,10 +521,20 @@ export function Get_Answers() {
                 🏅🖌🌿 Click on either <span className="underline"><em>{`"`}Open{`"`}</em></span> or <span className="underline"><em>{`"`}Download{`"`}</em></span> to get a well-explained document that will help you understand all the topics related to Semester 5 courses.
                 </h5>
                 <div className="spacers">---------------</div>
-                <div className="Detailled-docs">
+
+                {
+                  isMember ? (
+                    <div className="Detailled-docs">
                 <a href="https://drive.google.com/file/d/1TrQibA-a3GFAuX--95tBdFfp4cVFEC31/view?usp=drive_link" target="_blank" rel="noopener noreferrer"> <img height={22} src={open} alt="doc" /> Open</a>
                 <a href={Semester_5_Detailled_document} download={`Semester 5 Detailled document.pdf`} rel="noopener noreferrer"> <img height={22} src={download} alt="doc" /> Download</a>
                 </div>
+                  ) : (
+                    <div className="Detailled-docs">
+                <a data-bs-toggle="modal" data-bs-target="#logInMember"> <img height={22} src={open} alt="doc" /> Open</a>
+                <a data-bs-toggle="modal" data-bs-target="#logInMember"> <img height={22} src={download} alt="doc" /> Download</a>
+                </div>
+                  )
+                }
               </div>
             </div>)}
 
@@ -527,7 +546,9 @@ export function Get_Answers() {
                   🏅🖌🌿 : Compare and contrast African oral literature and
                   written literature ?
                 </h5>
-                <details>
+                {
+                  isMember ? (
+                    <details>
                   <summary className="reveal-answer mt-3">
                     Click to see the answer
                   </summary>
@@ -631,6 +652,10 @@ export function Get_Answers() {
                     </p>
                   </div>
                 </details>
+                  ) : (
+                    <p data-bs-toggle="modal" data-bs-target="#logInMember" className="no-reveal-answer">▸ Click to see the answer</p>
+                  )
+                }
               </div>
             </div>
 
@@ -639,7 +664,10 @@ export function Get_Answers() {
                 <h5 className="faq-title">
                   🏅🖌🌿 : How Orature influences Written Literature ?
                 </h5>
-                <details>
+
+                {
+                  isMember ? (
+                    <details>
                   <summary className="reveal-answer mt-3">
                     Click to see the answer
                   </summary>
@@ -703,6 +731,10 @@ export function Get_Answers() {
                     </p>
                   </div>
                 </details>
+                  ) : (
+                    <p data-bs-toggle="modal" data-bs-target="#logInMember" className="no-reveal-answer">▸ Click to see the answer</p>
+                  )
+                }
               </div>
             </div>
 
@@ -717,7 +749,10 @@ export function Get_Answers() {
                   🏅🖌🌿 : Compare and contrast African oral literature and
                   written literature ?
                 </h5>
-                <details>
+                
+                {
+                  isMember ? (
+                    <details>
                   <summary className="reveal-answer mt-3">
                     Click to see the answer
                   </summary>
@@ -821,6 +856,10 @@ export function Get_Answers() {
                     </p>
                   </div>
                 </details>
+                  ) : (
+                    <p data-bs-toggle="modal" data-bs-target="#logInMember" className="no-reveal-answer">▸ Click to see the answer</p>
+                  )
+                }
               </div>
             </div>
 
@@ -829,6 +868,8 @@ export function Get_Answers() {
                 <h5 className="faq-title">
                   🏅🖌🌿 : How Orature influences Written Literature ?
                 </h5>
+                {
+                  isMember ? (
                 <details>
                   <summary className="reveal-answer mt-3">
                     Click to see the answer
@@ -893,6 +934,11 @@ export function Get_Answers() {
                     </p>
                   </div>
                 </details>
+                    
+                  ) : (
+                    <p data-bs-toggle="modal" data-bs-target="#logInMember" className="no-reveal-answer">▸ Click to see the answer</p>
+                  )
+                }
               </div>
             </div>
 
@@ -901,6 +947,8 @@ export function Get_Answers() {
                 <h5 className="faq-title">
                   🏅🖌🌿 : What are the characteristics of puritan poetry ?
                 </h5>
+                {
+                  isMember ? (
                 <details>
                   <summary className="reveal-answer mt-3">
                     Click to see the answer
@@ -967,6 +1015,10 @@ export function Get_Answers() {
                     </p>
                   </div>
                 </details>
+                  ) : (
+                    <p data-bs-toggle="modal" data-bs-target="#logInMember" className="no-reveal-answer">▸ Click to see the answer</p>
+                  )
+                }
               </div>
             </div>
 
@@ -975,6 +1027,8 @@ export function Get_Answers() {
                 <h5 className="faq-title">
                   🏅🖌🌿 : Discuss Integration in the British Context.
                 </h5>
+                {
+                  isMember ? (
                 <details>
                   <summary className="reveal-answer mt-3">
                     Click to see the answer
@@ -1093,6 +1147,10 @@ export function Get_Answers() {
                     </p>
                   </div>
                 </details>
+                  ) : (
+                    <p data-bs-toggle="modal" data-bs-target="#logInMember" className="no-reveal-answer">▸ Click to see the answer</p>
+                  )
+                }
               </div>
             </div>
 
@@ -1101,6 +1159,8 @@ export function Get_Answers() {
                 <h5 className="faq-title">
                   🏅🖌🌿 : What are the landmarks which show the effectiveness of British integration ?
                 </h5>
+                {
+                  isMember ? (
                 <details>
                   <summary className="reveal-answer mt-3">
                     Click to see the answer
@@ -1181,6 +1241,10 @@ export function Get_Answers() {
                     </p>
                   </div>
                 </details>
+                  ) : (
+                    <p data-bs-toggle="modal" data-bs-target="#logInMember" className="no-reveal-answer">▸ Click to see the answer</p>
+                  )
+                }
               </div>
             </div>
 
@@ -1189,6 +1253,8 @@ export function Get_Answers() {
                 <h5 className="faq-title">
                   🏅🖌🌿 : Discuss the British Nationality.
                 </h5>
+                {
+                  isMember ? (
                 <details>
                   <summary className="reveal-answer mt-3">
                     Click to see the answer
@@ -1262,6 +1328,11 @@ export function Get_Answers() {
                     </p>
                   </div>
                 </details>
+                    
+                  ) : (
+                    <p data-bs-toggle="modal" data-bs-target="#logInMember" className="no-reveal-answer">▸ Click to see the answer</p>
+                  )
+                }
               </div>
             </div>
 
@@ -1270,6 +1341,8 @@ export function Get_Answers() {
                 <h5 className="faq-title">
                   🏅🖌🌿 : Discuss the British welfare state.
                 </h5>
+                {
+                  isMember ? (
                 <details>
                   <summary className="reveal-answer mt-3">
                     Click to see the answer
@@ -1373,6 +1446,11 @@ export function Get_Answers() {
                     </p>
                   </div>
                 </details>
+                    
+                  ) : (
+                    <p data-bs-toggle="modal" data-bs-target="#logInMember" className="no-reveal-answer">▸ Click to see the answer</p>
+                  )
+                }
               </div>
             </div>
 
@@ -1381,6 +1459,8 @@ export function Get_Answers() {
                 <h5 className="faq-title">
                   🏅🖌🌿 : What are the differences and similarities between American Revolutionary poetry and Harlem Renaissance ?
                 </h5>
+                {
+                  isMember ? (
                 <details>
                   <summary className="reveal-answer mt-3">
                     Click to see the answer
@@ -1514,6 +1594,11 @@ export function Get_Answers() {
                     </p>
                   </div>
                 </details>
+                    
+                  ) : (
+                    <p data-bs-toggle="modal" data-bs-target="#logInMember" className="no-reveal-answer">▸ Click to see the answer</p>
+                  )
+                }
               </div>
             </div>
 
@@ -1522,6 +1607,8 @@ export function Get_Answers() {
                 <h5 className="faq-title">
                   🏅🖌🌿 : Show how the Berlin conference is central to the colonial administration of Africa ?
                 </h5>
+                {
+                  isMember ? (
                 <details>
                   <summary className="reveal-answer mt-3">
                     Click to see the answer
@@ -1574,6 +1661,11 @@ export function Get_Answers() {
                     </p>
                   </div>
                 </details>
+                    
+                  ) : (
+                    <p data-bs-toggle="modal" data-bs-target="#logInMember" className="no-reveal-answer">▸ Click to see the answer</p>
+                  )
+                }
               </div>
             </div>
 
@@ -1583,10 +1675,21 @@ export function Get_Answers() {
                 🏅🖌🌿 Click on either <span className="underline"><em>{`"`}Open{`"`}</em></span> or <span className="underline"><em>{`"`}Download{`"`}</em></span> to get a well-explained document that will help you understand all the topics related to Semester 4 courses.
                 </h5>
                 <div className="spacers">---------------</div>
-                <div className="Detailled-docs">
+
+                {
+                  isMember ? (
+                    <div className="Detailled-docs">
                 <a href="https://drive.google.com/file/d/1befkXVQib9vH4FKvqnB_hF5t1zWIqV5U/view?usp=drive_link" target="_blank" rel="noopener noreferrer"> <img height={22} src={open} alt="doc" /> Open</a>
                 <a href={Semester_4_Detailled_document} download={`Semester 4 Detailled document.pdf`} rel="noopener noreferrer"> <img height={22} src={download} alt="doc" /> Download</a>
                 </div>
+                  ) : (
+                    <div className="Detailled-docs">
+                <a data-bs-toggle="modal" data-bs-target="#logInMember"> <img height={22} src={open} alt="doc" /> Open</a>
+                <a data-bs-toggle="modal" data-bs-target="#logInMember"> <img height={22} src={download} alt="doc" /> Download</a>
+                </div>
+                  )
+                }
+
               </div>
             </div>
 
@@ -1600,6 +1703,8 @@ export function Get_Answers() {
                 <h5 className="faq-title">
                   🏅🖌🌿 : Discuss Socialism in <em>Things Fall Apart</em> by Tchinua achebe.
                 </h5>
+                {
+                  isMember ? (
                 <details>
                   <summary className="reveal-answer mt-3">
                     Click to see the answer
@@ -1623,6 +1728,11 @@ export function Get_Answers() {
                     </p>
                   </div>
                 </details>
+                    
+                  ) : (
+                    <p data-bs-toggle="modal" data-bs-target="#logInMember" className="no-reveal-answer">▸ Click to see the answer</p>
+                  )
+                }
               </div>
             </div>
 
@@ -1631,6 +1741,8 @@ export function Get_Answers() {
                 <h5 className="faq-title">
                   🏅🖌🌿 : How  <em>Things Fall Apart</em> can be shown as a corner stone novel which inspired other themes on Africa ?
                 </h5>
+                {
+                  isMember ? (
                 <details>
                   <summary className="reveal-answer mt-3">
                     Click to see the answer
@@ -1699,6 +1811,11 @@ export function Get_Answers() {
                     </p>
                   </div>
                 </details>
+                    
+                  ) : (
+                    <p data-bs-toggle="modal" data-bs-target="#logInMember" className="no-reveal-answer">▸ Click to see the answer</p>
+                  )
+                }
               </div>
             </div>
 
@@ -1707,6 +1824,8 @@ export function Get_Answers() {
                 <h5 className="faq-title">
                   🏅🖌🌿 : Show how Achebe{"'"}s novel style inspired writers on clash culture ?
                 </h5>
+                {
+                  isMember ? (
                 <details>
                   <summary className="reveal-answer mt-3">
                     Click to see the answer
@@ -1765,6 +1884,11 @@ export function Get_Answers() {
                     </p>
                   </div>
                 </details>
+                    
+                  ) : (
+                    <p data-bs-toggle="modal" data-bs-target="#logInMember" className="no-reveal-answer">▸ Click to see the answer</p>
+                  )
+                }
               </div>
             </div>
 
@@ -1773,6 +1897,8 @@ export function Get_Answers() {
                 <h5 className="faq-title">
                   🏅🖌🌿 : How is Chinua Achebe{"'"}s <em>Things Fall Apart</em> relevant to the African literature of protest ?
                 </h5>
+                {
+                  isMember ? (
                 <details>
                   <summary className="reveal-answer mt-3">
                     Click to see the answer
@@ -1830,6 +1956,11 @@ export function Get_Answers() {
                     </p>
                   </div>
                 </details>
+                    
+                  ) : (
+                    <p data-bs-toggle="modal" data-bs-target="#logInMember" className="no-reveal-answer">▸ Click to see the answer</p>
+                  )
+                }
               </div>
             </div>
 
@@ -1838,6 +1969,8 @@ export function Get_Answers() {
                 <h5 className="faq-title">
                   🏅🖌🌿 : Discuss and show how <em>Things Fall Apart</em> has fund a new era in African literature and how it has become an early landmark and how it is a worthy archetype ?
                 </h5>
+                {
+                  isMember ? (
                 <details>
                   <summary className="reveal-answer mt-3">
                     Click to see the answer
@@ -1913,6 +2046,11 @@ export function Get_Answers() {
                     </p>
                   </div>
                 </details>
+                    
+                  ) : (
+                    <p data-bs-toggle="modal" data-bs-target="#logInMember" className="no-reveal-answer">▸ Click to see the answer</p>
+                  )
+                }
               </div>
             </div>
 
@@ -1921,6 +2059,8 @@ export function Get_Answers() {
                 <h5 className="faq-title">
                   🏅🖌🌿 : How does Chinua Achebe coexist Orature and Written Literature in <em>Things Fall Apart</em> ?
                 </h5>
+                {
+                  isMember ? (
                 <details>
                   <summary className="reveal-answer mt-3">
                     Click to see the answer
@@ -1982,6 +2122,11 @@ export function Get_Answers() {
                     </p>
                   </div>
                 </details>
+                    
+                  ) : (
+                    <p data-bs-toggle="modal" data-bs-target="#logInMember" className="no-reveal-answer">▸ Click to see the answer</p>
+                  )
+                }
               </div>
             </div>
 
@@ -1990,6 +2135,8 @@ export function Get_Answers() {
                 <h5 className="faq-title">
                   🏅🖌🌿 : Discuss Janie in <em>Their Eyes Were Watching God</em> by Zora Neale Hurston.
                 </h5>
+                {
+                  isMember ? (
                 <details>
                   <summary className="reveal-answer mt-3">
                     Click to see the answer
@@ -2015,6 +2162,11 @@ export function Get_Answers() {
                     </p>
                   </div>
                 </details>
+                    
+                  ) : (
+                    <p data-bs-toggle="modal" data-bs-target="#logInMember" className="no-reveal-answer">▸ Click to see the answer</p>
+                  )
+                }
               </div>
             </div>
 
@@ -2023,6 +2175,8 @@ export function Get_Answers() {
                 <h5 className="faq-title">
                   🏅🖌🌿 : What role do you think Sofia plays in the Alice Walker{"'"}s novel <em>The Color Purple</em> ? Describe her character and how she contributes to the themes in the book.
                 </h5>
+                {
+                  isMember ? (
                 <details>
                   <summary className="reveal-answer mt-3">
                     Click to see the answer
@@ -2049,6 +2203,11 @@ export function Get_Answers() {
                     </p>
                   </div>
                 </details>
+                    
+                  ) : (
+                    <p data-bs-toggle="modal" data-bs-target="#logInMember" className="no-reveal-answer">▸ Click to see the answer</p>
+                  )
+                }
               </div>
             </div>
 
@@ -2057,6 +2216,8 @@ export function Get_Answers() {
                 <h5 className="faq-title">
                   🏅🖌🌿 : What does Expressive Realism mean in critical theory ? and What connection does it have with Common Sense theory ?
                 </h5>
+                {
+                  isMember ? (
                 <details>
                   <summary className="reveal-answer mt-3">
                     Click to see the answer
@@ -2117,6 +2278,11 @@ export function Get_Answers() {
                     </p>
                   </div>
                 </details>
+                    
+                  ) : (
+                    <p data-bs-toggle="modal" data-bs-target="#logInMember" className="no-reveal-answer">▸ Click to see the answer</p>
+                  )
+                }
               </div>
             </div>
 
@@ -2125,6 +2291,8 @@ export function Get_Answers() {
                 <h5 className="faq-title">
                   🏅🖌🌿 : Write the characterization of the protagonist of <em>Their Eyes Were Watching God</em> , written by Zora Neale Hurston.
                 </h5>
+                {
+                  isMember ? (
                 <details>
                   <summary className="reveal-answer mt-3">
                     Click to see the answer
@@ -2193,6 +2361,11 @@ export function Get_Answers() {
                     </p>
                   </div>
                 </details>
+                    
+                  ) : (
+                    <p data-bs-toggle="modal" data-bs-target="#logInMember" className="no-reveal-answer">▸ Click to see the answer</p>
+                  )
+                }
               </div>
             </div>
 
@@ -2201,6 +2374,8 @@ export function Get_Answers() {
                 <h5 className="faq-title">
                   🏅🖌🌿 : Many critics agree that <em>Things Fall Apart</em> by Chinua Achebe marks the beginning of modern African novel. With evidences from Things Fall Apart as compared or contrast with some other African novels in English, show how the first novel by Achebe has become an early landmark guiding present and future African writers.
                 </h5>
+                {
+                  isMember ? (
                 <details>
                   <summary className="reveal-answer mt-3">
                     Click to see the answer
@@ -2284,6 +2459,11 @@ export function Get_Answers() {
                     </p>
                   </div>
                 </details>
+                    
+                  ) : (
+                    <p data-bs-toggle="modal" data-bs-target="#logInMember" className="no-reveal-answer">▸ Click to see the answer</p>
+                  )
+                }
               </div>
             </div>
 
@@ -2293,10 +2473,21 @@ export function Get_Answers() {
                 🏅🖌🌿 Click on either <span className="underline"><em>{`"`}Open{`"`}</em></span> or <span className="underline"><em>{`"`}Download{`"`}</em></span> to get a well-explained document that will help you understand all the topics related to Semester 6 courses.
                 </h5>
                 <div className="spacers">---------------</div>
-                <div className="Detailled-docs">
+
+                {
+                  isMember ? (
+                    <div className="Detailled-docs">
                 <a href="https://drive.google.com/file/d/1QELAIL7EaDAUYqqdq4TBn0yxKRprfMnw/view?usp=drive_link" target="_blank" rel="noopener noreferrer"> <img height={22} src={open} alt="doc" /> Open</a>
                 <a href={Semester_6_Detailled_document} download={`Semester 6 Detailled document.pdf`} rel="noopener noreferrer"> <img height={22} src={download} alt="doc" /> Download</a>
                 </div>
+                  ) : (
+                    <div className="Detailled-docs">
+                <a data-bs-toggle="modal" data-bs-target="#logInMember"> <img height={22} src={open} alt="doc" /> Open</a>
+                <a data-bs-toggle="modal" data-bs-target="#logInMember"> <img height={22} src={download} alt="doc" /> Download</a>
+                </div>
+                  )
+                }
+
               </div>
             </div>
 

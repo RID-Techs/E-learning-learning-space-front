@@ -201,6 +201,19 @@ const ClosingBanner = () => {
   localStorage.setItem("fromScreenLaunch", "Screen");
 }
 
+const [eco, setEco] = useState(false);
+
+useEffect(() => {
+  const ecoValue = localStorage.getItem("eco");
+  if(!ecoValue) return;
+  setEco(ecoValue === "true");
+}, []);
+
+const ClosingEcoBanner = () => {
+  localStorage.removeItem("isLoggedIn");
+  localStorage.setItem("eco", "true");
+  setEco(true);
+}
 
   return (
     <>
@@ -363,6 +376,22 @@ const ClosingBanner = () => {
     </div>
   </div>
 ) : null}
+
+{!eco && (
+   <div id="install-banner">
+    <div className="banner-wrapper">
+      <div className="banner-content">
+        <div className="closing-banner"><button onClick={ClosingEcoBanner} id="closing-banner">Close</button></div>
+        <p id="banner-title">✧ New Update ✧</p>
+        <p id="banner-divider">- · - - · - - · -</p>
+        <p>
+          Hey 😃, <strong><em>E-Collection Of Papers</em></strong> is here ! It is a collection of past exam papers that will help you prepare for your exams and improve your knowledge. You can contribute too 🤗.
+        </p>
+        <button onClick={ClosingEcoBanner} id="install-btn">Got it <em>!</em></button>
+      </div>
+    </div>
+  </div>
+)}
 
 
         </div>

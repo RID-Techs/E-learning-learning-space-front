@@ -1276,6 +1276,26 @@ hr.divider{
   padding: 0.7em;
   border-radius: 5px;
 }
+.no-reveal-answer{
+  background-color: rgba(127, 255, 212, 0.521);
+  padding: 0.7em;
+  border-radius: 5px;
+}
+.podcast-not-allowed {
+  display: flex;
+  justify-content: center;
+}
+.podcast-not-allowed p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  box-shadow: 0px 0px 4px #000;
+}
+.podcast-not-allowed p span:first-child {
+  color: #cf032f;
+}
+.podcast-not-allowed p span:last-child {
+  color: #00218d;
+}
 .answer-content{
   line-height: 1.7em;
 }

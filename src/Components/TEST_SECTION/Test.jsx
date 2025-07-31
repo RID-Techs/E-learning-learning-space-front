@@ -17,8 +17,12 @@ import { Morphology_Test } from "./SEM_3_TEST/Morpho_Test";
 import { S3_American_Novel_Test } from "./SEM_3_TEST/American_S3_Test";
 import { English_19th_Novel_Test } from "./SEM_5_TEST/English_19th_Century";
 import { Lit_And_Environment } from "./SEM_5_TEST/EnvironLit";
+import { Link } from "react-router-dom";
 export function Test() {
   const [testSem, setTestSem] = useState("");
+
+  const getMemberStatus = localStorage.getItem("isLoggedIn");
+  const isMember = getMemberStatus === "true";
 
   const handleTestSem = (e) => {
     setTestSem(e.target.value);
@@ -223,6 +227,41 @@ export function Test() {
 
   return (
     <>
+
+         <div className="modal" id="logInMember" tabIndex="-1">
+          <div className="modal-dialog">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title text-primary-emphasis fw-bold">E-learning Member</h5>
+                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div className="modal-body">
+                <p>Want to get access ? Alright, <strong>register</strong> to enjoy all the <strong>Resources</strong>, available exclusively to <strong>E-learning members</strong>, and therefore assess your learning progress and continue improving.</p>
+              </div>
+              <div className="modal-footer">
+                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <Link to={"/signin"}>
+                <button type="button" className="btn btn-primary fw-bold fst-italic" data-bs-dismiss="modal">Sign in <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M9 8v-2a2 2 0 0 1 2 -2h7a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-7a2 2 0 0 1 -2 -2v-2" />
+          <path d="M3 12h13l-3 -3" />
+          <path d="M13 15l3 -3" />
+        </svg> </button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+
       <div className="container-fluid test-wraper">
         <div className="test-holder">
           <header className="test-header">
@@ -352,25 +391,53 @@ export function Test() {
           <div className="test-subject-item">
             <p className="subject-header">Grammar <img src={star} alt="star" /> </p>
             <hr className="test-divder" />
-              <button onClick={HideSubjects_1}  className="test-btn" type="button">Take a test <img height={22} src={Testpic} alt="star" /> </button>
+              {
+                isMember ? (
+                  <button onClick={HideSubjects_1}  className="test-btn" type="button">Take a test <img height={22} src={Testpic} alt="star" /> </button>
+
+                ) : (
+                  <button data-bs-toggle="modal" data-bs-target="#logInMember"  className="test-btn" type="button">Take a test <img height={22} src={Testpic} alt="star" /> </button>
+                )
+              }
           </div>
 
           <div className="test-subject-item">
             <p className="subject-header">Phonetics & Phonology <img src={star} alt="star" /> </p>
             <hr className="test-divder" />
-              <button onClick={HideSubjects_2} className="test-btn" type="button">Take a test <img height={22} src={Testpic} alt="star" /> </button>
+               {
+                 isMember ? (
+                  <button onClick={HideSubjects_2} className="test-btn" type="button">Take a test <img height={22} src={Testpic} alt="star" /> </button>
+
+                ) : (
+                  <button data-bs-toggle="modal" data-bs-target="#logInMember"  className="test-btn" type="button">Take a test <img height={22} src={Testpic} alt="star" /> </button>
+                )
+              }
           </div>
 
           <div className="test-subject-item">
             <p className="subject-header">American Civilisation <img src={star} alt="star" /> </p>
             <hr className="test-divder" />
-              <button onClick={HideSubjects_3} className="test-btn" type="button">Take a test <img height={22} src={Testpic} alt="star" /> </button>
+               {
+                 isMember ? (
+                  <button onClick={HideSubjects_3} className="test-btn" type="button">Take a test <img height={22} src={Testpic} alt="star" /> </button>
+
+                ) : (
+                  <button data-bs-toggle="modal" data-bs-target="#logInMember"  className="test-btn" type="button">Take a test <img height={22} src={Testpic} alt="star" /> </button>
+                )
+              }
           </div>
 
           <div className="test-subject-item">
             <p className="subject-header">British Civilisation <img src={star} alt="star" /> </p>
             <hr className="test-divder" />
+               {
+                isMember ? (
               <button onClick={HideSubjects_4} className="test-btn" type="button">Take a test <img height={22} src={Testpic} alt="star" /> </button>
+
+                ) : (
+                  <button data-bs-toggle="modal" data-bs-target="#logInMember"  className="test-btn" type="button">Take a test <img height={22} src={Testpic} alt="star" /> </button>
+                )
+              }
           </div>
           
         </div>
@@ -385,19 +452,37 @@ export function Test() {
           <div className="test-subject-item">
             <p className="subject-header">18<sup>th</sup> Century English Novel <img src={star} alt="star" /> </p>
             <hr className="test-divder" />
-              <button onClick={HideSubjects_5}  className="test-btn" type="button">Take a test <img height={22} src={Testpic} alt="star" /> </button>
+               {
+                 isMember ? (
+                  <button onClick={HideSubjects_5}  className="test-btn" type="button">Take a test <img height={22} src={Testpic} alt="star" /> </button>
+                ) : (
+                  <button data-bs-toggle="modal" data-bs-target="#logInMember"  className="test-btn" type="button">Take a test <img height={22} src={Testpic} alt="star" /> </button>
+                )
+              }
           </div>
 
           <div className="test-subject-item">
             <p className="subject-header">Morphology & Syntax <img src={star} alt="star" /> </p>
             <hr className="test-divder" />
-              <button onClick={HideSubjects_6} className="test-btn" type="button">Take a test <img height={22} src={Testpic} alt="star" /> </button>
+               {
+                 isMember ? (
+                  <button onClick={HideSubjects_6} className="test-btn" type="button">Take a test <img height={22} src={Testpic} alt="star" /> </button>
+                ) : (
+                  <button data-bs-toggle="modal" data-bs-target="#logInMember"  className="test-btn" type="button">Take a test <img height={22} src={Testpic} alt="star" /> </button>
+                )
+              }
           </div>
 
           <div className="test-subject-item">
             <p className="subject-header">American Novel <img src={star} alt="star" /> </p>
             <hr className="test-divder" />
-              <button onClick={HideSubjects_7} className="test-btn" type="button">Take a test <img height={22} src={Testpic} alt="star" /> </button>
+               {
+                 isMember ? (
+                  <button onClick={HideSubjects_7} className="test-btn" type="button">Take a test <img height={22} src={Testpic} alt="star" /> </button>
+                ) : (
+                  <button data-bs-toggle="modal" data-bs-target="#logInMember"  className="test-btn" type="button">Take a test <img height={22} src={Testpic} alt="star" /> </button>
+                )
+              }
           </div>
         </div>
       : null}
@@ -410,13 +495,27 @@ export function Test() {
           <div className="test-subject-item">
             <p className="subject-header">19<sup>th</sup> Century English Novel <img src={star} alt="star" /> </p>
             <hr className="test-divder" />
-              <button onClick={HideSubjects_8}  className="test-btn" type="button">Take a test <img height={22} src={Testpic} alt="star" /> </button>
+               {
+                 isMember ? (
+                  <button onClick={HideSubjects_8}  className="test-btn" type="button">Take a test <img height={22} src={Testpic} alt="star" /> </button>
+
+                ) : (
+                  <button data-bs-toggle="modal" data-bs-target="#logInMember"  className="test-btn" type="button">Take a test <img height={22} src={Testpic} alt="star" /> </button>
+                )
+              }
           </div>
 
           <div className="test-subject-item">
             <p className="subject-header">Literature & Environement <img src={star} alt="star" /> </p>
             <hr className="test-divder" />
-              <button onClick={HideSubjects_9} className="test-btn" type="button">Take a test <img height={22} src={Testpic} alt="star" /> </button>
+               {
+                 isMember ? (
+                  <button onClick={HideSubjects_9} className="test-btn" type="button">Take a test <img height={22} src={Testpic} alt="star" /> </button>
+
+                ) : (
+                  <button data-bs-toggle="modal" data-bs-target="#logInMember"  className="test-btn" type="button">Take a test <img height={22} src={Testpic} alt="star" /> </button>
+                )
+              }
           </div>
         </div>
       : null}
