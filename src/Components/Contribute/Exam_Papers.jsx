@@ -194,6 +194,12 @@ export function AddExamPapers() {
             return;
           }
           if (data) {
+            setPreviewedImg("");
+            setImgUploaded(false);
+            setChoosedSemester("");
+            setChoosedTeachingUnit("");
+            setPaperYear("");
+            setExamPaperImg(null);
             setSubmitStatus("completed");
             setShowThanks(true);
           }
@@ -330,8 +336,8 @@ export function AddExamPapers() {
                         <option value="Creative Writing">
                           Creative Writing
                         </option>
-                        <option value="Méthodologie du Traduction">
-                          Méthodologie du Traduction
+                        <option value="Méthodologie de Traduction">
+                          Méthodologie de Traduction
                         </option>
                         <option value="Techniques d'Expression Orale">
                           Techniques d{"'"}Expression Orale
