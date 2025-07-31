@@ -12,7 +12,7 @@ label {
   font-weight:500;
 }
 
-#semester-level, #teaching-unit, #paper-year {
+#semester-level, #teaching-unit, #paper-side, #paper-side-part, #paper-year {
   outline: none;
   padding: 0.5em;
   border-radius: 5px;

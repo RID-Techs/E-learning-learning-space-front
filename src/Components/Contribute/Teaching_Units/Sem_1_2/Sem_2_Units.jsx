@@ -327,7 +327,7 @@ export function Semester2Units() {
         .from('exam_paper')
         .select('*')
         .eq('paper_semester', 'Semester 2')
-        .eq('paper_name', 'Méthodologie du Traduction')
+        .eq('paper_name', 'Méthodologie de Traduction')
         .order('paper_year', { ascending: false });
         
         if (error) {
@@ -361,7 +361,7 @@ export function Semester2Units() {
         .from('exam_paper')
         .select('*')
         .eq('paper_semester', 'Semester 2')
-        .eq('paper_name', 'Techniques d\'Expression Orale')
+        .eq('paper_name', 'Allemand')
         .order('paper_year', { ascending: false });
         
         if (error) {
@@ -395,7 +395,7 @@ export function Semester2Units() {
         .from('exam_paper')
         .select('*')
         .eq('paper_semester', 'Semester 2')
-        .eq('paper_name', 'Allemand / Espagnol')
+        .eq('paper_name', 'Espagnol')
         .order('paper_year', { ascending: false });
         
         if (error) {
@@ -546,7 +546,7 @@ export function Semester2Units() {
         <li>
           <div className="unit-info-header">
             <img src={paper} height={64} alt="paper" />
-            <p>Unit : Méthodologie du Traduction</p>
+            <p>Unit : Méthodologie de Traduction</p>
           </div>
           <div className="unit-info-body">
             {
@@ -564,7 +564,7 @@ export function Semester2Units() {
         <li>
           <div className="unit-info-header">
             <img src={paper} height={64} alt="paper" />
-            <p>Unit : Techniques d{"'"}Expression Orale</p>
+            <p>Unit : Allemand</p>
           </div>
           <div className="unit-info-body">
             {
@@ -582,7 +582,7 @@ export function Semester2Units() {
         <li>
           <div className="unit-info-header">
             <img src={paper} height={64} alt="paper" />
-            <p>Unit : Allemand / Espagnol</p>
+            <p>Unit : Espagnol</p>
           </div>
           <div className="unit-info-body">
             {

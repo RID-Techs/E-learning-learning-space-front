@@ -67,6 +67,7 @@ export function AddExamPapers() {
 
   const [submitStatus, setSubmitStatus] = useState("completed");
   const [showThanks, setShowThanks] = useState(false);
+  const [showPaperSidePart, setShowPaperSidePart] = useState(false);
   const [username, setUsername] = useState("");
   useEffect(() => {
     const user = localStorage.getItem("User") ?? "E-member";
@@ -90,6 +91,8 @@ export function AddExamPapers() {
   const [choosedSemester, setChoosedSemester] = useState("");
   const [choosedTeachingUnit, setChoosedTeachingUnit] = useState("");
   const [paperYear, setPaperYear] = useState("");
+  const [isDoubleSided, setIsDoubleSided] = useState("");
+  const [choosedPaperSide, setChoosedPaperSide] = useState("");
   const [imgUploaded, setImgUploaded] = useState(false);
   const [previewedImg, setPreviewedImg] = useState("");
   const [examPaperImg, setExamPaperImg] = useState(null);
@@ -114,6 +117,24 @@ export function AddExamPapers() {
     const choosedValue = event.target.value.trim();
     setChoosedTeachingUnit(choosedValue);
   };
+
+    const handlePaperSide = (event) => {
+    const choosedValue = event.target.value.trim();
+    if (choosedValue === "Yes") {
+      setShowPaperSidePart(true);
+      setIsDoubleSided(choosedValue);
+    } else {
+      setShowPaperSidePart(false);
+      setIsDoubleSided(choosedValue);
+    }
+  };
+
+  const handlePaperSidePart = (event) => {
+    const choosedValue = event.target.value.trim();
+    setChoosedPaperSide(choosedValue);
+  };
+
+
   const handlePaperYear = (event) => {
     const choosedValue = event.target.value.trim();
     setPaperYear(choosedValue);
@@ -123,7 +144,7 @@ export function AddExamPapers() {
     e.preventDefault();
     setSubmitStatus("pending");
 
-    if (!choosedSemester || !choosedTeachingUnit || !paperYear) {
+    if (!choosedSemester || !choosedTeachingUnit || !isDoubleSided || !choosedPaperSide || !paperYear) {
       MendatoryFields("Please, All fields are required !");
       setSubmitStatus("completed");
       return;
@@ -151,11 +172,24 @@ export function AddExamPapers() {
 
       if (exam_paper && exam_paper.length > 0) {
         const isPaperExists = exam_paper.some(
-          (paper) =>
-            paper.paper_name === choosedTeachingUnit &&
-            paper.paper_year === paperYear
+          (paper) => {
+            if(paper.is_double_sided && paper.is_double_sided === isDoubleSided) {
+              return (
+                paper.paper_name === choosedTeachingUnit &&
+                paper.paper_side === choosedPaperSide &&
+                paper.paper_year === paperYear
+              );
+            } else {
+              return (
+                paper.paper_name === choosedTeachingUnit &&
+                paper.paper_year === paperYear
+              );
+            }
+          }
         );
         if (isPaperExists) {
+          console.log(isPaperExists);
+          
           MendatoryFields(
             "This exam paper already exists for the selected semester and year."
           );
@@ -181,6 +215,8 @@ export function AddExamPapers() {
             .insert({
               paper_semester: choosedSemester,
               paper_name: choosedTeachingUnit,
+              is_double_sided: isDoubleSided,
+              paper_side: choosedPaperSide,
               paper_img: pictureUrl,
               paper_year: paperYear,
             })
@@ -339,11 +375,11 @@ export function AddExamPapers() {
                         <option value="Méthodologie de Traduction">
                           Méthodologie de Traduction
                         </option>
-                        <option value="Techniques d'Expression Orale">
-                          Techniques d{"'"}Expression Orale
+                        <option value="Allemand">
+                          Allemand
                         </option>
-                        <option value="Allemand / Espagnol">
-                          Allemand / Espagnol
+                        <option value="Espagnol">
+                          Espagnol
                         </option>
                       </>
                     )}
@@ -393,9 +429,6 @@ export function AddExamPapers() {
                         <option value="Poésie Anglaise">Poésie Anglaise</option>
                         <option value="Poésie Américaine">
                           Poésie Américaine
-                        </option>
-                        <option value="Techniques d'Expression Orale Avancée">
-                          Techniques d{"'"}Expression Orale Avancée
                         </option>
                       </>
                     )}
@@ -452,6 +485,26 @@ export function AddExamPapers() {
                   </select>
                 </div>
                 <div className="form-group">
+                  <label htmlFor="paper-side">Double-Sided or Two Parts ?</label>
+                  <select onChange={handlePaperSide} id="paper-side">
+                    <option value="">Choose</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                  </select>
+                </div>
+                {
+                  showPaperSidePart && (
+                  <div className="form-group">
+                  <label htmlFor="paper-side-part">Choose the Paper Side</label>
+                    <select onChange={handlePaperSidePart} id="paper-side-part">
+                      <option value="">Choose</option>
+                      <option value="Part 1">Part 1</option>
+                      <option value="Part 2">Part 2</option>
+                    </select>
+                </div>
+                  )
+                }
+                <div className="form-group">
                   <label htmlFor="upload-picture">
                     Upload the Exam Paper here ⤵
                     <input
@@ -485,6 +538,10 @@ export function AddExamPapers() {
                   <label htmlFor="paper-year">Mention its Academic Year </label>
                   <select onChange={handlePaperYear} id="paper-year">
                     <option value="">Choose</option>
+                    <option value="2011 - 2012">2011 - 2012</option>
+                    <option value="2012 - 2013">2012 - 2013</option>
+                    <option value="2013 - 2014">2013 - 2014</option>
+                    <option value="2014 - 2015">2014 - 2015</option>
                     <option value="2015 - 2016">2015 - 2016</option>
                     <option value="2016 - 2017">2016 - 2017</option>
                     <option value="2017 - 2018">2017 - 2018</option>

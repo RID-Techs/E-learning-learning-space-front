@@ -23,7 +23,6 @@ export function Semester4Units() {
   const [fetchingData_5, setFetchingData_5] = useState(false);
   const [fetchingData_6, setFetchingData_6] = useState(false);
   const [fetchingData_7, setFetchingData_7] = useState(false);
-  const [fetchingData_8, setFetchingData_8] = useState(false);
 
   
   const [examPapers_Unit_1, setExamPapers_Unit_1] = useState([]);
@@ -33,7 +32,6 @@ export function Semester4Units() {
   const [examPapers_Unit_5, setExamPapers_Unit_5] = useState([]);
   const [examPapers_Unit_6, setExamPapers_Unit_6] = useState([]);
   const [examPapers_Unit_7, setExamPapers_Unit_7] = useState([]);
-  const [examPapers_Unit_8, setExamPapers_Unit_8] = useState([]);
 
   const [subject_1, setSubject_1] = useState(false);
   const [subject_2, setSubject_2] = useState(false);
@@ -42,7 +40,6 @@ export function Semester4Units() {
   const [subject_5, setSubject_5] = useState(false);
   const [subject_6, setSubject_6] = useState(false);
   const [subject_7, setSubject_7] = useState(false);
-  const [subject_8, setSubject_8] = useState(false);
 
   const closeDisplayPapers = () => {
     setDisplayPapers(false);
@@ -53,7 +50,6 @@ export function Semester4Units() {
     setSubject_5(false);
     setSubject_6(false);
     setSubject_7(false);
-    setSubject_8(false);
     document.body.style.overflow = "auto";
   };
 
@@ -131,17 +127,6 @@ export function Semester4Units() {
     }
     if(examPapers_Unit_7.length === 0) {
       await fetchExamPapers_Unit_7();
-    }
-  };
-
-  const displayPapersHandler_Unit_8 = async () => {
-    if(examPapers_Unit_8.length > 0) {
-      setDisplayPapers(!displayPapers);
-      setSubject_8(true);
-      document.body.style.overflow = "hidden";
-    }
-    if(examPapers_Unit_8.length === 0) {
-      await fetchExamPapers_Unit_8();
     }
   };
 
@@ -386,41 +371,7 @@ export function Semester4Units() {
           console.error("Error fetching exam papers:", error);
         }
       }
-    }
-    const fetchExamPapers_Unit_8 = async () => {
-      document.body.style.overflow = "hidden";
-      setFetchingData_8(true);
-      try {
-        const { data, error } = await supabase
-        .from('exam_paper')
-        .select('*')
-        .eq('paper_semester', 'Semester 4')
-        .eq('paper_name', 'Techniques d\'Expression Orale Avancée')
-        .order('paper_year', { ascending: false });
-        
-        if (error) {
-          setFetchingData_8(false);
-          document.body.style.overflow = "auto";
-          throw error;
-        }
-        if (!data || data.length === 0) {
-          setFetchingData_8(false);
-          document.body.style.overflow = "auto";
-          ErrorMsg("No exam papers found for this Teaching Unit.");
-          throw new Error("No exam papers found for this Teaching Unit.");
-        }
-        setExamPapers_Unit_8(data);
-        setFetchingData_8(false);
-        setDisplayPapers(!displayPapers);
-        setSubject_8(true);
-      } catch (error) {
-        setFetchingData_8(false);
-        document.body.style.overflow = "auto";
-        if(import.meta.env.VITE_ENV === "development") {
-          console.error("Error fetching exam papers:", error);
-        }
-      }
-    }    
+    }  
 
   return (
     <>
@@ -440,7 +391,6 @@ export function Semester4Units() {
       {subject_5 && <DisplayPapers papers={examPapers_Unit_5} />}
       {subject_6 && <DisplayPapers papers={examPapers_Unit_6} />}
       {subject_7 && <DisplayPapers papers={examPapers_Unit_7} />}
-      {subject_8 && <DisplayPapers papers={examPapers_Unit_8} />}
       <hr />
       <div className="close-display-papers">
           <div className="close-display-papers-body">
@@ -575,24 +525,6 @@ export function Semester4Units() {
                     </button>
               ) : (
                 <button onClick={displayPapersHandler_Unit_7} type="button">View the exam papers</button>
-              )
-            }
-          </div>
-        </li>
-        <li>
-          <div className="unit-info-header">
-            <img src={paper} height={64} alt="paper" />
-            <p>Unit : Techniques d{"'"}Expression Orale Avancée</p>
-          </div>
-          <div className="unit-info-body">
-            {
-              fetchingData_8 ? (
-                  <button type="button">
-                      <span id="loading-circle"></span>{" "}
-                      <span>Processing...</span>{" "}
-                    </button>
-              ) : (
-                <button onClick={displayPapersHandler_Unit_8} type="button">View the exam papers</button>
               )
             }
           </div>
