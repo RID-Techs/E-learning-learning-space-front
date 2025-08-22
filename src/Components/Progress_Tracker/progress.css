@@ -1,0 +1,297 @@
+.progress-msg p{
+  font-size: 1.7rem;
+}
+.progress-msg p:nth-child(1) {
+  margin-left: 1em;
+}
+.progress-msg p:nth-child(2) {
+  margin-left: 2em;
+}
+.progress-msg p:nth-child(3) {
+  margin-left: 7em;
+}
+
+#eye-progress{
+  position: relative;
+}
+#eye-progress::before {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  height: 14px;
+  width: 100%;
+  background-color: rgb(248, 174, 186);
+  z-index: -1;
+}
+
+#embody-progress{
+  position: relative;
+}
+#embody-progress::before {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  height: 14px;
+  width: 100%;
+  background-color: aquamarine;
+  z-index: -1;
+}
+
+#enjoy-progress{
+  position: relative;
+}
+
+#enjoy-progress::before {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  height: 14px;
+  width: 100%;
+  background-color: khaki;
+  z-index: -1;
+}
+
+.progress-msg p:nth-child(4) {
+  text-align: center;
+  font-size: 2rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#learning-progress{
+  position: relative;
+}
+
+#learning-progress::before {
+  position: absolute;
+  content: "";
+  height: 5px;
+  width: 90px;
+  background-color: #c5bbff;
+  top: 0;
+  left: 0;
+  margin-left: -1em;
+  margin-top: -0.2em;
+  z-index: -1;
+}
+#learning-progress::after {
+  position: absolute;
+  content: "";
+  height: 5px;
+  width: 90px;
+  background-color: #bbee79;
+  bottom: 0;
+  right: 0;
+  margin-bottom: -0.3em;
+  margin-right: -1em;
+  z-index: -1;
+}
+
+#choose-semester {
+  margin-top: 1.3em;
+  margin-bottom: 1.3em;
+  text-align: center;
+}
+#choose-semester span {
+  background-color: #fff;
+  padding: 0.3em 0.5em;
+  border: 1px solid transparent;
+  position: relative;
+  box-shadow: 2px 0px 8px #333;
+
+}
+#choose-semester span::before {
+  position: absolute;
+  content: "";
+  height: 10px;
+  width: 10px;
+  background-color: rgb(14, 126, 89);
+  border-bottom-right-radius: 25px;
+  top: 0;
+  left: 0;
+}
+#choose-semester span::after {
+  position: absolute;
+  content: "";
+  height: 10px;
+  width: 10px;
+  background-color: crimson;
+  border-top-left-radius: 25px;
+  bottom: 0;
+  right: 0;
+}
+
+.progress-by-semester {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  flex-wrap: wrap;
+}
+
+.progress-inputs-group-checked {
+  background-image: linear-gradient(145deg, rgb(50, 107, 107), rgb(77, 85, 2), rgb(160, 35, 56));
+  border: none;
+  padding: 0.3em;
+  cursor: pointer;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+  animation: fade-in 0.3s ease-in-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  } to {
+    opacity: 1;
+  }
+}
+
+.progress-inputs-group {
+  background-color: #ffffffa8;
+  border: 1px solid #3333339d;
+  padding: 0.3em;
+  cursor: pointer;
+}
+.progress-by-semester label{
+  cursor: pointer;
+}
+
+.progress-by-semester input[type="checkbox"]{
+  margin: 0em 0.3em;
+  font-size: 1.1rem;
+  display: none;
+  cursor: pointer;
+}
+
+.checked-semester {
+  position: relative;
+  margin-right: 1em;
+}
+.unchecked-semester {
+  position: relative;
+  margin-right: 1em;
+}
+.checked-semester::before {
+  position: absolute;
+  content: "";
+  border: 1px solid transparent;
+  height: 12px;
+  width: 12px;
+  background-color: #000;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  margin-top: 0.2em;
+  transition: all 0.3s ease-in-out;
+}
+.checked-semester::after {
+  position: absolute;
+  content: "";
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  background-color: transparent;
+  height: 14px;
+  width: 7px;
+  rotate: 35deg;
+  top: 0;
+  left: 0;
+  margin-top: -0.1em;
+  margin-left: 0.2em;
+  z-index: 100;
+}
+.unchecked-semester::before {
+  position: absolute;
+  content: "";
+  border: 1px solid #000;
+  height: 12px;
+  width: 12px;
+  background-color: #fff;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  margin-top: 0.2em;
+  transition: all 0.3s ease-in-out;
+}
+
+.courses-by-semester {
+  margin-top: 2em;
+  transition: all 0.3s ease-in-out;
+  animation: appear 0.5s ease-in-out;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  } to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.courses-by-semester button {
+  outline: none;
+  border: none;
+  padding: 0.5em;
+  font-size: 1.1rem;
+  background-color: rgb(188, 221, 221);
+  position: relative;
+}
+
+.courses-by-semester button::before {
+  position: absolute;
+  content: "";
+  color: rgb(106, 8, 218);
+  height: 10px;
+  width: 10px;
+  bottom: 0;
+  left: 0;
+  background-color: #c4a727;
+  border-top-right-radius: 80px;
+}
+.courses-by-semester button::after {
+  position: absolute;
+  content: "";
+  padding-top: 0.5em;
+  padding-left: 0.5em;
+  height: 10%;
+  width: 20px;
+  top: 0;
+  right: 0;
+  background-color: #c4a727;
+  border-bottom-left-radius: 80px;
+}
+
+.validate-track-btn-holder {
+  display: flex;
+  justify-content: center;
+}
+
+#validate-track-btn {
+  outline: none;
+  border: none;
+  padding: 0.3em;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: rgb(0, 81, 128);
+  color: #fff;
+}
+
+
+
+@media only screen and (min-width: 769px) {
+.courses-by-semester {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 1em;
+}
+}
+@media only screen and (max-width: 768px) {
+.courses-by-semester {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1em;
+}
+}

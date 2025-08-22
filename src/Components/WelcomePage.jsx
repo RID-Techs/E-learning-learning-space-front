@@ -476,7 +476,7 @@ const ClosingEcoBanner = () => {
             <button onClick={EnterMySession} id="login-button"> <img height={32} src={courses} alt="user" /> Open my Learning Space</button>
             {isMember && <a id="web-tour" href="Websitetour" target="_blank">⋄⦂ Click me to make a nice tour of the website !</a>}
             <a id="survey-link" href="Survey">Have some feedback ? Take a quick survey ፦ </a>
-            <a id="exam-papers-link" href="/Exam-papers/"> <span id="exam-papers-icon">࠰⊱</span> E-Collection Of Papers 🪴</a>
+            <a id="exam-papers-link" href="/Exam-papers"> <span id="exam-papers-icon">࠰⊱</span> E-Collection Of Papers 🪴</a>
     </div>
 </div>)}
 

@@ -4,6 +4,7 @@ import Homepage from "/Homepage.png";
 import Answers from "/answerss.png";
 import TestOne from "/testOne.png";
 import podcast from "/podcast.png";
+import progress from "/progress.png";
 import user from "/user.png";
 import open from "/course.png";
 import download from "/download.png";
@@ -213,7 +214,7 @@ export function Get_Answers() {
       const handleClick = (event) => {
         const newTextContent = event.target.textContent.trim();
           setOpenAnswer((prevState) => {
-          console.log(prevState, "implemented by RID-Techs")
+          console.log(prevState, "implemented by RID-Techs");
           const newState = newTextContent === "Click to see the answer";
           event.target.textContent = newState ? "Close" : "Click to see the answer";
           return newState;
@@ -283,6 +284,12 @@ export function Get_Answers() {
               <li>
                 {" "}
                 <img height={22} src={podcast} alt="Podcast" /> E-Podcast{" "}
+              </li>
+            </a>
+            <a className="" href="Learning_progress">
+              <li>
+                {" "}
+                <img height={22} src={progress} alt="Podcast" /> E-Progress{" "}
               </li>
             </a>
           <a className="" href="Survey">

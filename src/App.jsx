@@ -16,6 +16,7 @@ import { WebsiteTour } from "./Components/webTour";
 import { Survey } from "./Components/Feedback/survey";
 import { ExamPapersWrapper } from "./Components/Add_Paper_holder";
 import { GetAllExamPapersWrapper } from "./Components/All_Exam_Papers_Holder";
+import { User_Progress } from "./Components/Progress_Tracker/User_Progress";
 function App() {
 
   const router = createBrowserRouter([
@@ -29,7 +30,7 @@ function App() {
       errorElement: <ErrorPage/>
     },
     {
-      path: "/signup",
+      path: "/signup-adins",
       element: (
         <ErrorBoundary fallback={<Error/>}>
           <SignUp/>
@@ -105,6 +106,15 @@ function App() {
       element: (
         <ErrorBoundary fallback={<Error/>}>
           <GetAllExamPapersWrapper />
+        </ErrorBoundary>
+      ),
+      errorElement: <ErrorPage/>
+    },
+    {
+      path: "/Learning_progress",
+      element: (
+        <ErrorBoundary fallback={<Error/>}>
+          <User_Progress />
         </ErrorBoundary>
       ),
       errorElement: <ErrorPage/>
