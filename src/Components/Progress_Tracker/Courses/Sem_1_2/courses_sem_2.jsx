@@ -63,8 +63,7 @@ export const Courses_Sem_2 = () => {
         
         if(sem_2_courses_group && sem_2_courses_group.courses_sem_2.length > 0) {
           const existingValue = sem_2_courses_group.courses_sem_2.find((val) => val === getCourseValue);
-          if(existingValue) {
-            alert(`"${existingValue}" is already selected !`);
+          if(existingValue) {         
             if(temporarySelect.textContent !== "") temporarySelect.textContent = ""
             const excludeTheExistingValue = sem_2_courses_group.courses_sem_2.filter((filtered) => 
             !filtered.includes(existingValue));

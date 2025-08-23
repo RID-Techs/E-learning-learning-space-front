@@ -487,12 +487,10 @@ export function Home() {
 
     if(checked_sem_1) {
       if(trackCourses_Sem_1[convertedTargetedCourseIndex].courseKey !== targetedCourseKey) {
-        console.warn(`Unknown course key: ${targetedCourseKey}`);
         return;
       }
   
       if(trackCourses_Sem_1[convertedTargetedCourseIndex].courses.includes(targetedCourse)){
-        alert("this doc exists !");
         return;
       }
   
@@ -507,12 +505,10 @@ export function Home() {
       );
     } else if(checked_sem_3) {
       if(trackCourses_Sem_3[convertedTargetedCourseIndex].courseKey !== targetedCourseKey) {
-        console.warn(`Unknown course key: ${targetedCourseKey}`);
         return;
       }
   
       if(trackCourses_Sem_3[convertedTargetedCourseIndex].courses.includes(targetedCourse)){
-        alert("this doc exists !");
         return;
       }
   
@@ -527,12 +523,10 @@ export function Home() {
       );
     } else if(checked_sem_5) {
       if(trackCourses_Sem_5[convertedTargetedCourseIndex].courseKey !== targetedCourseKey) {
-        console.warn(`Unknown course key: ${targetedCourseKey}`);
         return;
       }
   
       if(trackCourses_Sem_5[convertedTargetedCourseIndex].courses.includes(targetedCourse)){
-        alert("this doc exists !");
         return;
       }
   
@@ -547,12 +541,10 @@ export function Home() {
       );
     } else if(checked_sem_2) {
       if(trackCourses_Sem_2[convertedTargetedCourseIndex].courseKey !== targetedCourseKey) {
-        console.warn(`Unknown course key: ${targetedCourseKey}`);
         return;
       }
   
       if(trackCourses_Sem_2[convertedTargetedCourseIndex].courses.includes(targetedCourse)){
-        alert("this doc exists !");
         return;
       }
   
@@ -567,12 +559,10 @@ export function Home() {
       );
     } else if(checked_sem_4) {
       if(trackCourses_Sem_4[convertedTargetedCourseIndex].courseKey !== targetedCourseKey) {
-        console.warn(`Unknown course key: ${targetedCourseKey}`);
         return;
       }
   
-      if(trackCourses_Sem_4[convertedTargetedCourseIndex].courses.includes(targetedCourse)){
-        alert("this doc exists !");
+      if(trackCourses_Sem_4[convertedTargetedCourseIndex].courses.includes(targetedCourse)){ 
         return;
       }
   
@@ -587,12 +577,10 @@ export function Home() {
       );
     } else if(checked_sem_6) {
       if(trackCourses_Sem_6[convertedTargetedCourseIndex].courseKey !== targetedCourseKey) {
-        console.warn(`Unknown course key: ${targetedCourseKey}`);
         return;
       }
   
       if(trackCourses_Sem_6[convertedTargetedCourseIndex].courses.includes(targetedCourse)){
-        alert("this doc exists !");
         return;
       }
   
