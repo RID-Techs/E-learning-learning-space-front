@@ -217,7 +217,7 @@ export const Courses_Sem_1 = () => {
             <div className="tracked-courses-progress-holder" key={index}>
               <div className="tracked-courses-progress">
               <div className="tracked-courses-progress-header">
-                <h3>{course.split("-")[1]}</h3>
+                <h3>∻ {course.split("-")[1]}</h3>
               </div>
               <hr />
 
