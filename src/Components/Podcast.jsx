@@ -217,6 +217,7 @@ export function Podcast () {
 
   return  (
     <>
+      <div className="page-wrapper">
             <div className="container-fluid header-wraper">
         <div className="header-holder">
           <header>
@@ -255,7 +256,8 @@ export function Podcast () {
         </div>
       </div>
 
-      <div className="container mt-2">
+      <section className="stretch-section-content">
+        <div className="container mt-2">
         <div className="podcast-semester-wrapper">
           <h2 id="podcast-semester" > ✧ Choose my semester </h2>
         </div>
@@ -300,6 +302,7 @@ export function Podcast () {
       {isPodcastSem6 && <Sem_6_Podcasts />} 
       </>
     </div>
+      </section>
 
       <footer className="container-fluid normal-footer">
         <div className="footer-first-part">
@@ -368,6 +371,7 @@ export function Podcast () {
         </div>
       </footer>
 
+    </div>
     </>
   )
 }

@@ -2,6 +2,8 @@ import logo from "/learns.png";
 import Homepage from "/Homepage.png";
 import Answers from "/answerss.png";
 import TestOne from "/testOne.png";
+import E_Quiz_Dea from "/E_quiz_Dea.png";
+import E_Quiz_Gen from "/E_quiz_Gen.png";
 import star from "/stars_2.png";
 import Testpic from "/test.png";
 import { useState, useEffect, useRef } from "react";
@@ -227,6 +229,7 @@ export function Test() {
 
   return (
     <>
+      <div className="page-wrapper">
 
          <div className="modal" id="logInMember" tabIndex="-1">
           <div className="modal-dialog">
@@ -294,6 +297,18 @@ export function Test() {
                   <img height={22} src={TestOne} alt="Answers" /> Test{" "}
                 </li>
               </a>
+              <a href="E-Quiz">
+                <li>
+                  {" "}
+                  <img height={22} src={E_Quiz_Dea} alt="Answers" /> E-Quiz{" "}
+                </li>
+              </a>
+              <a href="E-Quiz-Gen">
+                <li>
+                  {" "}
+                  <img height={22} src={E_Quiz_Gen} alt="Answers" /> E-Quiz Général{" "}
+                </li>
+              </a>
             </ul>
           </div>
         </div>
@@ -318,7 +333,8 @@ export function Test() {
         </div>
     </div>
 
-    <div className="container mt-4">
+<section className="stretch-section-content">
+      <div className="container mt-4">
       <div className="test-semester">
         <h2> ✧ Choose my semester</h2>
       </div>
@@ -530,6 +546,7 @@ export function Test() {
     <div className="container mt-4">
       {testSem === "Semester 6" ? <TestSem_6 /> : null}
     </div>
+</section>
 
 
     <div className="test-appear-container">
@@ -628,6 +645,7 @@ export function Test() {
         </div>
       </footer>
 
+    </div>
     </>
   );
 }

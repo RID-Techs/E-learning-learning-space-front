@@ -228,7 +228,11 @@ export const Courses_Sem_2 = () => {
                                 pdfFiles_sem_2.filter((cs) => cs.course_key === course.split("-")[0]).length > 0 && (
                                     <>
                                     <div className="tracked-courses-progress-body-completed-wrapper">
-                                    <p className="tracked-courses-progress-body-completed-title">📍🧩 Documents you have already consulted 🤗🪴</p>
+                                    <h2 className="tracked-courses-progress-body-completed-title">
+                                      <span>
+                                        📍🧩 Documents you have already consulted 🤗🪴
+                                      </span>
+                                    </h2>
                                     <p className="text-center">⤋ ⤋ ⤋</p>
                                     <p className="tracked-courses-progress-body-completed-circle-tracker">
                                         <span>
@@ -237,7 +241,8 @@ export const Courses_Sem_2 = () => {
                                         cs.course_key === course.split("-")[0]).length) * 100)} />
                                       </span>                    
                                     </p>
-                                  <div className="tracked-courses-progress-body-completed-holder">
+                                  <div className="tracked-courses-progress-body-completed-holder-content">
+                                    <div className="tracked-courses-progress-body-completed-holder">
                                     {
                                       completedCourses.map((cs, index) => (
                                         cs.course_key === course.split("-")[0] ?
@@ -253,13 +258,16 @@ export const Courses_Sem_2 = () => {
                                       ))
                                     }
                                   </div>
+                                  </div>
                                 </div>
                                 {
                                   (completedCourses.filter((cs) =>
                                         cs.course_key === course.split("-")[0]).length !== pdfFiles_sem_2.filter((cs) => 
                                         cs.course_key === course.split("-")[0]).length) && (
                                 <div className="tracked-courses-progress-body-uncompleted-wrapper">
-                                    <p className="tracked-courses-progress-body-uncompleted-title">🎋🫣 Documents not yet consulted 🤯♦️</p>
+                                    <h2 className="tracked-courses-progress-body-uncompleted-title">
+                                      <span>🎋🫣 Documents not yet consulted 🤯♦️</span>
+                                    </h2>
                                     <p className="text-center">⤋ ⤋ ⤋</p>
                                   <div className="tracked-courses-progress-body-uncompleted-holder">
                                     {
@@ -317,7 +325,7 @@ export const Courses_Sem_2 = () => {
                                                           <div className="tracked-courses-progress-reminders-holder">
                                                             <div className="tracked-courses-progress-reminders-title-wrapper">
                                                           <div className="tracked-courses-progress-reminders-title-holder">
-                                                            <h3 className="tracked-courses-progress-reminders-title">≽ 🎋 Reminders 🧩 ≼</h3>
+                                                            <h4 className="tracked-courses-progress-reminders-title">≽ 🎋 Reminders 🧩 ≼</h4>
                                                           </div>
                                                           <div className="tracked-courses-progress-reminders-arrows">
                                                           <p>↯↯</p>

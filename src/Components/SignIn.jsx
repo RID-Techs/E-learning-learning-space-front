@@ -91,6 +91,7 @@ export function SignIn() {
 
   return (
     <>
+      <div className="page-wrapper">
       <div className="container-fluid header-wraper-home">
         <div className="header-holder">
           <header>
@@ -113,7 +114,8 @@ export function SignIn() {
         </h3>
       </div>
 
-      <div className="login-holder mt-4">
+      <section className="stretch-section-content">
+        <div className="login-holder mt-4">
         <div className="inputs-wraper mt-4">
           <form>
             <div className="input-holder">
@@ -148,21 +150,22 @@ export function SignIn() {
           <img height={350} src={E_member} alt="learning" />
         </div>
       </div>
+      </section>
 
-      <footer className="container-fluid welcome-footer">
-                <div className="footer-first-part">
+      <footer className="container-fluid normal-footer">
+              <div className="footer-first-part">
       
                 <div className="header-holder">
-                    <div className="header-footer">
-                      <img height={32} src={logo} alt="E-learning" />
-                      <h3>E-learning</h3>
-                    </div>
+                  <div className="header-footer">
+                    <img height={32} src={logo} alt="E-learning" />
+                    <h3>E-learning</h3>
                   </div>
+                </div>
       
               </div>
       
               <div className="footer-second-part">
-                  <div className="privacy">
+                <div className="privacy">
                   <div className="rights">
                     <p>&copy; {dateOfCreation} | All Rights Reserved</p>
                   </div>
@@ -170,9 +173,9 @@ export function SignIn() {
                   <div className="author">
                     <p>Made with <span style={{ color: "red" }}>&hearts;</span> by E-learning</p>
                   </div>
-                  </div>
+                </div>
       
-                  <div className="social-links">
+                <div className="social-links">
                   <div className="whatsapp-content-2">
                     <a
                       href="https://chat.whatsapp.com/KEHsubuy8gKBogstCaBPzq"
@@ -208,14 +211,15 @@ export function SignIn() {
                       Ma-moyenne
                     </a>
                   </div>
-                  </div>
-          
-                  <div className="Phone-number">
-                    <p>Contact : +228 79 83 62 19</p>
-                  </div>
                 </div>
-                </footer>
+      
+                <div className="Phone-number">
+                  <p>Contact : +228 79 83 62 19</p>
+                </div>
+              </div>
+            </footer>
 
+    </div>
     </>
   );
 }

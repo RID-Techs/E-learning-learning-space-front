@@ -352,7 +352,7 @@ export const Survey = () => {
     <>
     <main>
       <div className="survey-wrapper">
-      <h1><span className="highlight">♨</span> Hey {username}, <br /> E-learning is now back.</h1>
+      <h1><span className="highlight">♨</span> Hey {username}, <br /> E-learning is improving for you.</h1>
       {showThanks === false && <p id="survey-introductory-msg">Well, let{"'"}s go through a short and quick survey regarding E-learning.</p> }
       <div className="survey-container">
         <form onSubmit={handleSurveyQuestion_16}>

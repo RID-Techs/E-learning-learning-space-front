@@ -2,7 +2,6 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  align-items: stretch;
   gap: 1em;
 }
 .tracked-courses-progress {
@@ -40,7 +39,14 @@
   box-shadow: 0px 0px 10px #ccc;
 }
 
+.tracked-courses-progress-body-completed-holder-content {
+  display: flex;
+  justify-content: center;
+}
+
 .tracked-courses-progress-body-completed-holder {
+  display: inline-flex;
+  flex-direction: column;
   border-left: 2px dashed #33333388;
 }
 
@@ -69,8 +75,11 @@
   justify-content: center;
   align-items: center;
 }
-
 .tracked-courses-progress-body-completed-title {
+  display: flex;
+  justify-content: center;
+}
+.tracked-courses-progress-body-completed-title > span {
   font-size: 1rem;
   font-weight: 500;
   background-color: rgb(232, 248, 255);
@@ -86,6 +95,10 @@
 }
 .tracked-courses-progress-body-completed-course span, .tracked-courses-progress-body-uncompleted-course span{
   position: relative;
+}
+
+.tracked-courses-progress-body-completed-course span {
+ margin-left: 0.5em;
 }
 
 .tracked-courses-progress-body-completed-course span::before {
@@ -117,6 +130,10 @@
 }
 
 .tracked-courses-progress-body-uncompleted-title {
+  display: flex;
+  justify-content: center;
+}
+.tracked-courses-progress-body-uncompleted-title > span {
   font-size: 1rem;
   font-weight: 500;
   background-color: aliceblue;
@@ -145,6 +162,10 @@
 }
 
 .tracked-courses-progress-body-uncompleted-holder {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em;
   background-color: aliceblue;
   box-shadow: inset 0px 0px 7px #ccc;
   padding: 1em 0.5em;
@@ -188,20 +209,26 @@
 
 .tracked-courses-progress-body-completed-circle-tracker {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   margin-top: -1em;
 }
+.tracked-courses-progress-reminders {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  flex-wrap: wrap;
+}
 .tracked-courses-progress-reminders-title-holder {
-  background-color: #F1FAEE;
-  box-shadow: 0px 0px 9px #457B9D;
-  padding: 0.5em;
-  border-radius: 10px;
   margin-bottom: 0em;
   display: flex;
   justify-content: center;
   align-items: center;
   border: none;
-  & h3 {
+  & h4 {
+    padding: 0.5em;
+    border-radius: 10px;
+    background-color: #F8F9FA;
+    box-shadow: 0px 0px 9px #457B9D;
     margin-bottom: 0em;
     color: #E63946;
   }
@@ -211,7 +238,7 @@
   margin-top: 1em;
   display: flex;
   justify-content: center;
-  background-color: #F1FAEE;
+  background-color: #F8F9FA;
   box-shadow: 0px 0px 9px #A8DADC;
   padding: 1em 0.5em;
   border-radius: 10px;
@@ -267,9 +294,29 @@
 }
 
 .tracked-courses-progress-reminders-divider {
-  display: flex;
-  justify-content: center;
+  display: none;
   & p{
     margin-bottom: 0em;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .tracked-courses-progress-wrapper {
+    width: calc(100% - 15em);
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .tracked-courses-progress-reminders {
+    flex-direction: column;
+    gap: 0.5em;
+  }
+  .tracked-courses-progress-reminders-divider {
+    display: flex;
+    justify-content: center;
+    & p{
+      margin-bottom: 0em;
+    }
   }
 }

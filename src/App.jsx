@@ -17,6 +17,9 @@ import { Survey } from "./Components/Feedback/survey";
 import { ExamPapersWrapper } from "./Components/Add_Paper_holder";
 import { GetAllExamPapersWrapper } from "./Components/All_Exam_Papers_Holder";
 import { User_Progress } from "./Components/Progress_Tracker/User_Progress";
+import { E_Quiz } from "./Components/E_Quiz_Folder/E_QUIZ";
+import { Create_Quiz } from "./Components/E_Quiz_Folder/Create_Quiz";
+import { Create_Quiz_Extension } from "./Components/E_Quiz_Folder/Sample_Quiz";
 function App() {
 
   const router = createBrowserRouter([
@@ -30,7 +33,7 @@ function App() {
       errorElement: <ErrorPage/>
     },
     {
-      path: "/signup-adins",
+      path: "/sigup-adins",
       element: (
         <ErrorBoundary fallback={<Error/>}>
           <SignUp/>
@@ -115,6 +118,33 @@ function App() {
       element: (
         <ErrorBoundary fallback={<Error/>}>
           <User_Progress />
+        </ErrorBoundary>
+      ),
+      errorElement: <ErrorPage/>
+    },
+    {
+      path: "/E-Quiz",
+      element: (
+        <ErrorBoundary fallback={<Error/>}>
+          <E_Quiz />
+        </ErrorBoundary>
+      ),
+      errorElement: <ErrorPage/>
+    },
+    {
+      path: "/E-Quiz/:id",
+      element: (
+        <ErrorBoundary fallback={<Error/>}>
+          <Create_Quiz />
+        </ErrorBoundary>
+      ),
+      errorElement: <ErrorPage/>
+    },
+    {
+      path: "/E-Quiz-Gen",
+      element: (
+        <ErrorBoundary fallback={<Error/>}>
+          <Create_Quiz_Extension />
         </ErrorBoundary>
       ),
       errorElement: <ErrorPage/>
