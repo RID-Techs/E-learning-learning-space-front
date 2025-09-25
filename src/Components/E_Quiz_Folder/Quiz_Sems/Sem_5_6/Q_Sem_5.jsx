@@ -12,11 +12,11 @@ export function Sem_5_Quiz () {
                   <figure className="course-pic-quiz">᪣</figure>
                 </div>
                 <div>
-                  <p>Analyse Morpho-Phonologique</p>
+                  <p>Analyse Morpho~Phonologique</p>
                 </div>
               </div>
               <div className="quiz-semester-course-body">
-                <a href="/E-Quiz/Analyse Morpho-Phonologique-Semester 5">Create a quiz</a>
+                <a href="/E-Quiz/Analyse Morpho~Phonologique-Semester 5">Create a quiz</a>
               </div>
             </div>
 
