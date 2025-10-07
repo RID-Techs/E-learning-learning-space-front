@@ -386,6 +386,19 @@ header{
   color: rgb(2, 34, 138);
 }
 
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper > img {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  margin-right: 0.7em;
+  cursor: pointer;
+}
+
 .test-wraper {
   background-image: linear-gradient(to left, rgba(198, 179, 250, 0.226), rgba(246, 255, 255, 0.699)), url("/educa_pic_2.png");
   background-position: top;

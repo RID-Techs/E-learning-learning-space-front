@@ -1,6 +1,8 @@
 import supabase from "../Config/DbConnect"
 // Image logo, stars, star, username, password is from https://icons8.com/
 import logo from "/learns.png";
+import eye from "/eye.svg";
+import eyeBlocked from "/eye-blocked.svg";
 import stars from "/stars.png";
 import star from "/stars_2.png";
 import username from "/username.png";
@@ -11,6 +13,11 @@ import { useState, useEffect} from "react";
 export function SignUp() {
   const [loading, setLoading] = useState("Sign up");
   const [dateOfCreation, setDateOfCreation] = useState("2024");
+
+  const [showPass, setShowPass] = useState(false);
+  const handleShowPass = () => {
+    setShowPass(!showPass);
+  }
 
   useEffect(() => {
     const getYear = () => {
@@ -131,7 +138,16 @@ export function SignUp() {
                 {" "}
                 <img height={36} src={password} alt="password" /> Password :
               </label>
-              <input type="password" id="password" placeholder="Password" />
+              <div className="password-wrapper">
+                              <input type={showPass ? "text" : "password"} id="password" placeholder="Password" />
+                              {
+                                showPass ? (
+                                  <img onClick={handleShowPass} src={eyeBlocked} alt="show" />
+                                ) : (
+                                  <img onClick={handleShowPass} src={eye} alt="hide" />
+                                )
+                              }
+                            </div>
             </div>
             <div className="">
               <button onClick={handleSignUp} id="login-button" type="button">
