@@ -147,9 +147,9 @@ export function SignIn() {
                 <input type={showPass ? "text" : "password"} id="password" placeholder="Password" />
                 {
                   showPass ? (
-                    <img onClick={handleShowPass} src={eyeBlocked} alt="show" />
+                    <img height={32} onClick={handleShowPass} src={eyeBlocked} alt="show" />
                   ) : (
-                    <img onClick={handleShowPass} src={eye} alt="hide" />
+                    <img height={32} onClick={handleShowPass} src={eye} alt="hide" />
                   )
                 }
               </div>
