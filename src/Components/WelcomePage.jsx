@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 // Image logo, stars, star, username, password is from https://icons8.com/
 import logo from "/learns.png";
@@ -10,6 +10,7 @@ import courses from "/coursess.png";
 // import password from "/password.png";
 import E_member from "/E_picture.webp";
 import { toast, Zoom } from "react-toastify";
+
 export function Welcome_Page() {
   const navigate = useNavigate();
   const [showNote, setShowNote] = useState(null);
@@ -147,58 +148,45 @@ const LoginByName = () => {
   Welcome(`Welcome ${newUser}`)
   navigate("/Home")
 }
+const installBannerRef = useRef(null);
+const [isLaunch, setIsLaunch] = useState(null);
 
-const [isLaunch, setIsLaunch] = useState(() => {
+useEffect(() => {
   const getFromScreenLaunch = localStorage.getItem("fromScreenLaunch");
   const webApp = getFromScreenLaunch === "Screen";
-  return webApp;
-});
-  let reloadRoundTime = Number(sessionStorage.getItem("reloadRoundTime") || 1);
+  setIsLaunch(webApp);
+}, [])
+
+const deferredPrompt = useRef(null);
 useEffect(() => {
+  const handler = (event) => {
+    event.preventDefault();
+    deferredPrompt.current = event;
+  };
+  window.addEventListener("beforeinstallprompt", handler);
+  return () => window.removeEventListener("beforeinstallprompt", handler);
+}, []);
 
-  if (isMember && !isLaunch && reloadRoundTime < 2) {
-      sessionStorage.setItem("reloadRoundTime", reloadRoundTime + 1);
-      console.log("Added ng :", reloadRoundTime + 1);
-      window.location.reload();
+const handleAppInstallPrompt = async () => {
+  if (!deferredPrompt.current) return;
+  if(installBannerRef.current) installBannerRef.current.style.display = "none";
+  console.log("hopla");
+  deferredPrompt.current.prompt();
+  const { outcome } = await deferredPrompt.current.userChoice;
+  if (outcome === "accepted") {
+    localStorage.setItem("fromScreenLaunch", "Screen");
+    setIsLaunch(true);
+  } else {
+    if(installBannerRef.current) installBannerRef.current.style.display = "block";
   }
-
-      let deferredPrompt;
-
-      window.addEventListener("beforeinstallprompt", (e) => {
-        // Prevent Chrome from showing the default prompt
-        e.preventDefault();
-        deferredPrompt = e;
-
-        // Show your custom "Install App" button or banner
-        const installBanner = document.getElementById("install-banner");
-        if (installBanner) installBanner.style.display = "block";
-
-        // Handle the button click
-        const installButton = document.getElementById("install-btn");
-        if (installButton) {
-          installButton.addEventListener("click", () => {
-            if (installBanner) installBanner.style.display = "none"; // Hide banner
-            deferredPrompt.prompt(); // Show the install prompt
-
-            deferredPrompt.userChoice.then((choiceResult) => {
-              if (choiceResult.outcome === "accepted") {
-                console.log("User accepted");
-                localStorage.setItem("fromScreenLaunch", "Screen");
-                setIsLaunch(true);
-              } else {
-                console.log("User dismissed");
-              }
-              deferredPrompt = null;
-            });
-          });
-        }
-      });
-}, [isLaunch, isMember, reloadRoundTime]);
+  deferredPrompt.current = null;
+};
 
 const ClosingBanner = () => {
   const banner = document.getElementById("install-banner");
   banner.style.display = "none";
   localStorage.setItem("fromScreenLaunch", "Screen");
+  setIsLaunch(true);
 }
 
 const [eco, setEco] = useState(false);
@@ -213,6 +201,10 @@ const ClosingEcoBanner = () => {
   localStorage.removeItem("isLoggedIn");
   localStorage.setItem("eco", "true");
   setEco(true);
+}
+
+const showBannerToDownloadApp = () => {
+  setIsLaunch(false);
 }
 
   return (
@@ -362,8 +354,8 @@ const ClosingEcoBanner = () => {
             Welcome Dear E-learning Member <img className="member-stars" height={42} src={stars} alt="stars" />{" "}
           </h3>
 
-          {isMember && !isLaunch && window.innerWidth <= 786 ? (
-  <div id="install-banner">
+          {isMember && !isLaunch ? (
+  <div ref={installBannerRef} id="install-banner">
     <div className="banner-wrapper">
       <div className="banner-content">
         <div className="closing-banner"><button onClick={ClosingBanner} id="closing-banner">Close</button></div>
@@ -372,7 +364,7 @@ const ClosingEcoBanner = () => {
         <p>
           Just click <strong>Install</strong> to turn the <strong><em>E-learning</em></strong> website into an application, making it directly accessible from your phone{"'"}s home screen for a better experience !
         </p>
-        <button id="install-btn">Install ↯</button>
+        <button onClick={handleAppInstallPrompt} id="install-btn">Install ↯</button>
       </div>
     </div>
   </div>
@@ -567,6 +559,10 @@ const ClosingEcoBanner = () => {
       
                 <div className="Phone-number">
                   <p>Contact : +228 79 83 62 19</p>
+                </div>
+                <div className="app-container">
+                  <button onClick={showBannerToDownloadApp} type="button">Download App</button>
+                  <img height={32} src={logo} alt="E-learning" />
                 </div>
               </div>
             </footer>
