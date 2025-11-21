@@ -8,6 +8,11 @@ import The_Lion_and_Jewel from "../cours_podcasts/Sem_3/The_Lion_and_Jewel.aac"
 import Morphology from "../cours_podcasts/Sem_3/Morphology.aac"
 import { Link } from "react-router-dom";
 export function Sem_3_Podcasts () {
+  const Yellow_Yellow = "https://oousnjsxqzaocpqjfvkp.supabase.co/storage/v1/object/public/e-learning/Sem_3/Yellow_Yellow.ogg";
+  const Yellow_Characters = "https://oousnjsxqzaocpqjfvkp.supabase.co/storage/v1/object/public/e-learning/Sem_3/Yellow_Characterization.ogg";
+  const Yellow_SecondCharacters = "https://oousnjsxqzaocpqjfvkp.supabase.co/storage/v1/object/public/e-learning/Sem_3/Yellow_Secondary.ogg";
+  const Yellow_Themes = "https://oousnjsxqzaocpqjfvkp.supabase.co/storage/v1/object/public/e-learning/Sem_3/Yellow_Themes.ogg";
+  const Yellow_French = "https://oousnjsxqzaocpqjfvkp.supabase.co/storage/v1/object/public/e-learning/Sem_3/Yellow_French.ogg";
   const getMemberStatus = localStorage.getItem("isLoggedIn");
   const isMember = getMemberStatus === "true";
   return (
@@ -178,6 +183,102 @@ export function Sem_3_Podcasts () {
               isMember ? (
             <audio controls>
               <source src={The_Lion_and_Jewel} type="audio/aac" />
+            </audio>
+              ) : (
+              <div className="podcast-not-allowed">
+                <p data-bs-toggle="modal" data-bs-target="#logInMember"> <span>▸</span> <span> Play 🧩🎙️</span></p>
+              </div>
+              )
+            }
+          </div>
+        </div>
+
+          <div className="cours-podcast">
+          <div className="cours-podcast-header">
+            <p><span className="podcast-underliner">Podcast</span> : African Novel</p>
+          </div>
+          <div className="cours-podcast-body">
+          <p>Case Study : Kaine Agary{"'"}s <em>Yellow Yellow</em></p>
+            {
+              isMember ? (
+            <audio controls>
+              <source src={Yellow_Yellow} type="audio/aac" />
+            </audio>
+              ) : (
+              <div className="podcast-not-allowed">
+                <p data-bs-toggle="modal" data-bs-target="#logInMember"> <span>▸</span> <span> Play 🧩🎙️</span></p>
+              </div>
+              )
+            }
+          </div>
+        </div>
+          <div className="cours-podcast">
+          <div className="cours-podcast-header">
+            <p><span className="podcast-underliner">Podcast</span> : African Novel</p>
+          </div>
+          <div className="cours-podcast-body">
+          <p>Case Study : Kaine Agary{"'"}s <em>Yellow Yellow (Characterization)</em></p>
+            {
+              isMember ? (
+            <audio controls>
+              <source src={Yellow_Characters} type="audio/aac" />
+            </audio>
+              ) : (
+              <div className="podcast-not-allowed">
+                <p data-bs-toggle="modal" data-bs-target="#logInMember"> <span>▸</span> <span> Play 🧩🎙️</span></p>
+              </div>
+              )
+            }
+          </div>
+        </div>
+          <div className="cours-podcast">
+          <div className="cours-podcast-header">
+            <p><span className="podcast-underliner">Podcast</span> : African Novel</p>
+          </div>
+          <div className="cours-podcast-body">
+          <p>Case Study : Kaine Agary{"'"}s <em>Yellow Yellow (Secondary Characters)</em></p>
+            {
+              isMember ? (
+            <audio controls>
+              <source src={Yellow_SecondCharacters} type="audio/aac" />
+            </audio>
+              ) : (
+              <div className="podcast-not-allowed">
+                <p data-bs-toggle="modal" data-bs-target="#logInMember"> <span>▸</span> <span> Play 🧩🎙️</span></p>
+              </div>
+              )
+            }
+          </div>
+        </div>
+          <div className="cours-podcast">
+          <div className="cours-podcast-header">
+            <p><span className="podcast-underliner">Podcast</span> : African Novel</p>
+          </div>
+          <div className="cours-podcast-body">
+          <p>Case Study : Kaine Agary{"'"}s <em>Yellow Yellow (Themes)</em></p>
+            {
+              isMember ? (
+            <audio controls>
+              <source src={Yellow_Themes} type="audio/aac" />
+            </audio>
+              ) : (
+              <div className="podcast-not-allowed">
+                <p data-bs-toggle="modal" data-bs-target="#logInMember"> <span>▸</span> <span> Play 🧩🎙️</span></p>
+              </div>
+              )
+            }
+          </div>
+        </div>
+          <div className="cours-podcast">
+          <div className="cours-podcast-header">
+            <p><span className="podcast-underliner">Podcast</span> : African Novel</p>
+          </div>
+          <div className="cours-podcast-body">
+          <p>Case Study : Kaine Agary{"'"}s <em>Yellow Yellow (French Version)</em></p>
+            {
+              isMember ? (
+            <audio controls>
+              <source src={Yellow_French} type="audio/aac" />
             </audio>
               ) : (
               <div className="podcast-not-allowed">

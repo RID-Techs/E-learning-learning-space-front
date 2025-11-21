@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Phonetics_phonology from "../cours_podcasts/Sem_1/Phonetics_phonology.aac"
 
 export function Sem_1_Podcasts () {
+  const MTU_INTRODUCTION_STEPS = "https://oousnjsxqzaocpqjfvkp.supabase.co/storage/v1/object/public/e-learning/Sem_1/MTU_INTRO.ogg"
   const getMemberStatus = localStorage.getItem("isLoggedIn");
   const isMember = getMemberStatus === "true";
 
@@ -55,6 +56,25 @@ export function Sem_1_Podcasts () {
               isMember ? (
                 <audio controls>
                   <source src={Phonetics_phonology} type="audio/aac" />
+                </audio>
+              ) : (
+              <div className="podcast-not-allowed">
+                <p data-bs-toggle="modal" data-bs-target="#logInMember"> <span>▸</span> <span> Play 🧩🎙️</span></p>
+              </div>
+              )
+            }
+          </div>
+        </div>
+          <div className="cours-podcast">
+          <div className="cours-podcast-header">
+            <p><span className="podcast-underliner">Podcast</span> : Méthodologie du Travail Universitaire </p>
+          </div>
+          <div className="cours-podcast-body">
+            <p>Content : Introduction Steps</p>
+            {
+              isMember ? (
+                <audio controls>
+                  <source src={MTU_INTRODUCTION_STEPS} type="audio/aac" />
                 </audio>
               ) : (
               <div className="podcast-not-allowed">

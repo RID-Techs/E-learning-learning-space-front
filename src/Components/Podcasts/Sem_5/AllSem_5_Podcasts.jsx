@@ -13,6 +13,11 @@ import Toni_Morrison_Bluest_Eye from "../cours_podcasts/Sem_5/Toni_Morrison_Blue
 import phono_sem_5 from "../cours_podcasts/Sem_5/phono_sem_5.aac"
 import { Link } from "react-router-dom";
 export function Sem_5_Podcasts () {
+  const SmoulderingCharcoal = "https://oousnjsxqzaocpqjfvkp.supabase.co/storage/v1/object/public/e-learning/Sem_5/Smouldering_Charcoal.ogg";
+  const DauntingOdyssey = "https://oousnjsxqzaocpqjfvkp.supabase.co/storage/v1/object/public/e-learning/Sem_5/Daunting_Odyssey.ogg";
+  const BluestRacismSexism = "https://oousnjsxqzaocpqjfvkp.supabase.co/storage/v1/object/public/e-learning/Sem_5/Bluest_Racism_sexism.ogg";
+  const CultureInHibiscus = "https://oousnjsxqzaocpqjfvkp.supabase.co/storage/v1/object/public/e-learning/Sem_5/Culture_in_Hibiscus.ogg";
+  const IjemMessiah = "https://oousnjsxqzaocpqjfvkp.supabase.co/storage/v1/object/public/e-learning/Sem_5/Ijem_Messiah.ogg";
   const getMemberStatus = localStorage.getItem("isLoggedIn");
   const isMember = getMemberStatus === "true";
   return (
@@ -83,6 +88,26 @@ export function Sem_5_Podcasts () {
               isMember ? (
           <audio controls>
             <source src={Toni_Morrison_Bluest_Eye} type="audio/aac" />
+          </audio>
+                
+              ) : (
+              <div className="podcast-not-allowed">
+                <p data-bs-toggle="modal" data-bs-target="#logInMember"> <span>▸</span> <span> Play 🧩🎙️</span></p>
+              </div>
+              )
+            }
+        </div>
+      </div>
+      <div className="cours-podcast">
+        <div className="cours-podcast-header">
+          <p><span className="podcast-underliner">Podcast</span> : American Novel </p>
+        </div>
+        <div className="cours-podcast-body">
+          <p>Case Study : Toni Morrison{"'"}s <em>The Bluest Eye (Theme of Racism and Sexism)</em></p>
+          {
+              isMember ? (
+          <audio controls>
+            <source src={BluestRacismSexism} type="audio/aac" />
           </audio>
                 
               ) : (
@@ -279,12 +304,93 @@ export function Sem_5_Podcasts () {
             <p><span className="podcast-underliner">Podcast</span> : Littérature et Culture</p>
           </div>
           <div className="cours-podcast-body">
+          <p>Case Study : Chimamanda Ngozi
+          Adichie{"'"}s <em>Purple Hibiscus (Theme of Culture)</em></p>
+            {
+              isMember ? (
+            <audio controls>
+              <source src={CultureInHibiscus} type="audio/aac" />
+            </audio>
+                
+              ) : (
+              <div className="podcast-not-allowed">
+                <p data-bs-toggle="modal" data-bs-target="#logInMember"> <span>▸</span> <span> Play 🧩🎙️</span></p>
+              </div>
+              )
+            }
+          </div>
+        </div>
+        <div className="cours-podcast">
+          <div className="cours-podcast-header">
+            <p><span className="podcast-underliner">Podcast</span> : Littérature et Culture</p>
+          </div>
+          <div className="cours-podcast-body">
           <p>Case Study : Chinua Achebe{"'"}s <em>Things Fall Apart</em></p>
             {
               isMember ? (
                 
             <audio controls>
               <source src={Things_Apart} type="audio/aac" />
+            </audio>
+              ) : (
+              <div className="podcast-not-allowed">
+                <p data-bs-toggle="modal" data-bs-target="#logInMember"> <span>▸</span> <span> Play 🧩🎙️</span></p>
+              </div>
+              )
+            }
+          </div>
+        </div>
+        <div className="cours-podcast">
+          <div className="cours-podcast-header">
+            <p><span className="podcast-underliner">Podcast</span> : Roman Post-Colonial Africain</p>
+          </div>
+          <div className="cours-podcast-body">
+          <p>Case Study : Zeleza{"'"}s <em>Smouldering Charcoal</em></p>
+            {
+              isMember ? (
+                
+            <audio controls>
+              <source src={SmoulderingCharcoal} type="audio/aac" />
+            </audio>
+              ) : (
+              <div className="podcast-not-allowed">
+                <p data-bs-toggle="modal" data-bs-target="#logInMember"> <span>▸</span> <span> Play 🧩🎙️</span></p>
+              </div>
+              )
+            }
+          </div>
+        </div>
+        <div className="cours-podcast">
+          <div className="cours-podcast-header">
+            <p><span className="podcast-underliner">Podcast</span> : Roman Post-Colonial Africain</p>
+          </div>
+          <div className="cours-podcast-body">
+          <p>Case Study : Chinwe OKOLI{"'"}s <em>A Daunting Odyssey</em></p>
+            {
+              isMember ? (
+                
+            <audio controls>
+              <source src={DauntingOdyssey} type="audio/aac" />
+            </audio>
+              ) : (
+              <div className="podcast-not-allowed">
+                <p data-bs-toggle="modal" data-bs-target="#logInMember"> <span>▸</span> <span> Play 🧩🎙️</span></p>
+              </div>
+              )
+            }
+          </div>
+        </div>
+        <div className="cours-podcast">
+          <div className="cours-podcast-header">
+            <p><span className="podcast-underliner">Podcast</span> : Roman Post-Colonial Africain</p>
+          </div>
+          <div className="cours-podcast-body">
+          <p>Case Study : Chinwe OKOLI{"'"}s <em>A Daunting Odyssey (Ijem seen as a messiah)</em></p>
+            {
+              isMember ? (
+                
+            <audio controls>
+              <source src={IjemMessiah} type="audio/aac" />
             </audio>
               ) : (
               <div className="podcast-not-allowed">
