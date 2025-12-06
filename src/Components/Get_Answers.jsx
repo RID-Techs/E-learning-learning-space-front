@@ -112,15 +112,17 @@ export function Get_Answers() {
         window.open(fileUrl, "_blank");
         return;
     }
-  
+      const [downloadTxt, setDownloadTxt] = useState("Download");
       const getExplainedDoc = async (e) => {
         e.preventDefault();
+        setDownloadTxt("Preparing...");
         const currentItem = e.currentTarget;
         const fileUrl = currentItem.getAttribute("href");
         const findItemInTheCache = await isItemInCache(fileUrl);
     
         if(!isOnline && !findItemInTheCache) {
           setOfflineMsg(true);
+          setDownloadTxt("Download");
           return;
         }
 
@@ -136,6 +138,7 @@ export function Get_Answers() {
     
             if (response.ok) {
                 // The Service Worker has successfully intercepted and CACHED the file.
+              setDownloadTxt("Download");
             if(fileUrl.includes('Semester_1')) {
             setShowInCacheBtn(prevState => ({ ...prevState, sem1: true }));
           }
@@ -166,6 +169,7 @@ export function Get_Answers() {
                 window.URL.revokeObjectURL(url);
             }
         } catch (error) {
+          setDownloadTxt("Download");
             console.error("Fetch failed (offline or server error):", error);
             // Handle offline state here (show your "connect first" message)
             alert("Unable to download or access file. Please check connection."); 
@@ -655,7 +659,7 @@ export function Get_Answers() {
                     ) : (
                        <div className="Detailled-docs">
                 <a onClick={openDocInNewTab} href="https://drive.google.com/file/d/1t9pv_-A_9TS8FAdDjWdmnwqQISK4fDvB/view?usp=drive_link" rel="noopener noreferrer"> <img height={22} src={open} alt="doc" /> Open</a>
-                <a onClick={getExplainedDoc} href="/Docs/Semester_1/Semester_1_Detailled_document.pdf" data-doc-name="Semester 1 Detailled document" rel="noopener noreferrer"> <img height={22} src={download} alt="doc" /> Download</a>
+                <a onClick={getExplainedDoc} href="/Docs/Semester_1/Semester_1_Detailled_document.pdf" data-doc-name="Semester 1 Detailled document" rel="noopener noreferrer"> <img height={22} src={download} alt="doc" /> {downloadTxt}</a>
                 </div>
                     )
                   ) : (
@@ -684,7 +688,7 @@ export function Get_Answers() {
                     ) : (
                       <div className="Detailled-docs">
                 <a onClick={openDocInNewTab} href="https://drive.google.com/file/d/1kszTY85pFpXeJQfdSg5ayC_D_8U8rG0y/view?usp=drive_link" rel="noopener noreferrer"> <img height={22} src={open} alt="doc" /> Open</a>
-                <a onClick={getExplainedDoc} href="/Docs/Semester_3/Semester_3_Detailled_document.pdf" data-doc-name="Semester 3 Detailled document" rel="noopener noreferrer"> <img height={22} src={download} alt="doc" /> Download</a>
+                <a onClick={getExplainedDoc} href="/Docs/Semester_3/Semester_3_Detailled_document.pdf" data-doc-name="Semester 3 Detailled document" rel="noopener noreferrer"> <img height={22} src={download} alt="doc" /> {downloadTxt}</a>
                 </div>
                     )
                   ) : (
@@ -715,7 +719,7 @@ export function Get_Answers() {
                     ) : (
                       <div className="Detailled-docs">
                 <a onClick={openDocInNewTab} href="https://drive.google.com/file/d/1TrQibA-a3GFAuX--95tBdFfp4cVFEC31/view?usp=drive_link" rel="noopener noreferrer"> <img height={22} src={open} alt="doc" /> Open</a>
-                <a onClick={getExplainedDoc} href="/Docs/Semester_5/Semester_5_Detailled_document.pdf" data-doc-name="Semester 5 Detailled document" rel="noopener noreferrer"> <img height={22} src={download} alt="doc" /> Download</a>
+                <a onClick={getExplainedDoc} href="/Docs/Semester_5/Semester_5_Detailled_document.pdf" data-doc-name="Semester 5 Detailled document" rel="noopener noreferrer"> <img height={22} src={download} alt="doc" /> {downloadTxt}</a>
                 </div>
                     )
                   ) : (
@@ -1875,7 +1879,7 @@ export function Get_Answers() {
                     ) : (
                       <div className="Detailled-docs">
                 <a onClick={openDocInNewTab} href="https://drive.google.com/file/d/1befkXVQib9vH4FKvqnB_hF5t1zWIqV5U/view?usp=drive_link" rel="noopener noreferrer"> <img height={22} src={open} alt="doc" /> Open</a>
-                <a onClick={getExplainedDoc} href="/Docs/Semester_4/Semester_4_Detailled_document.pdf" data-doc-name="Semester 4 Detailled document" rel="noopener noreferrer"> <img height={22} src={download} alt="doc" /> Download</a>
+                <a onClick={getExplainedDoc} href="/Docs/Semester_4/Semester_4_Detailled_document.pdf" data-doc-name="Semester 4 Detailled document" rel="noopener noreferrer"> <img height={22} src={download} alt="doc" /> {downloadTxt}</a>
                 </div>
                     )
                   ) : (
@@ -2679,7 +2683,7 @@ export function Get_Answers() {
                     ) : (
                       <div className="Detailled-docs">
                 <a onClick={openDocInNewTab} href="https://drive.google.com/file/d/1QELAIL7EaDAUYqqdq4TBn0yxKRprfMnw/view?usp=drive_link" rel="noopener noreferrer"> <img height={22} src={open} alt="doc" /> Open</a>
-                <a onClick={getExplainedDoc} href="/Docs/Semester_6/Semester_6_Detailled_document.pdf" data-doc-name="Semester 6 Detailled document" rel="noopener noreferrer"> <img height={22} src={download} alt="doc" /> Download</a>
+                <a onClick={getExplainedDoc} href="/Docs/Semester_6/Semester_6_Detailled_document.pdf" data-doc-name="Semester 6 Detailled document" rel="noopener noreferrer"> <img height={22} src={download} alt="doc" /> {downloadTxt}</a>
                 </div>
                     )
                   ) : (

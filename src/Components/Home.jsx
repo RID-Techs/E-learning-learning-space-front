@@ -480,14 +480,15 @@ export function Home() {
           window.open(fileUrl, "_blank");
           return;
       }
-
+    const [downloadTxt, setDownloadTxt] = useState("Download");
   const getCourseOfSem = async (e, fileUrl, fileName) => {
     e.preventDefault();
     const currentItem = e.currentTarget;
     const findItemInTheCache = await isItemInCache(fileUrl);
-
+    setDownloadTxt("Preparing...");
     if(!isOnline && !findItemInTheCache) {
       setOfflineMsg(true);
+      setDownloadTxt("Download");
       return;
     }
 
@@ -504,7 +505,7 @@ export function Home() {
 
         if (response.ok) {
             // The Service Worker has successfully intercepted and CACHED the file.
-
+            setDownloadTxt("Download");
             // 3. Trigger the actual browser download using the response data.
             const blob = await response.blob();
             const url = window.URL.createObjectURL(blob);
@@ -520,6 +521,7 @@ export function Home() {
             window.URL.revokeObjectURL(url);
         }
     } catch (error) {
+      setDownloadTxt("Download");
         console.error("Fetch failed (offline or server error):", error);
         // Handle offline state here (show your "connect first" message)
         alert("Unable to download or access file. Please check connection."); 
@@ -953,7 +955,7 @@ async function openCachedPDF(url) {
                           src={download}
                           alt="arrow"
                         />{" "}
-                        <span className="both-screens">Download</span>
+                        <span className="both-screens">{downloadTxt}</span>
                       </a>
                       
                     </div>
@@ -1042,7 +1044,7 @@ async function openCachedPDF(url) {
                           src={download}
                           alt="arrow"
                         />{" "}
-                        <span className="both-screens">Download</span>
+                        <span className="both-screens">{downloadTxt}</span>
                       </a>
                       
                     </div>
@@ -1131,7 +1133,7 @@ async function openCachedPDF(url) {
                           src={download}
                           alt="arrow"
                         />{" "}
-                        <span className="both-screens">Download</span>
+                        <span className="both-screens">{downloadTxt}</span>
                       </a>
                       
                     </div>
@@ -1220,7 +1222,7 @@ async function openCachedPDF(url) {
                           src={download}
                           alt="arrow"
                         />{" "}
-                        <span className="both-screens">Download</span>
+                        <span className="both-screens">{downloadTxt}</span>
                       </a>
                       
                     </div>
@@ -1358,7 +1360,7 @@ async function openCachedPDF(url) {
                           src={download}
                           alt="arrow"
                         />{" "}
-                        <span className="both-screens">Download</span>
+                        <span className="both-screens">{downloadTxt}</span>
                       </a>
                       
                     </div>
@@ -1446,7 +1448,7 @@ async function openCachedPDF(url) {
                           src={download}
                           alt="arrow"
                         />{" "}
-                        <span className="both-screens">Download</span>
+                        <span className="both-screens">{downloadTxt}</span>
                       </a>
                       
                     </div>
