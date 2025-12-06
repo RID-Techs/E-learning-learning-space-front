@@ -1,0 +1,17 @@
+.offline-banner {
+  background-color: #ef4444; /* Red color */
+  color: white;
+  text-align: center;
+  padding: 10px;
+  position: fixed; /* Stays at the top even when scrolling */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999; /* On top of everything */
+  animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}

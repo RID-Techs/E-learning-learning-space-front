@@ -11,17 +11,16 @@ import download from "/download.png";
 import warning from "/warning.png";
 import feedback_pic from "/feedback.png";
 
-import Semester_1_Detailled_document from "../Docs/Semester_1/Semester_1_Detailled_document.pdf"
-import Semester_3_Detailled_document from "../Docs/Semester_3/Semester_3_Detailled_document.pdf"
-import Semester_4_Detailled_document from "../Docs/Semester_4/Semester_4_Detailled_document.pdf"
-import Semester_5_Detailled_document from "../Docs/Semester_5/Semester_5_Detailled_document.pdf"
-import Semester_6_Detailled_document from "../Docs/Semester_6/Semester_6_Detailled_document.pdf"
-
 // Image Faq from https://www.freepik.com/
 import Faq from "/Faq.webp";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import { isItemInCache } from "../Network-Status/itemCache";
+import { useNetworkStatus } from "../Network-Status/networkHook";
+import { AlertInfo } from "./Alert_Msg/Alert-Info";
 export function Get_Answers() {
+  const navigate = useNavigate();
+  const isOnline = useNetworkStatus();
   const hola = localStorage.getItem("User");
   const getMemberStatus = localStorage.getItem("isLoggedIn");
   const isMember = getMemberStatus === "true";
@@ -35,6 +34,145 @@ export function Get_Answers() {
 
   const [openAnswer, setOpenAnswer] = useState(false);
   console.log(openAnswer);
+
+    const [offlineMsg, setOfflineMsg] = useState(false);
+    const handleOfflineMsg = () => {
+      setOfflineMsg(false);
+    };
+
+    const [showInCacheBtn, setShowInCacheBtn] = useState({
+      sem1: false,
+      sem3: false,
+      sem4: false,
+      sem5: false,
+      sem6: false
+    });
+
+   useEffect(() => {
+      async function verifyCache(fileUrl) {
+          
+          try {
+          const cacheName = 'local-media-cache';
+          const cache = await caches.open(cacheName);
+          const cachedRequests = await cache.keys();
+          
+          // Optimisation : Créer un tableau simple des URLs en cache pour chercher vite
+          // On obtient ["http://localhost:4173/Docs/...", ...]
+          const cachedUrls = cachedRequests.map(req => decodeURIComponent(req.url));
+
+          const isInCache = cachedUrls.some(url => url.includes(fileUrl));
+          
+         if(isInCache) {
+          if(fileUrl.includes('Semester_1')) {
+            setShowInCacheBtn(prevState => ({ ...prevState, sem1: true }));
+            return;
+          }
+          if(fileUrl.includes('Semester_3')) {
+            setShowInCacheBtn(prevState => ({ ...prevState, sem3: true }));
+            return;
+          }
+          if(fileUrl.includes('Semester_5')) {
+            setShowInCacheBtn(prevState => ({ ...prevState, sem5: true }));
+            return;
+          }
+          if(fileUrl.includes('Semester_4')) {
+            setShowInCacheBtn(prevState => ({ ...prevState, sem4: true }));
+            return;
+          }
+          if(fileUrl.includes('Semester_6')) {
+            setShowInCacheBtn(prevState => ({ ...prevState, sem6: true }));
+            return;
+          }
+         }
+         return false;
+  
+        } catch (error) {
+          console.error("Erreur lecture cache:", error);
+        }
+        
+        }
+        
+        if(checked_sem_1) verifyCache('/Docs/Semester_1/Semester_1_Detailled_document.pdf');
+        if(checked_sem_3) verifyCache('/Docs/Semester_3/Semester_3_Detailled_document.pdf');
+        if(checked_sem_5) verifyCache('/Docs/Semester_5/Semester_5_Detailled_document.pdf');
+        if(checked_sem_4) verifyCache('/Docs/Semester_4/Semester_4_Detailled_document.pdf');
+        if(checked_sem_6) verifyCache('/Docs/Semester_6/Semester_6_Detailled_document.pdf');
+    }, [checked_sem_1, checked_sem_2, checked_sem_3, checked_sem_4, checked_sem_5, checked_sem_6]);
+
+    const openDocInNewTab = async (e) => {
+      e.preventDefault();
+      const currentItem = e.currentTarget;
+      const fileUrl = currentItem.getAttribute("href");
+        const findItemInTheCache = await isItemInCache(fileUrl);
+    
+        if(!isOnline && !findItemInTheCache) {
+          setOfflineMsg(true);
+          return;
+        }
+        window.open(fileUrl, "_blank");
+        return;
+    }
+  
+      const getExplainedDoc = async (e) => {
+        e.preventDefault();
+        const currentItem = e.currentTarget;
+        const fileUrl = currentItem.getAttribute("href");
+        const findItemInTheCache = await isItemInCache(fileUrl);
+    
+        if(!isOnline && !findItemInTheCache) {
+          setOfflineMsg(true);
+          return;
+        }
+
+        const dataDocName = currentItem.getAttribute("data-doc-name");
+        const getItemTarget = currentItem.getAttribute("target");
+    
+        if(getItemTarget === "_blank") {
+          window.open(fileUrl, "_blank");
+          return;
+        } else {
+          try {
+            const response = await fetch(fileUrl);
+    
+            if (response.ok) {
+                // The Service Worker has successfully intercepted and CACHED the file.
+            if(fileUrl.includes('Semester_1')) {
+            setShowInCacheBtn(prevState => ({ ...prevState, sem1: true }));
+          }
+          if(fileUrl.includes('Semester_3')) {
+            setShowInCacheBtn(prevState => ({ ...prevState, sem3: true }));
+          }
+          if(fileUrl.includes('Semester_5')) {
+            setShowInCacheBtn(prevState => ({ ...prevState, sem5: true }));
+          }
+          if(fileUrl.includes('Semester_4')) {
+            setShowInCacheBtn(prevState => ({ ...prevState, sem4: true }));
+          }
+          if(fileUrl.includes('Semester_6')) {
+            setShowInCacheBtn(prevState => ({ ...prevState, sem6: true }));
+          }
+                // 3. Trigger the actual browser download using the response data.
+                const blob = await response.blob();
+                const url = window.URL.createObjectURL(blob);
+    
+                // Create a temporary link element to prompt the download dialog
+                const tempLink = document.createElement('a');
+                tempLink.href = url;
+                tempLink.setAttribute('download', `${dataDocName}.pdf`);
+                document.body.appendChild(tempLink);
+                tempLink.click();
+                document.body.removeChild(tempLink);
+    
+                window.URL.revokeObjectURL(url);
+            }
+        } catch (error) {
+            console.error("Fetch failed (offline or server error):", error);
+            // Handle offline state here (show your "connect first" message)
+            alert("Unable to download or access file. Please check connection."); 
+        }
+        }
+  
+        }
   
   useEffect(() => {
     const all = document.querySelectorAll(".semester-choice ul li")
@@ -250,8 +388,35 @@ export function Get_Answers() {
     getYear();
   }, []);
 
+  async function openCachedPDF(url) {
+    await navigator.serviceWorker.ready;
+  
+    const cache = await caches.open('local-media-cache');
+    const cachedResponse = await cache.match(url);
+  
+    if (!cachedResponse) {
+      console.error("PDF not found in cache:", url);
+      return;
+    }
+  
+    // ✅ Just navigate with the original URL
+    navigate("/pdfreader", { state: { url }, replace: false });
+  }
+
   return (
     <>
+    {
+          offlineMsg && (
+            <div className="alert-msg-container">
+          <div className="alert-msg">
+          <AlertInfo message="You are currently offline. Please connect to the internet to download this file. 🤗🌴" />
+          <div className="alert-msg-footer">
+            <button onClick={handleOfflineMsg} type="button">Close</button>
+          </div>
+          </div>
+        </div>
+          )
+        }
       <div className="container-fluid header-wraper">
         <div className="header-holder">
           <header>
@@ -262,42 +427,42 @@ export function Get_Answers() {
 
         <div id="answers-header" className="header-elements">
           <ul>
-            <a href="Home">
+           <NavLink to={"/Home"}>
               <li>
                 {" "}
                 <img height={22} src={Homepage} alt="Semester" /> Homepage{" "}
               </li>
-            </a>
-            <a className="active" href="Get_Answers">
+            </NavLink>
+            <NavLink className="active" to={"/Get_Answers"}>
               <li>
                 {" "}
                 <img height={22} src={Answers} alt="Answers" /> E-learning Answer Hub{" "}
               </li>
-            </a>
-             <a className="" href="Test">
+            </NavLink>
+             <NavLink className="" to={"/Test"}>
               <li>
                 {" "}
                 <img height={22} src={TestOne} alt="Answers" /> Test{" "}
               </li>
-            </a>
-            <a className="" href="Podcast">
+            </NavLink>
+            <NavLink className="" to={"/Podcast"}>
               <li>
                 {" "}
                 <img height={22} src={podcast} alt="Podcast" /> E-Podcast{" "}
               </li>
-            </a>
-            <a className="" href="Learning_progress">
+            </NavLink>
+            <NavLink className="" to={"/Learning_progress"}>
               <li>
                 {" "}
                 <img height={22} src={progress} alt="Podcast" /> E-Progress{" "}
               </li>
-            </a>
-          <a className="" href="Survey">
+            </NavLink>
+          <NavLink className="" to={"/Survey"}>
               <li>
                 {" "}
                 <img height={22} src={feedback_pic} alt="Answers" /> Survey{" "}
               </li>
-            </a>
+            </NavLink>
             
           </ul>
         </div>
@@ -483,10 +648,16 @@ export function Get_Answers() {
                 <div className="spacers">---------------</div>
                 {
                   isMember ? (
-                    <div className="Detailled-docs">
-                <a href="https://drive.google.com/file/d/1t9pv_-A_9TS8FAdDjWdmnwqQISK4fDvB/view?usp=drive_link" target="_blank" rel="noopener noreferrer"> <img height={22} src={open} alt="doc" /> Open</a>
-                <a href={Semester_1_Detailled_document} download={`Semester 1 Detailled document.pdf`} rel="noopener noreferrer"> <img height={22} src={download} alt="doc" /> Download</a>
+                    showInCacheBtn.sem1 ? (
+                      <div className="Detailled-docs">
+                <a onClick={() => openCachedPDF("/Docs/Semester_1/Semester_1_Detailled_document.pdf")} data-doc-name="Semester 1 Detailled document" rel="noopener noreferrer"> <img height={22} src={open} alt="doc" /> Open</a>
                 </div>
+                    ) : (
+                       <div className="Detailled-docs">
+                <a onClick={openDocInNewTab} href="https://drive.google.com/file/d/1t9pv_-A_9TS8FAdDjWdmnwqQISK4fDvB/view?usp=drive_link" rel="noopener noreferrer"> <img height={22} src={open} alt="doc" /> Open</a>
+                <a onClick={getExplainedDoc} href="/Docs/Semester_1/Semester_1_Detailled_document.pdf" data-doc-name="Semester 1 Detailled document" rel="noopener noreferrer"> <img height={22} src={download} alt="doc" /> Download</a>
+                </div>
+                    )
                   ) : (
                     <div className="Detailled-docs">
                 <a data-bs-toggle="modal" data-bs-target="#logInMember"> <img height={22} src={open} alt="doc" /> Open</a>
@@ -506,10 +677,16 @@ export function Get_Answers() {
 
                 {
                   isMember ? (
-                    <div className="Detailled-docs">
-                <a href="https://drive.google.com/file/d/1kszTY85pFpXeJQfdSg5ayC_D_8U8rG0y/view?usp=drive_link" target="_blank" rel="noopener noreferrer"> <img height={22} src={open} alt="doc" /> Open</a>
-                <a href={Semester_3_Detailled_document} download={`Semester 3 Detailled document.pdf`} rel="noopener noreferrer"> <img height={22} src={download} alt="doc" /> Download</a>
+                    showInCacheBtn.sem3 ? (
+                      <div className="Detailled-docs">
+                <a onClick={() => openCachedPDF("/Docs/Semester_3/Semester_3_Detailled_document.pdf")} data-doc-name="Semester 3 Detailled document" rel="noopener noreferrer"> <img height={22} src={open} alt="doc" /> Open</a>
                 </div>
+                    ) : (
+                      <div className="Detailled-docs">
+                <a onClick={openDocInNewTab} href="https://drive.google.com/file/d/1kszTY85pFpXeJQfdSg5ayC_D_8U8rG0y/view?usp=drive_link" rel="noopener noreferrer"> <img height={22} src={open} alt="doc" /> Open</a>
+                <a onClick={getExplainedDoc} href="/Docs/Semester_3/Semester_3_Detailled_document.pdf" data-doc-name="Semester 3 Detailled document" rel="noopener noreferrer"> <img height={22} src={download} alt="doc" /> Download</a>
+                </div>
+                    )
                   ) : (
                     <div className="Detailled-docs">
                 <a data-bs-toggle="modal" data-bs-target="#logInMember"> <img height={22} src={open} alt="doc" /> Open</a>
@@ -531,10 +708,16 @@ export function Get_Answers() {
 
                 {
                   isMember ? (
-                    <div className="Detailled-docs">
-                <a href="https://drive.google.com/file/d/1TrQibA-a3GFAuX--95tBdFfp4cVFEC31/view?usp=drive_link" target="_blank" rel="noopener noreferrer"> <img height={22} src={open} alt="doc" /> Open</a>
-                <a href={Semester_5_Detailled_document} download={`Semester 5 Detailled document.pdf`} rel="noopener noreferrer"> <img height={22} src={download} alt="doc" /> Download</a>
+                    showInCacheBtn.sem5 ? (
+                  <div className="Detailled-docs">
+                <a onClick={() => openCachedPDF("/Docs/Semester_5/Semester_5_Detailled_document.pdf")} data-doc-name="Semester 5 Detailled document" rel="noopener noreferrer"> <img height={22} src={open} alt="doc" /> Open</a>
                 </div>
+                    ) : (
+                      <div className="Detailled-docs">
+                <a onClick={openDocInNewTab} href="https://drive.google.com/file/d/1TrQibA-a3GFAuX--95tBdFfp4cVFEC31/view?usp=drive_link" rel="noopener noreferrer"> <img height={22} src={open} alt="doc" /> Open</a>
+                <a onClick={getExplainedDoc} href="/Docs/Semester_5/Semester_5_Detailled_document.pdf" data-doc-name="Semester 5 Detailled document" rel="noopener noreferrer"> <img height={22} src={download} alt="doc" /> Download</a>
+                </div>
+                    )
                   ) : (
                     <div className="Detailled-docs">
                 <a data-bs-toggle="modal" data-bs-target="#logInMember"> <img height={22} src={open} alt="doc" /> Open</a>
@@ -1685,10 +1868,16 @@ export function Get_Answers() {
 
                 {
                   isMember ? (
-                    <div className="Detailled-docs">
-                <a href="https://drive.google.com/file/d/1befkXVQib9vH4FKvqnB_hF5t1zWIqV5U/view?usp=drive_link" target="_blank" rel="noopener noreferrer"> <img height={22} src={open} alt="doc" /> Open</a>
-                <a href={Semester_4_Detailled_document} download={`Semester 4 Detailled document.pdf`} rel="noopener noreferrer"> <img height={22} src={download} alt="doc" /> Download</a>
+                    showInCacheBtn.sem4 ? (
+                      <div className="Detailled-docs">
+                <a onClick={() => openCachedPDF("/Docs/Semester_4/Semester_4_Detailled_document.pdf")} data-doc-name="Semester 4 Detailled document" rel="noopener noreferrer"> <img height={22} src={open} alt="doc" /> Open</a>
                 </div>
+                    ) : (
+                      <div className="Detailled-docs">
+                <a onClick={openDocInNewTab} href="https://drive.google.com/file/d/1befkXVQib9vH4FKvqnB_hF5t1zWIqV5U/view?usp=drive_link" rel="noopener noreferrer"> <img height={22} src={open} alt="doc" /> Open</a>
+                <a onClick={getExplainedDoc} href="/Docs/Semester_4/Semester_4_Detailled_document.pdf" data-doc-name="Semester 4 Detailled document" rel="noopener noreferrer"> <img height={22} src={download} alt="doc" /> Download</a>
+                </div>
+                    )
                   ) : (
                     <div className="Detailled-docs">
                 <a data-bs-toggle="modal" data-bs-target="#logInMember"> <img height={22} src={open} alt="doc" /> Open</a>
@@ -2483,10 +2672,16 @@ export function Get_Answers() {
 
                 {
                   isMember ? (
-                    <div className="Detailled-docs">
-                <a href="https://drive.google.com/file/d/1QELAIL7EaDAUYqqdq4TBn0yxKRprfMnw/view?usp=drive_link" target="_blank" rel="noopener noreferrer"> <img height={22} src={open} alt="doc" /> Open</a>
-                <a href={Semester_6_Detailled_document} download={`Semester 6 Detailled document.pdf`} rel="noopener noreferrer"> <img height={22} src={download} alt="doc" /> Download</a>
+                    showInCacheBtn.sem6 ? (
+                      <div className="Detailled-docs">
+                <a onClick={() => openCachedPDF("/Docs/Semester_6/Semester_6_Detailled_document.pdf")} data-doc-name="Semester 6 Detailled document" rel="noopener noreferrer"> <img height={22} src={open} alt="doc" /> Open</a>
                 </div>
+                    ) : (
+                      <div className="Detailled-docs">
+                <a onClick={openDocInNewTab} href="https://drive.google.com/file/d/1QELAIL7EaDAUYqqdq4TBn0yxKRprfMnw/view?usp=drive_link" rel="noopener noreferrer"> <img height={22} src={open} alt="doc" /> Open</a>
+                <a onClick={getExplainedDoc} href="/Docs/Semester_6/Semester_6_Detailled_document.pdf" data-doc-name="Semester 6 Detailled document" rel="noopener noreferrer"> <img height={22} src={download} alt="doc" /> Download</a>
+                </div>
+                    )
                   ) : (
                     <div className="Detailled-docs">
                 <a data-bs-toggle="modal" data-bs-target="#logInMember"> <img height={22} src={open} alt="doc" /> Open</a>

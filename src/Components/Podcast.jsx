@@ -9,6 +9,7 @@ import { Unavailable } from "./Podcasts/Unavailable/Unavailable";
 import { Sem_1_Podcasts } from "./Podcasts/Sem_1/All_Sem_1_Podcasts";
 import { Sem_6_Podcasts } from "./Podcasts/Sem_6/All_Sem_6_Podcasts";
 import { Sem_4_Podcasts } from "./Podcasts/Sem_4/All_Sem_4_Podcasts";
+import { NavLink } from "react-router-dom";
 
 export function Podcast () {
 
@@ -228,18 +229,18 @@ export function Podcast () {
 
         <div id="answers-header" className="header-elements">
           <ul>
-            <a href="Home">
+            <NavLink to={"/Home"}>
               <li>
                 {" "}
                 <img height={22} src={Homepage} alt="Semester" /> Homepage{" "}
               </li>
-            </a>
-          <a className="active" href="Podcast">
+            </NavLink>
+          <NavLink className="active" to={"/Podcast"}>
               <li>
                 {" "}
                 <img height={22} src={podcast} alt="Podcast" /> E-Podcast{" "}
               </li>
-            </a>
+            </NavLink>
           </ul>
         </div>
         </div>

@@ -1,8 +1,8 @@
-const oral_speaking = "https://oousnjsxqzaocpqjfvkp.supabase.co/storage/v1/object/public/e-learning/Sem_4/Oral_speaking_Sem_4.aac";
-const prince_of_parthia = "https://oousnjsxqzaocpqjfvkp.supabase.co/storage/v1/object/public/e-learning/Sem_4/Parthia.aac";
-const the_contrast = "https://oousnjsxqzaocpqjfvkp.supabase.co/storage/v1/object/public/e-learning/Sem_4/Contrast.aac";
 import { Link } from "react-router-dom";
 export function Sem_4_Podcasts () {
+  const the_contrast = "https://pub-509848088272461d95c0b008ef09db9a.r2.dev/Sem_4/Contrast.aac";
+  const prince_of_parthia = "https://pub-509848088272461d95c0b008ef09db9a.r2.dev/Sem_4/Parthia.aac";
+  const oral_speaking = "https://pub-509848088272461d95c0b008ef09db9a.r2.dev/Sem_4/Oral_speaking_Sem_4.aac";
   const getMemberStatus = localStorage.getItem("isLoggedIn");
   const isMember = getMemberStatus === "true";
   return (

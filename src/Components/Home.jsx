@@ -13,13 +13,17 @@ import OnlineLearning from "/Online_learning.svg";
 
 import { toast, Zoom } from "react-toastify";
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { pdfFiles_sem_1, pdfFiles_sem_2 } from "../All_Couses_Docs/Sem_1_2/courses_docs_1_2";
 import { pdfFiles_sem_3, pdfFiles_sem_4 } from "../All_Couses_Docs/Sem_3_4/courses_docs_3_4";
 import { pdfFiles_sem_5, pdfFiles_sem_6 } from "../All_Couses_Docs/Sem_5_6/courses_docs_5_6";
+import { useNetworkStatus } from "../Network-Status/networkHook";
+import {isItemInCache} from "../Network-Status/itemCache";
+import { AlertInfo } from "./Alert_Msg/Alert-Info";
 
 export function Home() {
   const navigate = useNavigate();
+  const isOnline = useNetworkStatus();
   const LogOut = () => {
     toast.warn("You have just quit your session !", {
       theme: "light",
@@ -28,6 +32,13 @@ export function Home() {
       transition: Zoom,
     });
   };
+
+  const [filesSem1, setFilesSem1] = useState(pdfFiles_sem_1);
+  const [filesSem2, setFilesSem2] = useState(pdfFiles_sem_2);
+  const [filesSem3, setFilesSem3] = useState(pdfFiles_sem_3);
+  const [filesSem4, setFilesSem4] = useState(pdfFiles_sem_4);
+  const [filesSem5, setFilesSem5] = useState(pdfFiles_sem_5);
+  const [filesSem6, setFilesSem6] = useState(pdfFiles_sem_6);
 
   useEffect(() => {
     function One() {
@@ -272,75 +283,6 @@ export function Home() {
     }
   }, []);
 
-  useEffect(() => {
-    const getMemberStatus = localStorage.getItem("isLoggedIn");
-    const isMember = getMemberStatus === "true";
-    if(isMember) {
-
-    const getSem_3_NewBadge_1 = localStorage.getItem("Sem_3_NewBadge_1");
-    const getSem_3_NewBadge_2 = localStorage.getItem("Sem_3_NewBadge_2");
-    const getSem_5_NewBadge_1 = localStorage.getItem("Sem_5_NewBadge_1");
-    const getSem_5_NewBadge_2 = localStorage.getItem("Sem_5_NewBadge_2");
-    const getSem_5_NewBadge_3 = localStorage.getItem("Sem_5_NewBadge_3");
-    const getSem_5_NewBadge_4 = localStorage.getItem("Sem_5_NewBadge_4");
-
-    if(!getSem_3_NewBadge_1) {
-      localStorage.setItem("Sem_3_NewBadge_1", "true");
-    }
-    if(!getSem_3_NewBadge_2) {
-      localStorage.setItem("Sem_3_NewBadge_2", "true");
-    }
-    if(!getSem_5_NewBadge_1) {
-      localStorage.setItem("Sem_5_NewBadge_1", "true");
-    }
-    if(!getSem_5_NewBadge_2) {
-      localStorage.setItem("Sem_5_NewBadge_2", "true");
-    }
-    if(!getSem_5_NewBadge_3) {
-      localStorage.setItem("Sem_5_NewBadge_3", "true");
-    }
-    if(!getSem_5_NewBadge_4) {
-      localStorage.setItem("Sem_5_NewBadge_4", "true");
-    }
-    }
-    
-  }, [])
-
-  // const HideNewItemBadge_S3 = (e) => {
-  //   const currentItem = e.currentTarget;
-  //   const ToBeSeen = currentItem.getAttribute("data-actual-btn");
-  //   if(ToBeSeen === "btn-S3-8") {
-  //     localStorage.setItem("Sem_3_NewBadge_1", "false");
-  //   }
-  //   if(ToBeSeen === "btn-S3-9") {
-  //     localStorage.setItem("Sem_3_NewBadge_2", "false");
-  //   }
-  // }
-  // const HideNewItemBadge_S5 = (e) => {
-  //   const currentItem = e.currentTarget;
-  //   const ToBeSeen = currentItem.getAttribute("data-actual-btn");
-  //   if(ToBeSeen === "btn-S5-17") {
-  //     localStorage.setItem("Sem_5_NewBadge_1", "false");
-  //   }
-  //   if(ToBeSeen === "btn-S5-18") {
-  //     localStorage.setItem("Sem_5_NewBadge_2", "false");
-  //   }
-  //   if(ToBeSeen === "btn-S5-20") {
-  //     localStorage.setItem("Sem_5_NewBadge_3", "false");
-  //   }
-  //   if(ToBeSeen === "btn-S5-21") {
-  //     localStorage.setItem("Sem_5_NewBadge_4", "false");
-  //   }
-  // }
-
-
-  // const pdfFiles_sem_3_Filtered = pdfFiles_sem_3.filter((item) => {
-  //   return item.id !== 8 && item.id !== 9
-  // })
-  // const pdfFiles_sem_5_Filtered = pdfFiles_sem_5.filter((item) => {
-  //   return item.id !== 17 && item.id !== 18 && item.id !== 20 && item.id !== 21
-  // })
-
   const LoggedOut = () => {
     LogOut();
     setTimeout(() => {
@@ -477,13 +419,114 @@ export function Home() {
     ];
   });
 
-  const getCourseOfSem = (e) => {
-    const targetedCourse = e.currentTarget.getAttribute("data-course");
-    const targetedCourseKey = e.currentTarget.getAttribute("data-course-key");
-    const targetedCourseIndex = e.currentTarget.getAttribute("data-course-index");
+  useEffect(() => {
+    async function verifyCache(setSemesterFiles) {
+        
+        try {
+        const cacheName = 'local-media-cache';
+        const cache = await caches.open(cacheName);
+        const cachedRequests = await cache.keys();
+        
+        // Optimisation : Créer un tableau simple des URLs en cache pour chercher vite
+        // On obtient ["http://localhost:4173/Docs/...", ...]
+        const cachedUrls = cachedRequests.map(req => decodeURIComponent(req.url));
+        
+        // 2. Mettre à jour le State
+        setSemesterFiles(prevFiles => {
+          // On parcourt la liste actuelle
+          return prevFiles.map(doc => {
+            // Est-ce que ce document est dans le cache ?
+            // On vérifie si l'URL complète du cache contient ton chemin relatif (/Docs/...)
+            const isInCache = cachedUrls.some(url => url.includes(doc.url));
+            
+            // Si oui, on retourne le doc avec isCached: true
+            // Si non, on garde le doc tel quel
+            if (isInCache) {
+              return { ...doc, isCached: true };
+            }
+            return doc;
+          });
+        });
+
+      } catch (error) {
+        console.error("Erreur lecture cache:", error);
+      }
+      
+      }
+
+      if(checked_sem_1) verifyCache(setFilesSem1);
+      if(checked_sem_2) verifyCache(setFilesSem2);
+      if(checked_sem_3) verifyCache(setFilesSem3);
+      if(checked_sem_4) verifyCache(setFilesSem4);
+      if(checked_sem_5) verifyCache(setFilesSem5);
+      if(checked_sem_6) verifyCache(setFilesSem6);
+  }, [checked_sem_1, filesSem1, checked_sem_2, filesSem2, checked_sem_3, filesSem3, checked_sem_4, filesSem4, checked_sem_5, filesSem5, checked_sem_6, filesSem6]);
+
+  const [offlineMsg, setOfflineMsg] = useState(false);
+  const handleOfflineMsg = () => {
+    setOfflineMsg(false);
+  };
+
+      const openDocInNewTab = async (e) => {
+        e.preventDefault();
+        const currentItem = e.currentTarget;
+        const fileUrl = currentItem.getAttribute("href");
+          const findItemInTheCache = await isItemInCache(fileUrl);
+      
+          if(!isOnline && !findItemInTheCache) {
+            setOfflineMsg(true);
+            return;
+          }
+          window.open(fileUrl, "_blank");
+          return;
+      }
+
+  const getCourseOfSem = async (e, fileUrl, fileName) => {
+    e.preventDefault();
+    const currentItem = e.currentTarget;
+    const findItemInTheCache = await isItemInCache(fileUrl);
+
+    if(!isOnline && !findItemInTheCache) {
+      setOfflineMsg(true);
+      return;
+    }
+
+    const targetedCourse = currentItem.getAttribute("data-course");
+    const targetedCourseKey = currentItem.getAttribute("data-course-key");
+    const targetedCourseIndex = currentItem.getAttribute("data-course-index");
+    const getItemTarget = currentItem.getAttribute("target");
+
+    if(getItemTarget === "_blank") {
+      window.open(fileUrl, "_blank");
+    } else {
+      try {
+        const response = await fetch(fileUrl);
+
+        if (response.ok) {
+            // The Service Worker has successfully intercepted and CACHED the file.
+
+            // 3. Trigger the actual browser download using the response data.
+            const blob = await response.blob();
+            const url = window.URL.createObjectURL(blob);
+
+            // Create a temporary link element to prompt the download dialog
+            const tempLink = document.createElement('a');
+            tempLink.href = url;
+            tempLink.setAttribute('download', fileName);
+            document.body.appendChild(tempLink);
+            tempLink.click();
+            document.body.removeChild(tempLink);
+
+            window.URL.revokeObjectURL(url);
+        }
+    } catch (error) {
+        console.error("Fetch failed (offline or server error):", error);
+        // Handle offline state here (show your "connect first" message)
+        alert("Unable to download or access file. Please check connection."); 
+    }
+    }
+
     const convertedTargetedCourseIndex = Number(targetedCourseIndex);
-    
-    
 
     if(checked_sem_1) {
       if(trackCourses_Sem_1[convertedTargetedCourseIndex].courseKey !== targetedCourseKey) {
@@ -607,9 +650,35 @@ export function Home() {
     }
   }, [trackCourses_Sem_1, trackCourses_Sem_3, trackCourses_Sem_5, trackCourses_Sem_2, trackCourses_Sem_4, trackCourses_Sem_6, checked_sem_1, checked_sem_3, checked_sem_5, checked_sem_2, checked_sem_4, checked_sem_6, isMember]);
 
+async function openCachedPDF(url) {
+  await navigator.serviceWorker.ready;
+
+  const cache = await caches.open('local-media-cache');
+  const cachedResponse = await cache.match(url);
+
+  if (!cachedResponse) {
+    console.error("PDF not found in cache:", url);
+    return;
+  }
+
+  // ✅ Just navigate with the original URL
+  navigate("/pdfreader", { state: { url }, replace: false });
+}
 
   return (
     <>
+    {
+      offlineMsg && (
+        <div className="alert-msg-container">
+      <div className="alert-msg">
+      <AlertInfo message="You are currently offline. Please connect to the internet to download this file. 🤗🌴" />
+      <div className="alert-msg-footer">
+        <button onClick={handleOfflineMsg} type="button">Close</button>
+      </div>
+      </div>
+    </div>
+      )
+    }
          <div className="modal" id="logInMember" tabIndex="-1">
       <div className="modal-dialog">
         <div className="modal-content">
@@ -666,14 +735,14 @@ export function Home() {
                   Courses{" "}
                 </li>
               </a>
-              <a href="Get_Answers">
+              <NavLink to={"/Get_Answers"}>
                 <li>
                   {" "}
                   <img height={22} src={Answers} alt="Answers" /> E-learning
                   Answer Hub{" "}
                 </li>
-              </a>
-              <a href="https://elerning-e-library.netlify.app" target="_blank">
+              </NavLink>
+              <a href="https://elerning-e-library.netlify.app" target="_blank" rel="noopener noreferrer">
                 <li>
                   {" "}
                   <img height={22} src={Answers} alt="Answers" /> My E-library{" "}
@@ -831,7 +900,7 @@ export function Home() {
 
         {checked_sem_1 && (
           <div className="row row-cols-xl-3 row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-1 g-4">
-            {pdfFiles_sem_1.map((doc) => (
+            {filesSem1.map((doc) => (
               <div key={doc.id} className="col">
                 <div className="doc-item">
                   <div className="doc-img-and-name">
@@ -840,18 +909,28 @@ export function Home() {
                     </div>
                     <p> ~ {doc.name}</p>
                   </div>
+
                   {
                       isMember === true ? (
-                        <div className="doc-action-button">
+                        doc.isCached ? (
+                          <div className="doc-action-button">
+                      <a onClick={() => openCachedPDF(doc.url)}>
+                        <img
+                          className="me-2"
+                          height={22}
+                          src={open}
+                          alt="arrow"
+                        />{" "}
+                        Open
+                      </a>
+                    </div>
+                        ) : (
+                          
+                    <div className="doc-action-button">
                       <a
-                        onClick={getCourseOfSem}
+                        onClick={openDocInNewTab}
                         href={doc.opendoc}
                         rel="noopener noreferrer"
-                        data-actual-btn={`btn-S5-${doc.id}`}
-                        data-course={doc.name}
-                        data-course-key={doc.course_key}
-                        data-course-index={doc.course_index}
-                        target="_blank"
                       >
                         <img
                           className="me-2"
@@ -862,14 +941,11 @@ export function Home() {
                         Open
                       </a>
                       <a
-                        onClick={getCourseOfSem}
+                        onClick={(e) => getCourseOfSem(e, doc.url, `${doc.name}.pdf`)}
                         data-course={doc.name}
                         data-course-key={doc.course_key}
                         data-course-index={doc.course_index}
-                        href={doc.url}
                         rel="noopener noreferrer"
-                        data-actual-btn={`btn-S5-${doc.id}`}
-                        download={`${doc.name}.pdf`}
                       >
                         <img
                           className="me-2"
@@ -879,7 +955,9 @@ export function Home() {
                         />{" "}
                         <span className="both-screens">Download</span>
                       </a>
+                      
                     </div>
+                        )
                       ) : (
                         <div className="doc-action-button">
                       <a data-bs-toggle="modal" data-bs-target="#logInMember">
@@ -903,6 +981,7 @@ export function Home() {
                     </div>
                       )
                     }
+                  
                 </div>
               </div>
             ))}
@@ -911,13 +990,9 @@ export function Home() {
 
         {checked_sem_3 && (
           <div className="row row-cols-xl-3 row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-1 g-4">
-           {pdfFiles_sem_3.map((doc) => (
+           {filesSem3.map((doc) => (
               <div key={doc.id} className="col">
                 <div className="doc-item">
-                    {/* <div className="new-added-items">
-                      {doc.newAdded_1 === true ? <p>New !</p> : null}
-                      {doc.newAdded_2 === true ? <p>New !</p> : null}
-                    </div> */}
                   <div className="doc-img-and-name">
                     <div>
                       <img src={docs} alt="doc" />
@@ -926,17 +1001,25 @@ export function Home() {
                   </div>
                   {
                       isMember === true ? (
-                        <div className="doc-action-button">
+                        doc.isCached ? (
+                          <div className="doc-action-button">
+                      <a onClick={() => openCachedPDF(doc.url)}>
+                        <img
+                          className="me-2"
+                          height={22}
+                          src={open}
+                          alt="arrow"
+                        />{" "}
+                        Open
+                      </a>
+                    </div>
+                        ) : (
+                          
+                    <div className="doc-action-button">
                       <a
-                        onClick={getCourseOfSem}
+                        onClick={openDocInNewTab}
                         href={doc.opendoc}
                         rel="noopener noreferrer"
-                        data-actual-btn={`btn-S5-${doc.id}`}
-                        data-course-key={doc.course_key}
-                        data-course-index={doc.course_index}
-                        // onClick={HideNewItemBadge_S3}
-                        data-course={doc.name}
-                        target="_blank"
                       >
                         <img
                           className="me-2"
@@ -947,15 +1030,11 @@ export function Home() {
                         Open
                       </a>
                       <a
-                        onClick={getCourseOfSem}
-                        href={doc.url}
-                        rel="noopener noreferrer"
-                        data-actual-btn={`btn-S5-${doc.id}`}
+                        onClick={(e) => getCourseOfSem(e, doc.url, `${doc.name}.pdf`)}
+                        data-course={doc.name}
                         data-course-key={doc.course_key}
                         data-course-index={doc.course_index}
-                        // onClick={HideNewItemBadge_S3}
-                        download={`${doc.name}.pdf`}
-                        data-course={doc.name}
+                        rel="noopener noreferrer"
                       >
                         <img
                           className="me-2"
@@ -965,7 +1044,9 @@ export function Home() {
                         />{" "}
                         <span className="both-screens">Download</span>
                       </a>
+                      
                     </div>
+                        )
                       ) : (
                         <div className="doc-action-button">
                       <a data-bs-toggle="modal" data-bs-target="#logInMember">
@@ -998,15 +1079,9 @@ export function Home() {
 
         {checked_sem_5 && (
           <div className="row row-cols-xl-3 row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-1 g-4">
-            { pdfFiles_sem_5.map((doc) => (
+            { filesSem5.map((doc) => (
                 <div key={doc.id} className="col">
                   <div className="doc-item">
-                  {/* <div className="new-added-items">
-                  {doc.newAdded_1 === true ? <p>New !</p> : null}
-                  {doc.newAdded_2 === true ? <p>New !</p> : null}
-                  {doc.newAdded_3 === true ? <p>New !</p> : null}
-                  {doc.newAdded_4 === true ? <p>New !</p> : null}
-                      </div> */}
                     <div className="doc-img-and-name">
                       <div>
                         <img src={docs} alt="doc" />
@@ -1015,17 +1090,25 @@ export function Home() {
                     </div>
                     {
                       isMember === true ? (
-                        <div className="doc-action-button">
+                        doc.isCached ? (
+                          <div className="doc-action-button">
+                      <a onClick={() => openCachedPDF(doc.url)}>
+                        <img
+                          className="me-2"
+                          height={22}
+                          src={open}
+                          alt="arrow"
+                        />{" "}
+                        Open
+                      </a>
+                    </div>
+                        ) : (
+                          
+                    <div className="doc-action-button">
                       <a
-                        onClick={getCourseOfSem}
+                        onClick={openDocInNewTab}
                         href={doc.opendoc}
                         rel="noopener noreferrer"
-                        data-actual-btn={`btn-S5-${doc.id}`}
-                        data-course-key={doc.course_key}
-                        data-course-index={doc.course_index}
-                        // onClick={HideNewItemBadge_S5}
-                        data-course={doc.name}
-                        target="_blank"
                       >
                         <img
                           className="me-2"
@@ -1036,15 +1119,11 @@ export function Home() {
                         Open
                       </a>
                       <a
-                        onClick={getCourseOfSem}
-                        href={doc.url}
-                        rel="noopener noreferrer"
-                        data-actual-btn={`btn-S5-${doc.id}`}
+                        onClick={(e) => getCourseOfSem(e, doc.url, `${doc.name}.pdf`)}
+                        data-course={doc.name}
                         data-course-key={doc.course_key}
                         data-course-index={doc.course_index}
-                        // onClick={HideNewItemBadge_S5}
-                        download={`${doc.name}.pdf`}
-                        data-course={doc.name}
+                        rel="noopener noreferrer"
                       >
                         <img
                           className="me-2"
@@ -1054,7 +1133,9 @@ export function Home() {
                         />{" "}
                         <span className="both-screens">Download</span>
                       </a>
+                      
                     </div>
+                        )
                       ) : (
                         <div className="doc-action-button">
                       <a data-bs-toggle="modal" data-bs-target="#logInMember">
@@ -1086,7 +1167,7 @@ export function Home() {
 
         {checked_sem_2 && (
           <div className="row row-cols-xl-3 row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-1 g-4">
-            {pdfFiles_sem_2.map((doc) => (
+            {filesSem2.map((doc) => (
               <div key={doc.id} className="col">
                 <div className="doc-item">
                   <div className="doc-img-and-name">
@@ -1096,18 +1177,27 @@ export function Home() {
                     <p> ~ {doc.name}</p>
                   </div>
                   <div>
-                    {
+                 {
                       isMember === true ? (
-                        <div className="doc-action-button">
+                        doc.isCached ? (
+                          <div className="doc-action-button">
+                      <a onClick={() => openCachedPDF(doc.url)}>
+                        <img
+                          className="me-2"
+                          height={22}
+                          src={open}
+                          alt="arrow"
+                        />{" "}
+                        Open
+                      </a>
+                    </div>
+                        ) : (
+                          
+                    <div className="doc-action-button">
                       <a
-                        onClick={getCourseOfSem}
+                        onClick={openDocInNewTab}
                         href={doc.opendoc}
                         rel="noopener noreferrer"
-                        data-actual-btn={`btn-S5-${doc.id}`}
-                        data-course-key={doc.course_key}
-                        data-course-index={doc.course_index}
-                        data-course={doc.name}
-                        target="_blank"
                       >
                         <img
                           className="me-2"
@@ -1118,14 +1208,11 @@ export function Home() {
                         Open
                       </a>
                       <a
-                      onClick={getCourseOfSem}
-                        href={doc.url}
-                        rel="noopener noreferrer"
-                        data-actual-btn={`btn-S5-${doc.id}`}
+                        onClick={(e) => getCourseOfSem(e, doc.url, `${doc.name}.pdf`)}
+                        data-course={doc.name}
                         data-course-key={doc.course_key}
                         data-course-index={doc.course_index}
-                        download={`${doc.name}.pdf`}
-                        data-course={doc.name}
+                        rel="noopener noreferrer"
                       >
                         <img
                           className="me-2"
@@ -1135,7 +1222,9 @@ export function Home() {
                         />{" "}
                         <span className="both-screens">Download</span>
                       </a>
+                      
                     </div>
+                        )
                       ) : (
                         <div className="doc-action-button">
                       <a data-bs-toggle="modal" data-bs-target="#logInMember">
@@ -1217,7 +1306,7 @@ export function Home() {
 
         {checked_sem_4 && (
           <div className="row row-cols-xl-3 row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-1 g-4">
-            {pdfFiles_sem_4.map((doc) => (
+            {filesSem4.map((doc) => (
               <div key={doc.id} className="col">
                 <div className="doc-item">
                   <div className="doc-img-and-name">
@@ -1228,16 +1317,25 @@ export function Home() {
                   </div>
                   {
                       isMember === true ? (
-                        <div className="doc-action-button">
+                        doc.isCached ? (
+                          <div className="doc-action-button">
+                      <a onClick={() => openCachedPDF(doc.url)}>
+                        <img
+                          className="me-2"
+                          height={22}
+                          src={open}
+                          alt="arrow"
+                        />{" "}
+                        Open
+                      </a>
+                    </div>
+                        ) : (
+                          
+                    <div className="doc-action-button">
                       <a
-                      onClick={getCourseOfSem}
+                        onClick={openDocInNewTab}
                         href={doc.opendoc}
                         rel="noopener noreferrer"
-                        data-actual-btn={`btn-S5-${doc.id}`}
-                        data-course-key={doc.course_key}
-                        data-course-index={doc.course_index}
-                        data-course={doc.name}
-                        target="_blank"
                       >
                         <img
                           className="me-2"
@@ -1248,14 +1346,11 @@ export function Home() {
                         Open
                       </a>
                       <a
-                      onClick={getCourseOfSem}
-                        href={doc.url}
-                        rel="noopener noreferrer"
-                        data-actual-btn={`btn-S5-${doc.id}`}
+                        onClick={(e) => getCourseOfSem(e, doc.url, `${doc.name}.pdf`)}
+                        data-course={doc.name}
                         data-course-key={doc.course_key}
                         data-course-index={doc.course_index}
-                        download={`${doc.name}.pdf`}
-                        data-course={doc.name}
+                        rel="noopener noreferrer"
                       >
                         <img
                           className="me-2"
@@ -1265,7 +1360,9 @@ export function Home() {
                         />{" "}
                         <span className="both-screens">Download</span>
                       </a>
+                      
                     </div>
+                        )
                       ) : (
                         <div className="doc-action-button">
                       <a data-bs-toggle="modal" data-bs-target="#logInMember">
@@ -1297,7 +1394,7 @@ export function Home() {
 
         {checked_sem_6 && (
           <div className="row row-cols-xl-3 row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-1 g-4">
-            {pdfFiles_sem_6.map((doc) => (
+            {filesSem6.map((doc) => (
               <div key={doc.id} className="col">
                 <div className="doc-item">
                   <div className="doc-img-and-name">
@@ -1308,16 +1405,25 @@ export function Home() {
                   </div>
                   {
                       isMember === true ? (
-                        <div className="doc-action-button">
+                        doc.isCached ? (
+                          <div className="doc-action-button">
+                      <a onClick={() => openCachedPDF(doc.url)}>
+                        <img
+                          className="me-2"
+                          height={22}
+                          src={open}
+                          alt="arrow"
+                        />{" "}
+                        Open
+                      </a>
+                    </div>
+                        ) : (
+                          
+                    <div className="doc-action-button">
                       <a
-                      onClick={getCourseOfSem}
+                        onClick={openDocInNewTab}
                         href={doc.opendoc}
                         rel="noopener noreferrer"
-                        data-actual-btn={`btn-S5-${doc.id}`}
-                        data-course-key={doc.course_key}
-                        data-course-index={doc.course_index}
-                        data-course={doc.name}
-                        target="_blank"
                       >
                         <img
                           className="me-2"
@@ -1328,14 +1434,11 @@ export function Home() {
                         Open
                       </a>
                       <a
-                        onClick={getCourseOfSem}
-                        href={doc.url}
-                        rel="noopener noreferrer"
-                        data-actual-btn={`btn-S5-${doc.id}`}
+                        onClick={(e) => getCourseOfSem(e, doc.url, `${doc.name}.pdf`)}
+                        data-course={doc.name}
                         data-course-key={doc.course_key}
                         data-course-index={doc.course_index}
-                        download={`${doc.name}.pdf`}
-                        data-course={doc.name}
+                        rel="noopener noreferrer"
                       >
                         <img
                           className="me-2"
@@ -1345,7 +1448,9 @@ export function Home() {
                         />{" "}
                         <span className="both-screens">Download</span>
                       </a>
+                      
                     </div>
+                        )
                       ) : (
                         <div className="doc-action-button">
                       <a data-bs-toggle="modal" data-bs-target="#logInMember">

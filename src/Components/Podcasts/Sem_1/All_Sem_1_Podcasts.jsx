@@ -1,9 +1,10 @@
 
 import { Link } from "react-router-dom";
-import Phonetics_phonology from "../cours_podcasts/Sem_1/Phonetics_phonology.aac"
 
 export function Sem_1_Podcasts () {
-  const MTU_INTRODUCTION_STEPS = "https://oousnjsxqzaocpqjfvkp.supabase.co/storage/v1/object/public/e-learning/Sem_1/MTU_INTRO.ogg"
+  // const MTU_INTRODUCTION_STEPS = "https://oousnjsxqzaocpqjfvkp.supabase.co/storage/v1/object/public/e-learning/Sem_1/MTU_INTRO.ogg";
+  const MTU_INTRODUCTION_STEPS = "https://pub-509848088272461d95c0b008ef09db9a.r2.dev/Sem_1/MTU_INTRO.ogg";
+  const Phonetics_phonology = "https://pub-509848088272461d95c0b008ef09db9a.r2.dev/Sem_1/Phonetics_phonology.aac";
   const getMemberStatus = localStorage.getItem("isLoggedIn");
   const isMember = getMemberStatus === "true";
 

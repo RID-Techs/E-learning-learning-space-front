@@ -6,7 +6,7 @@ import E_Quiz_Dea from "/E_quiz_Dea.png";
 import E_Quiz_Gen from "/E_quiz_Gen.png";
 import star from "/stars_2.png";
 import Testpic from "/test.png";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { Sem_1_Grammar } from "./SEM_1_TEST/GrammarSem1";
 import { Phonetics } from "./SEM_1_TEST/Phonetics";
 import { TestSem_2 } from "./SEM_2/sem_2";
@@ -19,7 +19,7 @@ import { Morphology_Test } from "./SEM_3_TEST/Morpho_Test";
 import { S3_American_Novel_Test } from "./SEM_3_TEST/American_S3_Test";
 import { English_19th_Novel_Test } from "./SEM_5_TEST/English_19th_Century";
 import { Lit_And_Environment } from "./SEM_5_TEST/EnvironLit";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 export function Test() {
   const [testSem, setTestSem] = useState("");
 
@@ -63,8 +63,6 @@ export function Test() {
     })
   }, []);
 
-  const positionRef = useRef(null);
-
   const [GramTest, setGramTest] = useState(false);
   const [PhonTest, setPhonTest] = useState(false);
   const [AmericanTest, setAmericanTest] = useState(false);
@@ -88,7 +86,7 @@ export function Test() {
     setAmericanNovelTest(false);
     setCentury_19thNovel(false);
     setLit_EnvironmentTest(false);
-    positionRef.current.scrollTop = 0;
+    window.scrollTo(0, 0);
     TestInterface.style.display = "block";
   }
   const HideSubjects_2 = () => {
@@ -104,7 +102,7 @@ export function Test() {
     setAmericanNovelTest(false);
     setCentury_19thNovel(false);
     setLit_EnvironmentTest(false);
-    positionRef.current.scrollTop = 0;
+    window.scrollTo(0, 0);
     TestInterface.style.display = "block";
   }
   const HideSubjects_3 = () => {
@@ -120,7 +118,7 @@ export function Test() {
     setAmericanNovelTest(false);
     setCentury_19thNovel(false);
     setLit_EnvironmentTest(false);
-    positionRef.current.scrollTop = 0;
+    window.scrollTo(0, 0);
     TestInterface.style.display = "block";
   }
   const HideSubjects_4 = () => {
@@ -136,7 +134,7 @@ export function Test() {
     setAmericanNovelTest(false);
     setCentury_19thNovel(false);
     setLit_EnvironmentTest(false);
-    positionRef.current.scrollTop = 0;
+    window.scrollTo(0, 0);
     TestInterface.style.display = "block";
   }
   const HideSubjects_5 = () => {
@@ -152,7 +150,7 @@ export function Test() {
     setAmericanNovelTest(false);
     setCentury_19thNovel(false);
     setLit_EnvironmentTest(false);
-    positionRef.current.scrollTop = 0;
+    window.scrollTo(0, 0);
     TestInterface.style.display = "block";
   }
   const HideSubjects_6 = () => {
@@ -168,7 +166,7 @@ export function Test() {
     setAmericanNovelTest(false);
     setCentury_19thNovel(false);
     setLit_EnvironmentTest(false);
-    positionRef.current.scrollTop = 0;
+    window.scrollTo(0, 0);
     TestInterface.style.display = "block";
   }
   const HideSubjects_7 = () => {
@@ -184,7 +182,7 @@ export function Test() {
     setMorphologyTest(false);
     setCentury_19thNovel(false);
     setLit_EnvironmentTest(false);
-    positionRef.current.scrollTop = 0;
+    window.scrollTo(0, 0);
     TestInterface.style.display = "block";
   }
   const HideSubjects_8 = () => {
@@ -200,7 +198,7 @@ export function Test() {
     setMorphologyTest(false);
     setAmericanNovelTest(false);
     setLit_EnvironmentTest(false);
-    positionRef.current.scrollTop = 0;
+    window.scrollTo(0, 0);
     TestInterface.style.display = "block";
   }
   const HideSubjects_9 = () => {
@@ -216,7 +214,7 @@ export function Test() {
     setMorphologyTest(false);
     setAmericanNovelTest(false);
     setCentury_19thNovel(false);
-    positionRef.current.scrollTop = 0;
+    window.scrollTo(0, 0);
     TestInterface.style.display = "block";
   }
 
@@ -274,7 +272,7 @@ export function Test() {
 
           <div id="answers-header" className="header-elements me-xl-4 me-lg-4 me-md-4">
             <ul>
-              <a href="/Home">
+              <NavLink to={"/Home"}>
                 <li>
                   {" "}
                   <img
@@ -283,32 +281,32 @@ export function Test() {
                     alt="Semester"
                   /> Homepage{" "}
                 </li>
-              </a>
-              <a href="/Get_Answers">
+              </NavLink>
+              <NavLink to={"/Get_Answers"}>
                 <li>
                   {" "}
                   <img height={22} src={Answers} alt="Answers" /> E-learning
                   Answer Hub{" "}
                 </li>
-              </a>
-              <a className="active" href="Test">
+              </NavLink>
+              <NavLink className="active" to={"/Test"}>
                 <li>
                   {" "}
                   <img height={22} src={TestOne} alt="Answers" /> Test{" "}
                 </li>
-              </a>
-              <a href="E-Quiz">
+              </NavLink>
+              <NavLink to={"/E-Quiz"}>
                 <li>
                   {" "}
                   <img height={22} src={E_Quiz_Dea} alt="Answers" /> E-Quiz{" "}
                 </li>
-              </a>
-              <a href="E-Quiz-Gen">
+              </NavLink>
+              <NavLink to={"/E-Quiz-Gen"}>
                 <li>
                   {" "}
                   <img height={22} src={E_Quiz_Gen} alt="Answers" /> E-Quiz Général{" "}
                 </li>
-              </a>
+              </NavLink>
             </ul>
           </div>
         </div>
@@ -550,7 +548,7 @@ export function Test() {
 
 
     <div className="test-appear-container">
-      <div ref={positionRef} className="test-appear">
+      <div className="test-appear">
         <button type="button" onClick={BackBtn} id="back-btn"> <svg
   xmlns="http://www.w3.org/2000/svg"
   width="24"

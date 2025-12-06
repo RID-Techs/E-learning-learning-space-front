@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
 import "./survey.css";
 import supabase from "../../Config/DbConnect"
+import { useNetworkStatus } from "../../Network-Status/networkHook";
+import { AlertInfo } from "../Alert_Msg/Alert-Info";
+
 export const Survey = () => {
+  const isOnline = useNetworkStatus();
   const [showThanks, setShowThanks] = useState(false);
   const [username, setUsername] = useState("");
   useEffect(() => {
@@ -308,8 +312,19 @@ export const Survey = () => {
     setSurveyQuestion_15(true);
   }
 
+      const [offlineMsg, setOfflineMsg] = useState(false);
+      const handleOfflineMsg = () => {
+        setOfflineMsg(false);
+      };
+
   const handleSurveyQuestion_16 = (e) => {
     e.preventDefault();
+        
+            if(!isOnline) {
+              setOfflineMsg(true);
+              return;
+            }
+
     setSubmitting(true);
     setDisableSubmitBtn(true);
 
@@ -350,6 +365,18 @@ export const Survey = () => {
 
   return(
     <>
+    {
+              offlineMsg && (
+                <div className="alert-msg-container">
+              <div className="alert-msg">
+              <AlertInfo message="You are currently offline. Please connect to the internet to give your feedback. 🤗🌴" />
+              <div className="alert-msg-footer">
+                <button onClick={handleOfflineMsg} type="button">Close</button>
+              </div>
+              </div>
+            </div>
+              )
+            }
     <main>
       <div className="survey-wrapper">
       <h1><span className="highlight">♨</span> Hey {username}, <br /> E-learning is improving for you.</h1>

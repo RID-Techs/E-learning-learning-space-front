@@ -4,6 +4,8 @@ import "./paper.css";
 import star from "/stars_2.png";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { AlertInfo } from "../Alert_Msg/Alert-Info";
+import { useNetworkStatus } from "../../Network-Status/networkHook";
 
 const uploadPicture = (
   <svg
@@ -45,6 +47,7 @@ const changePicture = (
 
 export function AddExamPapers() {
   const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+  const isOnline = useNetworkStatus();
   const navigate = useNavigate();
 
   const MendatoryFields = (msg) => {
@@ -141,8 +144,17 @@ export function AddExamPapers() {
     setPaperYear(choosedValue);
   };
 
+   const [offlineMsg, setOfflineMsg] = useState(false);
+      const handleOfflineMsg = () => {
+        setOfflineMsg(false);
+      };
+
   const sendData = async (e) => {
     e.preventDefault();
+    if(!isOnline) {
+              setOfflineMsg(true);
+              return;
+            }
     setSubmitStatus("pending");
 
     if (!choosedSemester || !choosedTeachingUnit || !isDoubleSided || (showPaperSidePart && !choosedPaperSide) || !paperYear) {
@@ -270,6 +282,18 @@ export function AddExamPapers() {
 
   return (
     <>
+     {
+              offlineMsg && (
+                <div className="alert-msg-container">
+              <div className="alert-msg">
+              <AlertInfo message="You are currently offline. Please connect to the internet to contribute. 🤗🌴" />
+              <div className="alert-msg-footer">
+                <button onClick={handleOfflineMsg} type="button">Close</button>
+              </div>
+              </div>
+            </div>
+              )
+            }
       {" "}
       {showThanks ? (
         <div className="thanks-wrapper contribute-msg-holder">

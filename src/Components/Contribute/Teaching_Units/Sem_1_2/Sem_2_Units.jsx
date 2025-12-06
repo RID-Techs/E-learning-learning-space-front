@@ -3,9 +3,15 @@ import { toast, Zoom } from "react-toastify";
 import { useState } from "react";
 import { DisplayPapers } from "../../Dispay_Papers";
 import paper from "/paper.png";
+import { AlertInfo } from "../../../Alert_Msg/Alert-Info";
+import { useNetworkStatus } from "../../../../Network-Status/networkHook";
 
 export function Semester2Units() {
-
+  const isOnline = useNetworkStatus();
+  const [offlineMsg, setOfflineMsg] = useState(false);
+      const handleOfflineMsg = () => {
+        setOfflineMsg(false);
+      };
     const ErrorMsg = (message) => {
       toast.error(message, {
         theme: "light",
@@ -58,6 +64,10 @@ export function Semester2Units() {
   };
 
   const displayPapersHandler_Unit_1 = async () => {
+    if(!isOnline) {
+          setOfflineMsg(true);
+          return;
+        }
     if(examPapers_Unit_1.length > 0) {
       setDisplayPapers(!displayPapers);
       setSubject_1(true);
@@ -69,6 +79,10 @@ export function Semester2Units() {
   };
 
   const displayPapersHandler_Unit_2 = async () => {
+    if(!isOnline) {
+          setOfflineMsg(true);
+          return;
+        }
     if(examPapers_Unit_2.length > 0) {
       setDisplayPapers(!displayPapers);
       setSubject_2(true);
@@ -80,6 +94,10 @@ export function Semester2Units() {
   };
 
   const displayPapersHandler_Unit_3 = async () => {
+    if(!isOnline) {
+          setOfflineMsg(true);
+          return;
+        }
     if(examPapers_Unit_3.length > 0) {
       setDisplayPapers(!displayPapers);
       setSubject_3(true);
@@ -91,6 +109,10 @@ export function Semester2Units() {
   };
 
   const displayPapersHandler_Unit_4 = async () => {
+    if(!isOnline) {
+          setOfflineMsg(true);
+          return;
+        }
     if(examPapers_Unit_4.length > 0) {
       setDisplayPapers(!displayPapers);
       setSubject_4(true);
@@ -102,6 +124,10 @@ export function Semester2Units() {
   };
 
   const displayPapersHandler_Unit_5 = async () => {
+    if(!isOnline) {
+          setOfflineMsg(true);
+          return;
+        }
     if(examPapers_Unit_5.length > 0) {
       setDisplayPapers(!displayPapers);
       setSubject_5(true);
@@ -113,6 +139,10 @@ export function Semester2Units() {
   };
 
   const displayPapersHandler_Unit_6 = async () => {
+    if(!isOnline) {
+          setOfflineMsg(true);
+          return;
+        }
     if(examPapers_Unit_6.length > 0) {
       setDisplayPapers(!displayPapers);
       setSubject_6(true);
@@ -124,6 +154,10 @@ export function Semester2Units() {
   };
 
   const displayPapersHandler_Unit_7 = async () => {
+    if(!isOnline) {
+          setOfflineMsg(true);
+          return;
+        }
     if(examPapers_Unit_7.length > 0) {
       setDisplayPapers(!displayPapers);
       setSubject_7(true);
@@ -135,6 +169,10 @@ export function Semester2Units() {
   };
 
   const displayPapersHandler_Unit_8 = async () => {
+    if(!isOnline) {
+          setOfflineMsg(true);
+          return;
+        }
     if(examPapers_Unit_8.length > 0) {
       setDisplayPapers(!displayPapers);
       setSubject_8(true);
@@ -424,6 +462,18 @@ export function Semester2Units() {
 
   return (
     <>
+     {
+                  offlineMsg && (
+                    <div className="alert-msg-container">
+                  <div className="alert-msg">
+                  <AlertInfo message="You are currently offline. Please connect to the internet to download the exam papers of this teaching unit. 🤗🌴" />
+                  <div className="alert-msg-footer">
+                    <button onClick={handleOfflineMsg} type="button">Close</button>
+                  </div>
+                  </div>
+                </div>
+                  )
+                }
     {displayPapers && (
       <>
       <div className="display-papers-wrapper">

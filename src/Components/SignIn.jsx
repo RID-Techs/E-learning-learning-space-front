@@ -10,10 +10,8 @@ import password from "/password.png";
 import E_member from "/E_picture.webp";
 import { toast, Zoom } from "react-toastify";
 import { useState, useEffect} from "react";
-import { useNavigate } from "react-router-dom";
 
 export function SignIn() {
-  const navigate = useNavigate();
   const [loading, setLoading] = useState("Sign in");
 
   const [showPass, setShowPass] = useState(false);
@@ -91,7 +89,9 @@ export function SignIn() {
         localStorage.setItem("isLoggedIn", "true");
         setLoading("Sign in");
         Welcome("You are an E-member now !");
-        navigate("/");
+        setTimeout(() => {
+          window.location.replace("/");
+        }, 2000);
     }
 }
 

@@ -1,7 +1,7 @@
-const academic_Writing = "https://oousnjsxqzaocpqjfvkp.supabase.co/storage/v1/object/public/e-learning/Sem_6/Acdemic_writing.aac"
-const literary_theory = "https://oousnjsxqzaocpqjfvkp.supabase.co/storage/v1/object/public/e-learning/Sem_6/Theory.aac"
 import { Link } from "react-router-dom";
 export function Sem_6_Podcasts () {
+  const academic_Writing = "https://pub-509848088272461d95c0b008ef09db9a.r2.dev/Sem_6/Acdemic_writing.aac";
+  const literary_theory = "https://pub-509848088272461d95c0b008ef09db9a.r2.dev/Sem_6/Theory.aac";
   const getMemberStatus = localStorage.getItem("isLoggedIn");
   const isMember = getMemberStatus === "true";
   return (

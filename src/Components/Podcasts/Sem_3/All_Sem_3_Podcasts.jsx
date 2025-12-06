@@ -1,18 +1,19 @@
-
-import American_Novel from "../cours_podcasts/Sem_3/American_Novel.aac"
-import Uncle_Tom from "../cours_podcasts/Sem_3/Uncle_Tom.aac"
-import Huckleberry_Finn from "../cours_podcasts/Sem_3/Huckleberry_Finn.aac"
-import English_18_Novel from "../cours_podcasts/Sem_3/English_18_Novel.aac"
-import African_drama from "../cours_podcasts/Sem_3/African_drama.aac"
-import The_Lion_and_Jewel from "../cours_podcasts/Sem_3/The_Lion_and_Jewel.aac"
-import Morphology from "../cours_podcasts/Sem_3/Morphology.aac"
 import { Link } from "react-router-dom";
 export function Sem_3_Podcasts () {
-  const Yellow_Yellow = "https://oousnjsxqzaocpqjfvkp.supabase.co/storage/v1/object/public/e-learning/Sem_3/Yellow_Yellow.ogg";
-  const Yellow_Characters = "https://oousnjsxqzaocpqjfvkp.supabase.co/storage/v1/object/public/e-learning/Sem_3/Yellow_Characterization.ogg";
-  const Yellow_SecondCharacters = "https://oousnjsxqzaocpqjfvkp.supabase.co/storage/v1/object/public/e-learning/Sem_3/Yellow_Secondary.ogg";
-  const Yellow_Themes = "https://oousnjsxqzaocpqjfvkp.supabase.co/storage/v1/object/public/e-learning/Sem_3/Yellow_Themes.ogg";
-  const Yellow_French = "https://oousnjsxqzaocpqjfvkp.supabase.co/storage/v1/object/public/e-learning/Sem_3/Yellow_French.ogg";
+  const American_Novel = "https://pub-509848088272461d95c0b008ef09db9a.r2.dev/Sem_3/American_Novel.aac";
+  const Uncle_Tom = "https://pub-509848088272461d95c0b008ef09db9a.r2.dev/Sem_3/Uncle_Tom.aac";
+  const New_Names = "https://pub-509848088272461d95c0b008ef09db9a.r2.dev/Sem_3/NewNames.aac";
+  const Railroad = "https://pub-509848088272461d95c0b008ef09db9a.r2.dev/Sem_3/Railroad.aac";
+  const Huckleberry_Finn = "https://pub-509848088272461d95c0b008ef09db9a.r2.dev/Sem_3/Huckleberry_Finn.aac";
+  const English_18_Novel = "https://pub-509848088272461d95c0b008ef09db9a.r2.dev/Sem_3/English_18_Novel.aac";
+  const The_Lion_and_Jewel = "https://pub-509848088272461d95c0b008ef09db9a.r2.dev/Sem_3/The_Lion_and_Jewel.aac";
+  const Morphology = "https://pub-509848088272461d95c0b008ef09db9a.r2.dev/Sem_3/Morphology.aac";
+  const African_drama = "https://pub-509848088272461d95c0b008ef09db9a.r2.dev/Sem_3/African_drama.aac";
+  const Yellow_Yellow = "https://pub-509848088272461d95c0b008ef09db9a.r2.dev/Sem_3/Yellow_Yellow.ogg";
+  const Yellow_Characters = "https://pub-509848088272461d95c0b008ef09db9a.r2.dev/Sem_3/Yellow_Characterization.ogg";
+  const Yellow_SecondCharacters = "https://pub-509848088272461d95c0b008ef09db9a.r2.dev/Sem_3/Yellow_Secondary.ogg";
+  const Yellow_Themes = "https://pub-509848088272461d95c0b008ef09db9a.r2.dev/Sem_3/Yellow_Themes.ogg";
+  const Yellow_French = "https://pub-509848088272461d95c0b008ef09db9a.r2.dev/Sem_3/Yellow_French.ogg";
   const getMemberStatus = localStorage.getItem("isLoggedIn");
   const isMember = getMemberStatus === "true";
   return (
@@ -123,6 +124,46 @@ export function Sem_3_Podcasts () {
               isMember ? (
             <audio controls>
               <source src={Huckleberry_Finn} type="audio/aac" />
+            </audio>
+                
+              ) : (
+              <div className="podcast-not-allowed">
+                <p data-bs-toggle="modal" data-bs-target="#logInMember"> <span>▸</span> <span> Play 🧩🎙️</span></p>
+              </div>
+              )
+            }
+          </div>
+        </div>
+        <div className="cours-podcast">
+          <div className="cours-podcast-header">
+            <p><span className="podcast-underliner">Podcast</span> : American Novel </p>
+          </div>
+          <div className="cours-podcast-body">
+            <p>Case Study : Colson Whitehead{"'"}s <em>The Underground Railroad</em></p>
+            {
+              isMember ? (
+            <audio controls>
+              <source src={Railroad} type="audio/aac" />
+            </audio>
+                
+              ) : (
+              <div className="podcast-not-allowed">
+                <p data-bs-toggle="modal" data-bs-target="#logInMember"> <span>▸</span> <span> Play 🧩🎙️</span></p>
+              </div>
+              )
+            }
+          </div>
+        </div>
+        <div className="cours-podcast">
+          <div className="cours-podcast-header">
+            <p><span className="podcast-underliner">Podcast</span> : American Novel </p>
+          </div>
+          <div className="cours-podcast-body">
+            <p>Case Study : Noviolet Bulawayo{"'"}s <em>We Need New Names</em></p>
+            {
+              isMember ? (
+            <audio controls>
+              <source src={New_Names} type="audio/aac" />
             </audio>
                 
               ) : (

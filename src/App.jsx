@@ -20,6 +20,7 @@ import { User_Progress } from "./Components/Progress_Tracker/User_Progress";
 import { E_Quiz } from "./Components/E_Quiz_Folder/E_QUIZ";
 import { Create_Quiz } from "./Components/E_Quiz_Folder/Create_Quiz";
 import { Create_Quiz_Extension } from "./Components/E_Quiz_Folder/Sample_Quiz";
+import PDFViewer from "./Components/PDFViewer";
 function App() {
 
   const router = createBrowserRouter([
@@ -145,6 +146,15 @@ function App() {
       element: (
         <ErrorBoundary fallback={<Error/>}>
           <Create_Quiz_Extension />
+        </ErrorBoundary>
+      ),
+      errorElement: <ErrorPage/>
+    },
+    {
+      path: "/pdfreader",
+      element: (
+        <ErrorBoundary fallback={<Error/>}>
+          <PDFViewer />
         </ErrorBoundary>
       ),
       errorElement: <ErrorPage/>

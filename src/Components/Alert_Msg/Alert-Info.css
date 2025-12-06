@@ -1,0 +1,63 @@
+.alert-msg-container {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5000;
+  background-color: #ffffff5d;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+.alert-msg {
+  background-color: #f6fdfdf3;
+  border: 2px solid #4a90e2;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.alert-msg-header, .alert-msg-body {
+  display: flex;
+  justify-content: center;
+}
+
+.alert-msg-header > p{
+  font-size: 2rem;
+  color: #4a90e2;
+  font-style: italic;
+  font-weight: bold;
+  margin-bottom: 0rem;
+  line-height: 2.5rem;
+}
+
+.alert-msg-body > p{
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.alert-msg-footer {
+  display: flex;
+  justify-content: center;
+}
+
+.alert-msg-footer > button {
+  margin-top: 1.5rem;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #4a90e2;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.alert-msg-footer > button:hover {
+  background-color: #357ABD;
+}

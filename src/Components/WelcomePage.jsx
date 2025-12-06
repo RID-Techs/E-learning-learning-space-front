@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 // Image logo, stars, star, username, password is from https://icons8.com/
 import logo from "/learns.png";
 import stars from "/stars.png";
 import reward from "/reward.png";
 import star from "/stars_2.png";
-import E_crew from "/E_crew.png";
+// import E_crew from "/E_crew.png";
 import courses from "/coursess.png";
 // import password from "/password.png";
 import E_member from "/E_picture.webp";
@@ -148,47 +148,6 @@ const LoginByName = () => {
   Welcome(`Welcome ${newUser}`)
   navigate("/Home")
 }
-const installBannerRef = useRef(null);
-const [isLaunch, setIsLaunch] = useState(null);
-
-useEffect(() => {
-  const getFromScreenLaunch = localStorage.getItem("fromScreenLaunch");
-  const webApp = getFromScreenLaunch === "Screen";
-  setIsLaunch(webApp);
-}, [])
-
-const deferredPrompt = useRef(null);
-useEffect(() => {
-  const handler = (event) => {
-    event.preventDefault();
-    deferredPrompt.current = event;
-  };
-  window.addEventListener("beforeinstallprompt", handler);
-  return () => window.removeEventListener("beforeinstallprompt", handler);
-}, []);
-
-const handleAppInstallPrompt = async () => {
-  if (!deferredPrompt.current) return;
-  if(installBannerRef.current) installBannerRef.current.style.display = "none";
-  console.log("hopla");
-  deferredPrompt.current.prompt();
-  const { outcome } = await deferredPrompt.current.userChoice;
-  if (outcome === "accepted") {
-    localStorage.setItem("fromScreenLaunch", "Screen");
-    setIsLaunch(true);
-  } else {
-    if(installBannerRef.current) installBannerRef.current.style.display = "block";
-  }
-  deferredPrompt.current = null;
-};
-
-const ClosingBanner = () => {
-  const banner = document.getElementById("install-banner");
-  banner.style.display = "none";
-  localStorage.setItem("fromScreenLaunch", "Screen");
-  setIsLaunch(true);
-}
-
 const [eco, setEco] = useState(false);
 
 useEffect(() => {
@@ -198,14 +157,78 @@ useEffect(() => {
 }, []);
 
 const ClosingEcoBanner = () => {
-  localStorage.removeItem("isLoggedIn");
   localStorage.setItem("eco", "true");
   setEco(true);
 }
 
-const showBannerToDownloadApp = () => {
-  setIsLaunch(false);
-}
+  // 1. Track if the browser is actually ready to install
+  const [isInstallable, setIsInstallable] = useState(false);
+  
+  // 2. Track if the user has previously closed/installed (Preference)
+  const [userDismissed, setUserDismissed] = useState(() => {
+    // Lazy initialization: check localStorage only once on mount
+    return localStorage.getItem("pwaInstalledOrDismissed") === "true";
+  });
+
+  // 3. Store the event itself (we don't need this in state, just the ref)
+  const deferredPrompt = useRef(null);
+
+  useEffect(() => {
+    const handler = (event) => {
+      // Prevent the mini-infobar from appearing on mobile
+      event.preventDefault();
+      
+      // Stash the event so we can trigger it later
+      deferredPrompt.current = event;
+      
+      // ERROR FIX: Trigger a state change so React re-renders and shows the UI
+      setIsInstallable(true);
+    };
+
+    window.addEventListener("beforeinstallprompt", handler);
+
+    // Cleanup
+    return () => window.removeEventListener("beforeinstallprompt", handler);
+  }, []);
+
+  const handleAppInstallPrompt = async () => {
+    // Safety check
+    if (!deferredPrompt.current) return;
+
+    // Show the install prompt
+    deferredPrompt.current.prompt();
+
+    // Wait for the user to respond to the prompt
+    const { outcome } = await deferredPrompt.current.userChoice;
+
+    if (outcome === "accepted") {
+      console.log("User accepted the install prompt");
+      // Mark as installed so we don't show it again
+      localStorage.setItem("pwaInstalledOrDismissed", "true");
+      setUserDismissed(true);
+    } else {
+      console.log("User dismissed the install prompt");
+      // Optional: Do you want to hide it if they say no? 
+      // Usually yes, to not be annoying.
+    }
+
+    // We've used the prompt, it can't be used again
+    deferredPrompt.current = null;
+    setIsInstallable(false);
+  };
+
+  const closeBanner = () => {
+    localStorage.setItem("pwaInstalledOrDismissed", "true");
+    setUserDismissed(true);
+  };
+
+
+
+  // LOGIC: Show banner ONLY if:
+  // 1. User is a member
+  // 2. Browser says it's installable (isInstallable)
+  // 3. User hasn't dismissed it yet (!userDismissed)
+  const showBanner = isMember && isInstallable && !userDismissed;
 
   return (
     <>
@@ -271,13 +294,20 @@ const showBannerToDownloadApp = () => {
                         <button id="prev-btn" type="button">
                             Previous
                         </button>
-                        <button id="next-btn-2" type="button">
+                        {/* <button id="next-btn-2" type="button">
                             Next
+                        </button> */}
+                        <button
+                            id="close-btn"
+                            onClick={CloseNoteButton}
+                            type="button"
+                        >
+                            Close
                         </button>
                         </div>
                     </div>
 
-                    <div id="integrate-whatsapp">
+                    {/* <div id="integrate-whatsapp">
                         <div className="whatsapp-content">
                         <p>
                             Join our special WhatsApp group,{" "}
@@ -333,7 +363,7 @@ const showBannerToDownloadApp = () => {
                             Close
                         </button>
                         </div>
-                    </div>
+                    </div> */}
                     </div>
                 </div>
                 </div>
@@ -354,11 +384,11 @@ const showBannerToDownloadApp = () => {
             Welcome Dear E-learning Member <img className="member-stars" height={42} src={stars} alt="stars" />{" "}
           </h3>
 
-          {isMember && !isLaunch ? (
-  <div ref={installBannerRef} id="install-banner">
+          {showBanner && (
+  <div id="install-banner">
     <div className="banner-wrapper">
       <div className="banner-content">
-        <div className="closing-banner"><button onClick={ClosingBanner} id="closing-banner">Close</button></div>
+        <div className="closing-banner"><button onClick={closeBanner} id="closing-banner">Close</button></div>
         <p id="banner-title">✧ New Update ✧</p>
         <p id="banner-divider">- · - - · - - · -</p>
         <p>
@@ -368,7 +398,7 @@ const showBannerToDownloadApp = () => {
       </div>
     </div>
   </div>
-) : null}
+)}
 
 {!eco && (
    <div id="install-banner">
@@ -469,8 +499,8 @@ const showBannerToDownloadApp = () => {
     <div className="welcome-actions">
             <button onClick={EnterMySession} id="login-button"> <img height={32} src={courses} alt="user" /> Open my Learning Space</button>
             {isMember && <a id="web-tour" href="Websitetour" target="_blank">⋄⦂ Click me to make a nice tour of the website !</a>}
-            <a id="survey-link" href="Survey">Have some feedback ? Take a quick survey ፦ </a>
-            <a id="exam-papers-link" href="/Exam-papers"> <span id="exam-papers-icon">࠰⊱</span> E-Collection Of Papers 🪴</a>
+            <NavLink id="survey-link" to={"Survey"}>Have some feedback ? Take a quick survey ፦ </NavLink>
+            <NavLink id="exam-papers-link" to={"/Exam-papers"}> <span id="exam-papers-icon">࠰⊱</span> E-Collection Of Papers 🪴</NavLink>
     </div>
 </div>)}
 
@@ -560,10 +590,12 @@ const showBannerToDownloadApp = () => {
                 <div className="Phone-number">
                   <p>Contact : +228 79 83 62 19</p>
                 </div>
+                {isInstallable && (
                 <div className="app-container">
-                  <button onClick={showBannerToDownloadApp} type="button">Download App</button>
+                  <button onClick={handleAppInstallPrompt} type="button">Download App</button>
                   <img height={32} src={logo} alt="E-learning" />
                 </div>
+                )}
               </div>
             </footer>
 

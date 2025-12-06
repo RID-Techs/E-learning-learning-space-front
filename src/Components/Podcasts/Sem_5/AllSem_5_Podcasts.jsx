@@ -1,23 +1,22 @@
-
-import EnglishNovel_19ThCentury from "../cours_podcasts/Sem_5/Novel_19th_English.aac"
-import Frankenstein from "../cours_podcasts/Sem_5/Frankenstein.aac"
-import Frankenstein_Themes from "../cours_podcasts/Sem_5/Frankenstein_themes.aac"
-import Hard_Times from "../cours_podcasts/Sem_5/Hard_Times.aac"
-import Discourse_analysis from "../cours_podcasts/Sem_5/Discourse_analysis.aac"
-import Discourse_analysis_GRA from "../cours_podcasts/Sem_5/Grammar_In_Communication.aac"
-import Literature_Culture from "../cours_podcasts/Sem_5/Literature_Culture.aac"
-import Purple_Hibscus from "../cours_podcasts/Sem_5/Purple_Hibscus.aac"
-import Things_Apart from "../cours_podcasts/Sem_5/Things_Apart.aac"
-import Of_Mice from "../cours_podcasts/Sem_5/Of_Mice.aac"
-import Toni_Morrison_Bluest_Eye from "../cours_podcasts/Sem_5/Toni_Morrison_Bluest_Eye.aac"
-import phono_sem_5 from "../cours_podcasts/Sem_5/phono_sem_5.aac"
 import { Link } from "react-router-dom";
 export function Sem_5_Podcasts () {
-  const SmoulderingCharcoal = "https://oousnjsxqzaocpqjfvkp.supabase.co/storage/v1/object/public/e-learning/Sem_5/Smouldering_Charcoal.ogg";
-  const DauntingOdyssey = "https://oousnjsxqzaocpqjfvkp.supabase.co/storage/v1/object/public/e-learning/Sem_5/Daunting_Odyssey.ogg";
-  const BluestRacismSexism = "https://oousnjsxqzaocpqjfvkp.supabase.co/storage/v1/object/public/e-learning/Sem_5/Bluest_Racism_sexism.ogg";
-  const CultureInHibiscus = "https://oousnjsxqzaocpqjfvkp.supabase.co/storage/v1/object/public/e-learning/Sem_5/Culture_in_Hibiscus.ogg";
-  const IjemMessiah = "https://oousnjsxqzaocpqjfvkp.supabase.co/storage/v1/object/public/e-learning/Sem_5/Ijem_Messiah.ogg";
+  const EnglishNovel_19ThCentury = "https://pub-509848088272461d95c0b008ef09db9a.r2.dev/Sem_5/Novel_19th_English.aac";
+  const Frankenstein = "https://pub-509848088272461d95c0b008ef09db9a.r2.dev/Sem_5/Frankenstein.aac";
+  const Frankenstein_Themes = "https://pub-509848088272461d95c0b008ef09db9a.r2.dev/Sem_5/Frankenstein_themes.aac";
+  const Hard_Times = "https://pub-509848088272461d95c0b008ef09db9a.r2.dev/Sem_5/Hard_Times.aac";
+  const Discourse_analysis = "https://pub-509848088272461d95c0b008ef09db9a.r2.dev/Sem_5/Discourse_analysis.aac";
+  const Discourse_analysis_GRA = "https://pub-509848088272461d95c0b008ef09db9a.r2.dev/Sem_5/Grammar_In_Communication.aac";
+  const Literature_Culture = "https://pub-509848088272461d95c0b008ef09db9a.r2.dev/Sem_5/Literature_Culture.aac";
+  const Purple_Hibscus = "https://pub-509848088272461d95c0b008ef09db9a.r2.dev/Sem_5/Purple_Hibscus.aac";
+  const Things_Apart = "https://pub-509848088272461d95c0b008ef09db9a.r2.dev/Sem_5/Things_Apart.aac";
+  const Of_Mice = "https://pub-509848088272461d95c0b008ef09db9a.r2.dev/Sem_5/Of_Mice.aac";
+  const Toni_Morrison_Bluest_Eye = "https://pub-509848088272461d95c0b008ef09db9a.r2.dev/Sem_5/Toni_Morrison_Bluest_Eye.aac";
+  const phono_sem_5 = "https://pub-509848088272461d95c0b008ef09db9a.r2.dev/Sem_5/phono_sem_5.aac";
+  const SmoulderingCharcoal = "https://pub-509848088272461d95c0b008ef09db9a.r2.dev/Sem_5/Smouldering_Charcoal.ogg";
+  const DauntingOdyssey = "https://pub-509848088272461d95c0b008ef09db9a.r2.dev/Sem_5/Daunting_Odyssey.ogg";
+  const BluestRacismSexism = "https://pub-509848088272461d95c0b008ef09db9a.r2.dev/Sem_5/Bluest_Racism_sexism.ogg";
+  const CultureInHibiscus = "https://pub-509848088272461d95c0b008ef09db9a.r2.dev/Sem_5/Culture_in_Hibiscus.ogg";
+  const IjemMessiah = "https://pub-509848088272461d95c0b008ef09db9a.r2.dev/Sem_5/Ijem_Messiah.ogg";
   const getMemberStatus = localStorage.getItem("isLoggedIn");
   const isMember = getMemberStatus === "true";
   return (
