@@ -95,6 +95,10 @@ export function SignIn() {
     }
 }
 
+useEffect(() =>  {
+  localStorage.clear();
+}, []);
+
 
   return (
     <>
