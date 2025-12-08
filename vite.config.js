@@ -5,20 +5,31 @@ import { VitePWA } from 'vite-plugin-pwa'
 export default defineConfig({
   server: {
     host: true,
-    allowedHosts: [
-      ".ngrok-free.app"
-    ]
+    allowedHosts: [".ngrok-free.app"]
   },
   preview: {
-    allowedHosts: [
-      ".ngrok-free.app"
-    ]
+    allowedHosts: [".ngrok-free.app"]
   },
   plugins: [
     react(), 
     VitePWA({
       registerType: 'autoUpdate',
       strategies: 'generateSW',
+      
+      // 1. ADD THIS SECTION: explicitly precache public assets
+      // This forces the SW to download these immediately on install
+      includeAssets: [ 
+        'learns.png', 
+        'learns_16.png',
+        'learns_96.png',
+        'learns_1.png',
+        'learns_2.png',
+        'download.png',
+        'doc.png',
+        'create_quiz.png',
+        'reward.png'
+      ],
+
       manifest: {
         "name": "E-learning Université de Kara",
         "short_name": "UK E-Learn",
@@ -40,13 +51,17 @@ export default defineConfig({
         skipWaiting: true,
         clientsClaim: true,
         navigateFallback: '/index.html',
-        // Precache App Shell
-        globPatterns: ['**/*.{js,css,html,png,webp,svg,ico,json}'],
+        
+        // 2. INCREASE LIMIT: Default is 2MB. 
+        // If an image is 2.1MB, it is skipped silently. 
+        // Increase to 4-5MB to be safe.
+        maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
+
+        // Ensure jpg, jpeg and png are definitely included
+        globPatterns: ['**/*.{js,css,html,png,jpg,jpeg,webp,svg,ico,json}'],
         
         runtimeCaching: [
-          // -----------------------------------------------------------
-          // RULE 1: SUPABASE DATABASE (Text Metadata)
-          // -----------------------------------------------------------
+          // RULE 1: SUPABASE DATABASE
           {
             urlPattern: ({ url }) => {
               return url.hostname.includes('supabase.co') && url.pathname.includes('/rest/v1');
@@ -60,53 +75,41 @@ export default defineConfig({
             }
           },
 
-          // -----------------------------------------------------------
           // RULE 2: CLOUDFLARE R2 (External Media)
-          // -----------------------------------------------------------
           {
-            // Simple Regex: Matches ANY url containing r2.dev or supabase storage
             urlPattern: new RegExp('https://.*(r2.dev|supabase.co/storage/v1)'),
             handler: 'CacheFirst',
             options: {
               cacheName: 'learning-materials-cache',
               expiration: {
                 maxEntries: 100,
-                maxAgeSeconds: 60 * 60 * 24 * 30, // 30 Days
+                maxAgeSeconds: 60 * 60 * 24 * 30, 
                 purgeOnQuotaError: true,
               },
-              cacheableResponse: { statuses: [200, 206] }, // 206 is vital for audio
+              cacheableResponse: { statuses: [200, 206] }, 
               rangeRequests: true,
             }
           },
 
-          // -----------------------------------------------------------
-          // RULE 3: LOCAL MEDIA (The Bulletproof Rule)
-          // -----------------------------------------------------------
+          // RULE 3: LOCAL MEDIA
           {
-            // We do NOT check for folder names (Docs/Assets).
-            // We ONLY check if it is YOUR site and a MEDIA file.
             urlPattern: ({ url }) => {
-              // Just check the string. Does it end in PDF/AAC?
-              // And does it contain your folder name?
               return url.href.includes('/Docs/') && 
               (url.href.endsWith('.pdf') || url.href.endsWith('.aac'));
             },
             handler: 'CacheFirst',
             options: {
-              cacheName: 'local-media-cache', // This WILL appear now
+              cacheName: 'local-media-cache', 
               expiration: {
                 maxEntries: 50,
                 maxAgeSeconds: 60 * 60 * 24 * 30,
               },
-              // 0 allows opaque responses (safety), 200 is success
               cacheableResponse: { statuses: [0, 200] },
               rangeRequests: true,
             }
           },
 
-          // -----------------------------------------------------------
           // RULE 4: GENERIC ASSETS
-          // -----------------------------------------------------------
           {
             urlPattern: ({ request }) => 
                 request.destination === 'image' ||
