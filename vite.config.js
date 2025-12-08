@@ -39,8 +39,9 @@ export default defineConfig({
       workbox: {
         skipWaiting: true,
         clientsClaim: true,
+        navigateFallback: '/index.html',
         // Precache App Shell
-        globPatterns: ['**/*.{js,css,html,png,svg,ico,json}'],
+        globPatterns: ['**/*.{js,css,html,png,webp,svg,ico,json}'],
         
         runtimeCaching: [
           // -----------------------------------------------------------
@@ -112,10 +113,10 @@ export default defineConfig({
                 request.destination === 'style' ||
                 request.destination === 'script' ||
                 request.destination === 'font',
-            handler: 'StaleWhileRevalidate',
+            handler: 'CacheFirst',
             options: {
               cacheName: 'static-assets-cache',
-              expiration: { maxEntries: 50 },
+              expiration: { maxEntries: 100, maxAgeSeconds: 60 * 60 * 24 * 30 },
               cacheableResponse: { statuses: [0, 200] },
             }
           }
