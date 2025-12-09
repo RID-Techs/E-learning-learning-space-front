@@ -16,19 +16,9 @@ export default defineConfig({
       registerType: 'autoUpdate',
       strategies: 'generateSW',
       
-      // 1. ADD THIS SECTION: explicitly precache public assets
-      // This forces the SW to download these immediately on install
-      includeAssets: [ 
-        'learns.png', 
-        'learns_16.png',
-        'learns_96.png',
-        'learns_1.png',
-        'learns_2.png',
-        'download.png',
-        'doc.png',
-        'create_quiz.png',
-        'reward.png'
-      ],
+      // FIX 1: Use a wildcard to capture ALL images in public folder
+      // This ensures 'semester_2.png', 'answerss.png', etc. are all cached.
+      includeAssets: ['**/*.{png,svg,ico,webp}'],
 
       manifest: {
         "name": "E-learning Université de Kara",
@@ -52,13 +42,11 @@ export default defineConfig({
         clientsClaim: true,
         navigateFallback: '/index.html',
         
-        // 2. INCREASE LIMIT: Default is 2MB. 
-        // If an image is 2.1MB, it is skipped silently. 
-        // Increase to 4-5MB to be safe.
+        // Increase limit for large images
         maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
 
-        // Ensure jpg, jpeg and png are definitely included
-        globPatterns: ['**/*.{js,css,html,png,jpg,jpeg,webp,svg,ico,json}'],
+        // FIX 2: Add 'mjs' to this list so the PDF Worker is cached!
+        globPatterns: ['**/*.{js,mjs,css,html,png,jpg,jpeg,webp,svg,ico,json}'],
         
         runtimeCaching: [
           // RULE 1: SUPABASE DATABASE
@@ -75,7 +63,7 @@ export default defineConfig({
             }
           },
 
-          // RULE 2: CLOUDFLARE R2 (External Media)
+          // RULE 2: CLOUDFLARE R2
           {
             urlPattern: new RegExp('https://.*(r2.dev|supabase.co/storage/v1)'),
             handler: 'CacheFirst',
@@ -91,13 +79,13 @@ export default defineConfig({
             }
           },
 
-          // RULE 3: LOCAL MEDIA
+          // RULE 3: LOCAL MEDIA (PDFs)
           {
             urlPattern: ({ url }) => {
               return url.href.includes('/Docs/') && 
               (url.href.endsWith('.pdf') || url.href.endsWith('.aac'));
             },
-            handler: 'CacheFirst',
+            handler: 'CacheFirst', // This reads from cache if available
             options: {
               cacheName: 'local-media-cache', 
               expiration: {
@@ -105,6 +93,7 @@ export default defineConfig({
                 maxAgeSeconds: 60 * 60 * 24 * 30,
               },
               cacheableResponse: { statuses: [0, 200] },
+              // IMPORTANT: This allows PDF reader to request just parts of the file
               rangeRequests: true,
             }
           },
