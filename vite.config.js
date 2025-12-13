@@ -16,9 +16,9 @@ export default defineConfig({
       registerType: 'autoUpdate',
       strategies: 'generateSW',
       
-      // FIX 1: Use a wildcard to capture ALL images in public folder
-      // This ensures 'semester_2.png', 'answerss.png', etc. are all cached.
-      includeAssets: ['**/*.{png,svg,ico,webp}'],
+      // 1. REMOVE includeAssets completely.
+      // We don't need it because globPatterns below will do the job.
+      includeAssets: [], 
 
       manifest: {
         "name": "E-learning Université de Kara",
@@ -38,69 +38,55 @@ export default defineConfig({
         ]
       },
       workbox: {
+        // 2. CRITICAL: Clean up old caches that might be blocking the new ones
+        cleanupOutdatedCaches: true,
+        
         skipWaiting: true,
         clientsClaim: true,
         navigateFallback: '/index.html',
         
-        // Increase limit for large images
-        maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
+        // 3. Keep this high (6MB) to ensure larger images/PDFs aren't skipped
+        maximumFileSizeToCacheInBytes: 6 * 1024 * 1024,
 
-        // FIX 2: Add 'mjs' to this list so the PDF Worker is cached!
+        // 4. THE MASTER RULE:
+        // This pattern tells the Service Worker: 
+        // "Go to the build folder, find EVERY file ending in these extensions, and cache them."
+        // This covers: images, scripts, styles, json, and your PDF worker.
         globPatterns: ['**/*.{js,mjs,css,html,png,jpg,jpeg,webp,svg,ico,json}'],
         
         runtimeCaching: [
-          // RULE 1: SUPABASE DATABASE
+          // (Your runtime rules remain exactly the same as before)
           {
-            urlPattern: ({ url }) => {
-              return url.hostname.includes('supabase.co') && url.pathname.includes('/rest/v1');
-            },
+            urlPattern: ({ url }) => url.hostname.includes('supabase.co') && url.pathname.includes('/rest/v1'),
             handler: 'NetworkFirst',
             options: {
               cacheName: 'supabase-metadata-cache',
-              expiration: { maxEntries: 100, maxAgeSeconds: 60 * 60 * 24 * 1 },
-              networkTimeoutSeconds: 3,
+              expiration: { maxEntries: 100, maxAgeSeconds: 86400 },
               cacheableResponse: { statuses: [0, 200] }
             }
           },
-
-          // RULE 2: CLOUDFLARE R2
           {
-            urlPattern: new RegExp('https://.*(r2.dev|supabase.co/storage/v1)'),
+            urlPattern: /^https:\/\/ik\.imagekit\.io\/g4xui13wk\/.*/i,
             handler: 'CacheFirst',
             options: {
               cacheName: 'learning-materials-cache',
-              expiration: {
-                maxEntries: 100,
-                maxAgeSeconds: 60 * 60 * 24 * 30, 
-                purgeOnQuotaError: true,
-              },
+              expiration: { maxEntries: 100, maxAgeSeconds: 2592000, purgeOnQuotaError: true },
               cacheableResponse: { statuses: [200, 206] }, 
               rangeRequests: true,
             }
           },
-
-          // RULE 3: LOCAL MEDIA (PDFs)
           {
-            urlPattern: ({ url }) => {
-              return url.href.includes('/Docs/') && 
-              (url.href.endsWith('.pdf') || url.href.endsWith('.aac'));
-            },
-            handler: 'CacheFirst', // This reads from cache if available
+            urlPattern: ({ url }) => url.href.includes('/Docs/') && (url.href.endsWith('.pdf') || url.href.endsWith('.aac')),
+            handler: 'CacheFirst',
             options: {
               cacheName: 'local-media-cache', 
-              expiration: {
-                maxEntries: 50,
-                maxAgeSeconds: 60 * 60 * 24 * 30,
-              },
+              expiration: { maxEntries: 50, maxAgeSeconds: 2592000 },
               cacheableResponse: { statuses: [0, 200] },
-              // IMPORTANT: This allows PDF reader to request just parts of the file
               rangeRequests: true,
             }
           },
-
-          // RULE 4: GENERIC ASSETS
           {
-            urlPattern: ({ request }) => 
+             urlPattern: ({ request }) => 
                 request.destination === 'image' ||
                 request.destination === 'style' ||
                 request.destination === 'script' ||
@@ -108,7 +94,7 @@ export default defineConfig({
             handler: 'CacheFirst',
             options: {
               cacheName: 'static-assets-cache',
-              expiration: { maxEntries: 100, maxAgeSeconds: 60 * 60 * 24 * 30 },
+              expiration: { maxEntries: 100, maxAgeSeconds: 2592000 },
               cacheableResponse: { statuses: [0, 200] },
             }
           }

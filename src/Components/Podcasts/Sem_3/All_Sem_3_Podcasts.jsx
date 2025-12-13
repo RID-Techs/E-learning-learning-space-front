@@ -1,19 +1,19 @@
 import { Link } from "react-router-dom";
 export function Sem_3_Podcasts () {
-  const American_Novel = "https://pub-509848088272461d95c0b008ef09db9a.r2.dev/Sem_3/American_Novel.aac";
-  const Uncle_Tom = "https://pub-509848088272461d95c0b008ef09db9a.r2.dev/Sem_3/Uncle_Tom.aac";
-  const New_Names = "https://pub-509848088272461d95c0b008ef09db9a.r2.dev/Sem_3/NewNames.aac";
-  const Railroad = "https://pub-509848088272461d95c0b008ef09db9a.r2.dev/Sem_3/Railroad.aac";
-  const Huckleberry_Finn = "https://pub-509848088272461d95c0b008ef09db9a.r2.dev/Sem_3/Huckleberry_Finn.aac";
-  const English_18_Novel = "https://pub-509848088272461d95c0b008ef09db9a.r2.dev/Sem_3/English_18_Novel.aac";
-  const The_Lion_and_Jewel = "https://pub-509848088272461d95c0b008ef09db9a.r2.dev/Sem_3/The_Lion_and_Jewel.aac";
-  const Morphology = "https://pub-509848088272461d95c0b008ef09db9a.r2.dev/Sem_3/Morphology.aac";
-  const African_drama = "https://pub-509848088272461d95c0b008ef09db9a.r2.dev/Sem_3/African_drama.aac";
-  const Yellow_Yellow = "https://pub-509848088272461d95c0b008ef09db9a.r2.dev/Sem_3/Yellow_Yellow.ogg";
-  const Yellow_Characters = "https://pub-509848088272461d95c0b008ef09db9a.r2.dev/Sem_3/Yellow_Characterization.ogg";
-  const Yellow_SecondCharacters = "https://pub-509848088272461d95c0b008ef09db9a.r2.dev/Sem_3/Yellow_Secondary.ogg";
-  const Yellow_Themes = "https://pub-509848088272461d95c0b008ef09db9a.r2.dev/Sem_3/Yellow_Themes.ogg";
-  const Yellow_French = "https://pub-509848088272461d95c0b008ef09db9a.r2.dev/Sem_3/Yellow_French.ogg";
+  const American_Novel = "https://ik.imagekit.io/g4xui13wk/Sem_3/American_Novel.aac";
+  const Uncle_Tom = "https://ik.imagekit.io/g4xui13wk/Sem_3/Uncle_Tom.aac";
+  const New_Names = "https://ik.imagekit.io/g4xui13wk/Sem_3/NewNames.aac";
+  const Railroad = "https://ik.imagekit.io/g4xui13wk/Sem_3/Railroad.aac";
+  const Huckleberry_Finn = "https://ik.imagekit.io/g4xui13wk/Sem_3/Huckleberry_Finn.aac";
+  const English_18_Novel = "https://ik.imagekit.io/g4xui13wk/Sem_3/English_18_Novel.aac";
+  const The_Lion_and_Jewel = "https://ik.imagekit.io/g4xui13wk/Sem_3/The_Lion_and_Jewel.aac";
+  const Morphology = "https://ik.imagekit.io/g4xui13wk/Sem_3/Morphology.aac";
+  const African_drama = "https://ik.imagekit.io/g4xui13wk/Sem_3/African_drama.aac";
+  const Yellow_Yellow = "https://ik.imagekit.io/g4xui13wk/Sem_3/Yellow_Yellow.ogg";
+  const Yellow_Characters = "https://ik.imagekit.io/g4xui13wk/Sem_3/Yellow_Characterization.ogg";
+  const Yellow_SecondCharacters = "https://ik.imagekit.io/g4xui13wk/Sem_3/Yellow_Secondary.ogg";
+  const Yellow_Themes = "https://ik.imagekit.io/g4xui13wk/Sem_3/Yellow_Themes.ogg";
+  const Yellow_French = "https://ik.imagekit.io/g4xui13wk/Sem_3/Yellow_French.ogg";
   const getMemberStatus = localStorage.getItem("isLoggedIn");
   const isMember = getMemberStatus === "true";
   return (
