@@ -1,7 +1,7 @@
 // Images logo, semester, courses, Answers, user, download, docs and warning are from https://icons8.com/
 import logo from "../assets/learns.png";
 import semester from "../assets/semester_2.png";
-import Answers from "../assets/answerss.png";
+import Answers from "../assets/answers.png";
 import user from "../assets/user.png";
 import courses from "../assets/coursess.png";
 import open from "../assets/course.png";

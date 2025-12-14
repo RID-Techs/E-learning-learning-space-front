@@ -1,7 +1,7 @@
 // Images logo, Homepage, Answers, user and warning are from https://icons8.com/
 import logo from "../assets/learns.png";
 import Homepage from "../assets/Homepage.png";
-import Answers from "../assets/answerss.png";
+import Answers from "../assets/answers.png";
 import TestOne from "../assets/testOne.png";
 import podcast from "../assets/podcast.png";
 import progress from "../assets/progress.png";

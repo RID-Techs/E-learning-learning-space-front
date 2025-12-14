@@ -1,6 +1,6 @@
 import logo from "../../assets/learns.png";
 import Homepage from "../../assets/Homepage.png";
-import Answers from "../../assets/answerss.png";
+import Answers from "../../assets/answers.png";
 import TestOne from "../../assets/testOne.png";
 import E_Quiz_Dea from "../../assets/E_quiz_Dea.png";
 import E_Quiz_Gen from "../../assets/E_quiz_Gen.png";
