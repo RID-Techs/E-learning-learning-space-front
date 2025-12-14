@@ -1,5 +1,5 @@
-import stars from "/stars.png";
-import logo from "/learns.png";
+import stars from "../assets/stars.png";
+import logo from "../assets/learns.png";
 import { AddExamPapers } from "./Contribute/Exam_Papers";
 import { useEffect, useState } from "react";
 

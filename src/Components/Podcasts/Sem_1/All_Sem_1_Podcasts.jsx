@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export function Sem_1_Podcasts () {
   // const MTU_INTRODUCTION_STEPS = "https://oousnjsxqzaocpqjfvkp.supabase.co/storage/v1/object/public/e-learning/Sem_1/MTU_INTRO.ogg";
   const MTU_INTRODUCTION_STEPS = "https://ik.imagekit.io/g4xui13wk/Sem_1/MTU_INTRO.ogg";
-  const Phonetics_phonology = "https://ik.imagekit.io/g4xui13wk/Sem_1/Phonetics_phonology.aac";
+  const Phonetics_phonology = "https://oousnjsxqzaocpqjfvkp.supabase.co/storage/v1/object/public/e-audio-bucket/Phonetics_phonology.aac";
   const getMemberStatus = localStorage.getItem("isLoggedIn");
   const isMember = getMemberStatus === "true";
 

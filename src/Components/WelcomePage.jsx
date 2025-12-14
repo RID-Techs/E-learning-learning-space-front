@@ -1,14 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 // Image logo, stars, star, username, password is from https://icons8.com/
-import logo from "/learns.png";
-import stars from "/stars.png";
-import reward from "/reward.png";
-import star from "/stars_2.png";
+import logo from "../assets/learns.png";
+import stars from "../assets/stars.png";
+import reward from "../assets/reward.png";
+import star from "../assets/stars_2.png";
 // import E_crew from "/E_crew.png";
-import courses from "/coursess.png";
+import courses from "../assets/coursess.png";
 // import password from "/password.png";
-import E_member from "/E_picture.webp";
+import E_member from "../assets/E_picture.webp";
 import { toast, Zoom } from "react-toastify";
 
 export function Welcome_Page() {

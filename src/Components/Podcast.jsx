@@ -1,7 +1,7 @@
-import logo from "/learns.png";
-import Homepage from "/Homepage.png";
-import podcast from "/podcast.png";
-import podcast_pic from "/podcast_pic.png";
+import logo from "../assets/learns.png";
+import Homepage from "../assets/Homepage.png";
+import podcast from "../assets/podcast.png";
+import podcast_pic from "../assets/podcast_pic.png";
 import { useEffect, useRef, useState } from "react";
 import { Sem_5_Podcasts } from "./Podcasts/Sem_5/AllSem_5_Podcasts";
 import { Sem_3_Podcasts } from "./Podcasts/Sem_3/All_Sem_3_Podcasts";

@@ -1,15 +1,15 @@
 // Images logo, semester, courses, Answers, user, download, docs and warning are from https://icons8.com/
-import logo from "/learns.png";
-import semester from "/semester_2.png";
-import Answers from "/answerss.png";
-import user from "/user.png";
-import courses from "/coursess.png";
-import open from "/course.png";
-import warning from "/warning.png";
-import download from "/download.png";
-import docs from "/doc.png";
+import logo from "../assets/learns.png";
+import semester from "../assets/semester_2.png";
+import Answers from "../assets/answerss.png";
+import user from "../assets/user.png";
+import courses from "../assets/coursess.png";
+import open from "../assets/course.png";
+import warning from "../assets/warning.png";
+import download from "../assets/download.png";
+import docs from "../assets/doc.png";
 // Illustration OnlineLearning is from https://undraw.co/
-import OnlineLearning from "/Online_learning.svg";
+import OnlineLearning from "../assets/Online_learning.svg";
 
 import { toast, Zoom } from "react-toastify";
 import { useEffect, useState } from "react";

@@ -1,7 +1,7 @@
 import supabase from "../../Config/DbConnect";
 import { toast, Zoom } from "react-toastify";
 import "./paper.css";
-import star from "/stars_2.png";
+import star from "../../assets/stars_2.png";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AlertInfo } from "../Alert_Msg/Alert-Info";

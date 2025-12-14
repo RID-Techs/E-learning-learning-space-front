@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./paper.css";
-import warning from "/warning.png";
+import warning from "../../assets/warning.png";
 import { useEffect } from "react";
 import { Semester1Units } from "./Teaching_Units/Sem_1_2/Sem_1_Units";
 import { Semester2Units } from "./Teaching_Units/Sem_1_2/Sem_2_Units";

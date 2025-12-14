@@ -1,18 +1,18 @@
 // Images logo, Homepage, Answers, user and warning are from https://icons8.com/
-import logo from "/learns.png";
-import Homepage from "/Homepage.png";
-import Answers from "/answerss.png";
-import TestOne from "/testOne.png";
-import podcast from "/podcast.png";
-import progress from "/progress.png";
-import user from "/user.png";
-import open from "/course.png";
-import download from "/download.png";
-import warning from "/warning.png";
-import feedback_pic from "/feedback.png";
+import logo from "../assets/learns.png";
+import Homepage from "../assets/Homepage.png";
+import Answers from "../assets/answerss.png";
+import TestOne from "../assets/testOne.png";
+import podcast from "../assets/podcast.png";
+import progress from "../assets/progress.png";
+import user from "../assets/user.png";
+import open from "../assets/course.png";
+import download from "../assets/download.png";
+import warning from "../assets/warning.png";
+import feedback_pic from "../assets/feedback.png";
 
 // Image Faq from https://www.freepik.com/
-import Faq from "/Faq.webp";
+import Faq from "../assets/Faq.webp";
 import { useEffect, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { isItemInCache } from "../Network-Status/itemCache";

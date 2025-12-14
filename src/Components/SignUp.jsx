@@ -1,13 +1,13 @@
 import supabase from "../Config/DbConnect"
 // Image logo, stars, star, username, password is from https://icons8.com/
-import logo from "/learns.png";
-import eye from "/eye.svg";
-import eyeBlocked from "/eye-blocked.svg";
-import stars from "/stars.png";
-import star from "/stars_2.png";
-import username from "/username.png";
-import password from "/password.png";
-import E_member from "/E_picture.webp";
+import logo from "../assets/learns.png";
+import eye from "../assets/eye.svg";
+import eyeBlocked from "../assets/eye-blocked.svg";
+import stars from "../assets/stars.png";
+import star from "../assets/stars_2.png";
+import username from "../assets/username.png";
+import password from "../assets/password.png";
+import E_member from "../assets/E_picture.webp";
 import { toast, Zoom } from "react-toastify";
 import { useState, useEffect} from "react";
 export function SignUp() {

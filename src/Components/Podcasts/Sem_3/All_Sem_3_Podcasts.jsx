@@ -7,7 +7,7 @@ export function Sem_3_Podcasts () {
   const Huckleberry_Finn = "https://ik.imagekit.io/g4xui13wk/Sem_3/Huckleberry_Finn.aac";
   const English_18_Novel = "https://ik.imagekit.io/g4xui13wk/Sem_3/English_18_Novel.aac";
   const The_Lion_and_Jewel = "https://ik.imagekit.io/g4xui13wk/Sem_3/The_Lion_and_Jewel.aac";
-  const Morphology = "https://ik.imagekit.io/g4xui13wk/Sem_3/Morphology.aac";
+  const Morphology = "https://oousnjsxqzaocpqjfvkp.supabase.co/storage/v1/object/public/e-audio-bucket/Morphology.aac";
   const African_drama = "https://ik.imagekit.io/g4xui13wk/Sem_3/African_drama.aac";
   const Yellow_Yellow = "https://ik.imagekit.io/g4xui13wk/Sem_3/Yellow_Yellow.ogg";
   const Yellow_Characters = "https://ik.imagekit.io/g4xui13wk/Sem_3/Yellow_Characterization.ogg";

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import "./quiz.css";
-import logo from "/learns.png";
-import stars from "/stars.png";
-import warning from "/warning.png";
+import logo from "../../assets/learns.png";
+import stars from "../../assets/stars.png";
+import warning from "../../assets/warning.png";
 import { Sem_1_Quiz } from "./Quiz_Sems/Sem_1_2/Q_Sem_1";
 import { Sem_3_Quiz } from "./Quiz_Sems/Sem_3_4/Q_Sem_3";
 import { Sem_2_Quiz } from "./Quiz_Sems/Sem_1_2/Q_Sem_2";

@@ -1,8 +1,8 @@
 
 import { useEffect, useRef, useState } from "react";
-import logo from "/learns.png";
-import stars from "/stars.png";
-import create_quiz from "/create_quiz.png";
+import logo from "../../assets/learns.png";
+import stars from "../../assets/stars.png";
+import create_quiz from "../../assets/create_quiz.png";
 import { Link } from "react-router-dom";
 
 export function Create_Quiz () {

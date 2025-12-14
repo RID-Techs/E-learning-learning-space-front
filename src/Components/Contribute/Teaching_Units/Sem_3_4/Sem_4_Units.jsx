@@ -2,7 +2,7 @@ import supabase from "../../../../Config/DbConnect";
 import { toast, Zoom } from "react-toastify";
 import { useState } from "react";
 import { DisplayPapers } from "../../Dispay_Papers";
-import paper from "/paper.png";
+import paper from "../../../../assets/paper.png";
 import { AlertInfo } from "../../../Alert_Msg/Alert-Info";
 import { useNetworkStatus } from "../../../../Network-Status/networkHook";
 

@@ -4,12 +4,12 @@ export function Sem_5_Podcasts () {
   const Frankenstein = "https://ik.imagekit.io/g4xui13wk/Sem_5/Frankenstein.aac";
   const Frankenstein_Themes = "https://ik.imagekit.io/g4xui13wk/Sem_5/Frankenstein_themes.aac";
   const Hard_Times = "https://ik.imagekit.io/g4xui13wk/Sem_5/Hard_Times.aac";
-  const Discourse_analysis = "https://ik.imagekit.io/g4xui13wk/Sem_5/Discourse_analysis.aac";
+  const Discourse_analysis = "https://pub-509848088272461d95c0b008ef09db9a.r2.dev/Sem_5/Discourse_analysis.aac";
   const Discourse_analysis_GRA = "https://ik.imagekit.io/g4xui13wk/Sem_5/Grammar_In_Communication.aac";
   const Literature_Culture = "https://ik.imagekit.io/g4xui13wk/Sem_5/Literature_Culture.aac";
   const Purple_Hibscus = "https://ik.imagekit.io/g4xui13wk/Sem_5/Purple_Hibscus.aac";
   const Things_Apart = "https://ik.imagekit.io/g4xui13wk/Sem_5/Things_Apart.aac";
-  const Of_Mice = "https://ik.imagekit.io/g4xui13wk/Sem_5/Of_Mice.aac";
+  const Of_Mice = "https://oousnjsxqzaocpqjfvkp.supabase.co/storage/v1/object/public/e-audio-bucket/Of_Mice.aac";
   const Toni_Morrison_Bluest_Eye = "https://ik.imagekit.io/g4xui13wk/Sem_5/Toni_Morrison_Bluest_Eye.aac";
   const phono_sem_5 = "https://ik.imagekit.io/g4xui13wk/Sem_5/phono_sem_5.aac";
   const SmoulderingCharcoal = "https://ik.imagekit.io/g4xui13wk/Sem_5/Smouldering_Charcoal.ogg";

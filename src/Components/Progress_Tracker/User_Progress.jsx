@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import "./progress.css";
-import logo from "/learns.png";
-import warning from "/warning.png";
-import stars from "/stars.png";
+import logo from "../../assets/learns.png";
+import warning from "../../assets/warning.png";
+import stars from "../../assets/stars.png";
 import { Courses_Sem_1 } from "./Courses/Sem_1_2/courses_sem_1";
 import { Courses_Sem_3 } from "./Courses/Sem_3_4/courses_sem_3";
 import { Courses_Sem_5 } from "./Courses/Sem_5_6/courses_sem_5";
