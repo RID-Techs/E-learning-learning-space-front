@@ -40,7 +40,7 @@ export function WebsiteTour() {
 
     <section className="tuto-section">
       <div className="video-holder">
-          <a href="https://drive.google.com/file/d/1JIm6p7DZdEHVsCbETx3B5WWVhXmOuN_R/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+          <a href="https://drive.google.com/file/d/1RHcxCK9VgzyJ1a4Dj6-gSBW0mybikviw/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
             <span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"

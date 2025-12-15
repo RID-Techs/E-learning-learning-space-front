@@ -55,7 +55,7 @@ export default defineConfig({
         globPatterns: ['**/*.{js,mjs,css,html,png,jpg,jpeg,webp,svg,ico,json}'],
         
         runtimeCaching: [
-          // (Your runtime rules remain exactly the same as before)
+          // Supabase API data (metadata)
           {
             urlPattern: ({ url }) => url.hostname.includes('supabase.co') && url.pathname.includes('/rest/v1'),
             handler: 'NetworkFirst',
@@ -65,32 +65,48 @@ export default defineConfig({
               cacheableResponse: { statuses: [0, 200] }
             }
           },
+
+          // ImageKit images (specific external images)
           {
             urlPattern: /^https:\/\/ik\.imagekit\.io\/g4xui13wk\/.*/i,
             handler: 'CacheFirst',
             options: {
               cacheName: 'learning-materials-cache',
               expiration: { maxEntries: 100, maxAgeSeconds: 2592000, purgeOnQuotaError: true },
-              cacheableResponse: { statuses: [200, 206] }, 
+              cacheableResponse: { statuses: [200, 206] },
               rangeRequests: true,
             }
           },
+
+          // Local PDFs and audio files
           {
             urlPattern: ({ url }) => url.href.includes('/Docs/') && (url.href.endsWith('.pdf') || url.href.endsWith('.aac')),
             handler: 'CacheFirst',
             options: {
-              cacheName: 'local-media-cache', 
+              cacheName: 'local-media-cache',
               expiration: { maxEntries: 50, maxAgeSeconds: 2592000 },
               cacheableResponse: { statuses: [0, 200] },
               rangeRequests: true,
             }
           },
+
+          // ALL other images (covers any external images not caught above)
           {
-             urlPattern: ({ request }) => 
-                request.destination === 'image' ||
-                request.destination === 'style' ||
-                request.destination === 'script' ||
-                request.destination === 'font',
+            urlPattern: ({ request }) => request.destination === 'image',
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'external-images-cache',
+              expiration: { maxEntries: 200, maxAgeSeconds: 2592000, purgeOnQuotaError: true },
+              cacheableResponse: { statuses: [0, 200] },
+            }
+          },
+
+          // Styles, scripts, and fonts
+          {
+            urlPattern: ({ request }) =>
+              request.destination === 'style' ||
+              request.destination === 'script' ||
+              request.destination === 'font',
             handler: 'CacheFirst',
             options: {
               cacheName: 'static-assets-cache',
