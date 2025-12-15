@@ -747,7 +747,7 @@ async function openCachedPDF(url) {
               <a href="https://elerning-e-library.netlify.app" target="_blank" rel="noopener noreferrer">
                 <li>
                   {" "}
-                  <img height={22} src={Answers} alt="Answers" /> My E-library{" "}
+                  <img height={22} src={open} alt="library" /> My E-library{" "}
                 </li>
               </a>
               <button id="Log-out" onClick={LoggedOut} type="button">
