@@ -47,6 +47,7 @@ export default defineConfig({
         
         // 3. Keep this high (6MB) to ensure larger images/PDFs aren't skipped
         maximumFileSizeToCacheInBytes: 6 * 1024 * 1024,
+        dontCacheBustURLsMatching: /[.-][a-zA-Z0-9]{8}\./,
 
         // 4. THE MASTER RULE:
         // This pattern tells the Service Worker: 
@@ -112,6 +113,10 @@ export default defineConfig({
               cacheName: 'static-assets-cache',
               expiration: { maxEntries: 100, maxAgeSeconds: 2592000 },
               cacheableResponse: { statuses: [0, 200] },
+              matchOptions: {
+                ignoreVary: true,   // FIX: Ignores "Vary: Accept-Encoding" from Cloudflare
+                ignoreSearch: true  // FIX: Ignores "?v=123" query strings
+              }
             }
           }
         ]
