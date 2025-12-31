@@ -337,7 +337,7 @@ export function AddExamPapers() {
               <strong>
                 <em>Students of Anglophone Studies (DEA).</em>
               </strong>
-              <img src={star} alt="star" />{" "}
+              <img height={32} src={star} alt="star" />{" "}
             </h3>
           </div>
 

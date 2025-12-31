@@ -315,17 +315,11 @@ export function Test() {
     <div className="container mt-4">
         <div className="test-message-header">
         <div className="take-test">
-          <h1>
-              <span className="test-span-holder">
-                <span className="test-span">Take a test</span>
-              </span> <br />
-              <span className="test-span-holder">
-                <span className="test-span-2">Rate yourself</span>
-              </span><br />
-              <span className="test-span-holder">
-                <span className="test-span-3">Improve yourself</span>
-              </span>
-          </h1>
+          <div className="take-test-worthy-words">
+                <p className="test-span">Take a test</p> <br />
+                <p className="test-span-2">Rate yourself</p> <br />
+                <p className="test-span-3">Get Better</p>
+          </div>
           <img height={100} src={Testpic} alt="Test" />
         </div>
         </div>
@@ -403,7 +397,7 @@ export function Test() {
       
         <div className="test-subjects">
           <div className="test-subject-item">
-            <p className="subject-header">Grammar <img src={star} alt="star" /> </p>
+            <p className="subject-header">Grammar <img height={32} src={star} alt="star" /> </p>
             <hr className="test-divder" />
               {
                 isMember ? (
@@ -416,7 +410,7 @@ export function Test() {
           </div>
 
           <div className="test-subject-item">
-            <p className="subject-header">Phonetics & Phonology <img src={star} alt="star" /> </p>
+            <p className="subject-header">Phonetics & Phonology <img height={32} src={star} alt="star" /> </p>
             <hr className="test-divder" />
                {
                  isMember ? (
@@ -429,7 +423,7 @@ export function Test() {
           </div>
 
           <div className="test-subject-item">
-            <p className="subject-header">American Civilisation <img src={star} alt="star" /> </p>
+            <p className="subject-header">American Civilisation <img height={32} src={star} alt="star" /> </p>
             <hr className="test-divder" />
                {
                  isMember ? (
@@ -442,7 +436,7 @@ export function Test() {
           </div>
 
           <div className="test-subject-item">
-            <p className="subject-header">British Civilisation <img src={star} alt="star" /> </p>
+            <p className="subject-header">British Civilisation <img height={32} src={star} alt="star" /> </p>
             <hr className="test-divder" />
                {
                 isMember ? (
@@ -464,7 +458,7 @@ export function Test() {
       
         <div className="test-subjects">
           <div className="test-subject-item">
-            <p className="subject-header">18<sup>th</sup> Century English Novel <img src={star} alt="star" /> </p>
+            <p className="subject-header">18<sup>th</sup> Century English Novel <img height={32} src={star} alt="star" /> </p>
             <hr className="test-divder" />
                {
                  isMember ? (
@@ -476,7 +470,7 @@ export function Test() {
           </div>
 
           <div className="test-subject-item">
-            <p className="subject-header">Morphology & Syntax <img src={star} alt="star" /> </p>
+            <p className="subject-header">Morphology & Syntax <img height={32} src={star} alt="star" /> </p>
             <hr className="test-divder" />
                {
                  isMember ? (
@@ -488,7 +482,7 @@ export function Test() {
           </div>
 
           <div className="test-subject-item">
-            <p className="subject-header">American Novel <img src={star} alt="star" /> </p>
+            <p className="subject-header">American Novel <img height={32} src={star} alt="star" /> </p>
             <hr className="test-divder" />
                {
                  isMember ? (
@@ -507,7 +501,7 @@ export function Test() {
       
         <div className="test-subjects">
           <div className="test-subject-item">
-            <p className="subject-header">19<sup>th</sup> Century English Novel <img src={star} alt="star" /> </p>
+            <p className="subject-header">19<sup>th</sup> Century English Novel <img height={32} src={star} alt="star" /> </p>
             <hr className="test-divder" />
                {
                  isMember ? (
@@ -520,7 +514,7 @@ export function Test() {
           </div>
 
           <div className="test-subject-item">
-            <p className="subject-header">Literature & Environement <img src={star} alt="star" /> </p>
+            <p className="subject-header">Literature & Environement <img height={32} src={star} alt="star" /> </p>
             <hr className="test-divder" />
                {
                  isMember ? (

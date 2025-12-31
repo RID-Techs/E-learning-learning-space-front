@@ -45,7 +45,7 @@ export function Sem_1_Grammar() {
     CurrentBtn.style.border = "2px solid lightgreen";
     Impressions.classList.add("true-style");
     setAnswerFound(true);
-    setImpressions_1("Congratulations! You got it.")
+    setImpressions_1("Congratulations 🎉 You got it.")
   }
     const wrongAnswerBtn_1 = (e) =>{
       const CurrentBtn = e.currentTarget;
@@ -63,7 +63,7 @@ export function Sem_1_Grammar() {
       Impressions.style.display = "inline-block";
       Impressions.classList.add("disable-style");
       setAnswerFound(false);
-      setImpressions_1("Oops! Sorry, Try again later on.");
+      setImpressions_1("Oops  😕, Try again later on.");
     }
 
   const rightAnswerBtn_2 = (e) => {
@@ -82,7 +82,7 @@ export function Sem_1_Grammar() {
     CurrentBtn.style.border = "2px solid lightgreen";
     Impressions.classList.add("true-style");
     setAnswerFound(true);
-    setImpressions_2("Congratulations! You got it.")
+    setImpressions_2("Congratulations 🎉 You got it.")
   }
     const wrongAnswerBtn_2 = (e) =>{
       const CurrentBtn = e.currentTarget;
@@ -100,7 +100,7 @@ export function Sem_1_Grammar() {
       Impressions.style.display = "inline-block";
       Impressions.classList.add("disable-style");
       setAnswerFound(false);
-      setImpressions_2("Oops! Sorry, Try again later on.");
+      setImpressions_2("Oops  😕, Try again later on.");
     }
 
   const rightAnswerBtn_3 = (e) => {
@@ -119,7 +119,7 @@ export function Sem_1_Grammar() {
     CurrentBtn.style.border = "2px solid lightgreen";
     Impressions.classList.add("true-style");
     setAnswerFound(true);
-    setImpressions_3("Congratulations! You got it.")
+    setImpressions_3("Congratulations 🎉 You got it.")
   }
     const wrongAnswerBtn_3 = (e) =>{
       const CurrentBtn = e.currentTarget;
@@ -137,7 +137,7 @@ export function Sem_1_Grammar() {
       Impressions.style.display = "inline-block";
       Impressions.classList.add("disable-style");
       setAnswerFound(false);
-      setImpressions_3("Oops! Sorry, Try again later on.");
+      setImpressions_3("Oops  😕, Try again later on.");
     }
 
   const rightAnswerBtn_4 = (e) => {
@@ -156,7 +156,7 @@ export function Sem_1_Grammar() {
     CurrentBtn.style.border = "2px solid lightgreen";
     Impressions.classList.add("true-style");
     setAnswerFound(true);
-    setImpressions_4("Congratulations! You got it.")
+    setImpressions_4("Congratulations 🎉 You got it.")
   }
     const wrongAnswerBtn_4 = (e) =>{
       const CurrentBtn = e.currentTarget;
@@ -174,7 +174,7 @@ export function Sem_1_Grammar() {
       Impressions.style.display = "inline-block";
       Impressions.classList.add("disable-style");
       setAnswerFound(false);
-      setImpressions_4("Oops! Sorry, Try again later on.");
+      setImpressions_4("Oops  😕, Try again later on.");
     }
 
   const rightAnswerBtn_5 = (e) => {
@@ -193,7 +193,7 @@ export function Sem_1_Grammar() {
     CurrentBtn.style.border = "2px solid lightgreen";
     Impressions.classList.add("true-style");
     setAnswerFound(true);
-    setImpressions_5("Congratulations! You got it.")
+    setImpressions_5("Congratulations 🎉 You got it.")
   }
     const wrongAnswerBtn_5 = (e) =>{
       const CurrentBtn = e.currentTarget;
@@ -211,7 +211,7 @@ export function Sem_1_Grammar() {
       Impressions.style.display = "inline-block";
       Impressions.classList.add("disable-style");
       setAnswerFound(false);
-      setImpressions_5("Oops! Sorry, Try again later on.");
+      setImpressions_5("Oops  😕, Try again later on.");
     }
 
   const rightAnswerBtn_6 = (e) => {
@@ -230,7 +230,7 @@ export function Sem_1_Grammar() {
     CurrentBtn.style.border = "2px solid lightgreen";
     Impressions.classList.add("true-style");
     setAnswerFound(true);
-    setImpressions_6("Congratulations! You got it.")
+    setImpressions_6("Congratulations 🎉 You got it.")
   }
     const wrongAnswerBtn_6 = (e) =>{
       const CurrentBtn = e.currentTarget;
@@ -248,7 +248,7 @@ export function Sem_1_Grammar() {
       Impressions.style.display = "inline-block";
       Impressions.classList.add("disable-style");
       setAnswerFound(false);
-      setImpressions_6("Oops! Sorry, Try again later on.");
+      setImpressions_6("Oops  😕, Try again later on.");
     }
 
   const rightAnswerBtn_7 = (e) => {
@@ -267,7 +267,7 @@ export function Sem_1_Grammar() {
     CurrentBtn.style.border = "2px solid lightgreen";
     Impressions.classList.add("true-style");
     setAnswerFound(true);
-    setImpressions_7("Congratulations! You got it.")
+    setImpressions_7("Congratulations 🎉 You got it.")
   }
     const wrongAnswerBtn_7 = (e) =>{
       const CurrentBtn = e.currentTarget;
@@ -285,7 +285,7 @@ export function Sem_1_Grammar() {
       Impressions.style.display = "inline-block";
       Impressions.classList.add("disable-style");
       setAnswerFound(false);
-      setImpressions_7("Oops! Sorry, Try again later on.");
+      setImpressions_7("Oops  😕, Try again later on.");
     }
 
   const rightAnswerBtn_8 = (e) => {
@@ -304,7 +304,7 @@ export function Sem_1_Grammar() {
     CurrentBtn.style.border = "2px solid lightgreen";
     Impressions.classList.add("true-style");
     setAnswerFound(true);
-    setImpressions_8("Congratulations! You got it.")
+    setImpressions_8("Congratulations 🎉 You got it.")
   }
     const wrongAnswerBtn_8 = (e) =>{
       const CurrentBtn = e.currentTarget;
@@ -322,7 +322,7 @@ export function Sem_1_Grammar() {
       Impressions.style.display = "inline-block";
       Impressions.classList.add("disable-style");
       setAnswerFound(false);
-      setImpressions_8("Oops! Sorry, Try again later on.");
+      setImpressions_8("Oops  😕, Try again later on.");
     }
 
   const rightAnswerBtn_9 = (e) => {
@@ -341,7 +341,7 @@ export function Sem_1_Grammar() {
     CurrentBtn.style.border = "2px solid lightgreen";
     Impressions.classList.add("true-style");
     setAnswerFound(true);
-    setImpressions_9("Congratulations! You got it.")
+    setImpressions_9("Congratulations 🎉 You got it.")
   }
     const wrongAnswerBtn_9 = (e) =>{
       const CurrentBtn = e.currentTarget;
@@ -359,7 +359,7 @@ export function Sem_1_Grammar() {
       Impressions.style.display = "inline-block";
       Impressions.classList.add("disable-style");
       setAnswerFound(false);
-      setImpressions_9("Oops! Sorry, Try again later on.");
+      setImpressions_9("Oops  😕, Try again later on.");
     }
 
   const rightAnswerBtn_10 = (e) => {
@@ -378,7 +378,7 @@ export function Sem_1_Grammar() {
     CurrentBtn.style.border = "2px solid lightgreen";
     Impressions.classList.add("true-style");
     setAnswerFound(true);
-    setImpressions_10("Congratulations! You got it.")
+    setImpressions_10("Congratulations 🎉 You got it.")
   }
     const wrongAnswerBtn_10 = (e) =>{
       const CurrentBtn = e.currentTarget;
@@ -396,7 +396,7 @@ export function Sem_1_Grammar() {
       Impressions.style.display = "inline-block";
       Impressions.classList.add("disable-style");
       setAnswerFound(false);
-      setImpressions_10("Oops! Sorry, Try again later on.");
+      setImpressions_10("Oops  😕, Try again later on.");
     }
 
   const rightAnswerBtn_11 = (e) => {
@@ -415,7 +415,7 @@ export function Sem_1_Grammar() {
     CurrentBtn.style.border = "2px solid lightgreen";
     Impressions.classList.add("true-style");
     setAnswerFound(true);
-    setImpressions_11("Congratulations! You got it.")
+    setImpressions_11("Congratulations 🎉 You got it.")
   }
     const wrongAnswerBtn_11 = (e) =>{
       const CurrentBtn = e.currentTarget;
@@ -433,7 +433,7 @@ export function Sem_1_Grammar() {
       Impressions.style.display = "inline-block";
       Impressions.classList.add("disable-style");
       setAnswerFound(false);
-      setImpressions_11("Oops! Sorry, Try again later on.");
+      setImpressions_11("Oops  😕, Try again later on.");
     }
 
 
@@ -483,7 +483,7 @@ export function Sem_1_Grammar() {
             Impressions.style.backgroundColor = "";
             Impressions.classList.remove("disable-style");
             Impressions.classList.add("true-style");
-            setInputImpressions_1("Congratulations! You got it.");
+            setInputImpressions_1("Congratulations 🎉 You got it.");
             checkSpinner.style.display = "none";
             checkSpinnerText.textContent = "check";
             checkAnswerBtn.disabled = true;
@@ -500,7 +500,7 @@ export function Sem_1_Grammar() {
             Impressions.style.backgroundColor = "";
             Impressions.classList.remove("true-style");
             Impressions.classList.add("disable-style");
-            setInputImpressions_1("Oops! Sorry, Try again later on.");
+            setInputImpressions_1("Oops  😕, Try again later on.");
             checkSpinner.style.display = "none";
             checkSpinnerText.textContent = "check";
             checkAnswerBtn.disabled = true;
@@ -555,7 +555,7 @@ export function Sem_1_Grammar() {
             Impressions.style.backgroundColor = "";
             Impressions.classList.remove("disable-style");
             Impressions.classList.add("true-style");
-            setInputImpressions_2("Congratulations! You got it.");
+            setInputImpressions_2("Congratulations 🎉 You got it.");
             checkSpinner.style.display = "none";
             checkSpinnerText.textContent = "check";
             checkAnswerBtn.disabled = true;
@@ -572,7 +572,7 @@ export function Sem_1_Grammar() {
             Impressions.style.backgroundColor = "";
             Impressions.classList.remove("true-style");
             Impressions.classList.add("disable-style");
-            setInputImpressions_2("Oops! Sorry, Try again later on.");
+            setInputImpressions_2("Oops  😕, Try again later on.");
             checkSpinner.style.display = "none";
             checkSpinnerText.textContent = "check";
             checkAnswerBtn.disabled = true;
@@ -627,7 +627,7 @@ export function Sem_1_Grammar() {
             Impressions.style.backgroundColor = "";
             Impressions.classList.remove("disable-style");
             Impressions.classList.add("true-style");
-            setInputImpressions_3("Congratulations! You got it.");
+            setInputImpressions_3("Congratulations 🎉 You got it.");
             checkSpinner.style.display = "none";
             checkSpinnerText.textContent = "check"
             checkAnswerBtn.disabled = true;
@@ -644,7 +644,7 @@ export function Sem_1_Grammar() {
             Impressions.style.backgroundColor = "";
             Impressions.classList.remove("true-style");
             Impressions.classList.add("disable-style");
-            setInputImpressions_3("Oops! Sorry, Try again later on.");
+            setInputImpressions_3("Oops  😕, Try again later on.");
             checkSpinner.style.display = "none";
             checkSpinnerText.textContent = "check"
             checkAnswerBtn.disabled = true;
@@ -699,7 +699,7 @@ export function Sem_1_Grammar() {
             Impressions.style.backgroundColor = "";
             Impressions.classList.remove("disable-style");
             Impressions.classList.add("true-style");
-            setInputImpressions_4("Congratulations! You got it.");
+            setInputImpressions_4("Congratulations 🎉 You got it.");
             checkSpinner.style.display = "none";
             checkSpinnerText.textContent = "check";
             checkAnswerBtn.disabled = true;
@@ -716,7 +716,7 @@ export function Sem_1_Grammar() {
             Impressions.style.backgroundColor = "";
             Impressions.classList.remove("true-style");
             Impressions.classList.add("disable-style");
-            setInputImpressions_4("Oops! Sorry, Try again later on.");
+            setInputImpressions_4("Oops  😕, Try again later on.");
             checkSpinner.style.display = "none";
             checkSpinnerText.textContent = "check";
             checkAnswerBtn.disabled = true;
@@ -771,7 +771,7 @@ export function Sem_1_Grammar() {
             Impressions.style.backgroundColor = "";
             Impressions.classList.remove("disable-style");
             Impressions.classList.add("true-style");
-            setInputImpressions_5("Congratulations! You got it.");
+            setInputImpressions_5("Congratulations 🎉 You got it.");
             checkSpinner.style.display = "none";
             checkSpinnerText.textContent = "check";
             checkAnswerBtn.disabled = true;
@@ -788,7 +788,7 @@ export function Sem_1_Grammar() {
             Impressions.style.backgroundColor = "";
             Impressions.classList.remove("true-style");
             Impressions.classList.add("disable-style");
-            setInputImpressions_5("Oops! Sorry, Try again later on.");
+            setInputImpressions_5("Oops  😕, Try again later on.");
             checkSpinner.style.display = "none";
             checkSpinnerText.textContent = "check";
             checkAnswerBtn.disabled = true;
@@ -842,7 +842,7 @@ export function Sem_1_Grammar() {
             Impressions.style.backgroundColor = "";
             Impressions.classList.remove("disable-style");
             Impressions.classList.add("true-style");
-            setInputImpressions_6("Congratulations! You got it.");
+            setInputImpressions_6("Congratulations 🎉 You got it.");
             checkSpinner.style.display = "none";
             checkSpinnerText.textContent = "check";
             checkAnswerBtn.disabled = true;
@@ -859,7 +859,7 @@ export function Sem_1_Grammar() {
             Impressions.style.backgroundColor = "";
             Impressions.classList.remove("true-style");
             Impressions.classList.add("disable-style");
-            setInputImpressions_6("Oops! Sorry, Try again later on.");
+            setInputImpressions_6("Oops  😕, Try again later on.");
             checkSpinner.style.display = "none";
             checkSpinnerText.textContent = "check";
             checkAnswerBtn.disabled = true;
@@ -914,7 +914,7 @@ export function Sem_1_Grammar() {
             Impressions.style.backgroundColor = "";
             Impressions.classList.remove("disable-style");
             Impressions.classList.add("true-style");
-            setInputImpressions_7("Congratulations! You got it.");
+            setInputImpressions_7("Congratulations 🎉 You got it.");
             checkSpinner.style.display = "none";
             checkSpinnerText.textContent = "check";
             checkAnswerBtn.disabled = true;
@@ -931,7 +931,7 @@ export function Sem_1_Grammar() {
             Impressions.style.backgroundColor = "";
             Impressions.classList.remove("true-style");
             Impressions.classList.add("disable-style");
-            setInputImpressions_7("Oops! Sorry, Try again later on.");
+            setInputImpressions_7("Oops  😕, Try again later on.");
             checkSpinner.style.display = "none";
             checkSpinnerText.textContent = "check";
             checkAnswerBtn.disabled = true;
@@ -986,7 +986,7 @@ export function Sem_1_Grammar() {
             Impressions.style.backgroundColor = "";
             Impressions.classList.remove("disable-style");
             Impressions.classList.add("true-style");
-            setInputImpressions_8("Congratulations! You got it.");
+            setInputImpressions_8("Congratulations 🎉 You got it.");
             checkSpinner.style.display = "none";
             checkSpinnerText.textContent = "check"
             checkAnswerBtn.disabled = true;
@@ -1003,7 +1003,7 @@ export function Sem_1_Grammar() {
             Impressions.style.backgroundColor = "";
             Impressions.classList.remove("true-style");
             Impressions.classList.add("disable-style");
-            setInputImpressions_8("Oops! Sorry, Try again later on.");
+            setInputImpressions_8("Oops  😕, Try again later on.");
             checkSpinner.style.display = "none";
             checkSpinnerText.textContent = "check"
             checkAnswerBtn.disabled = true;
@@ -1058,7 +1058,7 @@ export function Sem_1_Grammar() {
             Impressions.style.backgroundColor = "";
             Impressions.classList.remove("disable-style");
             Impressions.classList.add("true-style");
-            setInputImpressions_9("Congratulations! You got it.");
+            setInputImpressions_9("Congratulations 🎉 You got it.");
             checkSpinner.style.display = "none";
             checkSpinnerText.textContent = "check";
             checkAnswerBtn.disabled = true;
@@ -1075,7 +1075,7 @@ export function Sem_1_Grammar() {
             Impressions.style.backgroundColor = "";
             Impressions.classList.remove("true-style");
             Impressions.classList.add("disable-style");
-            setInputImpressions_9("Oops! Sorry, Try again later on.");
+            setInputImpressions_9("Oops  😕, Try again later on.");
             checkSpinner.style.display = "none";
             checkSpinnerText.textContent = "check"
             checkAnswerBtn.disabled = true;
@@ -1130,7 +1130,7 @@ export function Sem_1_Grammar() {
             Impressions.style.backgroundColor = "";
             Impressions.classList.remove("disable-style");
             Impressions.classList.add("true-style");
-            setInputImpressions_10("Congratulations! You got it.");
+            setInputImpressions_10("Congratulations 🎉 You got it.");
             checkSpinner.style.display = "none";
             checkSpinnerText.textContent = "check"
             checkAnswerBtn.disabled = true;
@@ -1147,7 +1147,7 @@ export function Sem_1_Grammar() {
             Impressions.style.backgroundColor = "";
             Impressions.classList.remove("true-style");
             Impressions.classList.add("disable-style");
-            setInputImpressions_10("Oops! Sorry, Try again later on.");
+            setInputImpressions_10("Oops  😕, Try again later on.");
             checkSpinner.style.display = "none";
             checkSpinnerText.textContent = "check"
             checkAnswerBtn.disabled = true;
@@ -1202,7 +1202,7 @@ export function Sem_1_Grammar() {
             Impressions.style.backgroundColor = "";
             Impressions.classList.remove("disable-style");
             Impressions.classList.add("true-style");
-            setInputImpressions_11("Congratulations! You got it.");
+            setInputImpressions_11("Congratulations 🎉 You got it.");
             checkSpinner.style.display = "none";
             checkSpinnerText.textContent = "check"
             checkAnswerBtn.disabled = true;
@@ -1219,7 +1219,7 @@ export function Sem_1_Grammar() {
             Impressions.style.backgroundColor = "";
             Impressions.classList.remove("true-style");
             Impressions.classList.add("disable-style");
-            setInputImpressions_11("Oops! Sorry, Try again later on.");
+            setInputImpressions_11("Oops  😕, Try again later on.");
             checkSpinner.style.display = "none";
             checkSpinnerText.textContent = "check"
             checkAnswerBtn.disabled = true;

@@ -1,5 +1,10 @@
+import { useNavigate } from "react-router-dom";
+
 export function Sem_3_Quiz () {
-  
+  const navigate = useNavigate();
+    const createQuiz = (course) => {
+      navigate(`/E-Quiz/${course}`);
+    }
   return (
      <>
      <div className="quiz-semester-wrapper">
@@ -16,7 +21,7 @@ export function Sem_3_Quiz () {
                 </div>
               </div>
               <div className="quiz-semester-course-body">
-                <a href="/E-Quiz/Morphologie et Syntaxe-Semester 3">Create a quiz</a>
+                <button onClick={() => createQuiz("Morphologie et Syntaxe-Semester 3")} type="button">Create a quiz</button>
               </div>
             </div>
 
@@ -30,7 +35,7 @@ export function Sem_3_Quiz () {
                 </div>
               </div>
               <div className="quiz-semester-course-body">
-                <a href="/E-Quiz/Roman Anglais du 18è siècle-Semester 3">Create a quiz</a>
+                <button onClick={() => createQuiz("Roman Anglais du 18è siècle-Semester 3")} type="button">Create a quiz</button>
               </div>
             </div>
 
@@ -44,7 +49,7 @@ export function Sem_3_Quiz () {
                 </div>
               </div>
               <div className="quiz-semester-course-body">
-                <a href="/E-Quiz/Roman Américain-Semester 3">Create a quiz</a>
+                <button onClick={() => createQuiz("Roman Américain-Semester 3")} type="button">Create a quiz</button>
               </div>
             </div>
 
@@ -58,7 +63,7 @@ export function Sem_3_Quiz () {
                 </div>
               </div>
               <div className="quiz-semester-course-body">
-                <a href="/E-Quiz/Roman Africain-Semester 3">Create a quiz</a>
+                <button onClick={() => createQuiz("Roman Africain-Semester 3")} type="button">Create a quiz</button>
               </div>
             </div>
 
@@ -72,7 +77,7 @@ export function Sem_3_Quiz () {
                 </div>
               </div>
               <div className="quiz-semester-course-body">
-                <a href="/E-Quiz/Traduction Avancée-Semester 3">Create a quiz</a>
+                <button onClick={() => createQuiz("Traduction Avancée-Semester 3")} type="button">Create a quiz</button>
               </div>
             </div>
 
@@ -86,7 +91,7 @@ export function Sem_3_Quiz () {
                 </div>
               </div>
               <div className="quiz-semester-course-body">
-                <a href="/E-Quiz/Théâtre Africain : Époque Coloniale-Semester 3">Create a quiz</a>
+                <button onClick={() => createQuiz("Théâtre Africain : Époque Coloniale-Semester 3")} type="button">Create a quiz</button>
               </div>
             </div>
 
@@ -100,7 +105,7 @@ export function Sem_3_Quiz () {
                 </div>
               </div>
               <div className="quiz-semester-course-body">
-                <a href="/E-Quiz/Théâtre Classique Anglais-Semester 3">Create a quiz</a>
+                <button onClick={() => createQuiz("Théâtre Classique Anglais-Semester 3")} type="button">Create a quiz</button>
               </div>
             </div>
 
@@ -114,7 +119,7 @@ export function Sem_3_Quiz () {
                 </div>
               </div>
               <div className="quiz-semester-course-body">
-                <a href="/E-Quiz/Techniques d'expression Écrite Avancée-Semester 3">Create a quiz</a>
+                <button onClick={() => createQuiz("Techniques d'expression Écrite Avancée-Semester 3")} type="button">Create a quiz</button>
               </div>
             </div>
 

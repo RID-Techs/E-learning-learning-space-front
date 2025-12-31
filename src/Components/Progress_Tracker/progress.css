@@ -21,7 +21,7 @@
   left: 0;
   height: 14px;
   width: 100%;
-  background-color: rgb(248, 174, 186);
+  background-color: hsl(218, 87%, 86%);
   z-index: -1;
 }
 
@@ -35,7 +35,7 @@
   left: 0;
   height: 14px;
   width: 100%;
-  background-color: aquamarine;
+  background-color: hsl(37, 100%, 85%);
   z-index: -1;
 }
 
@@ -50,7 +50,7 @@
   left: 0;
   height: 14px;
   width: 100%;
-  background-color: khaki;
+  background-image: linear-gradient(to right, #0a223948, hsla(37, 100%, 85%, 0.628), #105ee55d);
   z-index: -1;
 }
 
@@ -69,7 +69,7 @@
   content: "";
   height: 5px;
   width: 90px;
-  background-color: #c5bbff;
+  background-color: #105EE5;
   top: 0;
   left: 0;
   margin-left: -1em;
@@ -81,7 +81,7 @@
   content: "";
   height: 5px;
   width: 90px;
-  background-color: #bbee79;
+  background-color: hsl(37, 100%, 45%);
   bottom: 0;
   right: 0;
   margin-bottom: -0.3em;
@@ -95,11 +95,12 @@
   text-align: center;
 }
 #choose-semester span {
-  background-color: #fff;
+  background-color: var(--bg-color);
+  color: var(--highlight-color);
   padding: 0.3em 0.5em;
   border: 1px solid transparent;
   position: relative;
-  box-shadow: 2px 0px 8px #333;
+  box-shadow: 2px 0px 8px var(--highlight-color);
 
 }
 #choose-semester span::before {
@@ -107,7 +108,7 @@
   content: "";
   height: 10px;
   width: 10px;
-  background-color: rgb(14, 126, 89);
+  background-color: hsl(37, 100%, 65%);
   border-bottom-right-radius: 25px;
   top: 0;
   left: 0;
@@ -117,7 +118,7 @@
   content: "";
   height: 10px;
   width: 10px;
-  background-color: crimson;
+  background-color: hsl(209, 70%, 22%);
   border-top-left-radius: 25px;
   bottom: 0;
   right: 0;
@@ -131,11 +132,11 @@
 }
 
 .progress-inputs-group-checked {
-  background-image: linear-gradient(145deg, rgb(50, 107, 107), rgb(77, 85, 2), rgb(160, 35, 56));
+  background-image: linear-gradient(145deg, hsl(209, 70%, 33%), hsl(209, 70%, 23%));
   border: none;
   padding: 0.3em;
   cursor: pointer;
-  color: #fff;
+  color: #F8FBFF;
   transition: all 0.3s ease-in-out;
   animation: fade-in 0.3s ease-in-out;
 }
@@ -149,8 +150,9 @@
 }
 
 .progress-inputs-group {
-  background-color: #ffffffa8;
-  border: 1px solid #3333339d;
+  background-color: #0A2239;
+  color: #F8FBFF;
+  border: 1px solid hsl(209, 70%, 33%);
   padding: 0.3em;
   cursor: pointer;
 }
@@ -179,7 +181,7 @@
   border: 1px solid transparent;
   height: 12px;
   width: 12px;
-  background-color: #000;
+  background-color: #0A2239;
   z-index: 100;
   top: 0;
   left: 0;
@@ -189,8 +191,8 @@
 .checked-semester::after {
   position: absolute;
   content: "";
-  border-right: 2px solid #fff;
-  border-bottom: 2px solid #fff;
+  border-right: 2px solid #F8FBFF;
+  border-bottom: 2px solid #F8FBFF;
   background-color: transparent;
   height: 14px;
   width: 7px;
@@ -204,10 +206,10 @@
 .unchecked-semester::before {
   position: absolute;
   content: "";
-  border: 1px solid #000;
+  border: 1px solid #0A2239;
   height: 12px;
   width: 12px;
-  background-color: #fff;
+  background-color: #F8FBFF;
   z-index: 100;
   top: 0;
   left: 0;
@@ -236,19 +238,18 @@
   border: none;
   padding: 0.5em;
   font-size: 1.1rem;
-  background-color: rgb(188, 221, 221);
+  background-color: hsl(218, 87%, 88%);
   position: relative;
 }
 
 .courses-by-semester button::before {
   position: absolute;
   content: "";
-  color: rgb(106, 8, 218);
   height: 10px;
   width: 10px;
   bottom: 0;
   left: 0;
-  background-color: #c4a727;
+  background-color: hsl(37, 100%, 55%);
   border-top-right-radius: 80px;
 }
 .courses-by-semester button::after {
@@ -260,7 +261,7 @@
   width: 20px;
   top: 0;
   right: 0;
-  background-color: #c4a727;
+  background-color: hsl(37, 100%, 55%);
   border-bottom-left-radius: 80px;
 }
 
@@ -275,8 +276,8 @@
   padding: 0.3em;
   font-size: 1rem;
   font-weight: bold;
-  background-color: rgb(0, 81, 128);
-  color: #fff;
+  background-color: hsl(218, 87%, 38%);
+  color: var(--bg-color);
   animation: blish-and-appear 1s ease-in-out;
 }
 @keyframes blish-and-appear {
@@ -290,8 +291,6 @@
     opacity: 1;
   }
 }
-
-
 
 @media only screen and (min-width: 769px) {
 .courses-by-semester {

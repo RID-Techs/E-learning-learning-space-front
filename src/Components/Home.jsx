@@ -111,17 +111,19 @@ export function Home() {
       Inps.forEach((inp) => {
         if (inp.checked) {
           const styleToParent = inp.parentElement;
+          styleToParent.style.color = "#F8FBFF";
           styleToParent.style.backgroundImage =
-            "linear-gradient(to right, rgb(214, 253, 253), rgb(180, 255, 236))";
-          styleToParent.style.borderTop = "2px solid rgba(67, 161, 238, 0.87)";
-          styleToParent.style.borderBottom = "2px dotted rgb(0, 113, 128)";
+            "linear-gradient(to right, #105ee5, #0F56D2)";
+          styleToParent.style.borderTop = "2px solid #0F56D2";
+          styleToParent.style.borderBottom = "2px dotted #FFCF80";
           styleToParent.style.boxShadow =
-            "inset 3px 0px 0px yellow, -3px 0px 0px brown, inset -3px 0px 0px brown, 3px 0px 0px yellow";
+            "inset 3px 0px 0px #FFCF80, -3px 0px 0px #0F56D2, inset -3px 0px 0px #FFCF80, 3px 0px 0px #0F56D2";
         }
       });
     } else {
       Inps.forEach((inp) => {
         const styleToParent_2 = inp.parentElement;
+        styleToParent_2.style.color = "";
         styleToParent_2.style.backgroundImage = "";
         styleToParent_2.style.borderTop = "";
         styleToParent_2.style.borderBottom = "";
@@ -133,17 +135,19 @@ export function Home() {
       const target = event.currentTarget;
       if (target) {
         all.forEach((el) => {
+          el.style.color = "";
           el.style.backgroundImage = "";
           el.style.borderTop = "";
           el.style.borderBottom = "";
           el.style.boxShadow = "";
         });
+        target.style.color = "#F8FBFF";
         target.style.backgroundImage =
-          "linear-gradient(to right, rgb(214, 253, 253), rgb(180, 255, 236))";
-        target.style.borderTop = "2px solid rgba(67, 161, 238, 0.87)";
-        target.style.borderBottom = "2px dotted rgb(0, 113, 128)";
+          "linear-gradient(to right, #105ee5, #0F56D2)";
+        target.style.borderTop = "2px solid #0F56D2";
+        target.style.borderBottom = "2px dotted #FFCF80";
         target.style.boxShadow =
-          "inset 3px 0px 0px yellow, -3px 0px 0px brown, inset -3px 0px 0px brown, 3px 0px 0px yellow";
+          "inset 3px 0px 0px #FFCF80, -3px 0px 0px #0F56D2, inset -3px 0px 0px #FFCF80, 3px 0px 0px #0F56D2";
       }
     };
 
@@ -779,7 +783,7 @@ async function openCachedPDF(url) {
             <span id="my-semester-span">~</span> Welcome {hola}{" "}
             <img src={user} alt="user" /> ~{" "}
           </h2>
-          <p>
+          <p id="encouraging-msg">
             Enjoy learning with E-learning ! Here, you have everything you need
             to grasp your courses and enhance your understanding by broadening
             your scope.

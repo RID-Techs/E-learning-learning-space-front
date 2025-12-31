@@ -35,7 +35,7 @@ export function Lit_And_Environment () {
     CurrentBtn.style.border = "2px solid lightgreen";
     Impressions.classList.add("true-style");
     setAnswerFound(true);
-    setImpressions_1("Congratulations! You got it.")
+    setImpressions_1("Congratulations 🎉 You got it.")
   }
     const wrongAnswerBtn_1 = (e) =>{
       const CurrentBtn = e.currentTarget;
@@ -53,7 +53,7 @@ export function Lit_And_Environment () {
       Impressions.style.display = "inline-block";
       Impressions.classList.add("disable-style");
       setAnswerFound(false);
-      setImpressions_1("Oops! Sorry, Try again later on.");
+      setImpressions_1("Oops  😕, Try again later on.");
     }
 
   const rightAnswerBtn_2 = (e) => {
@@ -72,7 +72,7 @@ export function Lit_And_Environment () {
     CurrentBtn.style.border = "2px solid lightgreen";
     Impressions.classList.add("true-style");
     setAnswerFound(true);
-    setImpressions_2("Congratulations! You got it.")
+    setImpressions_2("Congratulations 🎉 You got it.")
   }
     const wrongAnswerBtn_2 = (e) =>{
       const CurrentBtn = e.currentTarget;
@@ -90,7 +90,7 @@ export function Lit_And_Environment () {
       Impressions.style.display = "inline-block";
       Impressions.classList.add("disable-style");
       setAnswerFound(false);
-      setImpressions_2("Oops! Sorry, Try again later on.");
+      setImpressions_2("Oops  😕, Try again later on.");
     }
 
   const rightAnswerBtn_3 = (e) => {
@@ -109,7 +109,7 @@ export function Lit_And_Environment () {
     CurrentBtn.style.border = "2px solid lightgreen";
     Impressions.classList.add("true-style");
     setAnswerFound(true);
-    setImpressions_3("Congratulations! You got it.")
+    setImpressions_3("Congratulations 🎉 You got it.")
   }
     const wrongAnswerBtn_3 = (e) =>{
       const CurrentBtn = e.currentTarget;
@@ -127,7 +127,7 @@ export function Lit_And_Environment () {
       Impressions.style.display = "inline-block";
       Impressions.classList.add("disable-style");
       setAnswerFound(false);
-      setImpressions_3("Oops! Sorry, Try again later on.");
+      setImpressions_3("Oops  😕, Try again later on.");
     }
 
   const rightAnswerBtn_4 = (e) => {
@@ -146,7 +146,7 @@ export function Lit_And_Environment () {
     CurrentBtn.style.border = "2px solid lightgreen";
     Impressions.classList.add("true-style");
     setAnswerFound(true);
-    setImpressions_4("Congratulations! You got it.")
+    setImpressions_4("Congratulations 🎉 You got it.")
   }
     const wrongAnswerBtn_4 = (e) =>{
       const CurrentBtn = e.currentTarget;
@@ -164,7 +164,7 @@ export function Lit_And_Environment () {
       Impressions.style.display = "inline-block";
       Impressions.classList.add("disable-style");
       setAnswerFound(false);
-      setImpressions_4("Oops! Sorry, Try again later on.");
+      setImpressions_4("Oops  😕, Try again later on.");
     }
 
   const rightAnswerBtn_5 = (e) => {
@@ -183,7 +183,7 @@ export function Lit_And_Environment () {
     CurrentBtn.style.border = "2px solid lightgreen";
     Impressions.classList.add("true-style");
     setAnswerFound(true);
-    setImpressions_5("Congratulations! You got it.")
+    setImpressions_5("Congratulations 🎉 You got it.")
   }
     const wrongAnswerBtn_5 = (e) =>{
       const CurrentBtn = e.currentTarget;
@@ -201,7 +201,7 @@ export function Lit_And_Environment () {
       Impressions.style.display = "inline-block";
       Impressions.classList.add("disable-style");
       setAnswerFound(false);
-      setImpressions_5("Oops! Sorry, Try again later on.");
+      setImpressions_5("Oops  😕, Try again later on.");
     }
 
   const rightAnswerBtn_6 = (e) => {
@@ -220,7 +220,7 @@ export function Lit_And_Environment () {
     CurrentBtn.style.border = "2px solid lightgreen";
     Impressions.classList.add("true-style");
     setAnswerFound(true);
-    setImpressions_6("Congratulations! You got it.")
+    setImpressions_6("Congratulations 🎉 You got it.")
   }
     const wrongAnswerBtn_6 = (e) =>{
       const CurrentBtn = e.currentTarget;
@@ -238,7 +238,7 @@ export function Lit_And_Environment () {
       Impressions.style.display = "inline-block";
       Impressions.classList.add("disable-style");
       setAnswerFound(false);
-      setImpressions_6("Oops! Sorry, Try again later on.");
+      setImpressions_6("Oops  😕, Try again later on.");
     }
 
   const rightAnswerBtn_7 = (e) => {
@@ -257,7 +257,7 @@ export function Lit_And_Environment () {
     CurrentBtn.style.border = "2px solid lightgreen";
     Impressions.classList.add("true-style");
     setAnswerFound(true);
-    setImpressions_7("Congratulations! You got it.")
+    setImpressions_7("Congratulations 🎉 You got it.")
   }
     const wrongAnswerBtn_7 = (e) =>{
       const CurrentBtn = e.currentTarget;
@@ -275,7 +275,7 @@ export function Lit_And_Environment () {
       Impressions.style.display = "inline-block";
       Impressions.classList.add("disable-style");
       setAnswerFound(false);
-      setImpressions_7("Oops! Sorry, Try again later on.");
+      setImpressions_7("Oops  😕, Try again later on.");
     }
 
   const rightAnswerBtn_8 = (e) => {
@@ -294,7 +294,7 @@ export function Lit_And_Environment () {
     CurrentBtn.style.border = "2px solid lightgreen";
     Impressions.classList.add("true-style");
     setAnswerFound(true);
-    setImpressions_8("Congratulations! You got it.")
+    setImpressions_8("Congratulations 🎉 You got it.")
   }
     const wrongAnswerBtn_8 = (e) =>{
       const CurrentBtn = e.currentTarget;
@@ -312,7 +312,7 @@ export function Lit_And_Environment () {
       Impressions.style.display = "inline-block";
       Impressions.classList.add("disable-style");
       setAnswerFound(false);
-      setImpressions_8("Oops! Sorry, Try again later on.");
+      setImpressions_8("Oops  😕, Try again later on.");
     }
 
   const rightAnswerBtn_9 = (e) => {
@@ -331,7 +331,7 @@ export function Lit_And_Environment () {
     CurrentBtn.style.border = "2px solid lightgreen";
     Impressions.classList.add("true-style");
     setAnswerFound(true);
-    setImpressions_9("Congratulations! You got it.")
+    setImpressions_9("Congratulations 🎉 You got it.")
   }
     const wrongAnswerBtn_9 = (e) =>{
       const CurrentBtn = e.currentTarget;
@@ -349,7 +349,7 @@ export function Lit_And_Environment () {
       Impressions.style.display = "inline-block";
       Impressions.classList.add("disable-style");
       setAnswerFound(false);
-      setImpressions_9("Oops! Sorry, Try again later on.");
+      setImpressions_9("Oops  😕, Try again later on.");
     }
 
   const rightAnswerBtn_10 = (e) => {
@@ -368,7 +368,7 @@ export function Lit_And_Environment () {
     CurrentBtn.style.border = "2px solid lightgreen";
     Impressions.classList.add("true-style");
     setAnswerFound(true);
-    setImpressions_10("Congratulations! You got it.")
+    setImpressions_10("Congratulations 🎉 You got it.")
   }
     const wrongAnswerBtn_10 = (e) =>{
       const CurrentBtn = e.currentTarget;
@@ -386,7 +386,7 @@ export function Lit_And_Environment () {
       Impressions.style.display = "inline-block";
       Impressions.classList.add("disable-style");
       setAnswerFound(false);
-      setImpressions_10("Oops! Sorry, Try again later on.");
+      setImpressions_10("Oops  😕, Try again later on.");
     }
 
     // =========================================================
@@ -406,7 +406,7 @@ export function Lit_And_Environment () {
     CurrentBtn.style.border = "2px solid lightgreen";
     Impressions.classList.add("true-style");
     setAnswerFound(true);
-    setImpressions_11("Congratulations! You got it.")
+    setImpressions_11("Congratulations 🎉 You got it.")
   }
     const wrongAnswerBtn_11 = (e) =>{
       const CurrentBtn = e.currentTarget;
@@ -424,7 +424,7 @@ export function Lit_And_Environment () {
       Impressions.style.display = "inline-block";
       Impressions.classList.add("disable-style");
       setAnswerFound(false);
-      setImpressions_11("Oops! Sorry, Try again later on.");
+      setImpressions_11("Oops  😕, Try again later on.");
     }
     // =========================================================
 
@@ -445,7 +445,7 @@ export function Lit_And_Environment () {
     CurrentBtn.style.border = "2px solid lightgreen";
     Impressions.classList.add("true-style");
     setAnswerFound(true);
-    setImpressions_12("Congratulations! You got it.")
+    setImpressions_12("Congratulations 🎉 You got it.")
   }
     const wrongAnswerBtn_12 = (e) =>{
       const CurrentBtn = e.currentTarget;
@@ -463,7 +463,7 @@ export function Lit_And_Environment () {
       Impressions.style.display = "inline-block";
       Impressions.classList.add("disable-style");
       setAnswerFound(false);
-      setImpressions_12("Oops! Sorry, Try again later on.");
+      setImpressions_12("Oops  😕, Try again later on.");
     }
     // =========================================================
 
@@ -484,7 +484,7 @@ export function Lit_And_Environment () {
     CurrentBtn.style.border = "2px solid lightgreen";
     Impressions.classList.add("true-style");
     setAnswerFound(true);
-    setImpressions_13("Congratulations! You got it.")
+    setImpressions_13("Congratulations 🎉 You got it.")
   }
     const wrongAnswerBtn_13 = (e) =>{
       const CurrentBtn = e.currentTarget;
@@ -502,7 +502,7 @@ export function Lit_And_Environment () {
       Impressions.style.display = "inline-block";
       Impressions.classList.add("disable-style");
       setAnswerFound(false);
-      setImpressions_13("Oops! Sorry, Try again later on.");
+      setImpressions_13("Oops  😕, Try again later on.");
     }
     // =========================================================
 
@@ -523,7 +523,7 @@ export function Lit_And_Environment () {
     CurrentBtn.style.border = "2px solid lightgreen";
     Impressions.classList.add("true-style");
     setAnswerFound(true);
-    setImpressions_14("Congratulations! You got it.")
+    setImpressions_14("Congratulations 🎉 You got it.")
   }
     const wrongAnswerBtn_14 = (e) =>{
       const CurrentBtn = e.currentTarget;
@@ -541,7 +541,7 @@ export function Lit_And_Environment () {
       Impressions.style.display = "inline-block";
       Impressions.classList.add("disable-style");
       setAnswerFound(false);
-      setImpressions_14("Oops! Sorry, Try again later on.");
+      setImpressions_14("Oops  😕, Try again later on.");
     }
     // =========================================================
 
@@ -562,7 +562,7 @@ export function Lit_And_Environment () {
     CurrentBtn.style.border = "2px solid lightgreen";
     Impressions.classList.add("true-style");
     setAnswerFound(true);
-    setImpressions_15("Congratulations! You got it.")
+    setImpressions_15("Congratulations 🎉 You got it.")
   }
     const wrongAnswerBtn_15 = (e) =>{
       const CurrentBtn = e.currentTarget;
@@ -580,7 +580,7 @@ export function Lit_And_Environment () {
       Impressions.style.display = "inline-block";
       Impressions.classList.add("disable-style");
       setAnswerFound(false);
-      setImpressions_15("Oops! Sorry, Try again later on.");
+      setImpressions_15("Oops  😕, Try again later on.");
     }
     // =========================================================
 
@@ -601,7 +601,7 @@ export function Lit_And_Environment () {
     CurrentBtn.style.border = "2px solid lightgreen";
     Impressions.classList.add("true-style");
     setAnswerFound(true);
-    setImpressions_16("Congratulations! You got it.")
+    setImpressions_16("Congratulations 🎉 You got it.")
   }
     const wrongAnswerBtn_16 = (e) =>{
       const CurrentBtn = e.currentTarget;
@@ -619,7 +619,7 @@ export function Lit_And_Environment () {
       Impressions.style.display = "inline-block";
       Impressions.classList.add("disable-style");
       setAnswerFound(false);
-      setImpressions_16("Oops! Sorry, Try again later on.");
+      setImpressions_16("Oops  😕, Try again later on.");
     }
     // =========================================================
 

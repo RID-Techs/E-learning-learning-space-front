@@ -1,15 +1,19 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
+import { motion } from "motion/react";
 // Image logo, stars, star, username, password is from https://icons8.com/
 import logo from "../assets/learns.png";
+import students_crew from "../assets/students_crew.jpg";
+import openLearning from "../assets/open_learning.png";
 import stars from "../assets/stars.png";
+import feedback from "../assets/feedback.png";
 import reward from "../assets/reward.png";
 import star from "../assets/stars_2.png";
 // import E_crew from "/E_crew.png";
-import courses from "../assets/coursess.png";
 // import password from "/password.png";
 import E_member from "../assets/E_picture.webp";
 import { toast, Zoom } from "react-toastify";
+import { Testimony } from "./Testimonies/Testimony";
 
 export function Welcome_Page() {
   const navigate = useNavigate();
@@ -229,6 +233,17 @@ const ClosingEcoBanner = () => {
   // 2. Browser says it's installable (isInstallable)
   // 3. User hasn't dismissed it yet (!userDismissed)
   const showBanner = isMember && isInstallable && !userDismissed;
+  const imageSectionRef = useRef(null);
+  const [showTestimonyPicture, setShowTestimonyPicture] = useState(false);
+  const toggleTestimonyPicture = () => {
+    setShowTestimonyPicture(!showTestimonyPicture);
+  };
+
+  useEffect(() => {
+    if (showTestimonyPicture && imageSectionRef.current) {
+      imageSectionRef.current.scrollIntoView({ behavior: 'smooth', block: 'end' });
+    }
+  }, [showTestimonyPicture]);
 
   return (
     <>
@@ -488,7 +503,7 @@ const ClosingEcoBanner = () => {
             <span id="open-btn">centered-button</span>
           </span>{" "}
           below to access the E-learning learning space{" "}
-          <img src={star} alt="star" />{" "}
+          <img height={32} src={star} alt="star" />{" "}
         </h3>
       </div>
 
@@ -497,9 +512,11 @@ const ClosingEcoBanner = () => {
 
 {hasReadNote && (<div className="welcome-button">
     <div className="welcome-actions">
-            <button onClick={EnterMySession} id="login-button"> <img height={32} src={courses} alt="user" /> Open my Learning Space</button>
+            <button onClick={EnterMySession} id="login-button"> <img height={32} src={openLearning} alt="user" /> Open my Learning Space</button>
             {isMember && <a id="web-tour" href="Websitetour" target="_blank">⋄⦂ Click me to make a nice tour of the website !</a>}
-            <NavLink id="survey-link" to={"Survey"}>Have some feedback ? Take a quick survey ፦ </NavLink>
+            <NavLink id="survey-link" to={"Survey"}>
+              <img height={32} src={feedback} alt="feedback" />
+             Give your Feedback</NavLink>
             <NavLink id="exam-papers-link" to={"/Exam-papers"}> <span id="exam-papers-icon">࠰⊱</span> E-Collection Of Papers 🪴</NavLink>
     </div>
 </div>)}
@@ -509,6 +526,93 @@ const ClosingEcoBanner = () => {
 </div>
 
 </div>
+
+<section>
+  <div className="wave-holder">
+  {/* TOP CROPPED: viewBox adjusted from "0 0 1440 320" to "0 128 1440 192" */}
+  <svg 
+    id="wave-straight" 
+    xmlns="http://www.w3.org/2000/svg" 
+    viewBox="0 128 1440 192"
+    preserveAspectRatio="none"
+  >
+    <path fill="hsl(218, 87%, 88%)" fillOpacity="1" d="M0,128L480,224L960,192L1440,192L1440,320L960,320L480,320L0,320Z"></path>
+  </svg>
+  {/* BOTTOM CROPPED: viewBox adjusted from "0 0 1440 320" to "0 0 1440 283" */}
+  <svg 
+    id="wave-wavy" 
+    xmlns="http://www.w3.org/2000/svg" 
+    viewBox="0 0 1440 293"
+    preserveAspectRatio="none"
+  >
+    <path fill="hsl(218, 87%, 88%)" fillOpacity="1" d="M0,256L40,266.7C80,277,160,299,240,282.7C320,267,400,213,480,165.3C560,117,640,75,720,53.3C800,32,880,32,960,48C1040,64,1120,96,1200,96C1280,96,1360,64,1400,48L1440,32L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path>
+  </svg>
+</div>
+  <Testimony />
+  <div className="wave-footer">
+    <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1}} className="see-our-students">
+      <p>+ 600k Students</p>
+      <button onClick={toggleTestimonyPicture} type="button">
+        {showTestimonyPicture ? "Hide Crew" : "View more"}
+      </button>
+    </motion.div>
+    <svg 
+  width="100%" 
+  height="100%" 
+  id="wave-footer-svg-1" 
+  viewBox="0 0 1440 390" 
+  xmlns="http://www.w3.org/2000/svg" 
+  className="transition duration-300 ease-in-out delay-150"
+>
+  <path 
+    d="M 0,400 L 0,0 C 120.90909090909093,14.526315789473685 241.81818181818187,29.05263157894737 332,49 C 422.18181818181813,68.94736842105263 481.6363636363636,94.3157894736842 570,103 C 658.3636363636364,111.6842105263158 775.6363636363637,103.68421052631581 866,100 C 956.3636363636363,96.31578947368419 1019.8181818181818,96.94736842105263 1111,81 C 1202.1818181818182,65.05263157894737 1321.090909090909,32.526315789473685 1440,0 L 1440,400 L 0,400 Z" 
+    stroke="none" 
+    strokeWidth="0" 
+    fill="hsl(218, 87%, 88%)" 
+    fillOpacity="0.4" 
+    className="transition-all duration-300 ease-in-out delay-150 path-0"
+  ></path>
+  
+  <path 
+    d="M 0,400 L 0,0 C 88.00956937799043,55.23444976076556 176.01913875598086,110.46889952153111 281,137 C 385.98086124401914,163.5311004784689 507.93301435406704,161.35885167464113 595,159 C 682.066985645933,156.64114832535887 734.2488038277511,154.0956937799043 834,159 C 933.7511961722489,163.9043062200957 1081.0717703349283,176.25837320574163 1190,151 C 1298.9282296650717,125.74162679425838 1369.4641148325359,62.87081339712919 1440,0 L 1440,400 L 0,400 Z" 
+    stroke="none" 
+    strokeWidth="0" 
+    fill="hsl(218, 87%, 78%)" 
+    fillOpacity="0.53" 
+    className="transition-all duration-300 ease-in-out delay-150 path-1"
+  ></path>
+  
+  <path 
+    d="M 0,400 L 0,0 C 91.311004784689,129.0622009569378 182.622009569378,258.1244019138756 273,301 C 363.377990430622,343.8755980861244 452.82296650717694,300.5645933014354 541,285 C 629.177033492823,269.4354066985646 716.0861244019139,281.61722488038276 830,301 C 943.9138755980861,320.38277511961724 1084.8325358851675,346.96650717703346 1191,298 C 1297.1674641148325,249.03349282296654 1368.5837320574162,124.51674641148327 1440,0 L 1440,400 L 0,400 Z" 
+    stroke="none" 
+    strokeWidth="0" 
+    fill="hsl(218, 87%, 68%)" 
+    fillOpacity="1" 
+    className="transition-all duration-300 ease-in-out delay-150 path-2"
+  ></path>
+</svg>
+<svg 
+id="wave-footer-svg-2"
+  xmlns="http://www.w3.org/2000/svg" 
+  viewBox="0 32 1440 288" 
+  preserveAspectRatio="none"
+  style={{ width: '100%', height: '50px', transform: 'scaleY(-1)' }} /* Adjust height here to make it thinner */
+>
+  <path 
+    fill="hsl(218, 87%, 68%)" 
+    fillOpacity="1" 
+    d="M0,32L40,58.7C80,85,160,139,240,165.3C320,192,400,192,480,202.7C560,213,640,235,720,234.7C800,235,880,213,960,192C1040,171,1120,149,1200,122.7C1280,96,1360,64,1400,48L1440,32L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"
+  ></path>
+</svg>
+{
+  showTestimonyPicture && (
+    <div ref={imageSectionRef} className="students-crew-holder">
+      <img id="students_crew" src={students_crew} alt="students crew" />
+    </div>
+  )
+}
+  </div>
+</section>
 
 
 {!UserAlredyLoggedIn && (
@@ -528,7 +632,6 @@ const ClosingEcoBanner = () => {
 
         <footer className="container-fluid normal-footer">
               <div className="footer-first-part">
-      
                 <div className="header-holder">
                   <div className="header-footer">
                     <img height={32} src={logo} alt="E-learning" />

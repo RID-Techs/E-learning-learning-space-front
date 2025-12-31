@@ -1,5 +1,10 @@
+import { useNavigate } from "react-router-dom";
+
 export function Sem_4_Quiz () {
-  
+  const navigate = useNavigate();
+    const createQuiz = (course) => {
+      navigate(`/E-Quiz/${course}`);
+    }
   return (
      <>
      <div className="quiz-semester-wrapper">
@@ -16,7 +21,7 @@ export function Sem_4_Quiz () {
                 </div>
               </div>
               <div className="quiz-semester-course-body">
-                <a href="/E-Quiz/Civilisation Britannique Contemporaine-Semester 4">Create a quiz</a>
+                <button onClick={() => createQuiz("Civilisation Britannique Contemporaine-Semester 4")} type="button">Create a quiz</button>
               </div>
             </div>
 
@@ -30,7 +35,7 @@ export function Sem_4_Quiz () {
                 </div>
               </div>
               <div className="quiz-semester-course-body">
-                <a href="/E-Quiz/Théâtre Américain à ses Origines-Semester 4">Create a quiz</a>
+                <button onClick={() => createQuiz("Théâtre Américain à ses Origines-Semester 4")} type="button">Create a quiz</button>
               </div>
             </div>
 
@@ -44,7 +49,7 @@ export function Sem_4_Quiz () {
                 </div>
               </div>
               <div className="quiz-semester-course-body">
-                <a href="/E-Quiz/Poésie Anglaise-Semester 4">Create a quiz</a>
+                <button onClick={() => createQuiz("Poésie Anglaise-Semester 4")} type="button">Create a quiz</button>
               </div>
             </div>
 
@@ -58,7 +63,7 @@ export function Sem_4_Quiz () {
                 </div>
               </div>
               <div className="quiz-semester-course-body">
-                <a href="/E-Quiz/Civilisation Africaine : Période Coloniale et Post-coloniale-Semester 4">Create a quiz</a>
+                <button onClick={() => createQuiz("Civilisation Africaine : Période Coloniale et Post-coloniale-Semester 4")} type="button">Create a quiz</button>
               </div>
             </div>
 
@@ -72,7 +77,7 @@ export function Sem_4_Quiz () {
                 </div>
               </div>
               <div className="quiz-semester-course-body">
-                <a href="/E-Quiz/Poésie Américaine-Semester 4">Create a quiz</a>
+                <button onClick={() => createQuiz("Poésie Américaine-Semester 4")} type="button">Create a quiz</button>
               </div>
             </div>
 
@@ -86,7 +91,7 @@ export function Sem_4_Quiz () {
                 </div>
               </div>
               <div className="quiz-semester-course-body">
-                <a href="/E-Quiz/Civilisation Américaine de l'indépendance à nos jours-Semester 4">Create a quiz</a>
+                <button onClick={() => createQuiz("Civilisation Américaine de l'indépendance à nos jours-Semester 4")} type="button">Create a quiz</button>
               </div>
             </div>
 
@@ -100,7 +105,7 @@ export function Sem_4_Quiz () {
                 </div>
               </div>
               <div className="quiz-semester-course-body">
-                <a href="/E-Quiz/Poésie Africaine-Semester 4">Create a quiz</a>
+                <button onClick={() => createQuiz("Poésie Africaine-Semester 4")} type="button">Create a quiz</button>
               </div>
             </div>
 

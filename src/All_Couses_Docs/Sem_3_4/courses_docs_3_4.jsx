@@ -68,6 +68,24 @@
         "https://drive.google.com/file/d/1nYmeyonQUE88HFdoPnnCHeweUnOg4izf/view?usp=drive_link",
     },
     {
+      id: 25,
+      name: "African Novel : Our Lady of the Nile by Scholastique Mukasonga",
+      course_key: "African_Novel",
+      course_index: 2,
+      url: "/Docs/Semester_3/Our_Lady_Nile.pdf",
+      opendoc:
+        "https://drive.google.com/file/d/1QqUyaypzxObLaeLmpcEFw3P2RXXwLKy7/view?usp=drive_link",
+    },
+    {
+      id: 26,
+      name: "African Novel : I Am Still With You by Emmanuel Iduma",
+      course_key: "African_Novel",
+      course_index: 2,
+      url: "/Docs/Semester_3/Still_With_You.pdf",
+      opendoc:
+        "https://drive.google.com/file/d/1-C1ZwV8mvgO0LQ0Vz2ig7HL0vFBK9aRo/view?usp=drive_link",
+    },
+    {
       id: 6,
       name: "African Novel Exam_Paper 2020-2021",
       course_key: "African_Novel",
@@ -145,7 +163,7 @@
     },
     {
       id: 12,
-      name: "Théâtre africain : époque coloniale, Given Play (Wole Soyinka's The Lion and The Jewel)",
+      name: "Théâtre africain : époque coloniale, Wole Soyinka's The Lion and The Jewel",
       course_key: "Théâtre_Africain",
       course_index: 4,
       url: "/Docs/Semester_3/Théâtre_africain_Plays.pdf",

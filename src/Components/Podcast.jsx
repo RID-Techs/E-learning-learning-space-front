@@ -133,49 +133,49 @@ export function Podcast () {
     if(isPodcastSem1) {
       setPodcastSem_1(true);
       if(currentBox_1.current){
-        currentBox_1.current.style.color = "#fff";
-        currentBox_1.current.style.backgroundColor = "maroon";
-        currentBox_1.current.style.boxShadow = "-2px -2px 3px rgb(226, 211, 3), 2px 2px 3px rgb(182, 125, 1)";
+        currentBox_1.current.style.color = "#F8FBFF";
+        currentBox_1.current.style.backgroundColor = "#0A2239";
+        currentBox_1.current.style.boxShadow = "-2px -2px 3px #FFCF80, 2px 2px 3px hsl(37, 100%, 35%)";
       }
     }
     if(isPodcastSem2) {
       setPodcastSem_2(true);
       if(currentBox_2.current){
-        currentBox_2.current.style.color = "#fff";
-        currentBox_2.current.style.backgroundColor = "maroon";
-        currentBox_2.current.style.boxShadow = "-2px -2px 3px rgb(226, 211, 3), 2px 2px 3px rgb(182, 125, 1)";
+        currentBox_2.current.style.color = "#F8FBFF";
+        currentBox_2.current.style.backgroundColor = "#0A2239";
+        currentBox_2.current.style.boxShadow = "-2px -2px 3px #FFCF80, 2px 2px 3px hsl(37, 100%, 35%)";
       }
     }
     if(isPodcastSem3) {
       setPodcastSem_3(true);
       if(currentBox_3.current){
-        currentBox_3.current.style.color = "#fff";
-        currentBox_3.current.style.backgroundColor = "maroon";
-        currentBox_3.current.style.boxShadow = "-2px -2px 3px rgb(226, 211, 3), 2px 2px 3px rgb(182, 125, 1)";
+        currentBox_3.current.style.color = "#F8FBFF";
+        currentBox_3.current.style.backgroundColor = "#0A2239";
+        currentBox_3.current.style.boxShadow = "-2px -2px 3px #FFCF80, 2px 2px 3px hsl(37, 100%, 35%)";
       }
     }
     if(isPodcastSem4) {
       setPodcastSem_4(true);
       if(currentBox_4.current){
-        currentBox_4.current.style.color = "#fff";
-        currentBox_4.current.style.backgroundColor = "maroon";
-        currentBox_4.current.style.boxShadow = "-2px -2px 3px rgb(226, 211, 3), 2px 2px 3px rgb(182, 125, 1)";
+        currentBox_4.current.style.color = "#F8FBFF";
+        currentBox_4.current.style.backgroundColor = "#0A2239";
+        currentBox_4.current.style.boxShadow = "-2px -2px 3px #FFCF80, 2px 2px 3px hsl(37, 100%, 35%)";
       }
     }
     if(isPodcastSem5) {
       setPodcastSem_5(true);
       if(currentBox_5.current){
-        currentBox_5.current.style.color = "#fff";
-        currentBox_5.current.style.backgroundColor = "maroon";
-        currentBox_5.current.style.boxShadow = "-2px -2px 3px rgb(226, 211, 3), 2px 2px 3px rgb(182, 125, 1)";
+        currentBox_5.current.style.color = "#F8FBFF";
+        currentBox_5.current.style.backgroundColor = "#0A2239";
+        currentBox_5.current.style.boxShadow = "-2px -2px 3px #FFCF80, 2px 2px 3px hsl(37, 100%, 35%)";
       }
     }
     if(isPodcastSem6) {
       setPodcastSem_6(true);
       if(currentBox_6.current){
-        currentBox_6.current.style.color = "#fff";
-        currentBox_6.current.style.backgroundColor = "maroon";
-        currentBox_6.current.style.boxShadow = "-2px -2px 3px rgb(226, 211, 3), 2px 2px 3px rgb(182, 125, 1)";
+        currentBox_6.current.style.color = "#F8FBFF";
+        currentBox_6.current.style.backgroundColor = "#0A2239";
+        currentBox_6.current.style.boxShadow = "-2px -2px 3px #FFCF80, 2px 2px 3px hsl(37, 100%, 35%)";
       }
     }
 
@@ -189,9 +189,9 @@ export function Podcast () {
           subLabel.style.backgroundColor = ""
           subLabel.style.boxShadow = ""
         })
-        currentSemester.style.color = "#fff";
-        currentSemester.style.backgroundColor = "maroon";
-        currentSemester.style.boxShadow = "-2px -2px 3px rgb(226, 211, 3), 2px 2px 3px rgb(182, 125, 1)";
+        currentSemester.style.color = "#F8FBFF";
+        currentSemester.style.backgroundColor = "#0A2239";
+        currentSemester.style.boxShadow = "-2px -2px 3px #FFCF80, 2px 2px 3px hsl(37, 100%, 35%)";
       })
 
 

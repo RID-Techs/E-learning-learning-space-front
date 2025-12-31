@@ -16,7 +16,7 @@ export function CircleProgress({ percentage }) {
     >
       {/* background circle */}
       <circle
-        stroke="#ddd"
+        stroke="hsl(37, 100%, 32%, 0.1)"
         fill="transparent"
         strokeWidth={stroke}
         r={normalizedRadius}
@@ -25,7 +25,7 @@ export function CircleProgress({ percentage }) {
       />
       {/* progress circle */}
       <circle
-        stroke="tomato"
+        stroke="hsl(37, 100%, 45%)"
         fill="transparent"
         strokeWidth={stroke}
         strokeDasharray={circumference + " " + circumference}

@@ -12,7 +12,7 @@ import warning from "../assets/warning.png";
 import feedback_pic from "../assets/feedback.png";
 
 // Image Faq from https://www.freepik.com/
-import Faq from "../assets/Faq.webp";
+import Faq from "../assets/Faq.png";
 import { useEffect, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { isItemInCache } from "../Network-Status/itemCache";
@@ -188,20 +188,24 @@ export function Get_Answers() {
   
         if(inp.checked){
           const styleToParent = inp.parentElement
-          styleToParent.style.backgroundImage = "linear-gradient(to right, rgb(214, 253, 253), rgb(180, 255, 236))"
-          styleToParent.style.borderTop = "2px solid rgba(67, 161, 238, 0.87)"
-          styleToParent.style.borderBottom = "2px dotted rgb(0, 113, 128)"
-          styleToParent.style.boxShadow = "inset 3px 0px 0px yellow, -3px 0px 0px brown, inset -3px 0px 0px brown, 3px 0px 0px yellow"
+          styleToParent.style.color = "#F8FBFF";
+          styleToParent.style.backgroundImage =
+            "linear-gradient(to right, #105ee5, #0F56D2)";
+          styleToParent.style.borderTop = "2px solid #0F56D2";
+          styleToParent.style.borderBottom = "2px dotted #FFCF80";
+          styleToParent.style.boxShadow =
+            "inset 3px 0px 0px #FFCF80, -3px 0px 0px #0F56D2, inset -3px 0px 0px #FFCF80, 3px 0px 0px #0F56D2";
         } 
       })
 
     } else {
       Inps.forEach((inp) => {
           const styleToParent_2 = inp.parentElement
-          styleToParent_2.style.backgroundImage = ""
-          styleToParent_2.style.borderTop = ""
-          styleToParent_2.style.borderBottom = ""
-          styleToParent_2.style.boxShadow = ""
+          styleToParent_2.style.color = "";
+        styleToParent_2.style.backgroundImage = "";
+        styleToParent_2.style.borderTop = "";
+        styleToParent_2.style.borderBottom = "";
+        styleToParent_2.style.boxShadow = "";
       })
     }
 
@@ -209,17 +213,20 @@ export function Get_Answers() {
       const target = event.currentTarget
       if(target) {
         all.forEach((el) => {
-        el.style.backgroundImage = ""
-        el.style.borderTop = ""
-        el.style.borderBottom = ""
-        el.style.boxShadow = ""
+        el.style.color = "";
+          el.style.backgroundImage = "";
+          el.style.borderTop = "";
+          el.style.borderBottom = "";
+          el.style.boxShadow = "";
       })
-      target.style.backgroundImage = "linear-gradient(to right, rgb(214, 253, 253), rgb(180, 255, 236))"
-      target.style.borderTop = "2px solid rgba(67, 161, 238, 0.87)"
-      target.style.borderBottom = "2px dotted rgb(0, 113, 128)"
-      target.style.boxShadow = "inset 3px 0px 0px yellow, -3px 0px 0px brown, inset -3px 0px 0px brown, 3px 0px 0px yellow"
+      target.style.color = "#F8FBFF";
+        target.style.backgroundImage =
+          "linear-gradient(to right, #105ee5, #0F56D2)";
+        target.style.borderTop = "2px solid #0F56D2";
+        target.style.borderBottom = "2px dotted #FFCF80";
+        target.style.boxShadow =
+          "inset 3px 0px 0px #FFCF80, -3px 0px 0px #0F56D2, inset -3px 0px 0px #FFCF80, 3px 0px 0px #0F56D2";
       }
-      
     }
 
     all.forEach((el) => {
@@ -528,7 +535,7 @@ export function Get_Answers() {
         </div>
 
         <div className="ms-lg-3">
-          <img height={250} src={Faq} alt="Faq" />
+          <img height={250} width={250} src={Faq} alt="Faq" />
         </div>
       </div>
 
@@ -2592,13 +2599,13 @@ export function Get_Answers() {
                           <em>- Cultural Authenticity and Representation :</em>
                         </strong>
                       </span>{" "} <br />
-                      **{`"`}Things Fall Apart{`"`} by Chinua Achebe:** <br />
-- **Evidence:** Achebe presents a detailed and nuanced depiction of pre-colonial Igbo society, its customs, and beliefs. The use of proverbs, folktales, and native language terms enriches the narrative, providing an insider{`'`}s perspective on Igbo life. <br />
-- **Impact:** This approach has inspired other African writers to delve deeply into their own cultures and present them authentically. Achebe{`'`}s work encourages a reclamation of African narratives from a Western-dominated literary tradition. <br />
+                      <strong><em>{`"`}Things Fall Apart{`"`}</em> by Chinua Achebe:</strong> <br />
+<strong>- Evidence :</strong> Achebe presents a detailed and nuanced depiction of pre-colonial Igbo society, its customs, and beliefs. The use of proverbs, folktales, and native language terms enriches the narrative, providing an insider{`'`}s perspective on Igbo life. <br />
+<strong>- Impact :</strong> This approach has inspired other African writers to delve deeply into their own cultures and present them authentically. Achebe{`'`}s work encourages a reclamation of African narratives from a Western-dominated literary tradition. <br />
 
-**{`"`}A Grain of Wheat{`"`} by Ngũgĩ wa Thiong{`'`}o:** <br />
-- **Comparison:** Ngũgĩ similarly focuses on Kenyan culture and the impact of colonialism. He integrates Gikuyu oral traditions and idioms into the text, reflecting a commitment to cultural authenticity. <br />
-- **Contrast:** While Achebe sets his story in the pre-colonial and early colonial period, Ngũgĩ{`'`}s novel deals with the Mau Mau uprising and the struggle for independence, highlighting a different phase of colonial impact and resistance.
+<strong><em>{`"`}A Grain of Wheat{`"`}</em> by Ngũgĩ wa Thiong{`'`}o:</strong> <br />
+<strong>- Comparison :</strong> Ngũgĩ similarly focuses on Kenyan culture and the impact of colonialism. He integrates Gikuyu oral traditions and idioms into the text, reflecting a commitment to cultural authenticity. <br />
+<strong>- Contrast :</strong> While Achebe sets his story in the pre-colonial and early colonial period, Ngũgĩ{`'`}s novel deals with the Mau Mau uprising and the struggle for independence, highlighting a different phase of colonial impact and resistance.
                     </p>
 
                     <p>
@@ -2607,13 +2614,13 @@ export function Get_Answers() {
                           <em>- Colonialism and Its Effects :</em>
                         </strong>
                       </span>{" "} <br />
-                      **{`"`}Things Fall Apart{`"`}:** <br />
-- **Evidence:** The novel examines the disruption of Igbo society by British colonial forces and Christian missionaries, focusing on the personal and societal consequences of this encounter. <br />
-- **Impact:** Achebe{`'`}s critical portrayal of colonialism has set a precedent for African writers to explore and critique the colonial experience and its aftermath in their works.
+                      <strong><em>{`"`}Things Fall Apart{`"`}:</em></strong><br />
+<strong>- Evidence :</strong> The novel examines the disruption of Igbo society by British colonial forces and Christian missionaries, focusing on the personal and societal consequences of this encounter. <br />
+<strong>- Impact :</strong> Achebe{`'`}s critical portrayal of colonialism has set a precedent for African writers to explore and critique the colonial experience and its aftermath in their works.
 
-**{`"`}Half of a Yellow Sun{`"`} by Chimamanda Ngozi Adichie:** <br />
-- **Comparison:** Adichie{`'`}s novel addresses the Nigerian Civil War (Biafran War) and its effects on Nigerian society. Like Achebe, she explores themes of cultural identity, conflict, and the lasting impact of colonial rule. <br />
-- **Contrast:** Adichie{`'`}s focus on a post-independence conflict shows the ongoing struggles and complexities in post-colonial African nations, expanding the scope of Achebe{`'`}s initial critique of colonialism.
+<strong><em>{`"`}Half of a Yellow Sun{`"`}</em> by Chimamanda Ngozi Adichie:</strong> <br />
+<strong>- Comparison :</strong> Adichie{`'`}s novel addresses the Nigerian Civil War (Biafran War) and its effects on Nigerian society. Like Achebe, she explores themes of cultural identity, conflict, and the lasting impact of colonial rule. <br />
+<strong>- Contrast :</strong> Adichie{`'`}s focus on a post-independence conflict shows the ongoing struggles and complexities in post-colonial African nations, expanding the scope of Achebe{`'`}s initial critique of colonialism.
                     </p>
 
                     <p>
@@ -2623,13 +2630,13 @@ export function Get_Answers() {
                           <em>- Character Complexity and Humanization :</em>
                         </strong>
                       </span>{" "} <br />
-                      **{`"`}Things Fall Apart{`"`}:** <br />
-- **Evidence:** Achebe{`'`}s protagonist, Okonkwo, is a complex character whose personal flaws and tragic fate are deeply intertwined with the larger societal changes brought by colonialism. <br />
-- **Impact:** This depth of character has encouraged African writers to create multifaceted, relatable characters, moving beyond stereotypical portrayals often found in earlier Western literature about Africa.
+                      <strong><em>{`"`}Things Fall Apart{`"`}:</em></strong> <br />
+<strong>- Evidence :</strong> Achebe{`'`}s protagonist, Okonkwo, is a complex character whose personal flaws and tragic fate are deeply intertwined with the larger societal changes brought by colonialism. <br />
+<strong>- Impact :</strong> This depth of character has encouraged African writers to create multifaceted, relatable characters, moving beyond stereotypical portrayals often found in earlier Western literature about Africa.
 <br />
-**{`"`}The Beautyful Ones Are Not Yet Born{`"`} by Ayi Kwei Armah:** <br />
-- **Comparison:** Armah{`'`}s novel features similarly complex characters struggling with post-independence disillusionment and corruption in Ghana. The protagonist, {`"`}The Man,{`"`} embodies the moral and existential crises facing many Africans in the wake of failed political promises. <br />
-- **Contrast:** While Achebe{`'`}s characters grapple with the initial impact of colonialism, Armah{`'`}s characters deal with the internal failures of newly independent states, reflecting different stages of African post-colonial experience.
+<strong><em>{`"`}The Beautyful Ones Are Not Yet Born{`"`}</em> by Ayi Kwei Armah:</strong> <br />
+<strong>- Comparison :</strong> Armah{`'`}s novel features similarly complex characters struggling with post-independence disillusionment and corruption in Ghana. The protagonist, {`"`}The Man,{`"`} embodies the moral and existential crises facing many Africans in the wake of failed political promises. <br />
+<strong>- Contrast :</strong> While Achebe{`'`}s characters grapple with the initial impact of colonialism, Armah{`'`}s characters deal with the internal failures of newly independent states, reflecting different stages of African post-colonial experience.
                     </p>
 
                     <p>
@@ -2639,13 +2646,13 @@ export function Get_Answers() {
                           <em>- Language and Style :</em>
                         </strong>
                       </span>{" "} 
-                      **{`"`}Things Fall Apart{`"`}:** <br />
-- **Evidence:** Achebe{`'`}s use of English infused with Igbo idioms and proverbs creates a unique narrative voice that captures the rhythms and sensibilities of African oral traditions. <br />
-- **Impact:** This stylistic choice has influenced other African writers to experiment with language, blending local dialects and English to convey their cultural context authentically. <br />
+                      <strong><em>{`"`}Things Fall Apart{`"`}:</em></strong> <br />
+<strong>- Evidence :</strong> Achebe{`'`}s use of English infused with Igbo idioms and proverbs creates a unique narrative voice that captures the rhythms and sensibilities of African oral traditions. <br />
+<strong>- Impact :</strong> This stylistic choice has influenced other African writers to experiment with language, blending local dialects and English to convey their cultural context authentically. <br />
 
-**{`"`}Season of Migration to the North{`"`} by Tayeb Salih:**
-- **Comparison:** Salih{`'`}s novel, while set in Sudan and dealing with the effects of colonialism and post-colonial identity, also uses a hybrid narrative style. The protagonist{`'`}s story is interwoven with Arabic cultural references and a critique of colonial influence. <br />
-- **Contrast:** Salih{`'`}s narrative also deals with the complexities of cross-cultural interactions and the psychological impact of colonialism, but his style is more fragmented and introspective compared to Achebe{`'`}s straightforward storytelling.
+<strong><em>{`"`}Season of Migration to the North{`"`}</em> by Tayeb Salih:</strong>
+ <strong>- Comparison :</strong> Salih{`'`}s novel, while set in Sudan and dealing with the effects of colonialism and post-colonial identity, also uses a hybrid narrative style. The protagonist{`'`}s story is interwoven with Arabic cultural references and a critique of colonial influence. <br />
+ <strong>- Contrast :</strong> Salih{`'`}s narrative also deals with the complexities of cross-cultural interactions and the psychological impact of colonialism, but his style is more fragmented and introspective compared to Achebe{`'`}s straightforward storytelling.
                     </p>
 
                     <p>

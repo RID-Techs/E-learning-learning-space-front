@@ -16,9 +16,9 @@ label {
   outline: none;
   padding: 0.5em;
   border-radius: 5px;
-  background-color: #ffffff7c;
+  background-color: var(--bg-color);
   backdrop-filter: blur(3px);
-  border: 2px solid #0254a194;
+  border: 2px solid var(--highlight-color);
   font-size: 1.1rem;
 }
 
@@ -41,13 +41,13 @@ label {
 }
 #upload-picture-holder {
   display: inline-flex;
-  background-color: #043d7494;
+  background-color: #105ee5ec;
   padding: 1em;
   border-radius: 5px;
-  box-shadow: 0px 0px 5px #291a4694;
+  box-shadow: 0px 0px 5px #0A2239;
   transition: all 0.3s ease-in-out;
   &:hover {
-    background-color: #01182e94;
+    background-color: #0A2239;
     box-shadow: 0px 0px 9px #fff;
   }
 }
@@ -78,13 +78,13 @@ label {
   padding: 0.3em;
   font-size: 1.1rem;
   font-weight: bold;
-  background-color: rgb(32, 1, 170);
+  background-color: var(--highlight-color);
   border: none;
-  color: #fff;
+  color: var(--bg-color);
   border-radius: 5px;
   transition: all 0.3s ease-in-out;
   &:hover {
-    box-shadow: 3px 3px 3px #000;
+    box-shadow: 3px 3px 3px var(--text-color);
   }
 }
 
@@ -142,15 +142,15 @@ label {
 
 #contribute-link {
   text-decoration: none;
-  color: #fff;
+  color: var(--bg-color);
   font-weight: bold;
-  background-color: rgb(32, 1, 170);
+  background-color: var(--highlight-color);
   padding: 0.3em;
   border-radius: 5px;
   transition: all 0.3s ease-in-out;
   &:hover {
-    box-shadow: 3px 3px 3px #000;
-    background-color: rgb(32, 1, 170);
+    box-shadow: 3px 3px 3px var(--text-color);
+    background-color: var(--highlight-color-hover);
   }
 }
 
@@ -178,10 +178,10 @@ label {
   cursor: pointer;
 }
 .semester-checkbox-custom-unchecked-wrapper {
-  background-color: #1d184994;
-  border: 2px solid rgb(196, 6, 164);
+  background-color: #0A2239;
+  border: 2px solid var(--highlight-color);
   box-shadow: inset 0px 0px 9px #043e74;
-  color: #fff;
+  color: var(--bg-color);
   padding: 0.3em 0.5em;
   border-radius: 5px;
   cursor: pointer;
@@ -196,9 +196,9 @@ label {
   content: "";
   height: 15px;
   width: 15px;
-  background-color: #fff;
-  box-shadow: 0px 0px 9px #043e74;
-  border: 2px solid #fff;
+  background-color: var(--bg-color);
+  box-shadow: 0px 0px 9px var(--highlight-color);
+  border: 2px solid transparent;
   top: 50%;
   left: 0;
   transform: translateY(-50%);
@@ -218,7 +218,7 @@ label {
 .semester-checkbox-custom-checked::after {
   position: absolute;
   content: "√";
-  color: #043e74;
+  color: var(--highlight-color);
   font-size: 1.4rem;
   font-weight: bold;
   height: 16px;
@@ -253,9 +253,9 @@ label {
   content: "";
   height: 15px;
   width: 15px;
-  background-color: #fff;
-  box-shadow: 0px 0px 9px #043e74;
-  border: 2px solid #fff;
+  background-color: var(--bg-color);
+  box-shadow: 0px 0px 9px var(--highlight-color);
+  border: 2px solid transparent;
   top: 50%;
   left: 0;
   transform: translateY(-50%);
@@ -273,12 +273,12 @@ label {
   display: inline-flex;
   gap: 0.5em;
   padding: 1em;
-  border: 1px solid #00000054;
+  border: 1px solid #0a2239a3;
   border-radius: 5px;
-  background-color: #ffffff49;
+  background-color: var(--bg-color);
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
-  color: #000;
+  color: var(--text-color);
 }
 
 .no-semester-selected-msg p {
@@ -307,7 +307,7 @@ label {
   text-align: center;
 }
 .choose-exam-paper-semester-title span, #teaching-units-section-title span {
-  text-decoration: underline dashed #043e74;
+  text-decoration: underline dashed var(--highlight-color);
   text-underline-offset: 4px;
 }
 
@@ -333,16 +333,16 @@ label {
 .units-holder li {
   list-style: none;
   padding: 0.3em 1em;
-  border: 1px solid #043e74;
+  border: 1px solid var(--highlight-color);
   border-radius: 5px;
   margin-bottom: 0.5em;
-  background-color: #ffffff7c;
+  background-color: #f8fbff86;
   backdrop-filter: blur(1px);
   -webkit-backdrop-filter: blur(1px);
 }
 
 .units-holder li:hover {
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: var(--bg-color);
   cursor: pointer;
 }
 
@@ -354,12 +354,12 @@ label {
   color: #fff;
   font-weight: bold;
   transition: all 0.3s ease-in-out;
-  background-color: #0254a1;
+  background-color: var(--highlight-color);
   padding: 0.3em;
   margin-bottom: 1em;
   border-radius: 5px;
   display: inline-block;
-  box-shadow: 5px 3px 1px #c406a4;
+  box-shadow: 5px 3px 1px hsl(37, 100%, 55%);
 }
 
 .units-holder li a:hover {
@@ -377,7 +377,7 @@ label {
 .unit-info-header p {
   font-size: 1.2rem;
   font-weight: bold;
-  color: #043e74;
+  color: var(--text-color);
   padding-top: 0.7em;
 }
 
@@ -392,7 +392,7 @@ label {
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: #eef7fcef;
+  background-color: hsl(214, 100%, 92%);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   z-index: 2000;
@@ -423,7 +423,7 @@ label {
   border: 2px solid transparent;
   border-radius: 5px;
   padding: 1em;
-  background-color: #ffffff7c;
+  background-color: var(--bg-color);
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
   transition: all 0.3s ease-in-out;
@@ -455,9 +455,9 @@ label {
   outline: none;
   border: none;
   cursor: pointer;
-  background-color: #fff;
-  color: #043e74;
-  border: 1px solid #043e74;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border: 1px solid var(--text-color);
   font-weight: bold;
   padding: 0.3em 1em;
   margin-right: 1em;
@@ -465,9 +465,8 @@ label {
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   &:hover {
-    color: #fff;
-    background-color: #0254a1;
-    box-shadow: 0px 0px 5px #000;
+    color: var(--bg-color);
+    background-color: var(--text-color);
   }
 }
 
@@ -478,14 +477,13 @@ label {
 }
 .paper-info-footer a {
   text-decoration: none;
-  color: #fff;
+  color: var(--bg-color);
   font-weight: bold;
-  background-color: #043e74;
+  background-color: var(--highlight-color);
   padding: 0.3em;
   border-radius: 5px;
   transition: all 0.3s ease-in-out;
     &:hover {
-    background-color: #0254a1;
-    box-shadow: 0px 0px 5px #000;
+    background-color: var(--highlight-color-hover);
   }
 }

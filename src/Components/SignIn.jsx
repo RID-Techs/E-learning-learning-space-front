@@ -121,7 +121,7 @@ useEffect(() =>  {
       <div className="sign-up-and-in-holder">
         <h3 className="ms-4">
           Sign in to get access to the E-learning learning space{" "}
-          <img src={star} alt="star" />{" "}
+          <img height={32} src={star} alt="star" />{" "}
         </h3>
       </div>
 

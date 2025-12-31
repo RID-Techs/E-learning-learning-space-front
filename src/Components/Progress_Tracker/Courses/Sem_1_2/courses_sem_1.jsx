@@ -43,6 +43,14 @@ export const Courses_Sem_1 = () => {
       return saved
     }
   });
+
+      const [showProgress, setShowProgress] = useState(() => {
+      const showProgressStatus = localStorage.getItem("sh_pr_1");
+      if(showProgressStatus && showProgressStatus === "true"){
+        return true;
+      }
+      return false;
+    });
   
   useEffect(() => {
     let isMounted = true; 
@@ -89,25 +97,21 @@ export const Courses_Sem_1 = () => {
           btn.removeEventListener("click", courseValuesFunc)
         })
       }
-    }, [sem_1_courses_group, isMember])
-
-    const [showProgress, setShowProgress] = useState(() => {
-      const showProgressStatus = localStorage.getItem("sh_pr_1");
-      if(showProgressStatus && showProgressStatus === "true"){
-        return true;
-      }
-      return false;
-    });
+    }, [sem_1_courses_group, isMember, showProgress])
 
     const handleProgressSection = () => {
-      window.location.reload();
       localStorage.setItem("sh_pr_1", "false");
+      setShowProgress(false);
     }
 
     const KeepUnitsTotrack = () => {
+      if(sem_1_courses_group.courses_sem_1.length === 0) {
+        alert("Please select at least one Teaching Unit to track your progress.");
+        return;
+      }
       localStorage.setItem("sh_pr_1", "true");
       localStorage.setItem("s_1_c", JSON.stringify(sem_1_courses_group));
-      window.location.reload();
+      setShowProgress(true);
     }
 
     useEffect(() => {
@@ -396,8 +400,6 @@ export const Courses_Sem_1 = () => {
     
                         </div>
                       </div>
-
-
                 </div>
               </div>
 
@@ -413,99 +415,107 @@ export const Courses_Sem_1 = () => {
     <div className="courses-by-semester">
       <button type="button" value={"Phonetics_Phonology-Phonetics & Phonology"}>
         <span className="me-2">Phonetics & Phonology</span>
-        <span className="temporary-select"></span>
-        {
-           temporarySelectedCourses && (
-            temporarySelectedCourses.courses_sem_1.map((csKey, index) => (
-              csKey.split("-")[0] === "Phonetics_Phonology" ? (
-                <span key={index}>⦿</span>
-              ) : null
-            )))
+        <span className="temporary-select">
+          {
+          temporarySelectedCourses && (
+            temporarySelectedCourses.courses_sem_1.map((csKey) => (
+               csKey.split("-")[0] === "Phonetics_Phonology" ? (
+                 "⦿"
+               ) : ""
+             )))
           }
+        </span>
       </button>
       <button type="button" value={"English_Grammar-English Grammar"}>
         <span className="me-2">English Grammar</span>
-        <span className="temporary-select"></span>
-        {
+        <span className="temporary-select">
+          {
           temporarySelectedCourses && (
-            temporarySelectedCourses.courses_sem_1.map((csKey, index) => (
+            temporarySelectedCourses.courses_sem_1.map((csKey) => (
                csKey.split("-")[0] === "English_Grammar" ? (
-                 <span key={index}>⦿</span>
-               ) : null
+                 "⦿"
+               ) : ""
              )))
           }
+        </span>
       </button>
       <button type="button" value={"Civilisation_Britanique-British Civilisation"}>
         <span className="me-2">British Civilisation</span>
-        <span className="temporary-select"></span>
-        {
+        <span className="temporary-select">
+          {
           temporarySelectedCourses && (
-            temporarySelectedCourses.courses_sem_1.map((csKey, index) => (
+            temporarySelectedCourses.courses_sem_1.map((csKey) => (
                csKey.split("-")[0] === "Civilisation_Britanique" ? (
-                 <span key={index}>⦿</span>
-               ) : null
+                 "⦿"
+               ) : ""
              )))
           }
+        </span>
       </button>
       <button type="button" value={"American_Civilization-American Civilisation"}>
         <span className="me-2">American Civilisation</span>
-        <span className="temporary-select"></span>
-        {
+        <span className="temporary-select">
+          {
           temporarySelectedCourses && (
-           temporarySelectedCourses.courses_sem_1.map((csKey, index) => (
-              csKey.split("-")[0] === "American_Civilization" ? (
-                <span key={index}>⦿</span>
-              ) : null
-            )))
+            temporarySelectedCourses.courses_sem_1.map((csKey) => (
+               csKey.split("-")[0] === "American_Civilization" ? (
+                 "⦿"
+               ) : ""
+             )))
           }
+        </span>
       </button>
       <button type="button" value={"African_Civilization-African Civilisation"}>
         <span className="me-2">African Civilisation</span>
-        <span className="temporary-select"></span>
-        {
+        <span className="temporary-select">
+          {
           temporarySelectedCourses && (
-           temporarySelectedCourses.courses_sem_1.map((csKey, index) => (
-              csKey.split("-")[0] === "African_Civilization" ? (
-                <span key={index}>⦿</span>
-              ) : null
-            )))
+            temporarySelectedCourses.courses_sem_1.map((csKey) => (
+               csKey.split("-")[0] === "African_Civilization" ? (
+                 "⦿"
+               ) : ""
+             )))
           }
+        </span>
       </button>
       <button type="button" value={"Travail_Universitaire-Méthodologie du Travail Universitaire"}>
         <span className="me-2">Méthodologie du Travail Universitaire</span>
-        <span className="temporary-select"></span>
-        {
+        <span className="temporary-select">
+          {
           temporarySelectedCourses && (
-           temporarySelectedCourses.courses_sem_1.map((csKey, index) => (
-              csKey.split("-")[0] === "Travail_Universitaire" ? (
-                <span key={index}>⦿</span>
-              ) : null
-            )))
+            temporarySelectedCourses.courses_sem_1.map((csKey) => (
+               csKey.split("-")[0] === "Travail_Universitaire" ? (
+                 "⦿"
+               ) : ""
+             )))
           }
+        </span>
       </button>
       <button type="button" value={"Composition_En_Français-Techniques de Composition en Français"}>
         <span className="me-2">Techniques de Composition en Français</span>
-        <span className="temporary-select"></span>
-        {
+        <span className="temporary-select">
+          {
           temporarySelectedCourses && (
-           temporarySelectedCourses.courses_sem_1.map((csKey, index) => (
-              csKey.split("-")[0] === "Composition_En_Français" ? (
-                <span key={index}>⦿</span>
-              ) : null
-            )))
+            temporarySelectedCourses.courses_sem_1.map((csKey) => (
+               csKey.split("-")[0] === "Composition_En_Français" ? (
+                 "⦿"
+               ) : ""
+             )))
           }
+        </span>
       </button>
       <button type="button" value={"Expression_Écrite-Techniques d'expression écrite"}>
         <span className="me-2">Techniques d{"'"}expression écrite</span>
-        <span className="temporary-select"></span>
-        {
+        <span className="temporary-select">
+          {
           temporarySelectedCourses && (
-           temporarySelectedCourses.courses_sem_1.map((csKey, index) => (
-              csKey.split("-")[0] === "Expression_Écrite" ? (
-                <span key={index}>⦿</span>
-              ) : null
-            )))
+            temporarySelectedCourses.courses_sem_1.map((csKey) => (
+               csKey.split("-")[0] === "Expression_Écrite" ? (
+                 "⦿"
+               ) : ""
+             )))
           }
+        </span>
       </button>
     </div>
     <div className="mt-4 validate-track-btn-holder">
