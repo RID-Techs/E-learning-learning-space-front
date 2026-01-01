@@ -1,6 +1,6 @@
 import stars from "../assets/stars.png";
 import logo from "../assets/learns.png";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 export function WebsiteTour() {
     const [dateOfCreation, setDateOfCreation]  = useState("2024");
     useEffect(() => {
@@ -17,6 +17,65 @@ export function WebsiteTour() {
       
         getYear();
       }, []);
+
+      const webSections = [
+        {
+          sectionTitle: "Access the platform and install the application",
+          videoLink: "https://drive.google.com/file/d/1hL6HeeGPoPUVEdZgHu_yYA-jAfPv6BxJ/view?usp=drive_link",
+          duration: "4:48"
+        },
+        {
+          sectionTitle: "Learning space overview",
+          videoLink: "https://drive.google.com/file/d/1huPdo1fU6YzOdoXwxfq3_GxqI8I3RAXC/view?usp=drive_link",
+          duration: "3:17"
+        },
+        {
+          sectionTitle: "E-learning Answer Hub overview",
+          videoLink: "https://drive.google.com/file/d/1ysOket5SouEwjM5CruKduQk3a_oMEvZ5/view?usp=drive_link",
+          duration: "2:42"
+        },
+        {
+          sectionTitle: "E-Podcast overview",
+          videoLink: "https://drive.google.com/file/d/1dgqXVhppOKYHDFqqV0JZFW-RkZExXquD/view?usp=drive_link",
+          duration: "1:14"
+        },
+        {
+          sectionTitle: "Test Center overview",
+          videoLink: "https://drive.google.com/file/d/1hzTvphPIMBYmsjFDuFRJkzjOpAAjCU64/view?usp=drive_link",
+          duration: "3:45"
+        },
+        {
+          sectionTitle: "E-Quiz overview",
+          videoLink: "https://drive.google.com/file/d/1ygorVTL3-hjZdlKs__31CadmqfCVCs6L/view?usp=drive_link",
+          duration: "3:06"
+        },
+        {
+          sectionTitle: "E-Collection of Papers overview",
+          videoLink: "https://drive.google.com/file/d/1EQojoPJFlvJhDnxHmAef9UxFhRPz_dPD/view?usp=drive_link",
+          duration: "2:54"
+        },
+        {
+          sectionTitle: "E-Progress overview",
+          videoLink: "https://drive.google.com/file/d/1rD97lpZ3AwCzTzwrfC3LI3tQv1f01gFx/view?usp=drive_link",
+          duration: "5:15"
+        },
+        {
+          sectionTitle: "Feedback / Survey overview",
+          videoLink: "https://drive.google.com/file/d/195ROP1zdIZpFUnaL29hiPU1magg3MvVN/view?usp=drive_link",
+          duration: "1:10"
+        },
+        {
+          sectionTitle: "E-learning Website tour overview",
+          videoLink: "https://drive.google.com/file/d/1BXWtNDI5PZT5ovCYj5yjBAk5M0V4009I/view?usp=drive_link",
+          duration: "0:57"
+        },
+      ]
+      const moveToItemRef = useRef(null);
+      useEffect(() => {
+        if (moveToItemRef.current) {
+          moveToItemRef.current.scrollIntoView({ behavior: 'smooth', block: 'end' });
+        }
+      }, [])
   return (
     <>
     <div className="container-fluid header-wraper-home">
@@ -34,18 +93,21 @@ export function WebsiteTour() {
             </div>
           </div>
 
-          <div className="video-title sign-up-and-in-holder">
+          <div ref={moveToItemRef} className="video-title sign-up-and-in-holder">
               <h1>E-learning Website tour</h1>
           </div>
 
     <section className="tuto-section">
-      <div className="video-holder">
-          <a href="https://drive.google.com/file/d/1RHcxCK9VgzyJ1a4Dj6-gSBW0mybikviw/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+      {
+        webSections.map((section, index) => (
+          <div key={index} className="video-holder">
+            <div className="video-card-header">
+              <a href={section.videoLink} rel="noopener noreferrer">
             <span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
+                width="22"
+                height="22"
                 viewBox="0 0 24 24"
                 fill="currentColor"
               >
@@ -54,9 +116,17 @@ export function WebsiteTour() {
             </span>
             <span>Play</span>
           </a>
-      </div>
+            </div>
+            <div className="video-card-body">
+              <p>{section.sectionTitle}</p>
+              <div className="video-duration">
+                <p>Duration: {section.duration}</p>
+              </div>
+            </div>
+          </div>
+        ))
+      }
     </section>
-
 
     <footer className="container-fluid welcome-footer">
                     <div className="footer-first-part">

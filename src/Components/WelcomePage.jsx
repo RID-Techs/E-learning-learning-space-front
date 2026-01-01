@@ -152,13 +152,10 @@ const LoginByName = () => {
   Welcome(`Welcome ${newUser}`)
   navigate("/Home")
 }
-const [eco, setEco] = useState(false);
-
-useEffect(() => {
+const [eco, setEco] = useState(() => {
   const ecoValue = localStorage.getItem("eco");
-  if(!ecoValue) return;
-  setEco(ecoValue === "true");
-}, []);
+  return ecoValue === "true";
+});
 
 const ClosingEcoBanner = () => {
   localStorage.setItem("eco", "true");
@@ -513,7 +510,7 @@ const ClosingEcoBanner = () => {
 {hasReadNote && (<div className="welcome-button">
     <div className="welcome-actions">
             <button onClick={EnterMySession} id="login-button"> <img height={32} src={openLearning} alt="user" /> Open my Learning Space</button>
-            {isMember && <Link id="web-tour" to={"/Websitetour"} target="_blank">⋄⦂ Click me to make a nice tour of the website !</Link>}
+            {isMember && <Link id="web-tour" to={"/Websitetour"}>⋄⦂ Click me to make a nice tour of the website !</Link>}
             <NavLink id="survey-link" to={"Survey"}>
               <img height={32} src={feedback} alt="feedback" />
              Give your Feedback</NavLink>

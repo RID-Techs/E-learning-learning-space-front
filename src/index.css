@@ -1681,34 +1681,33 @@ footer{
 }
 
 .tuto-section {
-  margin-top: 1em;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 300px);
   justify-content: center;
-  align-items: center;
-  padding: 1em;
+  gap: 1em;
+  margin-top: 2em;
 }
 
 .video-holder {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 300px;
-  width: 300px;
+  gap: 0.9em;
+  background-color: hsl(218, 87%, 93%);
+  padding: 1em;
   border-radius: 10px;
-  box-shadow: 0px 0px 5px var(--text-color);
-  background-image: linear-gradient(to left, hsla(209, 70%, 13%, 0.603), hsla(214, 100%, 36%, 0.588)), url("/Nice.jpeg");
-  background-position: center;
-  background-size: cover;
 }
 
 .video-holder a {
+  display: inline-flex;
+  gap: 0.1em;
+  align-items: center;
   text-decoration: none;
-  font-size: 1.4rem;
-  font-weight: bold;
-  background-color: var(--bg-color);
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: hsla(216, 100%, 99%, 0.78);
   padding: 0.5em;
   border-radius: 5px;
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
   color: var(--text-color);
   box-shadow: 0px 0px 7px #0A2239;
   transition: all 0.2s ease-in-out;
@@ -1716,6 +1715,28 @@ footer{
     background-color: var(--text-color);
     color: var(--bg-color);
   }
+}
+
+.video-card-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  height: 80px;
+  max-width: 90px;
+  width: 100%;
+  background-image: linear-gradient(to left, hsla(209, 70%, 13%, 0.603), hsla(214, 100%, 36%, 0.588)), url("/Nice.jpeg");
+  background-position: center;
+  background-size: cover;
+}
+.video-card-body > p {
+  font-weight: 500;
+  font-size: 1.1rem;
+  margin-bottom: 0.5em;
+}
+
+.video-duration > p {
+  margin-bottom: 0em;
 }
 .login-needed-from-epodcast {
   display: inline-flex;

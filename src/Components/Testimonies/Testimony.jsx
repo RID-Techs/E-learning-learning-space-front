@@ -9,7 +9,7 @@ export const Testimony = () => {
     // 1. Use 'hash' to be precise (checks strictly for #testimonies)
     const { hash } = window.location;
     
-    if (hash === "#testimonies" && testimoniesRef.current) {
+    if (hash === "#testimonials" && testimoniesRef.current) {
       // 2. Add a small timeout (100ms) to allow layout/painting to settle
       setTimeout(() => {
         testimoniesRef.current.scrollIntoView({ 
@@ -22,7 +22,7 @@ export const Testimony = () => {
   return (
     <>
       <div className="testimonies-container-wrapper">
-        <h5 ref={testimoniesRef} id="testimonies" className="students-testimonies-title">Students Testimonies</h5>
+        <h5 ref={testimoniesRef} id="testimonials" className="students-testimonies-title">Student Testimonials</h5>
         <div className="testimonies-container">
           {
             StudentsTestimonies.map((testimony) => (

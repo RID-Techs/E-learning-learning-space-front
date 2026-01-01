@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import "./paper.css";
 import warning from "../../assets/warning.png";
 import { useEffect } from "react";
@@ -8,6 +8,7 @@ import { Semester3Units } from "./Teaching_Units/Sem_3_4/Sem_3_Units";
 import { Semester4Units } from "./Teaching_Units/Sem_3_4/Sem_4_Units";
 import { Semester5Units } from "./Teaching_Units/Sem_5_6/Sem_5_Units";
 import { Semester6Units } from "./Teaching_Units/Sem_5_6/Sem_6_Units";
+import { Link } from "react-router-dom";
 
 export function GetALlExamPapers() {
   const [semester_1_Box, setSemester_1_Box] = useState(false);
@@ -115,13 +116,20 @@ export function GetALlExamPapers() {
       }
     }, []);
 
+    const moveToItemRef = useRef(null);
+          useEffect(() => {
+            if (moveToItemRef.current) {
+              moveToItemRef.current.scrollIntoView({ behavior: 'smooth', block: 'end' });
+            }
+          }, [])
+
   return (
     <>
-    <div className="exam-paper-welcome-msg contribute-msg-holder">
+    <div ref={moveToItemRef} className="exam-paper-welcome-msg contribute-msg-holder">
       <h4><em>Welcome to the <span id="collection-highlight">Collection of Exam papers</span> section, dear {username} <span className="highlight">༆</span></em></h4>
       <div className="contribute-msg-group ms-md-5 ms-xl-5">
         <p>Here you can find all the exam papers that have been contributed by our community. 🎋🤗</p>
-        <p>If you want to contribute, please click right here ⤑ <a href="/Exam-papers/add" id="contribute-link">Contribute</a> </p>
+        <p>If you want to contribute, please click right here ⤑ <Link to={"/Exam-papers/add"} id="contribute-link">Contribute</Link> </p>
       </div>
     </div>
 

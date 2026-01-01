@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import "../track_course.css"
 import { pdfFiles_sem_1, Reminders_sem_1 } from "../../../../All_Couses_Docs/Sem_1_2/courses_docs_1_2";
 import { CircleProgress } from "../../circle_tracker";
@@ -113,6 +113,16 @@ export const Courses_Sem_1 = () => {
       localStorage.setItem("s_1_c", JSON.stringify(sem_1_courses_group));
       setShowProgress(true);
     }
+    
+    const trackCourseRef = useRef(null);
+    useEffect(() => {
+      if(showProgress && trackCourseRef.current) {
+        trackCourseRef.current.scrollIntoView({ 
+          behavior: 'smooth', 
+          block: 'center'
+        });
+      }
+    }, [showProgress])
 
     useEffect(() => {
       const getProgressStatus = localStorage.getItem("sh_pr_1") || "false";
@@ -213,7 +223,7 @@ export const Courses_Sem_1 = () => {
       showProgress ? (
         <>
           <div className="mt-4">
-            <div className="course-progress-btn-add">
+            <div ref={trackCourseRef} className="course-progress-btn-add">
           <button onClick={handleProgressSection} type="button">Add more courses ⤓</button>
         </div>
             <div className="tracked-courses-progress-wrapper">
