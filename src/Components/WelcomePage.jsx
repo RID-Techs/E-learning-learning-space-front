@@ -513,7 +513,7 @@ const ClosingEcoBanner = () => {
 {hasReadNote && (<div className="welcome-button">
     <div className="welcome-actions">
             <button onClick={EnterMySession} id="login-button"> <img height={32} src={openLearning} alt="user" /> Open my Learning Space</button>
-            {isMember && <a id="web-tour" href="Websitetour" target="_blank">⋄⦂ Click me to make a nice tour of the website !</a>}
+            {isMember && <Link id="web-tour" to={"/Websitetour"} target="_blank">⋄⦂ Click me to make a nice tour of the website !</Link>}
             <NavLink id="survey-link" to={"Survey"}>
               <img height={32} src={feedback} alt="feedback" />
              Give your Feedback</NavLink>

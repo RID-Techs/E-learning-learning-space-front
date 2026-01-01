@@ -31,11 +31,11 @@ export const Testimony = () => {
                   <p className="testimony-text testimony-description">
                     {
                       (testimony.e_help_description).trim().endsWith(".") ? (
-                      `🙶 ` + (testimony.e_help_description).trim()) + " " : `🙶 ` + (testimony.e_help_description).trim() + ". "
+                      `❝ ` + (testimony.e_help_description).trim()) + " " : `❝ ` + (testimony.e_help_description).trim() + ". "
                     }
                     {
                       (testimony.impressions).trim().endsWith(".") ? (
-                      (testimony.impressions).trim()) + " 🙷" : (testimony.impressions).trim() + ". 🙷"
+                      (testimony.impressions).trim()) + " ❞" : (testimony.impressions).trim() + ". ❞"
                     }
                   </p>
                 </div>
