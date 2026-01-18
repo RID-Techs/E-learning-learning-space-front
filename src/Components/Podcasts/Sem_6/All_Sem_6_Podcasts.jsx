@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 export function Sem_6_Podcasts () {
-  const academic_Writing = "https://ik.imagekit.io/g4xui13wk/Sem_6/Acdemic_writing.aac";
-  const literary_theory = "https://ik.imagekit.io/g4xui13wk/Sem_6/Theory.aac";
+  const academic_Writing = "https://res.cloudinary.com/ddejfyqlw/video/upload/v1768762090/Acdemic_writing_xubc1v.aac";
+  const literary_theory = "https://res.cloudinary.com/ddejfyqlw/video/upload/v1768762102/Theory_wcfdrs.aac";
   const getMemberStatus = localStorage.getItem("isLoggedIn");
   const isMember = getMemberStatus === "true";
   return (

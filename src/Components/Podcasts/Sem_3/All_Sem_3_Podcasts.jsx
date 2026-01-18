@@ -1,19 +1,19 @@
 import { Link } from "react-router-dom";
 export function Sem_3_Podcasts () {
-  const American_Novel = "https://ik.imagekit.io/g4xui13wk/Sem_3/American_Novel.aac";
-  const Uncle_Tom = "https://ik.imagekit.io/g4xui13wk/Sem_3/Uncle_Tom.aac";
-  const New_Names = "https://ik.imagekit.io/g4xui13wk/Sem_3/NewNames.aac";
-  const Railroad = "https://ik.imagekit.io/g4xui13wk/Sem_3/Railroad.aac";
-  const Huckleberry_Finn = "https://ik.imagekit.io/g4xui13wk/Sem_3/Huckleberry_Finn.aac";
-  const English_18_Novel = "https://ik.imagekit.io/g4xui13wk/Sem_3/English_18_Novel.aac";
-  const The_Lion_and_Jewel = "https://ik.imagekit.io/g4xui13wk/Sem_3/The_Lion_and_Jewel.aac";
-  const Morphology = "https://oousnjsxqzaocpqjfvkp.supabase.co/storage/v1/object/public/e-audio-bucket/Morphology.aac";
-  const African_drama = "https://ik.imagekit.io/g4xui13wk/Sem_3/African_drama.aac";
-  const Yellow_Yellow = "https://ik.imagekit.io/g4xui13wk/Sem_3/Yellow_Yellow.ogg";
-  const Yellow_Characters = "https://ik.imagekit.io/g4xui13wk/Sem_3/Yellow_Characterization.ogg";
-  const Yellow_SecondCharacters = "https://ik.imagekit.io/g4xui13wk/Sem_3/Yellow_Secondary.ogg";
-  const Yellow_Themes = "https://ik.imagekit.io/g4xui13wk/Sem_3/Yellow_Themes.ogg";
-  const Yellow_French = "https://ik.imagekit.io/g4xui13wk/Sem_3/Yellow_French.ogg";
+  const American_Novel = "https://res.cloudinary.com/ddejfyqlw/video/upload/v1768761682/American_Novel_zdlyub.aac";
+  const Uncle_Tom = "https://res.cloudinary.com/ddejfyqlw/video/upload/v1768761740/Uncle_Tom_ofdrgw.aac";
+  const New_Names = "https://res.cloudinary.com/ddejfyqlw/video/upload/v1768761675/NewNames_srdfua.aac";
+  const Railroad = "https://res.cloudinary.com/ddejfyqlw/video/upload/v1768761690/Railroad_pba2vu.aac";
+  const Huckleberry_Finn = "https://res.cloudinary.com/ddejfyqlw/video/upload/v1768761736/Huckleberry_Finn_l6et5r.aac";
+  const English_18_Novel = "https://res.cloudinary.com/ddejfyqlw/video/upload/v1768761708/English_18_Novel_bxayht.aac";
+  const The_Lion_and_Jewel = "https://res.cloudinary.com/ddejfyqlw/video/upload/v1768761723/The_Lion_and_Jewel_hd1h64.aac";
+  const Morphology = "https://res.cloudinary.com/ddejfyqlw/video/upload/v1768761729/Morphology_foti4p.aac";
+  const African_drama = "https://res.cloudinary.com/ddejfyqlw/video/upload/v1768761650/African_drama_ughbj7.aac";
+  const Yellow_Yellow = "https://res.cloudinary.com/ddejfyqlw/video/upload/v1768761712/Yellow_Yellow_hcfflz.ogg";
+  const Yellow_Characters = "https://res.cloudinary.com/ddejfyqlw/video/upload/v1768761692/Yellow_Characterization_su7mzl.ogg";
+  const Yellow_SecondCharacters = "https://res.cloudinary.com/ddejfyqlw/video/upload/v1768761698/Yellow_Secondary_fr2p8v.ogg";
+  const Yellow_Themes = "https://res.cloudinary.com/ddejfyqlw/video/upload/v1768761702/Yellow_Themes_gc34wk.ogg";
+  const Yellow_French = "https://res.cloudinary.com/ddejfyqlw/video/upload/v1768761696/Yellow_French_iwdfgg.ogg";
   const getMemberStatus = localStorage.getItem("isLoggedIn");
   const isMember = getMemberStatus === "true";
   return (

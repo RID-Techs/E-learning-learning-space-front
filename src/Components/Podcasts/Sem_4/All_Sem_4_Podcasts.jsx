@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 export function Sem_4_Podcasts () {
-  const the_contrast = "https://ik.imagekit.io/g4xui13wk/Sem_4/Contrast.aac";
-  const prince_of_parthia = "https://ik.imagekit.io/g4xui13wk/Sem_4/Parthia.aac";
-  const oral_speaking = "https://ik.imagekit.io/g4xui13wk/Sem_4/Oral_speaking_Sem_4.aac";
+  const the_contrast = "https://res.cloudinary.com/ddejfyqlw/video/upload/v1768762150/Contrast_zox1ce.aac";
+  const prince_of_parthia = "https://res.cloudinary.com/ddejfyqlw/video/upload/v1768762154/Parthia_zknl0m.aac";
+  const oral_speaking = "https://res.cloudinary.com/ddejfyqlw/video/upload/v1768762145/Oral_speaking_Sem_4_ixk2dr.aac";
   const getMemberStatus = localStorage.getItem("isLoggedIn");
   const isMember = getMemberStatus === "true";
   return (
