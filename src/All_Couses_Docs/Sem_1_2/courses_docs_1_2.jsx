@@ -6,6 +6,9 @@ export const pdfFiles_sem_1 = [
       id: 1,
       name: "English Grammar Exam Paper of 2017 - 2018",
       course_key: "English_Grammar",
+      exam_paper: {
+        year: "2017 - 2018",
+      },
       course_index: 0,
       isCached: false,
       url: "/Docs/Semester_1/English_Grammar_Exam_Paper_17_18.pdf",
@@ -16,6 +19,9 @@ export const pdfFiles_sem_1 = [
       id: 2,
       name: "English Grammar Exam Paper of 2019 - 2020",
       course_key: "English_Grammar",
+      exam_paper: {
+        year: "2019 - 2020",
+      },
       course_index: 0,
       isCached: false,
       url: "/Docs/Semester_1/English_Grammar_Exam_Paper_19_20.pdf",
@@ -26,6 +32,9 @@ export const pdfFiles_sem_1 = [
       id: 3,
       name: "English Grammar Exam Paper of 2020 - 2021",
       course_key: "English_Grammar",
+      exam_paper: {
+        year: "2020 - 2021",
+      },
       course_index: 0,
       isCached: false,
       url: "/Docs/Semester_1/English_Grammar_Exam_Paper_20_21.pdf",
@@ -46,6 +55,9 @@ export const pdfFiles_sem_1 = [
       id: 5,
       name: "American Civilization Exam_Paper 2020-2021",
       course_key: "American_Civilization",
+      exam_paper: {
+        year: "2020 - 2021",
+      },
       course_index: 1,
       isCached: false,
       url: "/Docs/Semester_1/Civilisation_Américaine_Exam_Paper_20_21.pdf",
@@ -56,6 +68,9 @@ export const pdfFiles_sem_1 = [
       id: 6,
       name: "American Civilization Exam_Paper 2021-2022",
       course_key: "American_Civilization",
+      exam_paper: {
+        year: "2021 - 2022",
+      },
       course_index: 1,
       isCached: false,
       url: "/Docs/Semester_1/Civilisation_Américaine_Exam_Paper_21_22.pdf",
@@ -66,6 +81,9 @@ export const pdfFiles_sem_1 = [
       id: 7,
       name: "American Civilization Exam_Paper 2022-2023",
       course_key: "American_Civilization",
+        exam_paper: {
+        year: "2022 - 2023",
+      },
       course_index: 1,
       isCached: false,
       url: "/Docs/Semester_1/Civilisation_Américaine_Exam_Paper_22_23.pdf",
@@ -86,6 +104,9 @@ export const pdfFiles_sem_1 = [
       id: 9,
       name: "African Civilization Exam_Paper 2017-2018",
       course_key: "African_Civilization",
+        exam_paper: {
+        year: "2017 - 2018",
+      },
       course_index: 2,
       isCached: false,
       url: "/Docs/Semester_1/Civilisation_Africaine_Exam_Paper_17_18.pdf",
@@ -96,6 +117,9 @@ export const pdfFiles_sem_1 = [
       id: 10,
       name: "African Civilization Exam_Paper 2018-2019",
       course_key: "African_Civilization",
+        exam_paper: {
+        year: "2018 - 2019",
+      },
       course_index: 2,
       isCached: false,
       url: "/Docs/Semester_1/Civilisation_Africaine_Exam_Paper_18_19.pdf",
@@ -106,6 +130,9 @@ export const pdfFiles_sem_1 = [
       id: 11,
       name: "African Civilization Exam_Paper 2019-2020",
       course_key: "African_Civilization",
+      exam_paper: {
+        year: "2019 - 2020",
+      },
       course_index: 2,
       isCached: false,
       url: "/Docs/Semester_1/Civilisation_Africaine_Exam_Paper_19_20.pdf",
@@ -116,6 +143,9 @@ export const pdfFiles_sem_1 = [
       id: 12,
       name: "African Civilization Exam_Paper 2020 - 2021",
       course_key: "African_Civilization",
+      exam_paper: {
+        year: "2020 - 2021",
+      },
       course_index: 2,
       isCached: false,
       url: "/Docs/Semester_1/Civilisation_Africaine_Exam_Paper_20_21.pdf",
@@ -136,6 +166,9 @@ export const pdfFiles_sem_1 = [
       id: 14,
       name: "Phonetics and Phonology Exam_Paper 2016-2017",
       course_key: "Phonetics_Phonology",
+        exam_paper: {
+        year: "2016 - 2017",
+      },
       course_index: 3,
       isCached: false,
       url: "/Docs/Semester_1/Phonetics_and_Phonology_Exam_Paper_16_17.pdf",
@@ -146,6 +179,9 @@ export const pdfFiles_sem_1 = [
       id: 15,
       name: "Phonetics and Phonology Exam_Paper 2019-2020",
       course_key: "Phonetics_Phonology",
+        exam_paper: {
+        year: "2019 - 2020",
+      },
       course_index: 3,
       isCached: false,
       url: "/Docs/Semester_1/Phonetics_and_Phonology_Exam_Paper_19_20.pdf",
@@ -156,6 +192,9 @@ export const pdfFiles_sem_1 = [
       id: 16,
       name: "Phonetics and Phonology Exam_Paper 2020-2021",
       course_key: "Phonetics_Phonology",
+        exam_paper: {
+        year: "2020 - 2021",
+      },
       course_index: 3,
       isCached: false,
       url: "/Docs/Semester_1/Phonetics_and_Phonology_Exam_Paper_20_21.pdf",
@@ -166,6 +205,9 @@ export const pdfFiles_sem_1 = [
       id: 17,
       name: "Phonetics and Phonology Exam_Paper 2021-2022",
       course_key: "Phonetics_Phonology",
+        exam_paper: {
+        year: "2021 - 2022",
+      },
       course_index: 3,
       isCached: false,
       url: "/Docs/Semester_1/Phonetics_and_Phonology_Exam_Paper_21_22.pdf",
@@ -176,6 +218,9 @@ export const pdfFiles_sem_1 = [
       id: 18,
       name: "Phonetics and Phonology Exam_Paper 2022-2023",
       course_key: "Phonetics_Phonology",
+        exam_paper: {
+        year: "2022 - 2023",
+      },
       course_index: 3,
       isCached: false,
       url: "/Docs/Semester_1/Phonetics_and_Phonology_Exam_Paper_22_23.pdf",
@@ -196,6 +241,9 @@ export const pdfFiles_sem_1 = [
       id: 20,
       name: "Méthodologie du Travail Universitaire Exam_Paper 2020-2021",
       course_key: "Travail_Universitaire",
+        exam_paper: {
+        year: "2020 - 2021",
+      },
       course_index: 4,
       isCached: false,
       url: "/Docs/Semester_1/Méthodologie_du_Travail_Universitaire_Exam_Paper_20_21.pdf",
@@ -206,6 +254,9 @@ export const pdfFiles_sem_1 = [
       id: 21,
       name: "Méthodologie du Travail Universitaire Exam_Paper 2021-2022",
       course_key: "Travail_Universitaire",
+        exam_paper: {
+        year: "2021 - 2022",
+      },
       course_index: 4,
       isCached: false,
       url: "/Docs/Semester_1/Méthodologie_du_Travail_Universitaire_Exam_Paper_21_22.pdf",
@@ -216,6 +267,9 @@ export const pdfFiles_sem_1 = [
       id: 22,
       name: "Méthodologie du Travail Universitaire Exam_Paper 2022-2023",
       course_key: "Travail_Universitaire",
+        exam_paper: {
+        year: "2022 - 2023",
+      },
       course_index: 4,
       isCached: false,
       url: "/Docs/Semester_1/Méthodologie_du_Travail_Universitaire_Exam_Paper_22_23.pdf",
@@ -246,6 +300,9 @@ export const pdfFiles_sem_1 = [
       id: 25,
       name: "Civilisation Britanique Exam_Paper 2020-2021",
       course_key: "Civilisation_Britanique",
+        exam_paper: {
+        year: "2020 - 2021",
+      },
       course_index: 5,
       isCached: false,
       url: "/Docs/Semester_1/Civilisation_Britanique_Exam_Paper_20_21.pdf",
@@ -256,6 +313,9 @@ export const pdfFiles_sem_1 = [
       id: 26,
       name: "Civilisation Britanique Exam_Paper 2021-2022",
       course_key: "Civilisation_Britanique",
+        exam_paper: {
+        year: "2021 - 2022",
+      },
       course_index: 5,
       isCached: false,
       url: "/Docs/Semester_1/Civilisation_Britanique_Exam_Paper_21_22.pdf",
@@ -266,6 +326,9 @@ export const pdfFiles_sem_1 = [
       id: 27,
       name: "Civilisation Britanique Exam_Paper 2022-2023",
       course_key: "Civilisation_Britanique",
+        exam_paper: {
+        year: "2022 - 2023",
+      },
       course_index: 5,
       isCached: false,
       url: "/Docs/Semester_1/Civilisation_Britanique_Exam_Paper_22_23.pdf",
@@ -290,6 +353,9 @@ export const pdfFiles_sem_1 = [
         name: "Anglophone Literature Exam_Paper 2020-2021",
         course_key: "Anglophone_Lit",
         course_index: 0,
+        exam_paper: {
+          year: "2020 - 2021",
+        },
         url: "/Docs/Semester_2/Anglophone_Lit_Exam_20_21.pdf",
         opendoc:
           "https://drive.google.com/file/d/1WWDORk6Iah8lnGhIQHICbhlBQ49rpDkD/view?usp=drive_link",
@@ -298,6 +364,9 @@ export const pdfFiles_sem_1 = [
         id: 3,
         name: "Anglophone Literature Exam_Paper 2022-2023",
         course_key: "Anglophone_Lit",
+        exam_paper: {
+          year: "2022 - 2023"
+        },
         course_index: 0,
         url: "/Docs/Semester_2/Anglophone_Lit_Exam_22_23.pdf",
         opendoc:
@@ -317,6 +386,9 @@ export const pdfFiles_sem_1 = [
         name: "Anglophone Poetry Exam_Paper 2019-2020",
         course_key: "Anglophone_Poetry",
         course_index: 1,
+        exam_paper: {
+          year: "2019 - 2020",
+        },
         url: "/Docs/Semester_2/Anglophone_Poetry_Exam_19_20.pdf",
         opendoc:
           "https://drive.google.com/file/d/1CcErEvK7MFxzhm_vkAgvCP1_2UEDrmit/view?usp=drive_link",
@@ -325,6 +397,9 @@ export const pdfFiles_sem_1 = [
         id: 6,
         name: "Anglophone Poetry Exam_Paper 2020-2021",
         course_key: "Anglophone_Poetry",
+        exam_paper: {
+          year: "2020 - 2021"
+        },
         course_index: 1,
         url: "/Docs/Semester_2/Anglophone_Poetry_Exam_20_21.pdf",
         opendoc:
@@ -334,6 +409,9 @@ export const pdfFiles_sem_1 = [
         id: 7,
         name: "Anglophone Poetry Exam_Paper 2022-2023",
         course_key: "Anglophone_Poetry",
+        exam_paper: {
+          year: "2022 - 2023"
+        },
         course_index: 1,
         url: "/Docs/Semester_2/Anglophone_Poetry_Exam_22_23.pdf",
         opendoc:
@@ -352,6 +430,9 @@ export const pdfFiles_sem_1 = [
         id: 9,
         name: "Anglophone Prose Exam_Paper 2019-2020",
         course_key: "Anglophone_Prose",
+          exam_paper: {
+            year: "2019 - 2020"
+          },
         course_index: 2,
         url: "/Docs/Semester_2/Anglophone_Prose_Exam_19_20.pdf",
         opendoc:
@@ -361,6 +442,9 @@ export const pdfFiles_sem_1 = [
         id: 10,
         name: "Anglophone Prose Exam_Paper 2020-2021",
         course_key: "Anglophone_Prose",
+          exam_paper: {
+            year: "2020 - 2021"
+          },
         course_index: 2,
         url: "/Docs/Semester_2/Anglophone_Prose_Exam_20_21.pdf",
         opendoc:
@@ -370,6 +454,9 @@ export const pdfFiles_sem_1 = [
         id: 11,
         name: "Anglophone Prose Exam_Paper 2022-2023",
         course_key: "Anglophone_Prose",
+          exam_paper: {
+            year: "2022 - 2023"
+          },
         course_index: 2,
         url: "/Docs/Semester_2/Anglophone_Prose_Exam_22_23.pdf",
         opendoc:
@@ -388,6 +475,9 @@ export const pdfFiles_sem_1 = [
         id: 13,
         name: "Anglophone Theater Exam_Paper 2020-2021",
         course_key: "Anglophone_Theater",
+        exam_paper: {
+          year: "2020 - 2021"
+        },
         course_index: 3,
         url: "/Docs/Semester_2/Anglophone_Theater_Exam_20_21.pdf",
         opendoc:
@@ -397,6 +487,9 @@ export const pdfFiles_sem_1 = [
         id: 14,
         name: "Anglophone Theater Exam_Paper 2022-2023",
         course_key: "Anglophone_Theater",
+          exam_paper: {
+            year: "2022 - 2023"
+          },
         course_index: 3,
         url: "/Docs/Semester_2/Anglophone_Theater_Exam_22_23.pdf",
         opendoc:
@@ -424,6 +517,9 @@ export const pdfFiles_sem_1 = [
         id: 17,
         name: "Creative Writing Exam_Paper 2019-2020",
         course_key: "Creative_Writing",
+        exam_paper: {
+          year: "2019 - 2020"
+        },
         course_index: 4,
         url: "/Docs/Semester_2/Creative_Writing_Exam_19_20.pdf",
         opendoc:
@@ -433,6 +529,9 @@ export const pdfFiles_sem_1 = [
         id: 18,
         name: "Creative Writing Exam_Paper 2020-2021",
         course_key: "Creative_Writing",
+        exam_paper: {
+          year: "2020 - 2021"
+        },
         course_index: 4,
         url: "/Docs/Semester_2/Creative_Writing_Exam_20_21.pdf",
         opendoc:
@@ -442,6 +541,9 @@ export const pdfFiles_sem_1 = [
         id: 19,
         name: "Creative Writing Exam_Paper 2022-2023",
         course_key: "Creative_Writing",
+          exam_paper: {
+            year: "2022 - 2023"
+          },
         course_index: 4,
         url: "/Docs/Semester_2/Creative_Writing_Exam_22_23.pdf",
         opendoc:
@@ -461,6 +563,9 @@ export const pdfFiles_sem_1 = [
         id: 21,
         name: "Méthodologie de Traduction_Exam_19_20",
         course_key: "Méth_de_Traduction",
+        exam_paper: {
+          year: "2019 - 2020"
+        },
         course_index: 5,
         url: "/Docs/Semester_2/Traduction_Exam_19_20.pdf",
         opendoc:
@@ -470,6 +575,9 @@ export const pdfFiles_sem_1 = [
         id: 22,
         name: "Méthodologie de Traduction_Exam_20_21",
         course_key: "Méth_de_Traduction",
+        exam_paper: {
+          year: "2020 - 2021"
+        },
         course_index: 5,
         url: "/Docs/Semester_2/Traduction_Exam_20_21.pdf",
         opendoc:
@@ -479,6 +587,9 @@ export const pdfFiles_sem_1 = [
         id: 23,
         name: "Méthodologie de Traduction_Exam_22_23",
         course_key: "Méth_de_Traduction",
+        exam_paper: {
+          year: "2022 - 2023"
+        },
         course_index: 5,
         url: "/Docs/Semester_2/Traduction_Exam_22_23.pdf",
         opendoc:

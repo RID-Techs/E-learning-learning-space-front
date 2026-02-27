@@ -424,47 +424,68 @@ export function Home() {
   });
 
   useEffect(() => {
-    async function verifyCache(setSemesterFiles) {
+    // 1. Move isMounted INSIDE the effect so it resets properly on every run
+  let isMounted = true; 
+
+  async function verifyCache(setSemesterFiles) {
+    try {
+      const cacheName = 'local-media-cache';
+      const cache = await caches.open(cacheName);
+      const cachedRequests = await cache.keys();
+      
+      const cachedUrls = cachedRequests.map(req => decodeURIComponent(req.url));
+      
+      // 2. Check if mounted right BEFORE setting state (after async work)
+      if (!isMounted) return; 
+      setSemesterFiles(prevFiles => {
+        let hasChanges = false;
         
-        try {
-        const cacheName = 'local-media-cache';
-        const cache = await caches.open(cacheName);
-        const cachedRequests = await cache.keys();
-        
-        // Optimisation : Créer un tableau simple des URLs en cache pour chercher vite
-        // On obtient ["http://localhost:4173/Docs/...", ...]
-        const cachedUrls = cachedRequests.map(req => decodeURIComponent(req.url));
-        
-        // 2. Mettre à jour le State
-        setSemesterFiles(prevFiles => {
-          // On parcourt la liste actuelle
-          return prevFiles.map(doc => {
-            // Est-ce que ce document est dans le cache ?
-            // On vérifie si l'URL complète du cache contient ton chemin relatif (/Docs/...)
-            const isInCache = cachedUrls.some(url => url.includes(doc.url));
-            
-            // Si oui, on retourne le doc avec isCached: true
-            // Si non, on garde le doc tel quel
-            if (isInCache) {
-              return { ...doc, isCached: true };
-            }
-            return doc;
-          });
+        const newFiles = prevFiles.map(doc => {
+          const isInCache = cachedUrls.some(url => url.includes(doc.url));
+          
+          // 3. Only create a new object if the status actually changed
+          if (isInCache && !doc.isCached) {
+            hasChanges = true;
+            return { ...doc, isCached: true };
+          } 
+          // Optional: If an item was removed from the cache, flip it to false
+          else if (!isInCache && doc.isCached) {
+            hasChanges = true;
+            return { ...doc, isCached: false };
+          }
+          
+          // If no change, return the exact same object reference
+          return doc; 
         });
 
-      } catch (error) {
-        console.error("Erreur lecture cache:", error);
-      }
-      
-      }
+        // 4. If nothing changed, return prevFiles to PREVENT a re-render
+        return hasChanges ? newFiles : prevFiles; 
+      });
 
-      if(checked_sem_1) verifyCache(setFilesSem1);
-      if(checked_sem_2) verifyCache(setFilesSem2);
-      if(checked_sem_3) verifyCache(setFilesSem3);
-      if(checked_sem_4) verifyCache(setFilesSem4);
-      if(checked_sem_5) verifyCache(setFilesSem5);
-      if(checked_sem_6) verifyCache(setFilesSem6);
-  }, [checked_sem_1, filesSem1, checked_sem_2, filesSem2, checked_sem_3, filesSem3, checked_sem_4, filesSem4, checked_sem_5, filesSem5, checked_sem_6, filesSem6]);
+    } catch (error) {
+      console.error("Erreur lecture cache:", error);
+    }
+  }
+    
+      // 2. Wrap the execution in a helper function so we can call it easily
+  const checkAllCaches = () => {
+    if(checked_sem_1) verifyCache(setFilesSem1);
+    if(checked_sem_2) verifyCache(setFilesSem2);
+    if(checked_sem_3) verifyCache(setFilesSem3);
+    if(checked_sem_4) verifyCache(setFilesSem4);
+    if(checked_sem_5) verifyCache(setFilesSem5);
+    if(checked_sem_6) verifyCache(setFilesSem6);
+  };
+  checkAllCaches();
+  // 4. Add the event listener to catch any downloads/deletions happening in real-time
+  window.addEventListener('cache-updated', checkAllCaches);
+    
+      return () => {
+        isMounted = false;
+        // 5. Clean up the listener when the component unmounts
+        window.removeEventListener('cache-updated', checkAllCaches);
+      }
+  }, [checked_sem_1, checked_sem_2, checked_sem_3, checked_sem_4, checked_sem_5, checked_sem_6]);
 
   const [offlineMsg, setOfflineMsg] = useState(false);
   const handleOfflineMsg = () => {
@@ -521,8 +542,9 @@ export function Home() {
             document.body.appendChild(tempLink);
             tempLink.click();
             document.body.removeChild(tempLink);
-
             window.URL.revokeObjectURL(url);
+            // Put this right after your file is successfully added to the cache
+            window.dispatchEvent(new Event('cache-updated'));
         }
     } catch (error) {
       setDownloadTxt("Download");

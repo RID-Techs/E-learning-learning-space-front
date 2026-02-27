@@ -8,9 +8,28 @@ import { Semester3Units } from "./Teaching_Units/Sem_3_4/Sem_3_Units";
 import { Semester4Units } from "./Teaching_Units/Sem_3_4/Sem_4_Units";
 import { Semester5Units } from "./Teaching_Units/Sem_5_6/Sem_5_Units";
 import { Semester6Units } from "./Teaching_Units/Sem_5_6/Sem_6_Units";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useNavigationType, useSearchParams } from "react-router-dom";
+
+const backBtn = <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  strokeWidth="2"
+  strokeLinecap="round"
+  strokeLinejoin="round"
+>
+  <path d="M13 14l-4 -4l4 -4" />
+  <path d="M8 14l-4 -4l4 -4" />
+  <path d="M9 10h7a4 4 0 1 1 0 8h-1" />
+</svg>
 
 export function GetALlExamPapers() {
+  const navigate = useNavigate();
+  const navigationType = useNavigationType();
+  const [, setSearchParams] = useSearchParams();
   const [semester_1_Box, setSemester_1_Box] = useState(false);
   const [semester_2_Box, setSemester_2_Box] = useState(false);
   const [semester_3_Box, setSemester_3_Box] = useState(false);
@@ -20,6 +39,7 @@ export function GetALlExamPapers() {
 
   const handleSemester1CheckboxChange = async (event) => {
     setSemester_1_Box(event.target.checked);
+    setSearchParams({ semester: "1" });
     localStorage.setItem("exp", "1");
     setSemester_2_Box(false);
     setSemester_3_Box(false);
@@ -30,6 +50,7 @@ export function GetALlExamPapers() {
 
   const handleSemester2CheckboxChange = (event) => {
     setSemester_2_Box(event.target.checked);
+    setSearchParams({ semester: "2" });
     localStorage.setItem("exp", "2");
     setSemester_1_Box(false);
     setSemester_3_Box(false);
@@ -40,6 +61,7 @@ export function GetALlExamPapers() {
 
   const handleSemester3CheckboxChange = (event) => {
     setSemester_3_Box(event.target.checked);
+    setSearchParams({ semester: "3" });
     localStorage.setItem("exp", "3");
     setSemester_1_Box(false);
     setSemester_2_Box(false);
@@ -50,6 +72,7 @@ export function GetALlExamPapers() {
 
   const handleSemester4CheckboxChange = (event) => {
     setSemester_4_Box(event.target.checked);
+    setSearchParams({ semester: "4" });
     localStorage.setItem("exp", "4");
     setSemester_1_Box(false);
     setSemester_2_Box(false);
@@ -60,6 +83,7 @@ export function GetALlExamPapers() {
 
   const handleSemester5CheckboxChange = (event) => {
     setSemester_5_Box(event.target.checked);
+    setSearchParams({ semester: "5" });
     localStorage.setItem("exp", "5");
     setSemester_1_Box(false);
     setSemester_2_Box(false);
@@ -70,6 +94,7 @@ export function GetALlExamPapers() {
 
   const handleSemester6CheckboxChange = (event) => {
     setSemester_6_Box(event.target.checked);
+    setSearchParams({ semester: "6" });
     localStorage.setItem("exp", "6");
     setSemester_1_Box(false);
     setSemester_2_Box(false);
@@ -94,21 +119,27 @@ export function GetALlExamPapers() {
         switch (exp) {
           case "1":
             setSemester_1_Box(true);
+            setSearchParams({ semester: "1" });
             break;
           case "2":
             setSemester_2_Box(true);
+            setSearchParams({ semester: "2" });
             break;
           case "3":
             setSemester_3_Box(true);
+            setSearchParams({ semester: "3" });
             break;
           case "4":
             setSemester_4_Box(true);
+            setSearchParams({ semester: "4" });
             break;
           case "5":
             setSemester_5_Box(true);
+            setSearchParams({ semester: "5" });
             break;
           case "6":
             setSemester_6_Box(true);
+            setSearchParams({ semester: "6" });
             break;
           default:
             break;
@@ -123,6 +154,10 @@ export function GetALlExamPapers() {
             }
           }, [])
 
+    const backToHomePage = () => {
+      navigate("/");
+    }
+
   return (
     <>
     <div ref={moveToItemRef} className="exam-paper-welcome-msg contribute-msg-holder">
@@ -133,6 +168,11 @@ export function GetALlExamPapers() {
       </div>
     </div>
 
+    <div className="back-to-home-btn">
+      <button onClick={backToHomePage} type="button">
+        <span>{backBtn}</span> <span>Back</span>
+      </button>
+    </div>
     <div className="choose-exam-paper-semester-wrapper p-2">
       <h3 className="choose-exam-paper-semester-title">∻ <span>Choose a semester</span> 🖇</h3>
     </div>

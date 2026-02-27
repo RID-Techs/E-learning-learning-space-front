@@ -129,7 +129,6 @@ export function Podcast () {
   const currentBox_6 = useRef(null);
 
   useEffect(() => {
-
     if(isPodcastSem1) {
       setPodcastSem_1(true);
       if(currentBox_1.current){

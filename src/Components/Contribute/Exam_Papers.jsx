@@ -99,6 +99,7 @@ export function AddExamPapers() {
   const [imgUploaded, setImgUploaded] = useState(false);
   const [previewedImg, setPreviewedImg] = useState("");
   const [examPaperImg, setExamPaperImg] = useState(null);
+  const [courseKey, setCourseKey] = useState("");
 
   const handleImgUpload = (e) => {
     const fileInput = e.target;
@@ -113,12 +114,184 @@ export function AddExamPapers() {
   const handleSemester = (event) => {
     setChoosedTeachingUnit("");
     setPaperYear("");
+    setCourseKey("");
     const choosedValue = event.target.value.trim();
     setChoosedSemester(choosedValue);
   };
   const handleChoosedTeachingUnit = (event) => {
     const choosedValue = event.target.value.trim();
     setChoosedTeachingUnit(choosedValue);
+    if(choosedSemester === "Semester 1") {
+      switch (choosedValue) {
+        case "Phonetics and Phonology":
+          setCourseKey("Phonetics_Phonology");
+          break;
+          case "English Grammar":
+            setCourseKey("English_Grammar");
+            break;
+            case "British Civilisation":
+              setCourseKey("British_Civilization");
+              break;
+        case "American Civilisation":
+          setCourseKey("American_Civilization");
+          break;
+          case "African Civilisation : Pre-colonial Period":
+            setCourseKey("African_Civilization");
+            break;
+            case "Méthodologie du Travail Universitaire":
+              setCourseKey("Travail_Universitaire");
+              break;
+              case "Techniques d'Expression Écrite":
+                setCourseKey("Expression_Ecrite_S1");
+                break;
+                case "Techniques de Composition en Français":
+                  setCourseKey("Composition_Français");
+                  break;
+        default:
+          setCourseKey("");
+      }
+    }
+     if(choosedSemester === "Semester 2") {
+      switch (choosedValue) {
+        case "Anglophone Literature":
+          setCourseKey("Anglophone_Lit");
+          break;
+          case "Anglophone Poetry":
+            setCourseKey("Anglophone_Poetry");
+            break;
+            case "Anglophone Theater":
+              setCourseKey("Anglophone_Theater");
+              break;
+        case "Anglophone Prose":
+          setCourseKey("Anglophone_Prose");
+          break;
+          case "Creative Writing":
+            setCourseKey("Creative_Writing");
+            break;
+            case "Méthodologie de Traduction":
+              setCourseKey("Méth_de_Traduction");
+              break;
+              case "Allemand":
+                setCourseKey("Allemand");
+                break;
+                case "Espagnol":
+                  setCourseKey("Espagnol");
+                  break;
+        default:
+          setCourseKey("");
+      }
+    }
+      if(choosedSemester === "Semester 3") {
+      switch (choosedValue) {
+        case "Roman Africain":
+          setCourseKey("African_Novel");
+          break;
+          case "Roman Américain":
+            setCourseKey("American_Novel");
+            break;
+            case "Morphologie et Syntaxe":
+              setCourseKey("Morphology_and_Syntax");
+              break;
+        case "Roman Anglais du 18è siècle":
+          setCourseKey("English_Novel");
+          break;
+          case "Traduction Avancée":
+            setCourseKey("Traduction_Avancée");
+            break;
+            case "Théâtre Africain : Époque Coloniale":
+              setCourseKey("Théâtre_Africain");
+              break;
+              case "Théâtre Classique Anglais":
+                setCourseKey("Théâtre_Classique");
+                break;
+                case "Techniques d'expression Écrite Avancée":
+                  setCourseKey("Expression_Ecrite_S3");
+                  break;
+        default:
+          setCourseKey("");
+      }
+    }
+       if(choosedSemester === "Semester 4") {
+      switch (choosedValue) {
+        case "Théâtre Américain à ses Origines":
+          setCourseKey("Early_Am_Theater");
+          break;
+          case "Civilisation Africaine : Période Coloniale et Post-coloniale":
+            setCourseKey("African_Civilisation");
+            break;
+            case "Civilisation Britannique Contemporaine":
+              setCourseKey("Contemporary_British_Civ");
+              break;
+        case "Civilisation Américaine de l'indépendance à nos jours":
+          setCourseKey("American_Civilisation");
+          break;
+          case "Poésie Africaine":
+            setCourseKey("African_Poetry");
+            break;
+            case "Poésie Anglaise":
+              setCourseKey("English_Poetry");
+              break;
+              case "Poésie Américaine":
+                setCourseKey("American_Poetry");
+                break;
+        default:
+          setCourseKey("");
+      }
+    }
+         if(choosedSemester === "Semester 5") {
+      switch (choosedValue) {
+        case "Roman Anglais du 19è siècle":
+          setCourseKey("English_Novel");
+          break;
+          case "Roman Moderne Américain":
+            setCourseKey("Modern_American");
+            break;
+            case "Littérature et Culture":
+              setCourseKey("Litt_Culture");
+              break;
+        case "Roman Post-colonial Africain":
+          setCourseKey("Post_African_Novel");
+          break;
+          case "Littérature et Environnement":
+            setCourseKey("Litt_Env");
+            break;
+            case "Analyse du Discours":
+              setCourseKey("Discourse_Analysis");
+              break;
+              case "Analyse Morpho-Phonologique":
+                setCourseKey("Morpho_Phonology");
+                break;
+        default:
+          setCourseKey("");
+      }
+    }
+           if(choosedSemester === "Semester 6") {
+      switch (choosedValue) {
+        case "Techniques de Rédaction Académique":
+          setCourseKey("Academic_Writing");
+          break;
+          case "Théorie et Critique Littéraire":
+            setCourseKey("Litt_Theory");
+            break;
+            case "Littérature Comparée":
+              setCourseKey("Litt_Comparée");
+              break;
+        case "Étude et Critique de la Littérature Africaine":
+          setCourseKey("Critique_Litt_Africa");
+          break;
+          case "Étude et Critique de la Littérature Anglaise":
+            setCourseKey("Critique_Litt_Anglaise");
+            break;
+            case "Étude et Critique de la Littérature Américaine":
+              setCourseKey("Critique_Litt_America");
+              break;
+              case "Littérature et Media":
+                setCourseKey("Litt_Media");
+                break;
+        default:
+          setCourseKey("");
+      }
+    }
   };
 
     const handlePaperSide = (event) => {
@@ -192,7 +365,6 @@ export function AddExamPapers() {
                 paper.paper_year === paperYear
         );
         if (isPaperExists_1) {
-          console.log("isPaperExists_1", isPaperExists_1);
           MendatoryFields(
             "This exam paper already exists for the selected part, semester and year."
           );
@@ -207,7 +379,6 @@ export function AddExamPapers() {
                   paper.paper_year === paperYear
           );
           if (isPaperExists_2) {
-            console.log("isPaperExists_2", isPaperExists_2);
             MendatoryFields(
               "This exam paper already exists for the selected semester and year."
             );
@@ -238,6 +409,7 @@ export function AddExamPapers() {
               paper_side: choosedPaperSide === "" ? null : choosedPaperSide,
               paper_img: pictureUrl,
               paper_year: paperYear,
+              course_key: courseKey
             })
             .select();
 
@@ -253,6 +425,7 @@ export function AddExamPapers() {
             setImgUploaded(false);
             setChoosedSemester("");
             setChoosedTeachingUnit("");
+            setCourseKey("");
             setIsDoubleSided("");
             setChoosedPaperSide("");
             setShowPaperSidePart(false);
@@ -517,6 +690,9 @@ export function AddExamPapers() {
                       </>
                     )}
                   </select>
+                </div>
+                <div style={{display: "none"}} className="form-group">
+                  <input type="text" value={courseKey} readOnly />
                 </div>
                 <div className="form-group">
                   <label htmlFor="paper-side">Double-Sided or Two Parts ?</label>

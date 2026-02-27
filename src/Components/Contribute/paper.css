@@ -30,6 +30,29 @@ label {
   margin: 1em 0;
 }
 
+.back-to-home-btn {
+  margin-left: 2em;
+  & button {
+    outline: none;
+    cursor: pointer;
+    padding: 0.3em 0.5em;
+    border-radius: 5px;
+    border: 1px solid var(--text-color);
+    background-color: var(--text-color);
+    font-weight: bold;
+    color: var(--bg-color);
+    letter-spacing: 0.2em;
+    box-shadow: 1px 1px 2px var(--text-color);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3em;
+    &:hover {
+      box-shadow: 3px 1px 3px currentColor;
+    }
+  }
+}
+
 .upload-picture-wrapper {
   cursor: pointer;
   display: flex;
@@ -422,12 +445,11 @@ label {
 .paper-item {
   border: 2px solid transparent;
   border-radius: 5px;
-  padding: 1em;
+  padding-top: 1em;
   background-color: var(--bg-color);
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
   transition: all 0.3s ease-in-out;
-
 }
 
 .paper-info-body {
@@ -486,4 +508,86 @@ label {
     &:hover {
     background-color: var(--highlight-color-hover);
   }
+}
+
+.exam-papers-corrections-links {
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;
+  background-color: #0A2239;
+  padding: 2em 2em 0em 2em;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+}
+
+.exam-papers-corrections-links > details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  & summary {
+    color: #0A2239;
+    background-color: hsl(209, 70%, 99%);
+    padding: 0.5em;
+    border-radius: 50px;
+    font-weight: bold;
+    margin-bottom: 2em;
+  }
+}
+
+.exam-papers-corrections-links .corrected-papers-holder {
+  background-color: hsl(209, 70%, 95%);
+  margin-bottom: 1em;
+  padding: 0.5em;
+  border-top-left-radius: 25px;
+  border-bottom-right-radius: 8px;
+  position: relative;
+  isolation: isolate;
+}
+
+.exam-papers-corrections-links .corrected-papers-holder::before {
+  position: absolute;
+  content: "";
+  height: 50px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: hsl(209, 70%,8%);
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 25px;
+  z-index: -1;
+}
+
+.corrected-papers-holder-title {
+  text-align: center;
+  color: #fff;
+  font-weight: 500;
+}
+.corrected-papers {
+padding: 1em 0.5em;
+}
+.corrected-papers-name {
+  text-align: center;
+}
+.corrected-papers-holder .doc-action-button a {
+  text-decoration: none;
+  background-color: hsl(209, 70%, 87%);
+  color: #0A2239;
+  padding: 0.3em 0.5em;
+  font-weight: 500;
+  border-radius: 5px;
+  display: inline-flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.corrected-papers:nth-child(even) {
+  border-left: 2px solid var(--highlight-color-hover);
+  border-bottom: 2px solid var(--highlight-color-hover);
+  border-bottom-left-radius: 8px;
+
+}
+.corrected-papers:nth-child(odd) {
+  border-bottom: 2px solid var(--highlight-color-hover);
+  border-right: 2px solid var(--highlight-color-hover);
+  border-bottom-right-radius: 8px;
 }

@@ -23,6 +23,9 @@
       name: "19th Century English Novel Exam Paper of 2021 - 2022",
       url: "/Docs/Semester_5/Nineteenth_Century_English_Novel_Exam_Paper_21_22.pdf",
       course_key: "English_Novel",
+      exam_paper: {
+        year: "2021 - 2022",
+      },
       course_index: 0,
       opendoc:
         "https://drive.google.com/file/d/1GX63dD9n2SYouHgroAJdF1C6_6mLu2a_/view?usp=drive_link",
@@ -31,6 +34,9 @@
       id: 3,
       name: "19th Century English Novel Exam Paper of 2022 - 2023",
       course_key: "English_Novel",
+      exam_paper: {
+        year: "2022 - 2023",
+      },
       course_index: 0,
       url: "/Docs/Semester_5/Nineteenth_Century_English_Novel_Exam_Paper_22_23.pdf",
       opendoc:
@@ -49,6 +55,9 @@
       id: 5,
       name: "Morpho-Phonological Analysis Exam_Paper 2020-2021",
       course_key: "Morpho_Phonology",
+      exam_paper: {
+        year: "2020 - 2021",
+      },
       course_index: 1,
       url: "/Docs/Semester_5/Morpho_Phonological_Analysis_Exam_Paper_20_21.pdf",
       opendoc:
@@ -58,6 +67,9 @@
       id: 6,
       name: "Morpho-Phonological Analysis Exam_Paper 2021-2022",
       course_key: "Morpho_Phonology",
+        exam_paper: {
+        year: "2021 - 2022",
+      },
       course_index: 1,
       url: "/Docs/Semester_5/Morpho_Phonological_Analysis_Exam_Paper_21_22.pdf",
       opendoc:
@@ -67,6 +79,9 @@
       id: 7,
       name: "Morpho-Phonological Analysis Exam_Paper 2022-2023",
       course_key: "Morpho_Phonology",
+      exam_paper: {
+        year: "2022 - 2023",
+      },
       course_index: 1,
       url: "/Docs/Semester_5/Morpho_Phonological_Analysis_Exam_Paper_22_23.pdf",
       opendoc:
@@ -85,6 +100,9 @@
       id: 9,
       name: "Roman Post-Colonial_Africain Exam_Paper 2021-2022",
       course_key: "Post_African_Novel",
+      exam_paper: {
+        year: "2021 - 2022",
+      },
       course_index: 2,
       url: "/Docs/Semester_5/Roman_PostColonial_Africain_Exam_Paper_21_22.pdf",
       opendoc:
@@ -103,6 +121,9 @@
       id: 11,
       name: "Discourse Analysis Exam_Paper 2022-2023",
       course_key: "Discourse_Analysis",
+      exam_paper: {
+        year: "2022 - 2023",
+      },
       course_index: 3,
       url: "/Docs/Semester_5/Discourse_Analysis_Exam_Paper_22_23.pdf",
       opendoc:
@@ -121,6 +142,9 @@
       id: 13,
       name: "Littérature et Environnement Exam_Paper 2021-2022",
       course_key: "Litt_Env",
+      exam_paper: {
+        year: "2021 - 2022",
+      },
       course_index: 4,
       url: "/Docs/Semester_5/Environment_and_Literature_Exam_Paper_21_22.pdf",
       opendoc:
@@ -130,6 +154,9 @@
       id: 14,
       name: "Littérature et Environnement Exam_Paper 2022-2023",
       course_key: "Litt_Env",
+      exam_paper: {
+        year: "2022 - 2023",
+      },
       course_index: 4,
       url: "/Docs/Semester_5/Environment_and_Literature_Exam_Paper_22_23.pdf",
       opendoc:
@@ -177,6 +204,9 @@
       id: 19,
       name: "Littérature et Culture Exam_Paper 2022-2023",
       course_key: "Litt_Culture",
+      exam_paper: {
+        year: "2022 - 2023",
+      },
       course_index: 5,
       url: "/Docs/Semester_5/Culture_and_Literature_Exam_Paper_22_23.pdf",
       opendoc:
@@ -219,6 +249,9 @@ export const pdfFiles_sem_6 = [
         name: "Academic Writing Exam_Paper 2021-2022",
         course_key: "Academic_Writing",
         course_index: 0,
+        exam_paper: {
+          year: "2021 - 2022",
+        },
         url: "/Docs/Semester_6/Academic_Writing_Exam_21_22.pdf",
         opendoc:
           "https://drive.google.com/file/d/1CwV17qnXFTNtdbOgGgPYSlO8cmACmraO/view?usp=drive_link",
@@ -227,6 +260,9 @@ export const pdfFiles_sem_6 = [
         id: 3,
         name: "Academic Writing Exam_Paper 2022-2023",
         course_key: "Academic_Writing",
+        exam_paper: {
+          year: "2022 - 2023",
+        },
         course_index: 0,
         url: "/Docs/Semester_6/Academic_Writing_Exam_22_23.pdf",
         opendoc:
@@ -246,6 +282,9 @@ export const pdfFiles_sem_6 = [
         name: "Literary Theory and Criticism Exam_Paper 2022-2023",
         course_key: "Litt_Theory",
         course_index: 1,
+        exam_paper: {
+          year: "2022 - 2023",
+        },
         url: "/Docs/Semester_6/Literary_Theory_and_Criticism_Exam_22_23.pdf",
         opendoc:
           "https://drive.google.com/file/d/1Hel8kdZdV6EcKcyxGT306WA6ojS7SK_H/view?usp=drive_link",
@@ -264,6 +303,9 @@ export const pdfFiles_sem_6 = [
         name: "Étude et Critique de la Littérature Africaine Exam_Paper 2021-2022",
         course_key: "Critique_Litt_Africa",
         course_index: 2,
+        exam_paper: {
+          year: "2021 - 2022",
+        },
         url: "/Docs/Semester_6/Etu_Crit_Lit_Afr_Exam_21_22.pdf",
         opendoc:
           "https://drive.google.com/file/d/1NXhGoO6kLo71i_I0m3AKK1oXafvjbA_a/view?usp=drive_link",
@@ -273,6 +315,9 @@ export const pdfFiles_sem_6 = [
         name: "Étude et Critique de la Littérature Africaine Exam_Paper 2022-2023",
         course_key: "Critique_Litt_Africa",
         course_index: 2,
+        exam_paper: {
+          year: "2022 - 2023",
+        },
         url: "/Docs/Semester_6/Etu_Crit_Lit_Afr_Exam_22_23.pdf",
         opendoc:
           "https://drive.google.com/file/d/1eP49IprNfloYng0t7vbeSdW_4tQfS7i3/view?usp=drive_link",
@@ -317,6 +362,9 @@ export const pdfFiles_sem_6 = [
         id: 11,
         name: "Étude et Critique de la Littérature Anglaise Exam_Paper 2021-2022",
         course_key: "Critique_Litt_Anglaise",
+        exam_paper: {
+          year: "2021 - 2022",
+        },
         course_index: 4,
         url: "/Docs/Semester_6/Etu_Crit_Lit_Ang_Exam_21_22.pdf",
         opendoc:
@@ -326,6 +374,9 @@ export const pdfFiles_sem_6 = [
         id: 12,
         name: "Étude et Critique de la Littérature Anglaise Exam_Paper 2022-2023",
         course_key: "Critique_Litt_Anglaise",
+        exam_paper: {
+          year: "2022 - 2023",
+        },
         course_index: 4,
         url: "/Docs/Semester_6/Etu_Crit_Lit_Ang_Exam_22_23.pdf",
         opendoc:
@@ -344,6 +395,9 @@ export const pdfFiles_sem_6 = [
         id: 14,
         name: "Littérature Comparée Exam_Paper 2022-2023",
         course_key: "Litt_Comparée",
+        exam_paper: {
+          year: "2022 - 2023",
+        },
         course_index: 5,
         url: "/Docs/Semester_6/Literature_Compare_Exam_22_23.pdf",
         opendoc:
@@ -362,6 +416,9 @@ export const pdfFiles_sem_6 = [
         id: 16,
         name: "Literature and Media Exam_Paper 2021-2022",
         course_key: "Litt_Media",
+        exam_paper: {
+          year: "2021 - 2022",
+        },
         course_index: 6,
         url: "/Docs/Semester_6/Literature_and_media_Exam_21_22.pdf",
         opendoc:
@@ -371,6 +428,9 @@ export const pdfFiles_sem_6 = [
         id: 17,
         name: "Literature and Media Exam_Paper 2022-2023",
         course_key: "Litt_Media",
+        exam_paper: {
+          year: "2022 - 2023",
+        },
         course_index: 6,
         url: "/Docs/Semester_6/Literature_and_media_Exam_22_23.pdf",
         opendoc:

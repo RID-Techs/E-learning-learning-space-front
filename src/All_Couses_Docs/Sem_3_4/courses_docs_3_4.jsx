@@ -17,6 +17,9 @@
       id: 2,
       name: "18th Century English Novel Exam Paper of 2021 - 2022",
       course_key: "English_Novel",
+      exam_paper: {
+        year: "2021 - 2022",
+      },
       course_index: 0,
       url: "/Docs/Semester_3/Eighteenth_Century_English_Novel_Exam_Paper_21_22.pdf",
       opendoc:
@@ -26,6 +29,9 @@
       id: 3,
       name: "Morphology and Syntax Exam Paper of 2020 - 2021",
       course_key: "Morphology_and_Syntax",
+      exam_paper: {
+        year: "2020 - 2021",
+      },
       course_index: 1,
       url: "/Docs/Semester_3/Morphology_and_Syntax_Exam_Paper_20_21.pdf",
       opendoc:
@@ -35,6 +41,9 @@
       id: 4,
       name: "Morphology and Syntax Exam Paper of 2021 - 2022",
       course_key: "Morphology_and_Syntax",
+      exam_paper: {
+        year: "2021 - 2022",
+      },
       course_index: 1,
       url: "/Docs/Semester_3/Morphology_and_Syntax_Exam_Paper_21_22.pdf",
       opendoc:
@@ -44,6 +53,9 @@
       id: 21,
       name: "Morphology and Syntax Exam Paper of 2023 - 2024",
       course_key: "Morphology_and_Syntax",
+      exam_paper: {
+        year: "2023 - 2024",
+      },
       course_index: 1,
       url: "/Docs/Semester_3/Morpho_ExamPaper_23_24.pdf",
       opendoc:
@@ -53,6 +65,9 @@
       id: 22,
       name: "Morphology and Syntax Exam Paper of 2024 - 2025",
       course_key: "Morphology_and_Syntax",
+      exam_paper: {
+        year: "2024 - 2025",
+      },
       course_index: 1,
       url: "/Docs/Semester_3/Morpho_ExamPaper_24_25.pdf",
       opendoc:
@@ -89,6 +104,9 @@
       id: 6,
       name: "African Novel Exam_Paper 2020-2021",
       course_key: "African_Novel",
+      exam_paper: {
+        year: "2020 - 2021",
+      },
       course_index: 2,
       url: "/Docs/Semester_3/Roman_Africain_Exam_Paper_20_21.pdf",
       opendoc:
@@ -147,6 +165,9 @@
       id: 10,
       name: "American Novel Exam_Paper 2020-2021",
       course_key: "American_Novel",
+      exam_paper: {
+        year: "2020 - 2021",
+      },
       course_index: 3,
       url: "/Docs/Semester_3/Roman_Américain_Exam_Paper_20_21.pdf",
       opendoc:
@@ -156,6 +177,9 @@
       id: 11,
       name: "American Novel Exam_Paper 2021-2022",
       course_key: "American_Novel",
+      exam_paper: {
+        year: "2021 - 2022",
+      },
       course_index: 3,
       url: "/Docs/Semester_3/Roman_Américain_Exam_Paper_21_22.pdf",
       opendoc:
@@ -174,6 +198,9 @@
       id: 13,
       name: "Théâtre africain Exam_Paper 2020-2021",
       course_key: "Théâtre_Africain",
+      exam_paper: {
+        year: "2020 - 2021",
+      },
       course_index: 4,
       url: "/Docs/Semester_3/Théâtre_africain_Exam_Paper_20_21.pdf",
       opendoc:
@@ -183,6 +210,9 @@
       id: 14,
       name: "Théâtre africain Exam_Paper 2021 - 2022",
       course_key: "Théâtre_Africain",
+      exam_paper: {
+        year: "2021 - 2022",
+      },
       course_index: 4,
       url: "/Docs/Semester_3/Théâtre_africain_Exam_Paper_21_22.pdf",
       opendoc:
@@ -207,9 +237,30 @@
         "https://drive.google.com/file/d/1EV1xqvaoHFIeVg_71N-hAWJp5CWGefsL/view?usp=drive_link",
     },
     {
+      id: 27,
+      name: "Théâtre classique anglais : Julius Caesar By William Shakespeare",
+      course_key: "Théâtre_Classique",
+      course_index: 5,
+      url: "/Docs/Semester_3/Julius_caesar.pdf",
+      opendoc:
+        "https://drive.google.com/file/d/13VeoyfI4Krj1O2xpqHZKKNesrwDmIcAY/view?usp=drive_link",
+    },
+    {
+      id: 28,
+      name: "Théâtre classique anglais : The Two Gentlemen of Verona by William Shakespeare",
+      course_key: "Théâtre_Classique",
+      course_index: 5,
+      url: "/Docs/Semester_3/Two_Gentlemen_Verona.pdf",
+      opendoc:
+        "https://drive.google.com/file/d/1efSh07i6LWFh-UJXtaXgvcTbVJNEIS30/view?usp=drive_link",
+    },
+    {
       id: 17,
       name: "Théâtre classique anglais Exam_Paper 2020-2021",
       course_key: "Théâtre_Classique",
+      exam_paper: {
+        year: "2020 - 2021",
+      },
       course_index: 5,
       url: "/Docs/Semester_3/Théâtre_classique_anglais_Exam_Paper_20_21.pdf",
       opendoc:
@@ -219,6 +270,9 @@
       id: 18,
       name: "Théâtre classique anglais Exam_Paper 2021-2022",
       course_key: "Théâtre_Classique",
+      exam_paper: {
+        year: "2021 - 2022",
+      },
       course_index: 5,
       url: "/Docs/Semester_3/Théâtre_classique_anglais_Exam_Paper_21_22.pdf",
       opendoc:
@@ -237,6 +291,9 @@
       id: 20,
       name: "Traduction_avancée Exam_Paper 2021-2022",
       course_key: "Traduction_Avancée",
+      exam_paper: {
+        year: "2021 - 2022",
+      },
       course_index: 6,
       url: "/Docs/Semester_3/Traduction_avancée_Exam_Paper_21_22.pdf",
       opendoc:
@@ -267,6 +324,9 @@ export const pdfFiles_sem_4 = [
         id: 3,
         name: "African Poetry Exam_Paper 2020-2021",
         course_key: "African_Poetry",
+        exam_paper: {
+          year: "2020 - 2021",
+        },
         course_index: 1,
         url: "/Docs/Semester_4/African_Poetry_Exam_20_21.pdf",
         opendoc:
@@ -276,6 +336,9 @@ export const pdfFiles_sem_4 = [
         id: 4,
         name: "African Poetry Exam_Paper 2021-2022",
         course_key: "African_Poetry",
+        exam_paper: {
+          year: "2021 - 2022",
+        },
         course_index: 1,
         url: "/Docs/Semester_4/African_Poetry_Exam_21_22.pdf",
         opendoc:
@@ -294,6 +357,9 @@ export const pdfFiles_sem_4 = [
         id: 6,
         name: "American Civilisation Exam_Paper 2020-2021",
         course_key: "American_Civilisation",
+        exam_paper: {
+          year: "2020 - 2021",
+        },
         course_index: 2,
         url: "/Docs/Semester_4/American_Civilisation_Exam_20_21.pdf",
         opendoc:
@@ -312,6 +378,9 @@ export const pdfFiles_sem_4 = [
         id: 8,
         name: "American Poetry Exam_Paper 2020-2021",
         course_key: "American_Poetry",
+        exam_paper: {
+          year: "2020 - 2021",
+        },
         course_index: 3,
         url: "/Docs/Semester_4/American_Poetry_Exam_20_21.pdf",
         opendoc:
@@ -321,6 +390,9 @@ export const pdfFiles_sem_4 = [
         id: 9,
         name: "American Poetry Exam_Paper 2021-2022",
         course_key: "American_Poetry",
+        exam_paper: {
+          year: "2021 - 2022",
+        },
         course_index: 3,
         url: "/Docs/Semester_4/American_Poetry_Exam_21_22.pdf",
         opendoc:
@@ -330,6 +402,9 @@ export const pdfFiles_sem_4 = [
         id: 10,
         name: "Contemporary British Civilisation Exam_Paper 2020-2021",
         course_key: "Contemporary_British_Civ",
+        exam_paper: {
+          year: "2020 - 2021",
+        },
         course_index: 4,
         url: "/Docs/Semester_4/Contemporary_British_Civilisation_Exam_20_21.pdf",
         opendoc:
@@ -339,6 +414,9 @@ export const pdfFiles_sem_4 = [
         id: 11,
         name: "Contemporary British Civilisation Exam_Paper 2021-2022",
         course_key: "Contemporary_British_Civ",
+        exam_paper: {
+          year: "2021 - 2022",
+        },
         course_index: 4,
         url: "/Docs/Semester_4/Contemporary_British_Civilisation_Exam_21_22.pdf",
         opendoc:
@@ -357,6 +435,9 @@ export const pdfFiles_sem_4 = [
         id: 13,
         name: "Early American Theater Exam_Paper 2020-2021",
         course_key: "Early_Am_Theater",
+        exam_paper: {
+          year: "2020 - 2021",
+        },
         course_index: 5,
         url: "/Docs/Semester_4/Early_American_Theater_Exam_20_21.pdf",
         opendoc:
@@ -366,6 +447,9 @@ export const pdfFiles_sem_4 = [
         id: 14,
         name: "Early American Theater Exam_Paper 2021-2022",
         course_key: "Early_Am_Theater",
+        exam_paper: {
+          year: "2021 - 2022",
+        },
         course_index: 5,
         url: "/Docs/Semester_4/Early_American_Theater_Exam_21_22.pdf",
         opendoc:
@@ -384,6 +468,9 @@ export const pdfFiles_sem_4 = [
         id: 16,
         name: "English Poetry Exam_Paper 2020-2021",
         course_key: "English_Poetry",
+        exam_paper: {
+          year: "2020 - 2021",
+        },
         course_index: 6,
         url: "/Docs/Semester_4/English_Poetry_Exam_20_21.pdf",
         opendoc:
@@ -393,6 +480,9 @@ export const pdfFiles_sem_4 = [
         id: 17,
         name: "English Poetry Exam_Paper 2021-2022",
         course_key: "English_Poetry",
+        exam_paper: {
+          year: "2021 - 2022",
+        },
         course_index: 6,
         url: "/Docs/Semester_4/English_Poetry_Exam_21_22.pdf",
         opendoc:
