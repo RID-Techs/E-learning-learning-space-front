@@ -1,176 +1,145 @@
 
-import {RouterProvider, createBrowserRouter} from "react-router-dom";
+import {Outlet, RouterProvider, ScrollRestoration, createBrowserRouter} from "react-router-dom";
 import { ErrorBoundary } from "react-error-boundary";
 import { Error } from "./Errors/Error";
 import { ErrorPage } from "./Errors/ErrorPage";
-import { Welcome_Page } from "./Components/WelcomePage";
-import { Home } from "./Components/Home";
-import { Get_Answers } from "./Components/Get_Answers";
-import { Test } from "./Components/TEST_SECTION/Test";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { SignIn } from "./Components/SignIn";
-import { SignUp } from "./Components/SignUp";
-import { Podcast } from "./Components/Podcast";
-import { WebsiteTour } from "./Components/webTour";
-import { Survey } from "./Components/Feedback/survey";
-import { ExamPapersWrapper } from "./Components/Add_Paper_holder";
-import { GetAllExamPapersWrapper } from "./Components/All_Exam_Papers_Holder";
-import { User_Progress } from "./Components/Progress_Tracker/User_Progress";
-import { E_Quiz } from "./Components/E_Quiz_Folder/E_QUIZ";
-import { Create_Quiz } from "./Components/E_Quiz_Folder/Create_Quiz";
-import { Create_Quiz_Extension } from "./Components/E_Quiz_Folder/Sample_Quiz";
-import PDFViewer from "./Components/PDFViewer";
-function App() {
+import { Suspense } from "react";
 
+function RootLayout() {
+  return (
+          <ErrorBoundary fallback={<Error />}>
+            <Suspense fallback={"Loading..."}>
+              <Outlet />
+            </Suspense>
+            <ScrollRestoration />
+          </ErrorBoundary>
+  );
+}
+function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: (
-        <ErrorBoundary fallback={<Error/>}>
-          <Welcome_Page/>
-        </ErrorBoundary>
-      ),
-      errorElement: <ErrorPage/>
-    },
-    {
-      path: "/sigup-adins",
-      element: (
-        <ErrorBoundary fallback={<Error/>}>
-          <SignUp/>
-        </ErrorBoundary>
-      ),
-      errorElement: <ErrorPage/>
-    },
-    {
-      path: "/signin",
-      element: (
-        <ErrorBoundary fallback={<Error/>}>
-          <SignIn/>
-        </ErrorBoundary>
-      ),
-      errorElement: <ErrorPage/>
-    },
-    {
-      path: "/Home",
-      element: (
-        <ErrorBoundary fallback={<Error/>}>
-          <Home/>
-        </ErrorBoundary>
-      ),
-      errorElement: <ErrorPage/>
-    },
-    {
-      path: "/Get_Answers",
-      element: (
-        <ErrorBoundary fallback={<Error/>}>
-          <Get_Answers/>
-        </ErrorBoundary>
-      ),
-      errorElement: <ErrorPage/>
-    },
-    {
-      path: "/Test",
-      element: (
-        <ErrorBoundary fallback={<Error/>}>
-          <Test/>
-        </ErrorBoundary>
-      ),
-      errorElement: <ErrorPage/>
-    },
-    {
-      path: "/Podcast",
-      element: (
-        <ErrorBoundary fallback={<Error/>}>
-          <Podcast/>
-        </ErrorBoundary>
-      ),
-      errorElement: <ErrorPage/>
-    },
-    {
-      path: "/Websitetour",
-      element: (
-        <ErrorBoundary fallback={<Error/>}>
-          <WebsiteTour />
-        </ErrorBoundary>
-      ),
-      errorElement: <ErrorPage/>
-    },
-    {
-      path: "/Exam-papers/add",
-      element: (
-        <ErrorBoundary fallback={<Error/>}>
-          <ExamPapersWrapper />
-        </ErrorBoundary>
-      ),
-      errorElement: <ErrorPage/>
-    },
-    {
-      path: "/Exam-papers",
-      element: (
-        <ErrorBoundary fallback={<Error/>}>
-          <GetAllExamPapersWrapper />
-        </ErrorBoundary>
-      ),
-      errorElement: <ErrorPage/>
-    },
-    {
-      path: "/Learning_progress",
-      element: (
-        <ErrorBoundary fallback={<Error/>}>
-          <User_Progress />
-        </ErrorBoundary>
-      ),
-      errorElement: <ErrorPage/>
-    },
-    {
-      path: "/E-Quiz",
-      element: (
-        <ErrorBoundary fallback={<Error/>}>
-          <E_Quiz />
-        </ErrorBoundary>
-      ),
-      errorElement: <ErrorPage/>
-    },
-    {
-      path: "/E-Quiz/:id",
-      element: (
-        <ErrorBoundary fallback={<Error/>}>
-          <Create_Quiz />
-        </ErrorBoundary>
-      ),
-      errorElement: <ErrorPage/>
-    },
-    {
-      path: "/E-Quiz-Gen",
-      element: (
-        <ErrorBoundary fallback={<Error/>}>
-          <Create_Quiz_Extension />
-        </ErrorBoundary>
-      ),
-      errorElement: <ErrorPage/>
-    },
-    {
-      path: "/pdfreader",
-      element: (
-        <ErrorBoundary fallback={<Error/>}>
-          <PDFViewer />
-        </ErrorBoundary>
-      ),
-      errorElement: <ErrorPage/>
-    },
-    {
-      path: "/Survey",
-      element: (
-        <ErrorBoundary fallback={<Error/>}>
-          <Survey />
-        </ErrorBoundary>
-      ),
-      errorElement: <ErrorPage/>
+      element: <RootLayout />,
+      errorElement: <ErrorPage />,
+      children: [
+        {
+          index: true,
+          lazy: async () => {
+            const { Welcome_Page } = await import("./Components/WelcomePage");
+            return { Component: Welcome_Page };
+          },
+        },
+        {
+          path: "/sigup-adins",
+          lazy: async () => {
+            const { SignUp } = await import("./Components/SignUp");
+            return { Component: SignUp };
+          },
+        },
+        {
+          path: "/signin",
+          lazy: async () => {
+            const { SignIn } = await import("./Components/SignIn");
+            return { Component: SignIn };
+          },
+        },
+        {
+          path: "/Home",
+          lazy: async () => {
+            const { Home } = await import("./Components/Home");
+            return { Component: Home };
+          },
+        },
+        {
+          path: "/Get_Answers",
+          lazy: async () => {
+            const { Get_Answers } = await import("./Components/Get_Answers");
+            return { Component: Get_Answers };
+          },
+        },
+        {
+          path: "/Test",
+          lazy: async () => {
+            const { Test } = await import("./Components/TEST_SECTION/Test");
+            return { Component: Test };
+          },
+        },
+        {
+          path: "/Podcast",
+          lazy: async () => {
+            const { Podcast } = await import("./Components/Podcast");
+            return { Component: Podcast };
+          },
+        },
+        {
+          path: "/Websitetour",
+          lazy: async () => {
+            const { WebsiteTour } = await import("./Components/webTour");
+            return { Component: WebsiteTour };
+          },
+        },
+        {
+          path: "/Exam-papers/add",
+          lazy: async () => {
+            const { ExamPapersWrapper } = await import("./Components/Add_Paper_holder");
+            return { Component: ExamPapersWrapper };
+          },
+        },
+        {
+          path: "/Exam-papers",
+          lazy: async () => {
+            const { GetAllExamPapersWrapper } = await import("./Components/All_Exam_Papers_Holder");
+            return { Component: GetAllExamPapersWrapper };
+          },
+        },
+        {
+          path: "/Learning_progress",
+          lazy: async () => {
+            const { User_Progress } = await import("./Components/Progress_Tracker/User_Progress");
+            return { Component: User_Progress };
+          },
+        },
+        {
+          path: "/E-Quiz",
+          lazy: async () => {
+            const { E_Quiz } = await import("./Components/E_Quiz_Folder/E_QUIZ");
+            return { Component: E_Quiz };
+          },
+        },
+        {
+          path: "/E-Quiz/:id",
+          lazy: async () => {
+            const { Create_Quiz } = await import("./Components/E_Quiz_Folder/Create_Quiz");
+            return { Component: Create_Quiz };
+          },
+        },
+        {
+          path: "/E-Quiz-Gen",
+          lazy: async () => {
+            const { Create_Quiz_Extension } = await import("./Components/E_Quiz_Folder/Sample_Quiz");
+            return { Component: Create_Quiz_Extension };
+          },
+        },
+        {
+          path: "/pdfreader",
+          lazy: async () => {
+            const PDFViewer = await import("./Components/PDFViewer");
+            return { Component: PDFViewer.default};
+          },
+        },
+        {
+          path: "/Survey",
+          lazy: async () => {
+            const { Survey } = await import("./Components/Feedback/survey");
+            return { Component: Survey };
+          },
+        }
+      ]
     }
   ])
   
-
   return (
     <>
       <RouterProvider router={router} future={{v7_startTransition: true}} />

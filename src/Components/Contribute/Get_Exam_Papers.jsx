@@ -8,7 +8,7 @@ import { Semester3Units } from "./Teaching_Units/Sem_3_4/Sem_3_Units";
 import { Semester4Units } from "./Teaching_Units/Sem_3_4/Sem_4_Units";
 import { Semester5Units } from "./Teaching_Units/Sem_5_6/Sem_5_Units";
 import { Semester6Units } from "./Teaching_Units/Sem_5_6/Sem_6_Units";
-import { Link, useNavigate, useNavigationType, useSearchParams } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 
 const backBtn = <svg
   xmlns="http://www.w3.org/2000/svg"
@@ -28,7 +28,6 @@ const backBtn = <svg
 
 export function GetALlExamPapers() {
   const navigate = useNavigate();
-  const navigationType = useNavigationType();
   const [, setSearchParams] = useSearchParams();
   const [semester_1_Box, setSemester_1_Box] = useState(false);
   const [semester_2_Box, setSemester_2_Box] = useState(false);
@@ -145,7 +144,7 @@ export function GetALlExamPapers() {
             break;
         }
       }
-    }, []);
+    }, [setSearchParams]);
 
     const moveToItemRef = useRef(null);
           useEffect(() => {

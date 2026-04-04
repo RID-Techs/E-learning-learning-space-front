@@ -6,7 +6,7 @@ export default defineConfig({
   server: {
     host: true,
     allowedHosts: [".ngrok-free.app"]
-  },
+  }, 
   preview: {
     allowedHosts: [".ngrok-free.app"]
   },
@@ -15,6 +15,10 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       strategies: 'generateSW',
+      devOptions: {
+        enabled: false,
+        type: 'module',
+      },
       
       // 1. REMOVE includeAssets completely.
       // We don't need it because globPatterns below will do the job.
@@ -44,6 +48,7 @@ export default defineConfig({
         skipWaiting: true,
         clientsClaim: true,
         navigateFallback: '/index.html',
+        navigateFallbackAllowlist: [/^(?!\/__).*/],
         
         // 3. Keep this high (6MB) to ensure larger images/PDFs aren't skipped
         maximumFileSizeToCacheInBytes: 6 * 1024 * 1024,
@@ -103,24 +108,44 @@ export default defineConfig({
           },
 
           // Styles, scripts, and fonts
-          {
-            urlPattern: ({ request }) =>
-              request.destination === 'style' ||
-              request.destination === 'script' ||
-              request.destination === 'font',
-            handler: 'CacheFirst',
-            options: {
-              cacheName: 'static-assets-cache',
-              expiration: { maxEntries: 100, maxAgeSeconds: 2592000 },
-              cacheableResponse: { statuses: [0, 200] },
-              matchOptions: {
-                ignoreVary: true,   // FIX: Ignores "Vary: Accept-Encoding" from Cloudflare
-                ignoreSearch: true  // FIX: Ignores "?v=123" query strings
-              }
-            }
-          }
+          // {
+          //   urlPattern: ({ request }) =>
+          //     request.destination === 'style' ||
+          //     request.destination === 'script' ||
+          //     request.destination === 'font',
+          //   handler: 'CacheFirst',
+          //   options: {
+          //     cacheName: 'static-assets-cache',
+          //     expiration: { maxEntries: 100, maxAgeSeconds: 2592000 },
+          //     cacheableResponse: { statuses: [0, 200] },
+          //     matchOptions: {
+          //       ignoreVary: true,   // FIX: Ignores "Vary: Accept-Encoding" from Cloudflare
+          //       ignoreSearch: true  // FIX: Ignores "?v=123" query strings
+          //     }
+          //   }
+          // }
         ]
       }
     })
   ],
+  build: {
+  rollupOptions: {
+    output: {
+      manualChunks: {
+        // Core React Engine (Very stable, rarely changes)
+        'vendor-core': ['react', 'react-dom', 'react-router-dom'],
+
+        // The Animation Engine
+        // Note: We use 'motion' because that is what's in your package.json
+        'vendor-motion': ['motion'],
+
+        // UI Helpers & Utilities
+        'vendor-ui': [
+          'react-toastify',
+          'react-error-boundary',
+        ],
+      },
+    },
+  },
+}
 })

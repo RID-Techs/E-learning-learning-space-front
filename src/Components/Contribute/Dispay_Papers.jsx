@@ -284,7 +284,7 @@ const [trackCourses_Sem_1, setTrackCourses_Sem_1] = useState(() => {
               const findItemInTheCache = await isItemInCache(fileUrl);
           
               if(!isOnline && !findItemInTheCache) {
-                setOfflineMsg(true);
+                // setOfflineMsg(true);
                 return;
               }
               window.open(fileUrl, "_blank");
@@ -298,7 +298,7 @@ const [trackCourses_Sem_1, setTrackCourses_Sem_1] = useState(() => {
         const findItemInTheCache = await isItemInCache(fileUrl);
         setDownloadTxt("Preparing...");
         if(!isOnline && !findItemInTheCache) {
-          setOfflineMsg(true);
+          // setOfflineMsg(true);
           setDownloadTxt("Download");
           return;
         }

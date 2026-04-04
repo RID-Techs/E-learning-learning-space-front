@@ -26,6 +26,32 @@ html, body {
     opacity: 1;
   }
 }
+.choose-exam-paper-semester-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.no-semester-selected-msg-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+}
+
+.no-semester-selected-msg {
+  display: inline-flex;
+  gap: 0.5em;
+  padding: 1em;
+  border: 1px solid #0a2239a3;
+  border-radius: 5px;
+  background-color: var(--bg-color);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  color: var(--text-color);
+}
+
+.no-semester-selected-msg p {
+  margin: 0;
+  font-size: 1.1rem;
+}
 
 .quiz-create-wrapper {
   animation: show-up 0.5s ease-in-out;
@@ -252,6 +278,11 @@ html, body {
   transition: all 0.3s ease-in-out;
 }
 
+.teaching-units-section{
+  padding: 1em;
+  animation: show-up .5s ease-in-out;
+}
+
 .quiz-semester {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -338,6 +369,11 @@ html, body {
   background-clip: text;
   -webkit-background-clip: text;
   background-image: linear-gradient(to right, #0A2239, #105EE5);
+}
+
+.choose-exam-paper-semester-title span, #teaching-units-section-title span {
+    text-decoration: underline dashed var(--highlight-color);
+    text-underline-offset: 4px;
 }
 
 .quiz-create-holder {

@@ -83,7 +83,7 @@ export function ExamPapersWrapper () {
                           </div>
               
                           <div className="average-content">
-                            <a href="https://ma-moyenne.netlify.app/" target="_blank">
+                            <a href="https://ma-moyenne-univ-tg.onrender.com/" target="_blank">
                               {" "}
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"

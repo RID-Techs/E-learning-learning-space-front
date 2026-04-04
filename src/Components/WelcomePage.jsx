@@ -223,8 +223,6 @@ const ClosingEcoBanner = () => {
     setUserDismissed(true);
   };
 
-
-
   // LOGIC: Show banner ONLY if:
   // 1. User is a member
   // 2. Browser says it's installable (isInstallable)
@@ -671,7 +669,7 @@ id="wave-footer-svg-2"
                   </div>
       
                   <div className="average-content">
-                    <a href="https://ma-moyenne.netlify.app/" target="_blank">
+                    <a href="https://ma-moyenne-univ-tg.onrender.com/" target="_blank">
                       {" "}
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
