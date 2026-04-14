@@ -748,10 +748,6 @@ export function AddExamPapers() {
                   <label htmlFor="paper-year">Mention its Academic Year </label>
                   <select onChange={handlePaperYear} id="paper-year">
                     <option value="">Choose</option>
-                    <option value="2011 - 2012">2011 - 2012</option>
-                    <option value="2012 - 2013">2012 - 2013</option>
-                    <option value="2013 - 2014">2013 - 2014</option>
-                    <option value="2014 - 2015">2014 - 2015</option>
                     <option value="2015 - 2016">2015 - 2016</option>
                     <option value="2016 - 2017">2016 - 2017</option>
                     <option value="2017 - 2018">2017 - 2018</option>
@@ -762,6 +758,7 @@ export function AddExamPapers() {
                     <option value="2022 - 2023">2022 - 2023</option>
                     <option value="2023 - 2024">2023 - 2024</option>
                     <option value="2024 - 2025">2024 - 2025</option>
+                    <option value="2025 - 2026">2025 - 2026</option>
                     <option value="Not Mentioned">Not Mentioned</option>
                   </select>
                 </div>
