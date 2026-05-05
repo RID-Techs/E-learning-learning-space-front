@@ -4,7 +4,7 @@ export function Unavailable () {
       <div className="container">
         <div className="not-available">
           <div className="unavailable">
-          <h1>On the way...</h1>
+          <h1>Not Available...</h1>
           <p>This part is not available yet. <svg
   xmlns="http://www.w3.org/2000/svg"
   width="24"

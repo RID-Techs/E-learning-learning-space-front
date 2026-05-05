@@ -490,14 +490,14 @@ const ClosingEcoBanner = () => {
 </div>
 
       <div className="guide-msg">
-        <h3 className="ms-4 me-4">
+        <h3 id="guide-msg-h3" className="ms-4 me-4">
           {" "}
-          Click the{" "}
+          Ensure your{" "}
           <span id="click-open-btn">
             {" "}
-            <span id="open-btn">centered-button</span>
+            <span id="open-btn"><em>university career</em></span>
           </span>{" "}
-          below to access the E-learning learning space{" "}
+          with E-learning{" "}
           <img height={32} src={star} alt="star" />{" "}
         </h3>
       </div>
@@ -546,7 +546,7 @@ const ClosingEcoBanner = () => {
   <Testimony />
   <div className="wave-footer">
     <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1}} className="see-our-students">
-      <p>+ 600k Students</p>
+      <p><strong>600k+</strong> Students</p>
       <button onClick={toggleTestimonyPicture} type="button">
         {showTestimonyPicture ? "Hide Crew" : "View more"}
       </button>

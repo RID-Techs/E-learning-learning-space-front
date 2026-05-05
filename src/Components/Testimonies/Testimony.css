@@ -152,7 +152,7 @@
     column-count: 2;
   }
 }
-@media (max-width: 476px) {
+@media (max-width: 480px) {
   .testimonies-container {
     column-count: 1;
   }

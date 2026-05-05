@@ -176,6 +176,9 @@ body{
     background-color: hsl(201, 100%, 36%);
   }
 }
+#guide-msg-h3 {
+  line-height: 2rem;
+}
 /* .whatsapp-content a {
   font-weight: 600;
   text-decoration: none;
@@ -1831,7 +1834,7 @@ footer{
   }
 }
 
-@media screen and (max-width: 476px) {
+@media screen and (max-width: 480px) {
 
   .elearning-member-wrapper {
     padding-bottom: 0.6em;
