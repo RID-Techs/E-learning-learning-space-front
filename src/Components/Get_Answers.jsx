@@ -630,7 +630,7 @@ export function Get_Answers() {
         <h1 id="my-current-courses">
           {" "}
           <span id="my-semester-span">~</span>{" "}
-          <span id="my-semester-text">Answers to Quesions</span>
+          <span id="my-semester-text">Answers to Questions</span>
         </h1>
       </div>
 
