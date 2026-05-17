@@ -7,6 +7,20 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Suspense } from "react";
 
+// Add this to main.jsx / index.jsx
+if ('serviceWorker' in navigator) {
+  let refreshing = false;
+  
+  // Detects when the new service worker takes over (thanks to skipWaiting: true)
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    if (!refreshing) {
+      refreshing = true;
+      // Force a silent page reload to load the new React assets
+      window.location.reload();
+    }
+  });
+}
+
 function RootLayout() {
   return (
           <ErrorBoundary fallback={<Error />}>
