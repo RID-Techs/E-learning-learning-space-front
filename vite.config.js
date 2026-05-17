@@ -13,10 +13,10 @@ export default defineConfig({
   plugins: [
     react(),
     VitePWA({
-      registerType: "autoUpdate",
+      registerType: "prompt",
       strategies: "generateSW",
       devOptions: {
-        enabled: true,
+        enabled: false,
         type: "module",
       },
 
@@ -66,7 +66,7 @@ export default defineConfig({
         // 2. CRITICAL: Clean up old caches that might be blocking the new ones
         cleanupOutdatedCaches: true,
 
-        skipWaiting: true,
+        // skipWaiting: true,
         clientsClaim: true,
         navigateFallback: "/index.html",
         navigateFallbackAllowlist: [/^(?!\/__).*/],
@@ -78,7 +78,7 @@ export default defineConfig({
         // This pattern tells the Service Worker:
         // "Go to the build folder, find EVERY file ending in these extensions, and cache them."
         // This covers: images, scripts, styles, json, and your PDF worker.
-        globPatterns: ["**/*.{js,mjs,css,html,png,jpg,jpeg,webp,svg,ico,json}"],
+        globPatterns: ["**/*.{js,css,html,png,jpg,jpeg,webp,svg,ico,json}"],
 
         runtimeCaching: [
           // Supabase API data (metadata)
