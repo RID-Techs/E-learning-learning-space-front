@@ -45,6 +45,7 @@ export function Welcome_Page() {
       setShowNote(false);
     } else {
       setShowNote(true);
+      document.body.style.overflow = "hidden";
     }
 
     const timer = setTimeout(() => {
@@ -125,6 +126,7 @@ export function Welcome_Page() {
 
   const CloseNoteButton = () => {
     setShowNote(false);
+    document.body.style.overflow = "auto";
     localStorage.setItem("Show Note", "true");
     setHasReadNote(true);
     localStorage.setItem("HasReadNote", "true");
@@ -250,9 +252,9 @@ const ClosingEcoBanner = () => {
                 <div className="ContentInfo">
                     <div className="info-title">
                     <h1>
-                        {" "}
-                        <span className="note">~</span> Important Note{" "}
-                        <span className="note">~</span>{" "}
+                        <span className="note-key">
+                          <svg fill="#105ee5" height={24} width={24} viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg" transform="rotate(0)matrix(1, 0, 0, 1, 0, 0)"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="m1783.68 1468.235-315.445 315.445v-315.445h315.445Zm-541.327-338.823v112.94h-903.53v-112.94h903.53Zm338.936-338.824V903.53H338.824V790.59h1242.465ZM621.176 0c93.403 0 169.412 76.01 169.412 169.412 0 26.09-6.437 50.484-16.94 72.62L999.98 468.255l-79.962 79.962-226.221-226.334c-22.137 10.504-46.532 16.942-72.622 16.942-93.402 0-169.411-76.01-169.411-169.412C451.765 76.009 527.775 0 621.176 0Zm395.295 225.882v112.942h790.588v1016.47h-451.765v451.765H112.941V338.824h225.883V225.882H0V1920h1421.478c45.176 0 87.755-17.619 119.717-49.581l329.224-329.11c31.962-32.076 49.581-74.655 49.581-119.831V225.882h-903.53Z" fillRule="evenodd"></path> </g></svg>
+                        </span> <span>KEY INSIGHT</span>
                     </h1>
                     </div>
                     <hr />
@@ -265,13 +267,8 @@ const ClosingEcoBanner = () => {
                             <em>E-learning website</em>
                             </strong>
                         </span>
-                        . Our platform is a learning space for students of
-                        Anglophone Studies who want to enhance their understanding
-                        of the courses taught by lecturers. On the platform, you
-                        will find all the resources you need to improve your
-                        comprehension of the material, increase your interactions
-                        with lecturers during courses, and ultimately enable you
-                        to transmit the knowledge you gain.
+                        . Our platform is a learning space for Anglophone Studies students, providing the resources needed to better understand lecturers’ courses, engage more actively in class, and effectively transmit the knowledge acquired.
+
                         </p>
                         <hr />
                         <div className="leave">
@@ -286,17 +283,14 @@ const ClosingEcoBanner = () => {
 
                     <div id="second-welcome-message">
                         <p>
-                        By doing so, you will broaden your scope on various topics
-                        in the field of the English language.{" "}
+                        By doing so, you will deepen your understanding of various areas within English Studies.{" "}
                         <span className="underline">
                             {" "}
                             <strong>
-                            However, some resources may not be up to date, as
-                            lecturers often modify or change the content of their
-                            courses.
+                            Please note that some resources may occasionally differ from current course content, as lecturers may revise or update their materials
                             </strong>{" "}
-                        </span>{" "}
-                        Otherwise, you are all set.
+                        </span>.{" "}
+                        Otherwise, you are ready to begin.
                         </p>
 
                         <hr />
@@ -402,7 +396,7 @@ const ClosingEcoBanner = () => {
         <p id="banner-title">✧ New Update ✧</p>
         <p id="banner-divider">- · - - · - - · -</p>
         <p>
-          Just click <strong>Install</strong> to turn the <strong><em>E-learning</em></strong> website into an application, making it directly accessible from your phone{"'"}s home screen for a better experience !
+          Install the platform for quicker access from your phone, tablet, or desktop and enjoy a more seamless learning experience.
         </p>
         <button onClick={handleAppInstallPrompt} id="install-btn">Install ↯</button>
       </div>
@@ -417,9 +411,14 @@ const ClosingEcoBanner = () => {
         <div className="closing-banner"><button onClick={ClosingEcoBanner} id="closing-banner">Close</button></div>
         <p id="banner-title">✧ New Update ✧</p>
         <p id="banner-divider">- · - - · - - · -</p>
-        <p>
-          Hey 😃, <strong><em>E-Collection Of Papers</em></strong> is here ! It is a collection of past exam papers that will help you prepare for your exams and improve your knowledge. You can contribute too 🤗.
-        </p>
+        <div>
+          <p>
+            Hey 😃, <span id="hey"><strong><em>E-Collection Of Papers</em></strong></span> is here !
+          </p>
+          <p>
+            It is a collection of past exam papers that will help you prepare for your exams and improve your knowledge. You can contribute too 🤗.
+          </p>
+        </div>
         <button onClick={ClosingEcoBanner} id="install-btn">Got it <em>!</em></button>
       </div>
     </div>

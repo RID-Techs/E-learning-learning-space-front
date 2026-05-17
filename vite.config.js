@@ -16,7 +16,7 @@ export default defineConfig({
       registerType: "autoUpdate",
       strategies: "generateSW",
       devOptions: {
-        enabled: false,
+        enabled: true,
         type: "module",
       },
 
