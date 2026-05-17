@@ -88,7 +88,7 @@ export default defineConfig({
               url.pathname.includes("/rest/v1"),
             handler: "NetworkFirst",
             options: {
-              cacheName: "supabase-metadata-cache-v2",
+              cacheName: "supabase-metadata-cache",
               expiration: { maxEntries: 100, maxAgeSeconds: 86400 },
               cacheableResponse: { statuses: [0, 200] },
             },
@@ -99,7 +99,7 @@ export default defineConfig({
             urlPattern: /^https:\/\/ik\.imagekit\.io\/g4xui13wk\/.*/i,
             handler: "CacheFirst",
             options: {
-              cacheName: "learning-materials-cache-v2",
+              cacheName: "learning-materials-cache",
               expiration: {
                 maxEntries: 100,
                 maxAgeSeconds: 2592000,
@@ -117,7 +117,7 @@ export default defineConfig({
               (url.href.endsWith(".pdf") || url.href.endsWith(".aac")),
             handler: "CacheFirst",
             options: {
-              cacheName: "local-media-cache-v2",
+              cacheName: "local-media-cache",
               expiration: { maxEntries: 50, maxAgeSeconds: 2592000 },
               cacheableResponse: { statuses: [0, 200] },
               rangeRequests: true,
@@ -129,7 +129,7 @@ export default defineConfig({
             urlPattern: ({ request }) => request.destination === "image",
             handler: "CacheFirst",
             options: {
-              cacheName: "external-images-cache-v2",
+              cacheName: "external-images-cache",
               expiration: {
                 maxEntries: 200,
                 maxAgeSeconds: 2592000,
