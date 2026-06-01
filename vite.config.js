@@ -78,7 +78,7 @@ export default defineConfig({
         // This pattern tells the Service Worker:
         // "Go to the build folder, find EVERY file ending in these extensions, and cache them."
         // This covers: images, scripts, styles, json, and your PDF worker.
-        globPatterns: ["**/*.{js,css,html,png,jpg,jpeg,webp,svg,ico,json}"],
+        globPatterns: ["**/*.{js,css,html,mjs,png,jpg,jpeg,webp,svg,ico,json}"],
 
         runtimeCaching: [
           // Supabase API data (metadata)
