@@ -20,6 +20,9 @@ function RootLayout() {
   );
 }
 function App() {
+  const excludedUsers = ["Eben", "Essossimina", "knbakle@e.member", "Paka hodabalo Francois", "Essomana", "BARRY Sidi"]
+  const getUser = localStorage.getItem("User") || "E-member";
+  const TookSurvey = localStorage.getItem("TookSurvey") === "true";
   const router = createBrowserRouter([
     {
       path: "/",
@@ -30,105 +33,120 @@ function App() {
           index: true,
           lazy: async () => {
             const { Welcome_Page } = await import("./Components/WelcomePage");
-            return { Component: Welcome_Page };
+            const { Survey } = await import("./Components/Feedback/survey");
+            return { Component: TookSurvey || excludedUsers.includes(getUser.trim()) ? Welcome_Page : Survey };
           },
         },
         {
           path: "/sigup-adins",
           lazy: async () => {
             const { SignUp } = await import("./Components/SignUp");
-            return { Component: SignUp };
+            const { Survey } = await import("./Components/Feedback/survey");
+            return { Component: TookSurvey || excludedUsers.includes(getUser.trim()) ? SignUp : Survey };
           },
         },
         {
           path: "/signin",
           lazy: async () => {
             const { SignIn } = await import("./Components/SignIn");
-            return { Component: SignIn };
+            const { Survey } = await import("./Components/Feedback/survey");
+            return { Component: TookSurvey || excludedUsers.includes(getUser.trim()) ? SignIn : Survey };
           },
         },
         {
           path: "/Home",
           lazy: async () => {
             const { Home } = await import("./Components/Home");
-            return { Component: Home };
+            const { Survey } = await import("./Components/Feedback/survey");
+            return { Component: TookSurvey || excludedUsers.includes(getUser.trim()) ? Home : Survey };
           },
         },
         {
           path: "/Get_Answers",
           lazy: async () => {
             const { Get_Answers } = await import("./Components/Get_Answers");
-            return { Component: Get_Answers };
+            const { Survey } = await import("./Components/Feedback/survey");
+            return { Component: TookSurvey || excludedUsers.includes(getUser.trim()) ? Get_Answers : Survey };
           },
         },
         {
           path: "/Test",
           lazy: async () => {
             const { Test } = await import("./Components/TEST_SECTION/Test");
-            return { Component: Test };
+            const { Survey } = await import("./Components/Feedback/survey");
+            return { Component: TookSurvey || excludedUsers.includes(getUser.trim()) ? Test : Survey };
           },
         },
         {
           path: "/Podcast",
           lazy: async () => {
             const { Podcast } = await import("./Components/Podcast");
-            return { Component: Podcast };
+            const { Survey } = await import("./Components/Feedback/survey");
+            return { Component: TookSurvey || excludedUsers.includes(getUser.trim()) ? Podcast : Survey };
           },
         },
         {
           path: "/Websitetour",
           lazy: async () => {
             const { WebsiteTour } = await import("./Components/webTour");
-            return { Component: WebsiteTour };
+            const { Survey } = await import("./Components/Feedback/survey");
+            return { Component: TookSurvey || excludedUsers.includes(getUser.trim()) ? WebsiteTour : Survey };
           },
         },
         {
           path: "/Exam-papers/add",
           lazy: async () => {
             const { ExamPapersWrapper } = await import("./Components/Add_Paper_holder");
-            return { Component: ExamPapersWrapper };
+            const { Survey } = await import("./Components/Feedback/survey");
+            return { Component: TookSurvey || excludedUsers.includes(getUser.trim()) ? ExamPapersWrapper : Survey };
           },
         },
         {
           path: "/Exam-papers",
           lazy: async () => {
             const { GetAllExamPapersWrapper } = await import("./Components/All_Exam_Papers_Holder");
-            return { Component: GetAllExamPapersWrapper };
+            const { Survey } = await import("./Components/Feedback/survey");
+            return { Component: TookSurvey || excludedUsers.includes(getUser.trim()) ? GetAllExamPapersWrapper : Survey };
           },
         },
         {
           path: "/Learning_progress",
           lazy: async () => {
             const { User_Progress } = await import("./Components/Progress_Tracker/User_Progress");
-            return { Component: User_Progress };
+            const { Survey } = await import("./Components/Feedback/survey");
+            return { Component: TookSurvey || excludedUsers.includes(getUser.trim()) ? User_Progress : Survey };
           },
         },
         {
           path: "/E-Quiz",
           lazy: async () => {
             const { E_Quiz } = await import("./Components/E_Quiz_Folder/E_QUIZ");
-            return { Component: E_Quiz };
+            const { Survey } = await import("./Components/Feedback/survey");
+            return { Component: TookSurvey || excludedUsers.includes(getUser.trim()) ? E_Quiz : Survey };
           },
         },
         {
           path: "/E-Quiz/:id",
           lazy: async () => {
             const { Create_Quiz } = await import("./Components/E_Quiz_Folder/Create_Quiz");
-            return { Component: Create_Quiz };
+            const { Survey } = await import("./Components/Feedback/survey");
+            return { Component: TookSurvey || excludedUsers.includes(getUser.trim()) ? Create_Quiz : Survey };
           },
         },
         {
           path: "/E-Quiz-Gen",
           lazy: async () => {
             const { Create_Quiz_Extension } = await import("./Components/E_Quiz_Folder/Sample_Quiz");
-            return { Component: Create_Quiz_Extension };
+            const { Survey } = await import("./Components/Feedback/survey");
+            return { Component: TookSurvey || excludedUsers.includes(getUser.trim()) ? Create_Quiz_Extension : Survey };
           },
         },
         {
           path: "/pdfreader",
           lazy: async () => {
             const PDFViewer = await import("./Components/PDFViewer");
-            return { Component: PDFViewer.default};
+            const { Survey } = await import("./Components/Feedback/survey");
+            return { Component: TookSurvey || excludedUsers.includes(getUser.trim()) ? PDFViewer : Survey };
           },
         },
         {

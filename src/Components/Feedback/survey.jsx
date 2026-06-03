@@ -351,6 +351,7 @@ export const Survey = () => {
         setSubmitting(false);
         setSurveyQuestion_16(false);
         setShowThanks(true);
+        localStorage.setItem("TookSurvey", "true");
       }
     }
     sendData();
@@ -359,7 +360,7 @@ export const Survey = () => {
   const endSurvey = () => {
     const body = document.querySelector("body");
     body.style.overflow = "auto";
-    localStorage.setItem("srv", "true");
+    localStorage.setItem("TookSurvey", "true");
     window.location.reload();
   }
 
@@ -629,7 +630,7 @@ export const Survey = () => {
       </div>
 
       {showThanks && <div className="thanks-wrapper">
-        <h5><em>Thank you for taking the time, my dear {username} ! <span className="highlight">༆</span></em></h5>
+        <h5><em>Thank you for taking this survey, my dear {username} ! <span className="highlight">༆</span></em></h5>
         <p>😉 Enjoy now !</p>
         <button onClick={endSurvey} type="button">Close</button>
       </div>}
