@@ -12,7 +12,6 @@ function RootLayout() {
   return (
           <ErrorBoundary fallback={<Error />}>
             <Suspense fallback={"Loading..."}>
-              <PwaUpdater/>
               <Outlet />
             </Suspense>
             <ScrollRestoration />
@@ -162,6 +161,7 @@ function App() {
   
   return (
     <>
+      <PwaUpdater/>
       <RouterProvider router={router} future={{v7_startTransition: true}} />
       <ToastContainer/>
     </>
