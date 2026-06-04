@@ -146,7 +146,7 @@ function App() {
           lazy: async () => {
             const PDFViewer = await import("./Components/PDFViewer");
             const { Survey } = await import("./Components/Feedback/survey");
-            return { Component: TookSurvey || excludedUsers.includes(getUser.trim()) ? PDFViewer : Survey };
+            return { Component: TookSurvey || excludedUsers.includes(getUser.trim()) ? PDFViewer.default : Survey };
           },
         },
         {
