@@ -40,8 +40,7 @@ function App() {
           path: "/sigup-adins",
           lazy: async () => {
             const { SignUp } = await import("./Components/SignUp");
-            const { Survey } = await import("./Components/Feedback/survey");
-            return { Component: TookSurvey || excludedUsers.includes(getUser.trim()) ? SignUp : Survey };
+            return { Component: SignUp };
           },
         },
         {

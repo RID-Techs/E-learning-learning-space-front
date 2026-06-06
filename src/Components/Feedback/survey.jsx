@@ -620,7 +620,7 @@ export const Survey = () => {
               </div>
               <div className="survey-footer">
                 <button onClick={handleSurveyQuestion_16_Prev} type="button">⇠ Previous</button>
-                <button type="submit" disabled={disableSubmitBtn}>{submitting ? "Processing...": "Submit ⸙"}</button>
+                {localStorage.getItem("TookSurvey") !== "true" && <button disabled={disableSubmitBtn} type="submit">{submitting ? "Submitting..." : "Submit Survey"}</button>}
               </div>
             </div>}
 
