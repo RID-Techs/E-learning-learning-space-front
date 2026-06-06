@@ -96,7 +96,14 @@ export function SignIn() {
 }
 
 useEffect(() =>  {
-  localStorage.clear();
+  const getSurveyConfirmation = localStorage.getItem("TookSurvey") || "false";
+  if(getSurveyConfirmation === "true") {
+    localStorage.clear();
+    localStorage.setItem("TookSurvey", "true");
+  } else {
+    localStorage.clear();
+  }
+  
 }, []);
 
 
