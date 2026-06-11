@@ -770,12 +770,12 @@ async function openCachedPDF(url) {
                   Answer Hub{" "}
                 </li>
               </NavLink>
-              <a href="https://elerning-e-library.netlify.app" target="_blank" rel="noopener noreferrer">
+              <NavLink to={"/Intro"}>
                 <li>
                   {" "}
-                  <img height={22} src={open} alt="library" /> My E-library{" "}
+                  <img height={22} src={open} alt="library" /> Intro{" "}
                 </li>
-              </a>
+              </NavLink>
               <button id="Log-out" onClick={LoggedOut} type="button">
                 Log Out <svg
   xmlns="http://www.w3.org/2000/svg"

@@ -84,7 +84,6 @@ export function SignUp() {
     }
 
     if(data){
-        localStorage.setItem("TookSurvey", "true");
         setLoading("Sign up");
         Welcome("You are an E-member now !");
         window.location.reload();

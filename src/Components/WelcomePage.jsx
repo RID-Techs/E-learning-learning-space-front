@@ -242,10 +242,6 @@ const ClosingEcoBanner = () => {
     }
   }, [showTestimonyPicture]);
 
-  // const excludedUsers = ["Eben", "Essossimina", "knbakle@e.member", "Paka hodabalo Francois", "Essomana", "BARRY Sidi"]
-  // const getUser = localStorage.getItem("User") || "E-member";
-  // const TookSurvey = localStorage.getItem("TookSurvey") === "true";
-
   return (
     <>
         <div className="page-wrapper">
